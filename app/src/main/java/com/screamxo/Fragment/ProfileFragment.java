@@ -79,7 +79,7 @@ public class ProfileFragment extends Fragment {
     private static final String TAG = "ProfileFragment";
     public String friendshipid, frdShipType = "-1";
     public Boolean isFriend = false, isBlock = false;
-    private int isMyFriend;
+    public int isMyFriend;
     Context context;
     @BindView(R.id.relative_layout)
     RelativeLayout relativeLayout;
@@ -608,8 +608,8 @@ public class ProfileFragment extends Fragment {
 
                 break;
             case R.id.send_money_iv:
-                startActivityForResult(new Intent(context, WalletSendReceiveActivity.class),
-                        REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+                startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")).putExtra("from", "profile"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
+
                 /*Intent intent = new Intent(context, SendMoneyActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("uid", "" + preferences.getUserId());
@@ -668,7 +668,7 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Add Friend":
                                     ((ProfileActivity) context).callAddFrd();
-                                    isMyFriend = 1;
+
                                     break;
                                 case "Un Friend":
                                     ((ProfileActivity) context).callUnfrdApi();
@@ -679,7 +679,7 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Send money":
 //                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")), REQ_CODE_WALLET_ACTIVITY_RESULTS);
+                                    startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")).putExtra("from", "profile"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
                                     break;
                             }
                             popUpWindow2.dismiss();

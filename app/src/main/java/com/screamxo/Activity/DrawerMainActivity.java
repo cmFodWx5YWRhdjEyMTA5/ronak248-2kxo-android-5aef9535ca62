@@ -619,7 +619,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 2:
                     flagWallet = true;
-                    pictureInPictureMode();
                     startActivityForResult(new Intent(DrawerMainActivity.this, WalletSendReceiveActivity.class), REQ_CODE_WALLET_ACTIVITY_RESULTS);
                     break;
 

@@ -143,7 +143,7 @@ public class FriendsFragment extends Fragment implements FacebookInterface {
     }
 
     @SuppressLint("ValidFragment")
-    public FriendsFragment(String socialPeopleType, String screenType,String amount) {
+    public FriendsFragment(String socialPeopleType, String screenType, String amount) {
         this.socialPeopleType = socialPeopleType;
         this.screenType = screenType;
         this.amount = amount;
@@ -396,7 +396,7 @@ public class FriendsFragment extends Fragment implements FacebookInterface {
         }
 
         if (friendAdapter == null) {
-            friendAdapter = new FriendAdapter(context, friends, type, screenType,amount);
+            friendAdapter = new FriendAdapter(context, friends, type, screenType, amount);
             recyclerView.setAdapter(friendAdapter);
         } else {
             friendAdapter.type = type;
@@ -465,7 +465,6 @@ public class FriendsFragment extends Fragment implements FacebookInterface {
 
     @OnClick({R.id.txt_member, R.id.txt_request, R.id.txt_suggetion, R.id.txt_finder, R.id.txt_inviter})
     public void onClick(View view) {
-
         switch (view.getId()) {
 
             case R.id.txt_member:
@@ -681,7 +680,6 @@ public class FriendsFragment extends Fragment implements FacebookInterface {
         }
         isFinderSelected = false;
     }
-
 
     private void callInviteFromTwitter() {
         mTwitterAuthClient = new TwitterAuthClient();

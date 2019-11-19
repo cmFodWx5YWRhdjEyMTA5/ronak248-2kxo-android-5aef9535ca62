@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.apimodule.ApiBase.ApiBean.Payment.StripeToken;
 import com.example.apimodule.ApiBase.ApiBean.WalletList.WalletList;
 import com.example.apimodule.ApiBase.FetchrServiceBase;
@@ -41,6 +42,7 @@ import com.screamxo.Utils.DialogBox;
 import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -59,6 +61,7 @@ import rjsv.floatingmenu.animation.enumerators.AnimationType;
 import rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton;
 import rjsv.floatingmenu.floatingmenubutton.listeners.FloatingMenuStateChangeListener;
 import rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton;
+
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_FRIENDS_ACTIVITY_RESULTS;
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_SUPPORT_ACTIVITY_RESULTS;
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_UPLOAD_DATA_ACTIVITY_RESULTS;
@@ -117,7 +120,6 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
         setListener();
         callGetWalletBalanceApi();
 
-
         if (getIntent().getExtras() != null) {
             if (getIntent().getExtras().containsKey("notification")) {
                 new Handler().postDelayed(new Runnable() {
@@ -126,12 +128,17 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
                         setHistory();
                     }
                 }, 2000);
+            } else if (getIntent().getExtras().containsKey("from")) {
+                if (getIntent().getExtras().get("from").equals("profile")) {
+                    viewPager.setCurrentItem(1);
+                }
             }
         }
+
+
     }
 
-    private void setHistory()
-    {
+    private void setHistory() {
         SimpleDateFormat sdf = new SimpleDateFormat("MM");
         Date d = new Date();
         tabs.getTabAt(0).setText(getString(R.string.txt_history));
@@ -139,10 +146,8 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
     }
 
 
-    private void initFabIcon()
-    {
-        try
-        {
+    private void initFabIcon() {
+        try {
             floatingButton = findViewById(R.id.my_floating_button);
             floatingButton.setStartAngle(0)
                     .setEndAngle(360)
@@ -161,26 +166,22 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
 
             floatingButton.setBackground(getResources().getDrawable(R.mipmap.menu));
 
-            floatingButton.setStateChangeListener(new FloatingMenuStateChangeListener()
-            {
+            floatingButton.setStateChangeListener(new FloatingMenuStateChangeListener() {
                 @Override
-                public void onMenuOpened(FloatingMenuButton floatingMenuButton)
-                {
+                public void onMenuOpened(FloatingMenuButton floatingMenuButton) {
                     Utils.hideKeyboard(WalletSendReceiveActivity.this);
                     floatingButton.setBackground(getResources().getDrawable(R.mipmap.cross));
                 }
 
                 @Override
-                public void onMenuClosed(FloatingMenuButton floatingMenuButton)
-                {
+                public void onMenuClosed(FloatingMenuButton floatingMenuButton) {
                     floatingButton.setBackground(getResources().getDrawable(R.mipmap.menu));
                 }
             });
 
             sbProfile = findViewById(R.id.sbProfile);
 
-            sbProfile.setOnClickListener(new View.OnClickListener()
-            {
+            sbProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent returnIntent = new Intent();
@@ -192,11 +193,9 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
 
             sbSocial = findViewById(R.id.sbSocial);
 
-            sbSocial.setOnClickListener(new View.OnClickListener()
-            {
+            sbSocial.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     floatingButton.closeMenu();
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("FRAGMENT_INDEX", 3);
@@ -207,14 +206,11 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
 
             sbChat = findViewById(R.id.sbChat);
 
-            sbChat.setOnClickListener(new View.OnClickListener()
-            {
+            sbChat.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     floatingButton.closeMenu();
-                    if (!preferences.getUserId().isEmpty() && !preferences.getStripeCustomerId().isEmpty())
-                    {
+                    if (!preferences.getUserId().isEmpty() && !preferences.getStripeCustomerId().isEmpty()) {
                         Intent gotoNext = new Intent(WalletSendReceiveActivity.this, UploadDataActivity.class);
                         startActivityForResult(gotoNext, REQ_CODE_UPLOAD_DATA_ACTIVITY_RESULTS);
                     }
@@ -223,11 +219,9 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
             });
 
             sbWorld = findViewById(R.id.sbWorld);
-            sbWorld.setOnClickListener(new View.OnClickListener()
-            {
+            sbWorld.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     floatingButton.closeMenu();
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("FRAGMENT_INDEX", 2);
@@ -249,11 +243,9 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
             });
 
             sbflSetting = findViewById(R.id.sbflSetting);
-            sbflSetting.setOnClickListener(new View.OnClickListener()
-            {
+            sbflSetting.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     floatingButton.closeMenu();
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("FRAGMENT_INDEX", 7);
@@ -263,8 +255,7 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
             });
 
             subFriend = findViewById(R.id.subFriend);
-            subFriend.setOnClickListener(new View.OnClickListener()
-            {
+            subFriend.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     floatingButton.closeMenu();
@@ -302,9 +293,7 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
                             if (TextUtils.isEmpty(s))
                                 s = "$ 00";
                             txtWalletAmount.setText(s);
-                        }
-                        catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -321,13 +310,10 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
         }
     }
 
-    private void setListener()
-    {
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
-        {
+    private void setListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
-            {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
@@ -581,34 +567,26 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
             progreessbar.setVisibility(View.VISIBLE);
             FetchrServiceBase mservice = new FetchrServiceBase();
             Call<StripeToken> topUsingCard = mservice.getFetcherService(context).stripeProcessPayment(map);
-            topUsingCard.enqueue(new Callback<StripeToken>()
-            {
+            topUsingCard.enqueue(new Callback<StripeToken>() {
                 @Override
                 public void onResponse(Call<StripeToken> call, Response<StripeToken> response) {
-                    if (response.code() == StaticConstant.RESULT_OK)
-                    {
+                    if (response.code() == StaticConstant.RESULT_OK) {
                         finalizeTopUpUsingCard(response.body().getResult().getStripePaymentId(), cardId);
-                    }
-                    else if (response.code() == StaticConstant.BAD_REQUEST)
-                    {
+                    } else if (response.code() == StaticConstant.BAD_REQUEST) {
                         DialogBox.showDialog(WalletSendReceiveActivity.this, getString(R.string.app_name), "Something go wrong!",
                                 DialogBox.DIALOG_FAILURE, null);
-                    }
-                    else if (response.code() == StaticConstant.UNAUTHORIZE)
-                    {
+                    } else if (response.code() == StaticConstant.UNAUTHORIZE) {
                         Utils.unAuthentication(WalletSendReceiveActivity.this);
                     }
                 }
+
                 @Override
-                public void onFailure(Call<StripeToken> call, Throwable t)
-                {
+                public void onFailure(Call<StripeToken> call, Throwable t) {
                     t.printStackTrace();
                     progreessbar.setVisibility(View.GONE);
                 }
             });
-        }
-        else
-            {
+        } else {
             Utils.showToast(context, context.getString(R.string.toast_no_internet));
         }
     }
@@ -656,15 +634,12 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            switch (requestCode)
-            {
+            switch (requestCode) {
                 case REQ_CODE_FRIENDS_ACTIVITY_RESULTS:
-                    if (data.getExtras() != null && data.getStringExtra("uid") != null)
-                    {
+                    if (data.getExtras() != null && data.getStringExtra("uid") != null) {
                         uid = data.getStringExtra("uid");
                         sendMoneyApi();
                     }
@@ -679,37 +654,29 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
         }
     }
 
-    private void sendMoneyApi()
-    {
+    private void sendMoneyApi() {
         Map<String, String> map = new HashMap<>();
         map.put("user_id", preferences.getUserId());
         map.put("to_user_id", "" + uid);
         map.put("amount", txtSendAmount.getText().toString() + "." + txtOtherAmount.getText().toString());
 
-        if (Utils.isInternetOn(context))
-        {
+        if (Utils.isInternetOn(context)) {
 
             Call<StripeToken> sendMoney = mService.getFetcherService(context).sendMoney(map);
 
-            sendMoney.enqueue(new Callback<StripeToken>()
-            {
+            sendMoney.enqueue(new Callback<StripeToken>() {
                 @Override
                 public void onResponse(Call<StripeToken> call, Response<StripeToken> response) {
                     //   setViewEnableDisable(true);
-                    if (response.code() == StaticConstant.RESULT_OK)
-                    {
-                        if (response.body().getStatus().equals(StaticConstant.STATUS_1))
-                        {
+                    if (response.code() == StaticConstant.RESULT_OK) {
+                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                             preferences.saveAmount(String.valueOf(response.body().getResult().getAmount()));
-                            try
-                            {
+                            try {
                                 String s = (Utils.getFormattedPrice(preferences.getAmount()));
                                 if (TextUtils.isEmpty(s))
                                     s = "$ 00";
                                 txtWalletAmount.setText(s);
-                            }
-                            catch (Exception e)
-                            {
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             txtSendAmount.setText("00");

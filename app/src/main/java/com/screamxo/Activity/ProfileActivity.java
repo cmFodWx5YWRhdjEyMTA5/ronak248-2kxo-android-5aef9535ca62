@@ -25,6 +25,8 @@ import com.example.apimodule.ApiBase.ApiBean.UserBean;
 import com.example.apimodule.ApiBase.ApiBean.UserResult;
 import com.example.apimodule.ApiBase.ApiBean.Userdetail;
 import com.example.apimodule.ApiBase.FetchrServiceBase;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.screamxo.Activity.RahulWork.BuyCongActivity;
 import com.screamxo.Activity.RahulWork.ItemBuyFinal;
 import com.screamxo.Activity.RahulWork.PostCongActivity;
@@ -42,6 +44,7 @@ import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -581,8 +584,21 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                             friendshType = "" + 2;
                             frdshipId = "" + response.body().getResult().getTotalcount();
                             updateValue("2");
+                            if (fragment instanceof ProfileFragment) {
+                                ((ProfileFragment) fragment).isMyFriend = 1;
+                            }
                         }
+                    } else if (response.errorBody() != null) {
+                        try {
+                            FriendBean friendBean = new Gson().fromJson(response.errorBody().string(), FriendBean.class);
+                            Utils.showToast(context, friendBean.getMsg());
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
                     }
+
                 }
 
                 @Override
