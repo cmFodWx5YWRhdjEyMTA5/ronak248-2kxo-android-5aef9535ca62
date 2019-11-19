@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="str_shop">
+        <item>Men Fashion</item>
+        <item>Camera</item>
+        <item>Baby &amp; Kids</item>
+        <item>Women Fashion</item>
+    </string-array>
+
+    <integer-array name="un_shop">
+        <item>@drawable/unselected_men_fashion</item>
+        <item>@drawable/unselected_camera</item>
+        <item>@drawable/unselected_baby_kids</item>
+        <item>@drawable/unselected_women_fashion</item>
+    </integer-array>
+
+    <integer-array name="sl_shop">
+        <item>@drawable/selected_men_fashion</item>
+        <item>@drawable/selected_camera</item>
+        <item>@drawable/selected_baby_kids</item>
+        <item>@drawable/selected_women_fashion</item>
+    </integer-array>
+</resources>

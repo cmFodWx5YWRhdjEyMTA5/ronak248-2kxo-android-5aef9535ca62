@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_timer_bg">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <!-- <ListView
+             android:id="@+id/listview_time_dialog"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:scrollbars="none"
+             android:dividerHeight="0dp"
+             android:divider="@android:color/white"
+             android:layout_marginTop="@dimen/_40sdp"
+             android:background="@android:color/white"
+             tools:listitem="@layout/list_dialog_fragment_popup" />-->
+
+        <TextView
+            android:id="@+id/cancle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorf7f7f7"
+            android:gravity="center"
+            android:padding="@dimen/_12sdp"
+            android:text="Cancel"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12sdp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

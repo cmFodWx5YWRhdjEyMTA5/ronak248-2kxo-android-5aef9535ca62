@@ -1,0 +1,176 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.22.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
+}
+
+//apply plugin: 'android-apt'
+//apply plugin: 'me.tatarka.retrolambda'
+
+def TWITTER_KEY = '"' + TWITTER_KEY + '"' ?: '"jHzlraMS5VkB0Q1ZKfgcQ6cku"'
+def TWITTER_SECRET = '"' + TWITTER_SECRET + '"' ?: '"9Hpee8FcMgx7QLF4imV3nF2rjmHnPAziz467of1wZ9IcORBSMT"'
+def INSTAGRAMCLIENID = '"' + INSTAGRAMCLIENID + '"' ?: '"Insta client id"'
+def INSTAGRAMREDIRECTURL = '"' + INSTAGRAMREDIRECTURL + '"' ?: '"Insta Redirect url"'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.screamxo"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 56
+        versionName "1.5"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions
+            {
+                exclude 'META-INF/rxjava.properties'
+            }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/activity',
+                            'src/main/res/layout/other',
+                            'src/main/res/layout/fragment',
+                            'src/main/res/layout/recycle_view',
+                            'src/main/res'
+                    ]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'TWITTER_KEY', TWITTER_KEY
+            buildConfigField 'String', 'TWITTER_SECRET', TWITTER_SECRET
+            buildConfigField 'String', 'INSTAGRAMCLIENID', INSTAGRAMCLIENID
+            buildConfigField 'String', 'INSTAGRAMREDIRECTURL', INSTAGRAMREDIRECTURL
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            lintOptions {
+                disable 'MissingTranslation'
+            }
+        }
+        debug {
+            buildConfigField 'String', 'TWITTER_KEY', TWITTER_KEY
+            buildConfigField 'String', 'TWITTER_SECRET', TWITTER_SECRET
+            buildConfigField 'String', 'INSTAGRAMCLIENID', INSTAGRAMCLIENID
+            buildConfigField 'String', 'INSTAGRAMREDIRECTURL', INSTAGRAMREDIRECTURL
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled true;
+    }
+
+
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation('com.yalantis:ucrop:2.2.0') {
+        exclude module: 'support-v4', group: 'com.squareup.okhttp3'
+    }
+    implementation project(path: ':giraffeplayer')
+    implementation project(path: ':apimodule')
+
+
+    configurations.all {
+        resolutionStrategy {
+            implementation 'com.google.firebase:firebase-messaging:10.2.1'
+            implementation 'com.android.support:recyclerview-v7:26.1.0'
+            implementation 'com.android.support:support-v4:26.1.0'
+            implementation 'com.android.support:cardview-v7:26.1.0'
+
+        }
+    }
+
+
+    implementation project(':sandriosCamera')
+    implementation project(path: ':floatingmenu')
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.facebook.android:facebook-android-sdk:4.39.0'
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+//  compile 'com.hbb20:ccp:1.7.1'
+    implementation 'com.hbb20:ccp:2.0.8'
+    implementation 'com.stripe:stripe-android:4.1.5'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+    implementation 'io.reactivex:rxandroid:1.2.0'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+//    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    //noinspection GradleDependency
+
+    implementation("com.github.bumptech.glide:glide:4.9.0") {
+        exclude group: "com.android.support"
+    }
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    //noinspection GradleDependency
+    implementation 'com.google.android.gms:play-services-location:10.2.1'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testImplementation 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    implementation 'org.apmem.tools:layouts:1.10@aar'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    implementation 'com.aldoapps:autoformatedittext:0.9.3'
+    implementation 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
+    implementation 'com.labo.kaji:swipeawaydialog:0.1.1'
+    implementation 'com.github.andreilisun:swipedismissdialog:0.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+        transitive = true;
+    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+apply plugin: 'com.google.gms.google-services'

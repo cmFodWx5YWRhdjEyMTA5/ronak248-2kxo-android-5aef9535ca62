@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:floatingMenuActionButton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_floating_button"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_gravity="bottom|center"
+    android:scaleType="centerInside"
+    floatingMenuActionButton:anchored="false"
+    floatingMenuActionButton:animationType="radial"
+    floatingMenuActionButton:dispositionEndAngle="360"
+    floatingMenuActionButton:dispositionStartAngle="0"
+    floatingMenuActionButton:subActionButtonRadius="60">
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbSocial"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_trolly">
+
+    </rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton>
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbWorld"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_wallates" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbChat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/post_gsm_new" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbSearch"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_chat" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbflHome"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_dashboard" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_profiles" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/sbflSetting"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_posts" />
+
+    <rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton
+        android:id="@+id/subFriend"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/floating_peoples" />
+
+</rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton>
+

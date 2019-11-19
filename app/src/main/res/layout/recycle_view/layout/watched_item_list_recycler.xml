@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="@dimen/_78sdp"
+            android:layout_height="@dimen/_78sdp"
+            android:adjustViewBounds="true"
+            android:paddingLeft="@dimen/_5sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ico_img_new_placeholder" />
+
+        <TextView
+            android:id="@+id/txt_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/_10sdp"
+            android:text="@string/hint_item_name"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:src="@drawable/cross_cart"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_round_corner_red"
+        android:text="Remove"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:paddingBottom="@dimen/_4sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingLeft="@dimen/_25sdp"
+        android:paddingRight="@dimen/_25sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_selector"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_selector"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_9sdp"
+        android:visibility="invisible"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/img_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/drawable_round_corner_red"
+        android:paddingBottom="@dimen/_6sdp"
+        android:paddingLeft="@dimen/_40sdp"
+        android:paddingRight="@dimen/_40sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:text="Remove"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@+id/ll_selector"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_selector"
+        app:layout_constraintTop_toBottomOf="@+id/ll_selector"
+        android:textColor="@android:color/white" />
+</android.support.constraint.ConstraintLayout>

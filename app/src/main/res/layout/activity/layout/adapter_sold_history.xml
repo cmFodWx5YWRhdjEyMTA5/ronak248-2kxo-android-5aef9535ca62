@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_purchase"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_15sdp"
+    android:layout_marginRight="@dimen/_15sdp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingLeft="@dimen/_12sdp"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingRight="@dimen/_5sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ico_img_new_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_purchased_item_name"
+            fontPath="fonts/Poppins-Medium.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintLeft_toRightOf="@+id/img_item"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_item"
+            tools:ignore="MissingPrefix"
+            tools:text="username " />
+
+        <TextView
+            android:id="@+id/txt_purchased_item_price"
+            fontPath="fonts/Poppins-Medium.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_purchased_date"
+            app:layout_constraintLeft_toRightOf="@+id/img_item"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_purchased_item_name"
+            tools:ignore="MissingPrefix"
+            tools:text="$230" />
+
+        <TextView
+            android:id="@+id/txt_purchased_date"
+            fontPath="fonts/Poppins-SemiBold.ttf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/color8c8c8c"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_item"
+            app:layout_constraintLeft_toRightOf="@+id/img_item"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="MissingPrefix"
+            tools:text="24th november" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_item">
+
+            <TextView
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                tools:ignore="MissingPrefix"
+                tools:text="SHIP TO" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    fontPath="fonts/Poppins-SemiBold.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_toLeftOf="@+id/img_buyer"
+                    android:gravity="left"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color8c8c8c"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingPrefix"
+                    tools:text="35-06, ASTORIA, NY\n UNITED STATES" />
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/img_buyer"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/messageicon" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Grey_200"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:src="@drawable/messageicon" />
+
+                    <TextView
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingPrefix"
+                        tools:text="Postal Carrier" />
+
+                    <EditText
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="#ffffff"
+                        android:paddingLeft="4dp"
+                        android:text="UPS*"
+                        android:textColor="@color/tw__composer_red"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingPrefix" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:src="@drawable/messageicon" />
+
+                    <TextView
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingPrefix"
+                        tools:text="Estimated Delivery" />
+
+
+                    <EditText
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="#ffffff"
+                        android:paddingLeft="4dp"
+                        android:text="6/10/2019*"
+                        android:textColor="@color/tw__composer_red"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingPrefix" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:src="@drawable/messageicon" />
+
+                    <TextView
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingPrefix"
+                        tools:text="Postal Carrier" />
+
+
+                    <EditText
+                        fontPath="fonts/Poppins-Medium.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="#ffffff"
+                        android:paddingLeft="4dp"
+                        android:text="00000000*"
+                        android:textColor="@color/tw__composer_red"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingPrefix" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txt_view_more"
+        fontPath="fonts/Poppins-SemiBold.ttf"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/drawable_round_corner_red"
+        android:gravity="center"
+        android:inputType="text"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="View More"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_9sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/constraint_main"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_main"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/txt_review"
+        fontPath="fonts/Poppins-SemiBold.ttf"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/drawable_round_corner_red"
+        android:gravity="center"
+        android:inputType="text"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingRight="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="Review"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_9sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/constraint_main"
+        app:layout_constraintEnd_toStartOf="@+id/txt_view_more"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_main"
+        tools:ignore="MissingPrefix" />
+
+
+</android.support.constraint.ConstraintLayout>
+
+    <!--
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/txt_purchased_item_name"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_item"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_item"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/img_placeholder"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintTop_creator="1" />
+
+        <TextView
+            android:id="@+id/txt_view_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPink"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:text="Add Tracking"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/view3"
+            app:layout_constraintRight_toLeftOf="@+id/img_item"
+            app:layout_constraintTop_toBottomOf="@+id/txt_purchased_item_name"
+            app:layout_constraintVertical_bias="0.84000003"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_item" />
+
+    </android.support.constraint.ConstraintLayout>
+    -->

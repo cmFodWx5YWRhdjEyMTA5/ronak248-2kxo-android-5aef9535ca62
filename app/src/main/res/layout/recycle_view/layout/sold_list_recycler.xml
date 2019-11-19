@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/img_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_15sdp"
+        android:src="@mipmap/profile_pic_placeholder" />
+
+    <TextView
+        android:id="@+id/txt_purchage_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_toEndOf="@+id/img_item"
+        android:layout_toRightOf="@+id/img_item"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_shipping_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_purchage_user"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/img_item"
+        android:layout_toRightOf="@+id/img_item"
+        android:inputType="textMultiLine"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/txt_tracking_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_shipping_address"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/txt_traking_detail"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+</RelativeLayout>

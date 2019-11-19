@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--THIS VIEW AND CORRESPONDING ACTIVITY ISN'T USED ANYWHERE IN THE APPLICATION CURRENTLY....-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_post_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
+    android:orientation="vertical"
+    tools:context="com.screamxo.Activity.PostDetailsActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lny_emoji_msg"
+        android:layout_below="@+id/toolbar"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/lny_emoji_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/linear_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/img_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/_10sdp"
+                android:src="@mipmap/ico_xo_like_copy"
+                android:tint="@color/colorBlack" />
+
+            <EditText
+                android:id="@+id/edt_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:hint="Add comment..."
+                android:padding="@dimen/_5sdp" />
+
+            <ImageView
+                android:id="@+id/img_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5sdp"
+                android:src="@mipmap/ico_send" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_emoji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar" />
+
+</RelativeLayout>

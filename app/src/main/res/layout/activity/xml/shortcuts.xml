@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <shortcut
+        android:shortcutId="post_stream"
+        android:icon="@mipmap/add_icon"
+        android:shortcutShortLabel="@string/post_stream_short"
+        android:shortcutLongLabel="@string/post_stream"
+        >
+        <intent
+            android:action="com.screamxo.Activity.PostStreamActivity"
+            android:targetPackage="com.screamxo"
+            android:targetClass="com.screamxo.Activity.PostStreamActivity"
+            />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="sell_now"
+        android:icon="@mipmap/edit_square_icon"
+        android:shortcutShortLabel="@string/sell_now_short"
+        android:shortcutLongLabel="@string/sell_now"
+        >
+        <intent
+            android:action="com.screamxo.Activity.RahulWork.SellItemActivity"
+            android:targetPackage="com.screamxo"
+            android:targetClass="com.screamxo.Activity.RahulWork.SellItemActivity"
+            />
+    </shortcut>
+    <shortcut
+        android:shortcutId="post_media"
+        android:icon="@mipmap/video_icon"
+        android:shortcutShortLabel="@string/post_media_short"
+        android:shortcutLongLabel="@string/post_media"
+        >
+        <intent
+            android:action="com.screamxo.Activity.UploadMediaAcitvity"
+            android:targetPackage="com.screamxo"
+            android:targetClass="com.screamxo.Activity.UploadMediaAcitvity"
+            />
+    </shortcut>
+
+
+</shortcuts>

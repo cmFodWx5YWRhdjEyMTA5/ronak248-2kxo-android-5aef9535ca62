@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/linear_profile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rl_Header"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:background="@drawable/bg_profile_circle_new"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center_vertical"
+    android:layout_toLeftOf="@+id/profileBg">
+
+    <TextView
+        android:id="@+id/txt_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/txt_item_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Item"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+<RelativeLayout
+    android:layout_width="110dp"
+    android:layout_height="110dp"
+    android:layout_centerInParent="true"
+    android:layout_marginLeft="20dp"
+    android:background="@drawable/profile_bg_new"
+    android:layout_marginRight="20dp"
+    android:id="@+id/profileBg">
+
+    <ImageView
+        android:id="@+id/user_profile"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/pic_holder_dashboard" />
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:gravity="center_horizontal">-->
+
+    <!--</RelativeLayout>-->
+</RelativeLayout>
+
+
+<LinearLayout
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:background="@drawable/bg_profile_circle_new"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:layout_toRightOf="@+id/profileBg"
+    android:layout_centerVertical="true">
+
+    <TextView
+        android:id="@+id/txt_frd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/txt_frd_frnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Friends"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+</LinearLayout>
+
+<!--<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="55dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="145dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/send_money_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/hand_icon_new" />
+
+    <ImageView
+        android:id="@+id/more_info_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/info_icon_new" />
+
+    <ImageView
+        android:id="@+id/friends_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profile_arrow_new" />
+</LinearLayout>-->
+</RelativeLayout>

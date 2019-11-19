@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">ঠিক আছে</string>
+    <string name="txt_camara">ক্যামেরা</string>
+    <string name="txt_gallery">গ্যালারি</string>
+    <string name="txt_no_image">কোন চিত্র নেই </string>
+    <!-- login activity -->
+    <string name="btn_login">সাইন ইন করুন</string>
+    <string name="hint_edit_username">ব্যবহারকারীর নাম</string>
+    <string name="hint_password">পাসওয়ার্ড</string>
+    <string name="txt_sign_in_with">অথবা সাইন ইন করুন</string>
+    <string name="txt_forgot_password">আপনার পাসওয়ার্ড ভুলে গেছেন?</string>
+    <string name="txt_new_here">নতুন এখানে? সাইন আপ করুন</string>
+    <!-- Signup activity -->
+    <string name="hint_username"> ব্যবহারকারীর নাম </string>
+    <string name="hint_firstname"> প্রথম নাম </string>
+    <string name="hint_fullname"> সম্পূর্ণ নাম </string>
+    <string name="hint_lastname">পদবি</string>
+    <string name="hint_email"> ইমেল ঠিকানা </string>
+    <string name="hint_phone_no"> ফোন নম্বর </string>
+    <string name="txt_terms_condition"> শর্ত গ্রহণ করুন </string>
+    <string name="btn_create_account"> কাউন্ট তৈরি করুন </string>
+    <string name="msg_first_name_null"> আপনার প্রথম নাম লিখুন </string>
+    <string name="msg_last_name_null"> আপনার পদবি লিখুন </string>
+    <string name="msg_username_null"> একটি বৈধ ইমেল বা ব্যবহারকারীর নাম প্রয়োজন </string>
+    <string name="msg_email_invalid"> দয়া করে একটি বৈধ ইমেল ঠিকানা লিখুন </string>
+    <string name="msg_email_null"> আপনার ইমেল লিখুন </string>
+    <string name="msg_phone_number_null"> ফোন নম্বর লিখুন দয়া করে </string>
+    <string name="msg_phone_number_invalid"> একটি বৈধ ফোন নম্বর লিখুন </string>
+    <string name="msg_password_null"> পাসওয়ার্ড প্রয়োজন </string>
+    <string name="msg_password_not_valid"> পাসওয়ার্ড অন্তত 6 অক্ষর হতে হবে। </string>
+    <string name="msg_accept_t_c"> আমাদের শর্তাবলী স্বীকার করুন </string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password"> যদি আপনি আপনার পাসওয়ার্ড ভুলে গেছেন তবে আমরা এটি পুনরায় সেট করতে আপনাকে একটি ইমেল পাঠাতে পারি। </string>
+    <string name="btn_send_email"> ইমেল পাঠান </string>
+    <string name="etd_email"> ইমেল </string>
+    <string name="title_forgot_password"> পাসওয়ার্ড ভুলে গেছেন </string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board"> ড্যাশবোর্ড </string>
+    <string name="title_activity_drawer_friend"> বন্ধু </string>
+    <string name="title_activity_drawer_notification"> বিজ্ঞপ্তি </string>
+    <string name="title_activity_drawer_shop">কেনাকাটা</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting"> সেটিংস </string>
+    <string name="title_activity_drawer_social"> সামাজিক </string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop"> কেনাকাটা </string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA"> মিডিয়া </string>
+    <string name="txt_tag_bottom_stream">স্ট্রিম</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend"> পুনরায় পাঠান</string>
+    <string name="btn_confirm"> নিশ্চিত করুন</string>
+    <string name="txt_varification"> একটি যাচাইকরণ কোড আপনার ইমেইল পাঠানো হয়েছে। আপনার নিবন্ধন সম্পূর্ণ করার জন্য এই যাচাইকরণ কোডটি লিখুন।</string>
+    <string name="txt_varification_time"> কটি যাচাইকরণ কোড ঐচ্ছিক (0) সেকেন্ডে প্রদান করা হবে </string>
+    <string name="title_verification"> যাচাইকরণ </string>
+    <string name="hint_verification_code"> যাচাই কোড </string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master"> ল বা আলমা মাটার </string>
+    <string name="hint_job">পেশা</string>
+    <string name="hint_city"> শহর বা জিপ কোড </string>
+    <string name="hint_hobby"> আগ্রহ </string>
+    <string name="txt_gender"> লিঙ্গ </string>
+    <string name="rad_male"> পুরুষ </string>
+    <string name="rad_Female"> মহিলা </string>
+    <string name="rad_transgender"> ট্রান্সজেন্ডার </string>
+    <string name="txt_Relationship_status"> সম্পর্কের অবস্থা </string>
+    <string name="rad_available">উপলব্ধ</string>
+    <string name="rad_unavailable"> অনুপলব্ধ </string>
+    <string name="txt_sex_preference"> যৌন পছন্দ </string>
+    <string name="rad_opposite"> বিপরীত </string>
+    <string name="rad_same"> একই </string>
+    <string name="btn_update"> আপডেট </string>
+    <string name="title_edit_profile"> প্রোফাইল সম্পাদনা করুন </string>
+    <!-- post media -->
+    <string name="title_post_media"> পোস্ট মিডিয়া </string>
+    <string name="btn_create_posgt"> পোস্ট তৈরি করুন </string>
+    <string name="hint_title"> শিরোনাম </string>
+    <!-- Post Stream -->
+    <string name="title_post"> পোস্ট করুন </string>
+    <string name="hint_stream"> আপনার মনে কি আছে? </string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail"> পোস্ট বিবরণ </string>
+    <!-- Setings -->
+    <string name="txt_notification_setting"> পুশ বিজ্ঞপ্তি সেটিংস </string>
+    <string name="txt_reject_list">প্রত্যাখ্যান তালিকা</string>
+   <!-- <string name="txt_privacy_settings">গোপনীয়তা সেটিংস</string>-->
+    <!--<string name="txt_payment">অর্থ প্রদান</string>-->
+    <string name="txt_change_pass">পাসওয়ার্ড পরিবর্তন করুন</string>
+    <string name="txt_help">সাহায্য এবং যোগাযোগ</string>
+    <string name="txt_logout">লগ আউট করুন</string>
+    <!--<string name="txt_about_us">আমাদের সম্পর্কে</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">বিক্রি করুন</string>
+    <string name="txt_more">আরো</string>
+    <!--<string name="txt_watching">দেখছেন</string>-->
+    <string name="txt_bought">কেনা</string>
+    <string name="txt_sold">বিক্রীত</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">আইটেম বিক্রি করুন</string>
+    <string name="hint_item_name">আইটেমের নাম</string>
+    <string name="hint_item_description">আইটেমের বিবরণ</string>
+    <string name="hint_item_category">বিভাগ নির্বাচন করুন</string>
+    <string name="hint_item_quantity">আইটেমের পরিমাণ</string>
+    <string name="hint_item_price">আইটেমের মূল্য</string>
+    <string name="hint_you_earn">আপনি উপার্জন করবেন</string>
+    <string name="hint_item_shipping_cost">আইটেম পাঠানোর খরচ</string>
+    <string name="hint_separate_keywords">কমা দিয়ে কীওয়ার্ড পৃথক করুন।</string>
+    <string name="btn_continue">চালিয়ে যান</string>
+    <string name="btn_delete">মুছুন</string>
+    <string name="dialog_item_info">আপনি প্রতিটি ক্রয়ের জন্য এই পরিমাণটি পাবেন।</string>
+    <string name="msg_enter_item_name">আইটেমের নাম লিখুন দয়া করে</string>
+    <string name="msg_enter_item_description">কটি আইটেমের বিবরণ লিখুন</string>
+    <string name="msg_enter_item_quantity">আইটেম পরিমাণ লিখুন</string>
+    <string name="msg_enter_item_price">আইটেমের মূল্যটির লিখুন</string>
+    <string name="msg_enter_item_actual_price">আইটেমের মূল্যটির লিখুন</string>
+    <string name="msg_enter_item_shipping_coast">ফ্রি শিপিংয়ের সুপারিশ করা হচ্ছে</string>
+    <string name="msg_enter_keywords">দয়া করে কিছু কীওয়ার্ড লিখুন</string>
+    <string name="msg_select_item_image">আপনার আইটেমের অন্তত চারটি ছবি আপলোড করুন</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">আপনার শিপিং ঠিকানাটি লিখুন</string>
+    <string name="txt_payment_detail">পেমেন্টের বিবরণ</string>
+    <string name="txt_item_quantity">আইটেমের পরিমাণ</string>
+    <string name="txt_item_cost">আইটেমের খরচ</string>
+    <string name="txt_shipping_cost">শিপিং খরচ</string>
+    <string name="txt_total_cost">মোট খরচ</string>
+    <string name="hint_street">রাস্তা</string>
+    <string name="hint_city_payment">শহর</string>
+    <string name="hint_zipcode">জিপ কোড</string>
+    <string name="hint_state">রাজ্য</string>
+    <string name="title_payment_detail">পেমেন্টের বিবরণ</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">অর্থ প্রদান পদ্ধতি</string>
+    <string name="txt_or">অথবা</string>
+    <string name="title_payment_process">অর্থ প্রদান করা চলছে</string>
+    <!-- item detail -->
+    <string name="txt_userid">ব্যবহারকারী শহর</string>
+    <string name="txt_date">সোমবার 11:10 AM</string>
+    <string name="txt_watch">দেখুন</string>
+    <string name="txt_unwatch">সরান</string>
+    <!--<string name="txt_message">আনওয়াচ করুন</string>-->
+    <string name="txt_review">পর্যালোচনা দিন</string>
+    <string name="txt_buy_item">আইটেম কিনুন</string>
+    <string name="title_item_detail">আইটেমের বিবরণ</string>
+    <string name="txt_sold_list">বিক্রি তালিকা</string>
+    <string name="txt_traking_detail">ট্র্যাকিং যোগ করুন #</string>
+    <string name="msg_no_review">প্রথম পর্যালোচনা করুন!</string>
+    <string name="msg_no_data">আরও আসছে!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">পুরনো পাসওয়ার্ড</string>
+    <string name="edt_new_password">নতুন পাসওয়ার্ড</string>
+    <string name="edt_confirm_password">পাসওয়ার্ড নিশ্চিত করুন</string>
+    <string name="title_change_password">পাসওয়ার্ড পরিবর্তন করুন</string>
+    <string name="msg_empty_old_password">আপনার পুরানো পাসওয়ার্ড লিখুন</string>
+    <string name="msg_empty_new_password">আপনার নতুন পাসওয়ার্ড লিখুন</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">পেমেন্ট কনফিগার করুন</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">ওয়াচ তালিকা</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> রাস্তার ঠিকানা প্রয়োজন</string>
+    <string name="toast_no_city">শহর প্রয়োজন</string>
+    <string name="toast_no_zip">জিপ কোড প্রয়োজন</string>
+    <string name="toast_no_state">স্টেট প্রয়োজন</string>
+    <string name="toast_no_quantity">আইটেমের পরিমাণ লিখুন</string>
+    <!-- -->
+    <string name="title_sold_history">বিক্রেতার ইতিহাস</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">রসিদ</string>
+    <string name="txt_add_review">পর্যালোচনা যোগ করুন</string>
+    <string name="txt_done">সম্পন্ন হয়েছে</string>
+    <!--<string name="txt_cancel">বাতিল করুন</string>-->
+    <string name="msg_empty_review">দয়া করে আপনার পর্যালোচনা যোগ করুন</string>
+    <!--Toast -->
+    <string name="toast_login_fail">আবার চেষ্টা করুন অথবা 2KXO.com/help দেখুন</string>
+    <string name="toast_password_empty">আপনার পাসওয়ার্ড লিখুন</string>
+    <string name="toast_no_internet">আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন</string>
+    <string name="toast_some_errro"> আবার চেষ্টা করুন অথবা 2KXO.com/help দেখুন </string>
+    <string name="toast_error_retry"> আবার চেষ্টা করুন অথবা 2KXO.com/help দেখুন </string>
+    <string name="toast_error_something_went_wrong"> আবার চেষ্টা করুন অথবা 2KXO.com/help দেখুন </string>
+    <string name="toast_error_cannot_share_file"> আমরা মুহূর্তে এই ফাইলটি শেয়ার করতে পারছি না।</string>
+    <string name="navigation_drawer_open"> ওপেন নেভিগেশান ড্রয়ার</string>
+    <string name="navigation_drawer_close"> নেভিগেশান ড্রয়ার বন্ধ করুন</string>
+    <string name="action_settings"> সেটিংস</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification"> বিজ্ঞপ্তি </string>
+    <string name="about_us"> 2KXO একটি বিজ্ঞাপন মুক্ত, সীমাহীন স্ট্রিমিং সেবা, এখানে আন্তর্জাতিক বাজারে সঙ্গীত, ভিডিও, ভয়েস রেকর্ডিং, ফটো আপলোড বা বিশ্বের যেকোন প্রান্ত থেকে পণ্য ও পরিষেবা ক্রয় বিক্রয় করা হয়। মার্কিন যুক্তরাষ্ট্রে জন্মগ্রহণ ও উত্থাপিত, 2KXO নিউইয়র্ক সিটিতে ডেভেলপারদের একটি অভিজাত দল দ্বারা উন্নত হয়েছে। তিন বছরের বিকাশের পর, 2KXO এখন বিশ্বব্যাপী প্রকাশের জন্য প্রস্তুত। আমাদের এনক্রিপশন প্রযুক্তি সবার থেকে শ্রেষ্ঠ। একটি ই-কমার্স প্ল্যাটফর্ম হিসাবে, আমাদের অস্তিত্বের জন্য নিরাপত্তা অপরিহার্য, ফলস্বরূপ 2KXO সর্বাধিক গোপনীয়তা সুরক্ষা প্রদানের জন্য নিরীক্ষণ, পর্যালোচনা এবং আপডেট করা হচ্ছে। ব্যবহারকারীদের বিশ্বাস এবং আস্থা বজায় রাখতে 2KXO একটি স্বচ্ছ পরিবেশ সরবরাহ করে, বিশেষত ব্যক্তিগত তথ্য সম্পর্কিত, জনসাধারণকে ঠিক কী তথ্য গুরুত্বপূর্ণ বলে মনে করে, কীভাবে তথ্য সংগ্রহ করা হয় এবং এর সাথে কী করা হয় তা সরবরাহ করে। অনেক ওয়েব পরিষেবাদি থেকে চয়ন করার চেষ্টা আপনাকে বিচলিত করতে পারে। আপনি সোশ্যাল মিডিয়ার জন্য একটি পেমেন্ট পাঠানোর জন্য অন্য কোনো বং গ্রহণের জন্য এবং অন্যরা কেনাকাটা এবং বিক্রি করার জন্য অন্য পরিসেবা ব্যবহার করেন। 2KXO প্রতিষ্ঠাতা ও সিইও হুগো বলেন, "মিলেনিয়াল হিসাবে আমি ইন্টার্নেটের সাথে বড় হয়েছি।" "যখন আমি ছোট ছিলাম, তখন আমি সঙ্গীত এবং ভিডিও স্ট্রিমিং করার জন্য, তারপর সোশ্যাল নেটওয়ার্কিংয়ের জন্য এবং অবশেষে বাণিজ্যিক উদ্দেশ্যে ইন্টারনেট ব্যবহার করেছি। বড় হওয়ার সাথে সাথে আমার ইন্টারনেট ব্যবহারও উন্নত হয়। আমি বুঝতে পেরেছিলাম যে আমার একটি প্ল্যাটফর্ম দরকার যেটা আমার সাথে বেড়ে উঠবে। আমি 2KXO এই রকম একটি প্লাটফর্ম হিসাবে তৈরি করেছি, যাতে এটি সকল ব্যবহারকারীদের যেকোনো স্তরে একক প্ল্যাটফর্ম সরবরাহ করে যা তারা সবচেয়ে বেশি পছন্দ করে: স্ট্রীম, কেনাকাটা, বিক্রি, অর্থ পাঠাতে এবং সংযুক্ত থাকার সময়।" 2KXO ধারণা করা হয়েছিল 2008 সালে, সাহসী নতুন পদ্ধতির সাথে প্রযুক্তি শিল্পকে ব্যাহত করার লক্ষ্য নিয়ে। 2KXO সৃজনশীলদের একটি শক্তিশালী, সুষম প্ল্যাটফর্মে পেশাগতভাবে মিডিয়া, পণ্যদ্রব্য, পণ্য এবং পরিষেবাদি সংগঠিত করার একটি স্থান সরবরাহ করে। কেবলমাত্র 2KXO সীমাহীন স্ট্রিমিং এবং শপিংয়ের প্রস্তাব দেয় না, ব্যবহারকারীরা স্বয়ংক্রিয় টার্গেটিং ব্যবহারকারীর মাধ্যমে দ্রুত এবং সহজেই সংযুক্তিগুলি বৃদ্ধি করতে স্বয়ংক্রিয় বুস্ট প্রচারগুলিও সেট আপ করতে পারে। অনেকগুলি অনলাইন পরিষেবাগুলির মধ্যে স্যুইচ করার কারণে, সর্বশেষ খবর এবং প্রবণতাগুলির সম্বন্ধে অবগত থাকা কষ্টকর হতে পারে। তাই 2KXO ব্যবহারকারীদের তাদের একক প্ল্যাটফর্মে তাদের অনলাইন ইন্টারেকশনগুলি আরও বেশি আরামদায়ক এবং আরও সুরক্ষিত করতে সহায়তা করার জন্য একটি প্ল্যাটফর্ম তৈরি করেছে।\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">মিডিয়া পোস্ট করুন</string>
+    <string name="post_media_short"> মিডিয়া পোস্ট করুন </string>
+    <string name="sell_now"> এখনই বিক্রি করুন </string>
+    <string name="sell_now_short"> এখনই বিক্রি করুন </string>
+    <string name="post_stream"> স্ট্রিম পোস্ট করুন</string>
+    <string name="post_stream_short"> স্ট্রিম পোস্ট করুন </string>
+    <string name="existing_shortcuts"> বিদ্যমান শর্টকাট:</string>
+    <string name="remove_shortcut"> সরান </string>
+    <string name="disable_shortcut"> অক্ষম করুন</string>
+    <string name="enable_shortcut"> সক্ষম করুন </string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login"> লগইন করুন </string>
+    <string name="txt_signup"> সাইন আপ করুন </string>
+    <string name="txt_done_small"> সম্পন্ন হয়েছে</string>
+    <string name="txt_login_small"> লগইন করুন </string>
+    <string name="txt_welcome_back"> অবার স্বাগতম </string>
+    <string name="txt_signin_account"> আপনার অ্যাকাউন্টে সাইন ইন করুন </string>
+    <!-- signup new -->
+    <string name="txt_signup_with">এটি দিয়ে সাইন আপ করুন </string>
+    <string name="txt_signup_with_email"> ইমেলের মাধ্যমে সাইন আপ করুন </string>
+    <!-- Upload data -->
+    <!--<string name="txt_media"> মিডিয়া </string>-->
+    <!--<string name="txt_shop">কেনাকাটা </string>-->
+    <string name="txt_blog"> ব্লগ </string>
+    <string name="txt_camera"> ক্যামেরা </string>
+    <string name="txt_music"> সঙ্গীত </string>
+    <string name="txt_microphone"> মাইক্রোফোন </string>
+    <string name="txt_timer">টাইমার</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new"> নতুন </string>-->
+    <string name="txt_new_description"> ট্যাগগুলিতে নতুন (NWT), অব্যবহৃত, খোলা প্যাকেজিং </string>
+   <!-- <string name="txt_like_new">নতুন লাইক করুন</string>-->
+    <string name="txt_like_new_description"> ট্যাগ ছাড়া নতুন (NWOT), অব্যবহৃত, পরিধানের কোন চিহ্ন </string>
+    <!--<string name="txt_refurnished"> পুনরায় সজ্জিত </string>-->
+    <string name="txt_refurnished_description"> সাবধানে ব্যবহৃত, কার্যকরী, একটি/কয়েকটি ছোটখাটো ত্রুটি </string>
+    <!--<string name="txt_fair"> ন্যায্য </string>-->
+    <string name="txt_fair_description"> বহৃত, কার্যকরী, একাধিক ত্রুটি </string>
+    <!--<string name="txt_poor">খারাপ</string>-->
+    <string name="txt_poor_descrption">অনেক ত্রুটি কটিগ্রস্ত</string>
+</resources>

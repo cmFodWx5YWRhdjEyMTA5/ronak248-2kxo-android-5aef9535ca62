@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">ตกลง</string>
+    <string name="txt_camara">กล้อง</string>
+    <string name="txt_gallery">แกลเลอรี่</string>
+    <string name="txt_no_image">ไม่มีรูปภาพ</string>
+    <!-- login activity -->
+    <string name="btn_login">เข้าสู่ระบบ</string>
+    <string name="hint_edit_username">ชื่อผู้ใช้งาน</string>
+    <string name="hint_password">รหัสผ่าน</string>
+    <string name="txt_sign_in_with">หรือเข้าสู่ระบบด้วย</string>
+    <string name="txt_forgot_password">ลืมรหัสผ่าน?</string>
+    <string name="txt_new_here">ใหม่สำหรับที่นี่? ลงทะเบียน</string>
+    <!-- Signup activity -->
+    <string name="hint_username">ชื่อผู้ใช้งาน</string>
+    <string name="hint_firstname">ชื่อ</string>
+    <string name="hint_fullname">ชื่อ และนามสกุล</string>
+    <string name="hint_lastname">นามสกุล</string>
+    <string name="hint_email">ที่อยู่อีเมล</string>
+    <string name="hint_phone_no">หมายเลขโทรศัพท์</string>
+    <string name="txt_terms_condition">ยอมรับข้อกำหนด และเงื่อนไข</string>
+    <string name="btn_create_account">สร้างบัญชี</string>
+    <string name="msg_first_name_null">ป้อนชื่อของคุณ</string>
+    <string name="msg_last_name_null">ป้อนนามสกุลของคุณ</string>
+    <string name="msg_username_null">ต้องระบุอีเมล และชื่อผู้ใช้งานที่ถูกต้อง</string>
+    <string name="msg_email_invalid">โปรดป้อนที่อยู่อีเมลที่ถูกต้อง</string>
+    <string name="msg_email_null">ป้อนอีเมลของคุณ</string>
+    <string name="msg_phone_number_null">โปรดป้อนหมายเลขโทรศัพท์</string>
+    <string name="msg_phone_number_invalid">ป้อนหมายเลขโทรศัพท์ที่ถูกต้อง</string>
+    <string name="msg_password_null">ต้องระบุรหัสผ่าน</string>
+    <string name="msg_password_not_valid">รหัสผ่านต้องมีความยาวอย่างน้อย 6 ตัวอักษร</string>
+    <string name="msg_accept_t_c">ยอมรับข้อกำหนด และเงื่อนไขของเรา</string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">หากคุณลืมรหัสผ่านของคุณ เราสามารถส่งอีเมลไปให้คุณเพื่อทำการรีเซ็ทรหัสผ่านได้</string>
+    <string name="btn_send_email">ส่งอีเมล</string>
+    <string name="etd_email">อีเมล</string>
+    <string name="title_forgot_password">ลืมรหัสผ่าน</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">แดชบอร์ด</string>
+    <string name="title_activity_drawer_friend">เพื่อน</string>
+    <string name="title_activity_drawer_notification">การแจ้งเตือน</string>
+    <string name="title_activity_drawer_shop">ร้านค้า</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">การตั้งค่า</string>
+    <string name="title_activity_drawer_social">สังคม</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">ร้านค้า</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">มีเดีย</string>
+    <string name="txt_tag_bottom_stream">สตรีม</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">ส่งใหม่</string>
+    <string name="btn_confirm">ยืนยัน</string>
+    <string name="txt_varification">รหัสยืนยันได้ถูกส่งไปยังอีเมลของคุณแล้ว ป้อนรหัสยืนยันเพื่อทำการลงทะเบียนให้เสร็จสมบูรณ์</string>
+    <string name="txt_varification_time">รหัสยืนยันจะถูกส่งเป็นตัวเลือก (0) วินาที</string>
+    <string name="title_verification">การยืนยัน</string>
+    <string name="hint_verification_code">รหัสยืนยัน</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">โรงเรียน หรือสถาบันการศึกษาที่เรียนจบ</string>
+    <string name="hint_job">อาชีพ</string>
+    <string name="hint_city">เมือง หรือรหัสไปรษณีย์</string>
+    <string name="hint_hobby">ความสนใจ</string>
+    <string name="txt_gender">เพศ</string>
+    <string name="rad_male">ชาย</string>
+    <string name="rad_Female">หญิง</string>
+    <string name="rad_transgender">คนข้ามเพศ</string>
+    <string name="txt_Relationship_status">สถานะความสัมพันธ์</string>
+    <string name="rad_available">พร้อมให้ใช้งาน</string>
+    <string name="rad_unavailable">ไม่พร้อมให้ใช้งาน</string>
+    <string name="txt_sex_preference">ความชอบทางเพศ</string>
+    <string name="rad_opposite">ตรงข้าม</string>
+    <string name="rad_same">เหมือนกัน</string>
+    <string name="btn_update">ปรับปรุง</string>
+    <string name="title_edit_profile">แก้ไขโปรไฟล์</string>
+    <!-- post media -->
+    <string name="title_post_media">โพสต์มีเดีย</string>
+    <string name="btn_create_posgt">สร้างโพสต์</string>
+    <string name="hint_title">ชื่อเรื่อง</string>
+    <!-- Post Stream -->
+    <string name="title_post">โพสต์</string>
+    <string name="hint_stream">คุณมีอะไรอยู่ในใจ</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">รายละเอียดของโพสต์</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">การตั้งค่าการแจ้งเตือนแบบพุช</string>
+    <string name="txt_reject_list">ปฏิเสธรายการ</string>
+    <!--<string name="txt_privacy_settings">การตั้งค่าความเป็นส่วนตัว</string>-->
+    <!--<string name="txt_payment">การชำระเงิน</string>-->
+    <string name="txt_change_pass">เปลี่ยนแปลงรหัสผ่าน</string>
+    <string name="txt_help">ช่วยเหลือ และติดต่อ</string>
+    <string name="txt_logout">ออกจากระบบ</string>
+    <!--<string name="txt_about_us">เกี่ยวกับเรา</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">ขาย</string>
+    <string name="txt_more">เพิ่มเติม</string>
+    <!--<string name="txt_watching">การติดตาม</string>-->
+    <string name="txt_bought">ซื้อแล้ว</string>
+    <string name="txt_sold">ขายแล้ว</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">รายการขาย</string>
+    <string name="hint_item_name">ชื่อรายการ</string>
+    <string name="hint_item_description">รายละเอียดรายการ</string>
+    <string name="hint_item_category">เลือกหมวดหมู่</string>
+    <string name="hint_item_quantity">จำนวนของรายการ</string>
+    <string name="hint_item_price">ราคาของรายการ</string>
+    <string name="hint_you_earn">คุณจะได้รับ</string>
+    <string name="hint_item_shipping_cost">ค่าจัดส่งรายการ</string>
+    <string name="hint_separate_keywords">แยกคีย์เวิร์ดด้วยเครื่องหมายจุลภาค</string>
+    <string name="btn_continue">ดำเนินการต่อ</string>
+    <string name="btn_delete">ลบ</string>
+    <string name="dialog_item_info">คุณได้รับจำนวนนี้ในแต่ละการซื้อ</string>
+    <string name="msg_enter_item_name">โปรดป้อนชื่อรายการ</string>
+    <string name="msg_enter_item_description">ป้อนรายละเอียดรายการ</string>
+    <string name="msg_enter_item_quantity">ป้อนจำนวนของรายการ</string>
+    <string name="msg_enter_item_price">ป้อนราคาของรายการ</string>
+    <string name="msg_enter_item_actual_price">โปรดป้อนราคาของรายการ</string>
+    <string name="msg_enter_item_shipping_coast">แนะนำค่าจัดส่งฟรี</string>
+    <string name="msg_enter_keywords">โปรดป้อนคีย์เวิร์ด</string>
+    <string name="msg_select_item_image">อัพโหลดรูปภาพรายการของคุณอย่างน้อย 4 ภาพ</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">ป้อนที่อยู่ในการจัดส่งของคุณ</string>
+    <string name="txt_payment_detail">รายละเอียดในการชำระเงิน</string>
+    <string name="txt_item_quantity">จำนวนของรายการ</string>
+    <string name="txt_item_cost">ราคาของรายการ</string>
+    <string name="txt_shipping_cost">ราคาค่าจัดส่ง</string>
+    <string name="txt_total_cost">ราคารวม</string>
+    <string name="hint_street">ถนน</string>
+    <string name="hint_city_payment">เมือง</string>
+    <string name="hint_zipcode">รหัสไปรษณีย์</string>
+    <string name="hint_state">รัฐ</string>
+    <string name="title_payment_detail">รายละเอียดในการชำระเงิน</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">วิธีการชำระเงิน</string>
+    <string name="txt_or">or</string>
+    <string name="title_payment_process">กำลังดำเนินการชำระเงิน</string>
+    <!-- item detail -->
+    <string name="txt_userid">เมืองของผู้ใช้งาน</string>
+    <string name="txt_date">วันจันทร์ เวลา 11:10 น. </string>
+    <string name="txt_watch">ติดตาม</string>
+    <string name="txt_unwatch">ไม่ติดตาม</string>
+    <!--<string name="txt_message">ข้อความ</string>-->
+    <string name="txt_review">รีวิว</string>
+    <string name="txt_buy_item">ซื้อรายการ</string>
+    <string name="title_item_detail">รายละเอียดของรายการ</string>
+    <string name="txt_sold_list">รายการที่ขายแล้ว</string>
+    <string name="txt_traking_detail">เพิ่มการติดตาม #</string>
+    <string name="msg_no_review">เป็นผู้รีวิวคนแรก!</string>
+    <string name="msg_no_data">อีกมากมายกำลังจะมา!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">รหัสผ่านเดิม</string>
+    <string name="edt_new_password">รหัสผ่านใหม่</string>
+    <string name="edt_confirm_password">ยืนยันรหัสผ่าน</string>
+    <string name="title_change_password">เปลี่ยนแปลงรหัสผ่าน</string>
+    <string name="msg_empty_old_password">ป้อนรหัสผ่านเดิมของคุณ</string>
+    <string name="msg_empty_new_password">ป้อนรหัสผ่านใหม่ของคุณ</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">กำหนดค่าการชำระเงิน</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">รายการที่ติดตาม</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> ต้องระบุที่อยู่ของถนน</string>
+    <string name="toast_no_city">ต้องระบุเมือง</string>
+    <string name="toast_no_zip">ต้องระบุรหัสไปรษณีย์</string>
+    <string name="toast_no_state">ต้องระบุรัฐ</string>
+    <string name="toast_no_quantity">ป้อนจำนวนของรายการ</string>
+    <!-- -->
+    <string name="title_sold_history">ประวัติผู้ขาย</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">ใบเสร็จรับเงิน</string>
+    <string name="txt_add_review">เพิ่มรีวิว</string>
+    <string name="txt_done">เสร็จแล้ว</string>
+    <!--<string name="txt_cancel">ยกเลิก</string>-->
+    <string name="msg_empty_review">โปรดเพิ่มรีวิวของคุณ</string>
+    <!--Toast -->
+    <string name="toast_login_fail">ลองใหม่อีกครั้ง หรือไปที่ 2KXO.com/help</string>
+    <string name="toast_password_empty">ป้อนรหัสผ่านของคุณ</string>
+    <string name="toast_no_internet">ตรวจสอบการเชื่อมต่ออินเตอร์เน็ตของคุณ</string>
+    <string name="toast_some_errro"> ลองใหม่อีกครั้ง หรือไปที่ 2KXO.com/help </string>
+    <string name="toast_error_retry"> ลองใหม่อีกครั้ง หรือไปที่ 2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> ลองใหม่อีกครั้ง หรือไปที่ 2KXO.com/help</string>
+    <string name="toast_error_cannot_share_file">เราไม่สามารถแบ่งปันไฟล์ได้ในขณะนี้</string>
+    <string name="navigation_drawer_open">เปิดภาพวาดของการนำทาง</string>
+    <string name="navigation_drawer_close">ปิดภาพวาดของการนำทาง</string>
+    <string name="action_settings">การตั้งค่า</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">การแจ้งเตือน</string>
+    <string name="about_us"> 2KXO เป็นบริการสตรีมมิ่งแบบไม่จำกัด ไม่มีโฆษณา และเป็นสถานที่ที่ตลาดระดับโลกเคยใช้ในการอัพโหลดเพลง วีดีโอ การอัดเสียง รูปภาพ หรือการซื้อ และขายสินค้า รวมทั้งให้บริการจากที่ใดก็ได้โลก เกิด และเติบโตในสหรัฐอเมริกา 2KXO ได้ถูกพัฒนาขึ้นจากทีมงานพัฒนาอไจล์ที่ดีที่สุดในกรุงนิวยอร์ก หลังจากการพัฒนาสามปีเต็ม ๆ 2KXO พร้อมแล้วสำหรับการเปิดตัวออกสู่ตลาดโลก เทคโนโลยีการเข้ารหัสของเราเป็นเทคโนโลยีที่ดีที่สุดในตลาด ในฐานะที่เป็นแพลตฟอร์ม อี-คอมเมิร์ซ ความปลอดภัยมีความสำคัญต่อการดำรงอยู่ของเรามาก ๆ ดังนั้นจึงส่งผลให้ 2KXO ได้รับการเฝ้าดู ตรวจสอบ และปรับปรุงอยู่ตลอดเวลาเพื่อปกป้องความเป็นส่วนตัวให้ได้มากที่สุด ในการรักษาความไว้วางใจ และความมั่นใจของผู้ใช้งาน 2KXO จัดให้มีสภาพแวดล้อมที่โปร่งใส โดยเฉพาะอย่างยิ่งการคำนึงถึงข้อมูลส่วนตัวด้วยการแจ้งให้สาธารณะชนทราบว่าข้อมูลใดที่ถือว่ามีความสำคัญ จะมีการเก็บข้อมูลสำคัญได้อย่างไร และข้อมูลใดที่มีการเก็บเรียบร้อยแล้ว การพยายามเลือกจากเว็บไซต์ที่ให้บริการมากมายสามารถทำให้คุณเจ็บตัวได้ คุณสามารถใช้เว็บไซต์หนึ่งสำหรับโซเชียลมีเดีย อีกเว็บไซต์หนึ่งสำหรับการส่ง และรับการชำระเงิน และเว็บไซต์อื่น ๆ สำหรับการจัดส่ง และการขาย "ในฐานะที่เป็นกลุ่มคนมิลเลนเนียล ผมเติบโตมากับอินเตอร์เน็ต" ผู้ก่อตั้ง 2KXO และกรรมการผู้บริหารของ Hugo กล่าว "เมื่อตอนที่ผมยังเด็ก ผมใช้อินเตอร์เน็ตสำหรับการสตรีมมิ่งเพลง และวีดีโอ หลังจากนั้นก็ใช้สำหรับเครือข่ายโซเชียล และใช้เพื่อวัตถุประสงค์ในเชิงพาณิชย์ในที่สุด เมื่อผมเติบโตขึ้น การใช้อินเตอร์เน็ตของผมได้เปลี่ยนแปลงไป ผมตระหนักว่าผมต้องการแพลตฟอร์มที่สามารถเติบโตไปกับผมได้ ผมได้สร้าง 2KXO ขึ้นเพื่อเป็นแพลตฟอร์มให้ผู้ใช้งานทุกคนในทุกระดับใช้งานได้ทุกอย่างที่พวกเขาชื่นชอบมากที่สุดบนแพลตฟอร์ม: สตรีม ช็อปปิ้ง ขาย ส่งเงิน ในขณะที่กำลังเชื่อมต่อกับอินเตอร์เน็ต" 2KXO ได้สร้างกรอบแนวคิดขึ้นในปี พ.ศ. 2551 ด้วยจุดมุ่งหมายที่จะแทรกแซงอุตสาหกรรมด้านเทคโนโลยีด้วยแนวทางปฏิบัติใหม่ที่ชัดเจน 2KXO มีสถานที่ให้ผู้มีความคิดสร้างสรรค์จัดการมีเดีย การค้าขาย สินค้า และบริการได้อย่างมีอาชีพในแพลตฟอร์มเดียวที่ทรงพลัง และคล่องตัว 2KXO ไม่เพียงแค่เสนอการสตรีมมิ่ง และการช็อปปิ้งแบบไม่จำกัดเท่านั้น แต่ผู้ใช้งานยังสามารถตั้งค่าแคมเปญส่งเสริมอัตโนมัติได้เพื่อเพิ่มการมีส่วนร่วมได้อย่างรวดเร็ว และง่ายดายผ่านการกำหนดเป้าหมายอัตโนมัติของผู้ใช้งานที่มีความสนใจสูงมาก เนื่องจากคนจำนวนมากกำลังสับเปลี่ยนไปมาระหว่างบริการออนไลน์มากมาย มันจึงทำให้ยากต่อการจัดการบัญชีหลายบัญชีในขณะที่กำลังพยายามติดตามข่าวสารล่าสุด และเทรนต่าง ๆ ดังนั้น 2KXO จึงได้สร้างแพลตฟอร์มเพื่อช่วยให้ผู้ใช้งานสามารถจัดการ และรวบรวมการโต้ตอบทางออนไลน์ของพวกเขาได้สะดวกยิ่งขึ้นบนแพลตฟอร์มเดียว\n\n2KXO™\nนิวยอร์ก, นิวยอร์ก\n(888) 611-8331</string>
+    <string name="post_media">โพสต์มีเดีย</string>
+    <string name="post_media_short">โพสต์มีเดีย</string>
+    <string name="sell_now">ขายตอนนี้</string>
+    <string name="sell_now_short">ขายตอนนี้</string>
+    <string name="post_stream">โพสต์สตรีม</string>
+    <string name="post_stream_short">โพสต์สตรีม</string>
+    <string name="existing_shortcuts">ภาพถ่ายหน้าจอที่มีอยู่:</string>
+    <string name="remove_shortcut">ลบออก</string>
+    <string name="disable_shortcut">ปิดการใช้งาน</string>
+    <string name="enable_shortcut">เปิดการใช้งาน</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">เข้าสู่ระบบ</string>
+    <string name="txt_signup">ลงทะเบียน</string>
+
+    <string name="txt_done_small">เสร็จแล้ว</string>
+    <string name="txt_login_small">เข้าสู่ระบบ</string>
+    <string name="txt_welcome_back">ยินดีต้อนรับสู่การกลับมา</string>
+    <string name="txt_signin_account">เข้าสู่บัญชีของคุณ</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">ลงทะเบียนด้วย</string>
+    <string name="txt_signup_with_email">ลงทะเบียนผ่านอีเมล</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">มีเดีย</string>-->
+    <!--<string name="txt_shop">ร้านค้า</string>-->
+    <string name="txt_blog">บล็อก</string>
+    <string name="txt_camera">กล้อง</string>
+    <string name="txt_music">เพลง</string>
+    <string name="txt_microphone">โมโครโฟน</string>
+    <string name="txt_timer">ตัวจับเวลา</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">ใหม่</string>-->
+    <string name="txt_new_description">ใหม่ด้วยแท็ก (NWT) ไม่ใช้ถูกงาน ไม่เปิดบรรจุภัณฑ์</string>
+    <!--<string name="txt_like_new">เหมือนใหม่</string>-->
+    <string name="txt_like_new_description">ใหม่โดยไม่มีแท็ก (NWOT) ไม่ถูกใช้งาน ไม่สึกหรอ</string>
+    <!--<string name="txt_refurnished">ปรับโฉมใหม่แล้ว</string>-->
+    <string name="txt_refurnished_description">ใช้แล้วอย่างระมัดระวัง คุณสมบัติในการทำงานบกพร่อง หนึ่งอย่าง หรือบางอย่างเล็กน้อย</string>
+   <!-- <string name="txt_fair">พอดี</string>-->
+    <string name="txt_fair_description">ใช้งานแล้ว คุณสมบัติบกพร่องหลายอย่าง</string>
+    <!--<string name="txt_poor">แย่</string>-->
+    <string name="txt_poor_descrption">การบกพร่องในส่วนสำคัญอาจทำให้ชิ้นส่วนเสียหายได้</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_user_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="gone"
+        android:src="@mipmap/user" />
+
+    <LinearLayout
+        android:id="@+id/lny_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:background="@drawable/chat_bubble_user"
+        android:backgroundTint="@color/colorfb4a4c"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/txt_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="left"
+            android:linksClickable="false"
+            android:maxWidth="200dp"
+            android:minWidth="100dp"
+            android:focusable="true"
+            android:textSize="@dimen/_8sdp"
+            android:textColor="@android:color/white"
+            android:visibility="visible"
+            tools:text="Test : https://api.screamxo.com/assets/uploads/postsmedia/oQmOwcXbsmxSrZZoaTK6JxnqE.png" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textColor="@color/color8c8c8c"
+        android:layout_below="@id/lny_message"
+        android:textAllCaps="true"
+        android:layout_alignStart="@+id/lny_message"
+        android:textSize="@dimen/_8sdp"
+        android:textStyle="bold"
+        tools:text="5 hours ago" />
+
+</RelativeLayout>
+

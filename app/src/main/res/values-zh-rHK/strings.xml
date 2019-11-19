@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">同意</string>
+    <string name="txt_camara">相機</string>
+    <string name="txt_gallery">畫廊</string>
+    <string name="txt_no_image">沒有圖像</string>
+    <!-- login activity -->
+    <string name="btn_login">登錄</string>
+    <string name="hint_edit_username">用戶名</string>
+    <string name="hint_password">密碼</string>
+    <string name="txt_sign_in_with">或登錄與</string>
+    <string name="txt_forgot_password">忘記您的密碼?</string>
+    <string name="txt_new_here">新來的？註冊</string>
+    <!-- Signup activity -->
+    <string name="hint_username">用戶名</string>
+    <string name="hint_firstname">名字</string>
+    <string name="hint_fullname">全名</string>
+    <string name="hint_lastname">姓氏</string>
+    <string name="hint_email">電子郵件地址</string>
+    <string name="hint_phone_no">電話號碼</string>
+    <string name="txt_terms_condition">接受條款和條件</string>
+    <string name="btn_create_account">創建帳號</string>
+    <string name="msg_first_name_null">輸入您的名字</string>
+    <string name="msg_last_name_null">輸入您的姓氏</string>
+    <string name="msg_username_null">需要有效的電子郵件或用戶名</string>
+    <string name="msg_email_invalid">請輸入有效的電子郵件地址</string>
+    <string name="msg_email_null">輸入您的電子郵件</string>
+    <string name="msg_phone_number_null">請輸入電話號碼</string>
+    <string name="msg_phone_number_invalid">輸入一個有效的電話號碼</string>
+    <string name="msg_password_null">需要密碼</string>
+    <string name="msg_password_not_valid">密碼需要至少6個字元。</string>
+    <string name="msg_accept_t_c">接受我們的條款和條件 </string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">如果您忘了密碼。我們可以向您發送電子郵件以將其重置。</string>
+    <string name="btn_send_email">發送電子郵件</string>
+    <string name="etd_email">電子郵件</string>
+    <string name="title_forgot_password">忘記密碼</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">指示板</string>
+    <string name="title_activity_drawer_friend">朋友</string>
+    <string name="title_activity_drawer_notification">通知</string>
+    <string name="title_activity_drawer_shop">商店</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">設置</string>
+    <string name="title_activity_drawer_social">社會</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">商店</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">媒體</string>
+    <string name="txt_tag_bottom_stream">流動</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">重新發送</string>
+    <string name="btn_confirm">確認</string>
+    <string name="txt_varification">驗證碼已發送到您的郵箱。輸入此驗證碼以完成註冊。</string>
+    <string name="txt_varification_time">驗證碼將在可選的(0)秒內交付</string>
+    <string name="title_verification">驗證</string>
+    <string name="hint_verification_code">驗證碼</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">學校或母校</string>
+    <string name="hint_job">職業</string>
+    <string name="hint_city">城市或郵遞區號</string>
+    <string name="hint_hobby">興趣</string>
+    <string name="txt_gender">性別</string>
+    <string name="rad_male">男性</string>
+    <string name="rad_Female">女性</string>
+    <string name="rad_transgender">變性人</string>
+    <string name="txt_Relationship_status">感情狀態</string>
+    <string name="rad_available">可用</string>
+    <string name="rad_unavailable">不可用</string>
+    <string name="txt_sex_preference">性別偏好</string>
+    <string name="rad_opposite">相反</string>
+    <string name="rad_same">相同</string>
+    <string name="btn_update">更新</string>
+    <string name="title_edit_profile">編輯個人資料</string>
+    <!-- post media -->
+    <string name="title_post_media">發佈媒體</string>
+    <string name="btn_create_posgt">創建帖子</string>
+    <string name="hint_title">標題</string>
+    <!-- Post Stream -->
+    <string name="title_post">帖子</string>
+    <string name="hint_stream">您在想什麼?</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">文章的細節</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">推送通知設置</string>
+    <string name="txt_reject_list">拒絕名單</string>
+    <!--<string name="txt_privacy_settings">隱私設置</string>-->
+    <!--<string name="txt_payment">支付</string>-->
+    <string name="txt_change_pass">更改密碼</string>
+    <string name="txt_help">幫助和聯繫</string>
+    <string name="txt_logout">登出</string>
+    <!--<string name="txt_about_us">關於我們</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">出售</string>
+    <string name="txt_more">更多的</string>
+    <!--<string name="txt_watching">觀看</string>-->
+    <string name="txt_bought">已購買</string>
+    <string name="txt_sold">已出售</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">出售物品</string>
+    <string name="hint_item_name">物品名稱</string>
+    <string name="hint_item_description">物品描述</string>
+    <string name="hint_item_category">選擇類別</string>
+    <string name="hint_item_quantity">專案數量</string>
+    <string name="hint_item_price">物品價格</string>
+    <string name="hint_you_earn">你將獲得</string>
+    <string name="hint_item_shipping_cost">物品運輸成本</string>
+    <string name="hint_separate_keywords">用逗號分隔關鍵字。</string>
+    <string name="btn_continue">繼續</string>
+    <string name="btn_delete">刪除</string>
+    <string name="dialog_item_info">每次採購，您都可以獲得這一金額。</string>
+    <string name="msg_enter_item_name">輸入物品名稱</string>
+    <string name="msg_enter_item_description">輸入物品描述</string>
+    <string name="msg_enter_item_quantity">輸入物品數量</string>
+    <string name="msg_enter_item_price">輸入物品價格</string>
+    <string name="msg_enter_item_actual_price">請輸入物品價格</string>
+    <string name="msg_enter_item_shipping_coast">推薦免費運輸。</string>
+    <string name="msg_enter_keywords">請輸入關鍵字</string>
+    <string name="msg_select_item_image">上傳至少四張您的物品的照片</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">輸入您的送貨地址</string>
+    <string name="txt_payment_detail">付款細節</string>
+    <string name="txt_item_quantity">物品數量</string>
+    <string name="txt_item_cost">物品成本</string>
+    <string name="txt_shipping_cost">運輸成本</string>
+    <string name="txt_total_cost">總成本</string>
+    <string name="hint_street">街道</string>
+    <string name="hint_city_payment">城市</string>
+    <string name="hint_zipcode">郵遞區號</string>
+    <string name="hint_state">州</string>
+    <string name="title_payment_detail">付款細節</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">付款方式</string>
+    <string name="txt_or">or</string>
+    <string name="title_payment_process">付款過程中</string>
+    <!-- item detail -->
+    <string name="txt_userid">用戶城市</string>
+    <string name="txt_date">星期一上午11點10分</string>
+    <string name="txt_watch">觀看</string>
+    <string name="txt_unwatch">取消觀看</string>
+    <!--<string name="txt_message">消息</string>-->
+    <string name="txt_review">評論</string>
+    <string name="txt_buy_item">購買物品</string>
+    <string name="title_item_detail">物品細節</string>
+    <string name="txt_sold_list">銷售列表</string>
+    <string name="txt_traking_detail">添加追蹤號 #</string>
+    <string name="msg_no_review">當第一個評論!</string>
+    <string name="msg_no_data">還有更多!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">舊密碼</string>
+    <string name="edt_new_password">新密碼</string>
+    <string name="edt_confirm_password">確認密碼</string>
+    <string name="title_change_password">更改密碼</string>
+    <string name="msg_empty_old_password">輸入舊密碼</string>
+    <string name="msg_empty_new_password">輸入新密碼</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">配置支付</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">觀看名單</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> 需要街道地址</string>
+    <string name="toast_no_city">需要城市</string>
+    <string name="toast_no_zip">需要郵遞區號</string>
+    <string name="toast_no_state">需要州屬</string>
+    <string name="toast_no_quantity">輸入物品數量</string>
+    <!-- -->
+    <string name="title_sold_history">賣方歷史</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">收據</string>
+    <string name="txt_add_review">添加評論</string>
+    <string name="txt_done">完成</string>
+    <!--<string name="txt_cancel">取消</string>-->
+    <string name="msg_empty_review">請添加您的評論</string>
+    <!--Toast -->
+    <string name="toast_login_fail">請重試或流覽2KXO.com/help</string>
+    <string name="toast_password_empty">輸入您的密碼</string>
+    <string name="toast_no_internet">檢查你的互聯網連接</string>
+    <string name="toast_some_errro"> 請重試或流覽2KXO.com/help </string>
+    <string name="toast_error_retry"> 請重試或流覽2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> 請重試或流覽2KXO.com/help。</string>
+    <string name="toast_error_cannot_share_file">我們目前無法分享此檔。</string>
+    <string name="navigation_drawer_open">打開導航抽屜</string>
+    <string name="navigation_drawer_close">關閉導航抽屜</string>
+    <string name="action_settings">設置</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">通知</string>
+    <string name="about_us"> 2KXO是一個無廣告、無限制流量的媒體服務，讓全球市場用於上傳音樂、視頻、錄音、照片或買賣世界各地的產品和服務。在美國出生並成立，2KXO是由一隊紐約市開發人員的精英團隊所開發的。經過整整三年的開發，2KXO現在已經為其全球發佈做好了準備。我們的加密技術是目前最好的加密技術之一。作為一個電子商務平臺,安全對我們的存在是至關重要的; 因此，2KXO不斷被監控，被審查，並更新以提供最大的隱私保護。為了保持用戶的信任和信心，2KXO提供了一個透明的環境，特別是在個人資訊方面，它讓公眾確切地知道哪些資訊被認為是重要的，如何收集資訊，以及如何使用這些資訊。嘗試從這麼多網頁服務中進行選擇可能會讓您左右為難。一個用於社交媒體，另一個用於發送和接收支付，另一個則用於購物和銷售。 2KXO創始人兼首席執行官Hugo說："作為一名千禧一代，我是伴隨著互聯網長大的。" "當我年輕的時候，我使用互聯網播放音樂和視頻，然後用於社交網路，最終用於商業目的。隨著年齡的增長，我對互聯網的使用也在不斷發展。我意識到我需要一個和我一起成長的平臺。我創建2KXO就是為了成為這樣一個平臺，為所有級別的用戶提供一個單一的平臺來做他們最喜歡的事情：播放媒體、購物、銷售、發送金錢，同時保持聯繫。" 2KXO於2008年被構想出來，目標是要以一種大膽的新方式顛覆科技行業。 2KXO為創意人員提供了一個能夠專業地將媒體、商品、產品和服務組織在一個強大的、以及流線化的平臺上。2KXO不僅提供無限制的播放媒體和購物，用戶還可以設置自動的推進活動，通過自動定位來找到高度感興趣的用戶，並快速和輕鬆地與其增加互動。 隨著許多人在各種線上服務之間切換，試圖追蹤最新的新聞和趨勢的同時管理多個帳戶是相當困難的。因此，2KXO創建了一個單一平臺來幫助用戶們更方便地管理和整合他們的線上交流。\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">發佈媒體</string>
+    <string name="post_media_short">發佈媒體</string>
+    <string name="sell_now">立即出售</string>
+    <string name="sell_now_short">立即出售</string>
+    <string name="post_stream">後流</string>
+    <string name="post_stream_short">後流</string>
+    <string name="existing_shortcuts">現有快捷方式:</string>
+    <string name="remove_shortcut">刪除</string>
+    <string name="disable_shortcut">禁用</string>
+    <string name="enable_shortcut">啟用</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">登錄</string>
+    <string name="txt_signup">註冊</string>
+
+    <string name="txt_done_small">完成</string>
+    <string name="txt_login_small">登錄</string>
+    <string name="txt_welcome_back">歡迎回來</string>
+    <string name="txt_signin_account">登錄您的帳戶</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">註冊</string>
+    <string name="txt_signup_with_email">通過郵件註冊</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">媒體</string>-->
+    <!--<string name="txt_shop">商店</string>-->
+    <string name="txt_blog">博客</string>
+    <string name="txt_camera">相機</string>
+    <string name="txt_music">音樂</string>
+    <string name="txt_microphone">麥克風</string>
+    <string name="txt_timer">計時器</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">新的</string>-->
+    <string name="txt_new_description">新標籤(NWT)，未使用，未打開包裝</string>
+    <!--<string name="txt_like_new">像新的</string>-->
+    <string name="txt_like_new_description">全新無吊牌(NWOT)，未使用，無磨損跡象</string>
+   <!-- <string name="txt_refurnished">翻新</string>-->
+    <string name="txt_refurnished_description">曾溫和使用，實用，一個/幾個小瑕疵</string>
+   <!-- <string name="txt_fair">公平</string>-->
+    <string name="txt_fair_description">已使用、實用、多瑕疵/缺陷</string>
+    <!--<string name="txt_poor">不良</string>-->
+    <string name="txt_poor_descrption">主要缺陷，可能會損壞，為零件</string>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F2F1F4"
+    android:layout_height="match_parent"
+    tools:context="com.screamxo.Activity.RahulWork.CardInformationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_Header"
+        android:background="#F7F7F7"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtCancel"
+            android:textColor="@color/tw__composer_blue_text"
+            android:text="Cancel"
+            android:onClick="funCancel"
+            android:padding="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtHeader"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:text="Add a Card"
+            android:padding="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtDone"
+            android:textColor="@color/colordarkGray"
+            android:layout_alignParentRight="true"
+            android:text="Done"
+            android:onClick="funDone"
+            android:padding="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:src="@mipmap/card_icon"
+        android:layout_below="@+id/rl_Header"
+        android:id="@+id/imgCard"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/imgCard"
+        android:id="@+id/rl_Email"
+        android:background="@android:color/white"
+        android:elevation="@dimen/_1sdp"
+        android:layout_height="wrap_content"
+        tools:targetApi="lollipop">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Email"
+            android:singleLine="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/colorGray"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/txtCard"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textColor="@color/colorGray"
+        android:text="Card"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_below="@+id/rl_Email"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/txtCard"
+        android:background="@android:color/white"
+        android:elevation="@dimen/_1sdp"
+        android:layout_height="wrap_content"
+        tools:targetApi="lollipop">
+
+        <com.stripe.android.view.CardInputWidget
+            android:id="@+id/card_input_widget"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        style="@style/progressbar" />
+
+</RelativeLayout>

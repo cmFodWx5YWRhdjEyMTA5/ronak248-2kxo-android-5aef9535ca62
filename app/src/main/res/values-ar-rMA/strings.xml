@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">موافق</string>
+    <string name="txt_camara">الكاميرا</string>
+    <string name="txt_gallery">الاستوديو</string>
+    <string name="txt_no_image">لا يوجد صورة</string>
+    <!-- login activity -->
+    <string name="btn_login">تسجيل الدخول</string>
+    <string name="hint_edit_username">اسم المستخدم</string>
+    <string name="hint_password">كلمة المرور</string>
+    <string name="txt_sign_in_with">أو تسجيل الدخول بواسطة</string>
+    <string name="txt_forgot_password">نسيت كلمة المرور؟</string>
+    <string name="txt_new_here">جديد هنا؟ قم بتسجيل الاشتراك</string>
+    <!-- Signup activity -->
+    <string name="hint_username">اسم المستخدم</string>
+    <string name="hint_firstname">الاسم الاول</string>
+    <string name="hint_fullname">الاسم بالكامل</string>
+    <string name="hint_lastname">الاسم الاخير</string>
+    <string name="hint_email">البريد الالكتروني</string>
+    <string name="hint_phone_no">رقم الهاتف</string>
+    <string name="txt_terms_condition">أوافق على الشروط والأحكام</string>
+    <string name="btn_create_account">انشاء الحساب</string>
+    <string name="msg_first_name_null">ادخل اسمك الاول</string>
+    <string name="msg_last_name_null">ادخل اسمك الاخير</string>
+    <string name="msg_username_null"> مطلوب بريد إلكتروني صالح أو اسم مستخدم </string>
+    <string name="msg_email_invalid"> من فضلك أدخل بريد أليكترونى صحيح </string>
+    <string name="msg_email_null"> أدخل بريدك الإلكتروني </string>
+    <string name="msg_phone_number_null"> يرجى إدخال رقم الهاتف </string>
+    <string name="msg_phone_number_invalid"> أدخل رقم هاتف صالح </string>
+    <string name="msg_password_null"> كلمة المرور مطلوبة </string>
+    <string name="msg_password_not_valid"> يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.</string>
+    <string name="msg_accept_t_c"> اقبل البنود والشروط الخاصة بنا </string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password"> إذا نسيت كلمة المرور الخاصة بك. يمكننا أن نرسل لك بريدًا إلكترونيًا لإعادة تعيينها.</string>
+    <string name="btn_send_email"> ارسل بريد الكتروني </string>
+    <string name="etd_email"> البريد الإلكتروني </string>
+    <string name="title_forgot_password"> نسيت كلمة المرور </string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board"> لوحة التحكم </string>
+    <string name="title_activity_drawer_friend">الاصدقاء</string>
+    <string name="title_activity_drawer_notification">الاشعارات</string>
+    <string name="title_activity_drawer_shop">التسوق</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">الاعدادات</string>
+    <string name="title_activity_drawer_social">اجتماعي</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">التسوق</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">الوسائط</string>
+    <string name="txt_tag_bottom_stream">التدفق</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">إعادة ارسال</string>
+    <string name="btn_confirm">تأكيد</string>
+    <string name="txt_varification"> تم إرسال رمز التحقق إلى بريدك الإلكتروني. أدخل رمز التحقق هذا لإكمال تسجيلك.</string>
+    <string name="txt_varification_time"> سيتم تسليم رمز التحقق في ثوانٍ اختيارية (0) </string>
+    <string name="title_verification">التحقق</string>
+    <string name="hint_verification_code">رمز التحقق</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master"> مدرسة أو ألما ماتر </string>
+    <string name="hint_job">الوظيفة</string>
+    <string name="hint_city">المدينة او الرمز البريدي</string>
+    <string name="hint_hobby">الاهتمامات</string>
+    <string name="txt_gender">النوع</string>
+    <string name="rad_male">ذكر</string>
+    <string name="rad_Female">أنثى</string>
+    <string name="rad_transgender"> متحول جنسيا </string>
+    <string name="txt_Relationship_status">الحالة الاجتماعية</string>
+    <string name="rad_available">متوفر</string>
+    <string name="rad_unavailable">غير متوفر</string>
+    <string name="txt_sex_preference"> تفضيل الجنس </string>
+    <string name="rad_opposite">العكس</string>
+    <string name="rad_same">المثل</string>
+    <string name="btn_update">تحديث</string>
+    <string name="title_edit_profile">تعديل الملف الشخصي</string>
+    <!-- post media -->
+    <string name="title_post_media">نشر وسائط</string>
+    <string name="btn_create_posgt">انشاء منشور</string>
+    <string name="hint_title">عنوان</string>
+    <!-- Post Stream -->
+    <string name="title_post">منشور</string>
+    <string name="hint_stream">ماذا يدور في بالك؟</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">نشر التفاصيل</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">اعدادات دفع الاشعارات</string>
+    <string name="txt_reject_list">قائمة الرفض</string>
+    <!--<string name="txt_privacy_settings">اعدادات الخصوصية</string>-->
+    <!--<string name="txt_payment">الدفع</string>-->
+    <string name="txt_change_pass">تغيير كلمة المرور</string>
+    <string name="txt_help">المساعدة والاتصال</string>
+    <string name="txt_logout">تسجيل الخروج</string>
+    <!--<string name="txt_about_us">حولنا</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">البيع</string>
+    <string name="txt_more">المزيد</string>
+    <!--<string name="txt_watching">المشاهدة</string>-->
+    <string name="txt_bought">تم الشراء</string>
+    <string name="txt_sold">تم البيع</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">بيع سلعة</string>
+    <string name="hint_item_name">اسم السلعة</string>
+    <string name="hint_item_description">وصف السلعة</string>
+    <string name="hint_item_category">تحديد فئة</string>
+    <string name="hint_item_quantity">كمية السلعة</string>
+    <string name="hint_item_price">سعر السلعة</string>
+    <string name="hint_you_earn">سوف تربح</string>
+    <string name="hint_item_shipping_cost">تكلفة شحن السلعة</string>
+    <string name="hint_separate_keywords"> افصل الكلمات الرئيسية بفاصلة.</string>
+    <string name="btn_continue">استمرار</string>
+    <string name="btn_delete">حذف</string>
+    <string name="dialog_item_info"> يمكنك الحصول على هذا المبلغ ، لكل عملية شراء.</string>
+    <string name="msg_enter_item_name"> يرجى إدخال اسم السلعة </string>
+    <string name="msg_enter_item_description"> أدخل وصف السلعة </string>
+    <string name="msg_enter_item_quantity">ادخل كمية السلعة</string>
+    <string name="msg_enter_item_price">ادخل سعر السلعة</string>
+    <string name="msg_enter_item_actual_price">ادخل سعر السلعة</string>
+    <string name="msg_enter_item_shipping_coast">الشحن المجاني موصى به.</string>
+    <string name="msg_enter_keywords"> يرجى إدخال بعض الكلمات الرئيسية </string>
+    <string name="msg_select_item_image"> حمِّل أربع صور على الأقل للسلعة خاصتك </string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address"> أدخل عنوان الشحن الخاص بك </string>
+    <string name="txt_payment_detail"> تفاصيل الدفع </string>
+    <string name="txt_item_quantity">كمية السلعة</string>
+    <string name="txt_item_cost">تكلفة السلعة</string>
+    <string name="txt_shipping_cost">تكلفة الشحن</string>
+    <string name="txt_total_cost">اجمالي التكلفة</string>
+    <string name="hint_street">شارع</string>
+    <string name="hint_city_payment">مدينة</string>
+    <string name="hint_zipcode">الرمز البريدي</string>
+    <string name="hint_state">ولاية</string>
+    <string name="title_payment_detail">تفاصيل الدفع</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">طريقة الدفع</string>
+    <string name="txt_or">أو</string>
+    <string name="title_payment_process">الدفع قيد المعالجة</string>
+    <!-- item detail -->
+    <string name="txt_userid">مدينة المستخدم</string>
+    <string name="txt_date"> الاثنين الساعة 11:10 صباحًا </string>
+    <string name="txt_watch">مشاهدة</string>
+    <string name="txt_unwatch"> إزالة </string>
+   <!-- <string name="txt_message">رسالة</string>-->
+    <string name="txt_review">مراجعة</string>
+    <string name="txt_buy_item">شراء السلعة</string>
+    <string name="title_item_detail">تفاصيل السلعة</string>
+    <string name="txt_sold_list">قائمة المباع</string>
+    <string name="txt_traking_detail">إضافة تتبع #</string>
+    <string name="msg_no_review">كن أول مراجع!</string>
+    <string name="msg_no_data">المزيد سيأتي!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">كلمة المرور القديمة</string>
+    <string name="edt_new_password">كلمة المرور الجديدة</string>
+    <string name="edt_confirm_password">تأكيد كلمة المرور</string>
+    <string name="title_change_password">تغيير كلمة المرور</string>
+    <string name="msg_empty_old_password">ادخل كلمة المرور القديمة</string>
+    <string name="msg_empty_new_password">ادخل كلمة المرور الجديدة</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">اعداد الدفع</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">قائمة المشاهدة</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> رقم الشارع مطلوب</string>
+    <string name="toast_no_city">المدينة مطلوبة</string>
+    <string name="toast_no_zip">الرمز البريدي مطلوب</string>
+    <string name="toast_no_state">الولاية مطلوبة</string>
+    <string name="toast_no_quantity">ادخل كمية السلعة</string>
+    <!-- -->
+    <string name="title_sold_history">تاريخ البائع</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">ايصالات الدفع</string>
+    <string name="txt_add_review">إضافة مراجعة</string>
+    <string name="txt_done">تم بنجاح</string>
+   <!-- <string name="txt_cancel">الغاء</string>-->
+    <string name="msg_empty_review">من فضلك اضف مراجعتك</string>
+    <!--Toast -->
+    <string name="toast_login_fail">حاول مرة أخرى او قم بزيارة 2KXO.com/help </string>
+    <string name="toast_password_empty">ادخل كلمة المرور الخاصة بك</string>
+    <string name="toast_no_internet">افحص اتصال الانترنت الخاص بك</string>
+    <string name="toast_some_errro"> حاول مرة أخرى او قم بزيارة 2KXO.com/help </string>
+    <string name="toast_error_retry"> حاول مرة أخرى او قم بزيارة 2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> حاول مرة أخرى او قم بزيارة 2KXO.com/help.</string>
+    <string name="toast_error_cannot_share_file"> لا يمكننا مشاركة هذا الملف في الوقت الحالي.</string>
+    <string name="navigation_drawer_open">افتح رسام التنقل</string>
+    <string name="navigation_drawer_close">اغلق رسام التنقل</string>
+    <string name="action_settings">الاعدادات</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">الاشعارات</string>
+    <string name="about_us"> 2KXO عبارة عن خدمة بث غير محدودة للسوق العالمي تستخدم لتحميل الموسيقى والفيديو والتسجيلات الصوتية والصور أو شراء وبيع المنتجات والخدمات من أي مكان في العالم. تم انشاء 2KXO في الولايات المتحدة الأمريكية ، وتم تطويره من قبل نخبة من المطورين المحترفين في مدينة نيويورك. بعد ثلاث سنوات كاملة من التطوير ، أصبحت 2KXO جاهزة للإصدار العالمي. تعد تقنية التشفير لدينا واحدة من أفضل التقنيات المتاحة. كمنصة للتجارة الإلكترونية ، الأمن أمر حيوي لوجودنا ذاته ؛ ونتيجة لذلك ، يخضع 2KXO باستمرار للمراقبة والمراجعة والتحديث لتوفير أقصى حماية للخصوصية. وللحفاظ على ثقة المستخدمين ، يوفر نظام 2KXO بيئة شفافة ، خاصة فيما يتعلق بالمعلومات الشخصية ، وذلك من خلال السماح للجمهور بمعرفة المعلومات التي تعتبر مهمة ، وكيفية جمع تلك المعلومات ، وما يتم عمله. إن محاولة الاختيار من بين العديد من خدمات الويب يمكن أن تتركك في حيرة. يمكنك استخدام واحد من وسائل الإعلام الاجتماعية ، وآخر لإرسال المدفوعات وتلقيها ، وغيرها من أجل التسوق والبيع. "كجيل الألفية ، لقد نشأت مع الإنترنت" ، يقول مؤسس ومدير تنفيذي لشركة Hugo 2KXO. "عندما كنت أصغر سنا ، استخدمت الإنترنت لتشغيل الموسيقى ومقاطع الفيديو ، ثم للتواصل الاجتماعي ، وفي النهاية لأغراض تجارية. كلما كبرت ، تطور استخدامي للإنترنت أيضًا. أدركت أنني بحاجة إلى منصة تنمو معي. لقد بنيت 2KXO لتكون هذه المنصة ، لتوفير جميع المستخدمين على أي مستوى منصة واحدة للقيام بالأشياء التي يحبونها أكثر: تدفق ، تسوق ، بيع ، إرسال الأموال ، مع البقاء متصلاً ". تم تصور 2KXO ، في عام 2008 بهدف تعطيل صناعة التكنولوجيا بنهج جريء جديد. يوفر 2KXO لمبدعي التصميمات مكانًا لتنظيم وسائل الإعلام والسلع والمنتجات والخدمات بشكل احترافي في منصة واحدة قوية ومبسطة. لا يوفر 2KXO تدفقًا غير محدود للتسوق فقط ، بل يمكن للمستخدمين أيضًا إعداد حملات تحسين تلقائية لزيادة المشاركات بسرعة وسهولة من خلال الاستهداف التلقائي للمستخدمين ذوي الاهتمام الكبير. العديد من الأفراد الذين يتحولون بين مجموعة متنوعة من الخدمات عبر الإنترنت ، قد يكون من الصعب جدًا إدارة حسابات متعددة أثناء محاولتهم مواكبة أحدث الأخبار والاتجاهات. لذلك أنشأت 2KXO منصة لمساعدة المستخدمين على إدارة وتوحيد تفاعلاتهم عبر الإنترنت بشكل أكثر سهولة على نظام أساسي واحد \n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">نشر وسائط</string>
+    <string name="post_media_short">نشر وسائط</string>
+    <string name="sell_now">بيع الآن</string>
+    <string name="sell_now_short">بيع الآن</string>
+    <string name="post_stream">نشر تدفق</string>
+    <string name="post_stream_short">نشر تدفق</string>
+    <string name="existing_shortcuts">أختصارات موجودة:</string>
+    <string name="remove_shortcut">ازالة</string>
+    <string name="disable_shortcut">تعطيل</string>
+    <string name="enable_shortcut">تمكين</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">تسجيل دخول</string>
+    <string name="txt_signup">تسجيل اشتراك</string>
+    <!--<string name="txt_back">للخلف</string>-->
+    <string name="txt_done_small">تم</string>
+    <string name="txt_login_small">تسجيل دخول</string>
+    <string name="txt_welcome_back">مرحبا بعودتك</string>
+    <string name="txt_signin_account"> تسجيل الدخول إلى حسابك </string>
+    <!-- signup new -->
+    <string name="txt_signup_with">تسجيل الاشتراك بواسطة</string>
+    <string name="txt_signup_with_email">تسجيل الاشتراك بواسطة البريد الالكتروني</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">الوسائط</string>-->
+    <!--<string name="txt_shop">تسوق</string>-->
+    <string name="txt_blog">المدونة</string>
+    <string name="txt_camera">الكاميرا</string>
+    <string name="txt_music">الموسيقى</string>
+    <string name="txt_microphone">الميكروفون</string>
+    <string name="txt_timer">مؤقت</string>
+    <!-- Sell item condition -->
+   <!-- <string name="txt_new">جديد</string>-->
+    <string name="txt_new_description"> الجديد مع العلامات (NWT) ، والتعبئة غير المستخدمة وغير المفتوحة </string>
+    <!--<string name="txt_like_new">مثل الجديد</string>-->
+    <string name="txt_like_new_description"> جديد دون علامات (NWOT) ، غير مستخدمة ، لا يوجد علامة على ارتداء </string>
+   <!-- <string name="txt_refurnished">إعادة تجهيز</string>-->
+    <string name="txt_refurnished_description"> استخدمت بلطف ، تؤدي الوظيفة ، واحدة / بعض العيوب الطفيفة </string>
+    <!--<string name="txt_fair">جيدة</string>-->
+    <string name="txt_fair_description">مستخدمة، تؤدي الغرض، عيوب متعددة</string>
+   <!-- <string name="txt_poor">رديئة</string>-->
+    <string name="txt_poor_descrption">عيوب أساسية، قد تتحطم، قد تحتاج قطع غيار</string>
+</resources>

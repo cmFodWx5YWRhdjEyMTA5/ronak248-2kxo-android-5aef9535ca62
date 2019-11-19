@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lny_finder_invite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_marginBottom="@dimen/_16sdp"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+
+    <TextView
+        android:id="@+id/finder_header_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/finder_header_bg"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:text="MACHINE"
+        android:textColor="@android:color/white" />
+
+
+    <LinearLayout
+        android:id="@+id/finder_inviter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/finder_header_tv"
+        android:layout_marginTop="-10dp">
+
+        <TextView
+            android:id="@+id/txt_finder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_weight="1"
+            android:background="@drawable/txt_finder_bg"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="FINDER"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_inviter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:layout_weight="1"
+            android:background="@drawable/txt_inviter_bg"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="INVITER"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/finder_pop_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/finder_inviter_container"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/inviter_pop_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/finder_inviter_container"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

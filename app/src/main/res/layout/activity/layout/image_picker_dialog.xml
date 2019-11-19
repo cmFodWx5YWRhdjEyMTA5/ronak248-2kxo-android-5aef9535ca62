@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_25sdp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/lny_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_25sdp"
+        android:paddingRight="@dimen/_25sdp"
+        android:paddingTop="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/txt_camara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/txt_camara"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack" />
+
+    <LinearLayout
+        android:id="@+id/lny_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="@dimen/_25sdp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_25sdp"
+        android:paddingRight="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/txt_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/txt_gallery"
+            android:textColor="@color/colorBlack"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!--<TextView
+        android:id="@+id/txt_line"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />-->
+
+    <!--   <LinearLayout
+           android:id="@+id/lny_no_image"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:layout_marginLeft="20dp"
+           android:layout_marginRight="20dp"
+           android:layout_marginTop="10dp"
+           android:orientation="horizontal"
+           android:paddingBottom="@dimen/_25sdp"
+           android:paddingLeft="@dimen/_25sdp"
+           android:paddingRight="@dimen/_25sdp">
+
+           <TextView
+               android:id="@+id/txt_no_image"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:ellipsize="end"
+               android:gravity="center_vertical"
+               android:paddingLeft="16dp"
+               android:paddingRight="16dp"
+               android:text="@string/txt_no_image"
+               android:textColor="@color/colorBlack"
+               android:textSize="13dp" />
+       </LinearLayout>-->
+</LinearLayout>

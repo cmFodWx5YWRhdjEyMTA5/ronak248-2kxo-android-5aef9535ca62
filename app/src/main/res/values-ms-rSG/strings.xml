@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    <string name="txt_amount_cash"><sup><small>%s</small></sup>%s<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">Ok</string>
+    <string name="txt_camara">Camera</string>
+    <string name="txt_gallery">Gallery</string>
+    <string name="txt_no_image">No Image</string>
+    <!-- login activity -->
+    <string name="btn_login">Sign In</string>
+    <string name="hint_edit_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="txt_sign_in_with">OR SIGN IN WITH</string>
+    <string name="txt_forgot_password">Forgot your password?</string>
+    <string name="txt_new_here">New here? Sign Up</string>
+    <!-- Signup activity -->
+    <string name="hint_username">Username</string>
+    <string name="hint_firstname">First Name</string>
+    <string name="hint_fullname">Full Name</string>
+    <string name="hint_lastname">Last Name</string>
+    <string name="hint_email">Email Address</string>
+    <string name="hint_phone_no">Phone Number</string>
+    <string name="txt_terms_condition">Accept Terms &amp; Conditions</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="msg_first_name_null">Enter your first name</string>
+    <string name="msg_last_name_null">Enter your last name</string>
+    <string name="msg_username_null">A valid Email or Username is required</string>
+    <string name="msg_email_invalid">Please enter a valid email address</string>
+    <string name="msg_email_null">Enter your email</string>
+    <string name="msg_phone_number_null">Please Enter Phone Number</string>
+    <string name="msg_phone_number_invalid">Enter a Valid Phone Number</string>
+    <string name="msg_password_null">Password required</string>
+    <string name="msg_password_not_valid">The password needs to be at least 6 characters long.</string>
+    <string name="msg_accept_t_c">Accept our terms and conditions </string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">If you forgot your password. we can send you an email to reset it.</string>
+    <string name="btn_send_email">Send Email</string>
+    <string name="etd_email">Email</string>
+    <string name="title_forgot_password">Forgot Password</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">DashBoard</string>
+    <string name="title_activity_drawer_friend">Friends</string>
+    <string name="title_activity_drawer_notification">Notifications</string>
+    <string name="title_activity_drawer_shop">Shop</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">Settings</string>
+    <string name="title_activity_drawer_social">Social</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">SHOP</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">MEDIA</string>
+    <string name="txt_tag_bottom_stream">STREAM</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">Resend</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="txt_varification">A verification code has been sent to your email. Enter this verification code to complete your registration.</string>
+    <string name="txt_varification_time">A verification code will be deliver in Optional(0) Seconds</string>
+    <string name="title_verification">VERIFICATION</string>
+    <string name="hint_verification_code">Verification Code</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">School or Alma Mater</string>
+    <string name="hint_job">Occupation</string>
+    <string name="hint_city">City or Zip Code</string>
+    <string name="hint_hobby">Interests</string>
+    <string name="txt_gender">Gender</string>
+    <string name="rad_male">Male</string>
+    <string name="rad_Female">Female</string>
+    <string name="rad_transgender">Transgender</string>
+    <string name="txt_Relationship_status">Relationship status</string>
+    <string name="rad_available">Available</string>
+    <string name="rad_unavailable">Unavailable</string>
+    <string name="txt_sex_preference">Sex preference</string>
+    <string name="rad_opposite">Opposite</string>
+    <string name="rad_same">Same</string>
+    <string name="btn_update">Update</string>
+    <string name="title_edit_profile">Edit Profile</string>
+    <!-- post media -->
+    <string name="title_post_media">POST MEDIA</string>
+    <string name="btn_create_posgt">Create Post</string>
+    <string name="hint_title">Title</string>
+    <!-- Post Stream -->
+    <string name="title_post">POST</string>
+    <string name="hint_stream">What\'s on your mind?</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">POST DETAILS</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">Push Notification Settings</string>
+    <string name="txt_reject_list">Reject List</string>
+    <!--<string name="txt_privacy_settings">Privacy Settings</string>-->
+    <!--<string name="txt_payment">Payment</string>-->
+    <string name="txt_change_pass">Change Password</string>
+    <string name="txt_help">Help and Contact</string>
+    <string name="txt_logout">Log Out</string>
+    <!--<string name="txt_about_us">About Us</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">Sell</string>
+    <string name="txt_more">More</string>
+    <!--<string name="txt_watching">Watching</string>-->
+    <string name="txt_bought">Bought</string>
+    <string name="txt_sold">Sold</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">SELL ITEM</string>
+    <string name="hint_item_name">Item Name</string>
+    <string name="hint_item_description">Item Description</string>
+    <string name="hint_item_category">Select Category</string>
+    <string name="hint_item_quantity">Item Quantity</string>
+    <string name="hint_item_price">Item Price</string>
+    <string name="hint_you_earn">You will Earn</string>
+    <string name="hint_item_shipping_cost">Item Shipping Cost</string>
+    <string name="hint_separate_keywords">Separate keywords with a comma.</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_delete">Delete</string>
+    <string name="dialog_item_info">You get this amount, for each purchase.</string>
+    <string name="msg_enter_item_name">Please enter the item name</string>
+    <string name="msg_enter_item_description">Enter an item description</string>
+    <string name="msg_enter_item_quantity">Enter the item quantity</string>
+    <string name="msg_enter_item_price">Enter the item price</string>
+    <string name="msg_enter_item_actual_price">Please enter the item price</string>
+    <string name="msg_enter_item_shipping_coast">Free shipping is recommended.</string>
+    <string name="msg_enter_keywords">Please enter some keywords</string>
+    <string name="msg_select_item_image">Upload at least four images of your item</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">Enter your shipping address</string>
+    <string name="txt_payment_detail">Payment Detail</string>
+    <string name="txt_item_quantity">Item Quantity</string>
+    <string name="txt_item_cost">Item Cost</string>
+    <string name="txt_shipping_cost">Shipping Cost</string>
+    <string name="txt_total_cost">Total Cost</string>
+    <string name="hint_street">Street</string>
+    <string name="hint_city_payment">City</string>
+    <string name="hint_zipcode">Zip Code</string>
+    <string name="hint_state">State</string>
+    <string name="title_payment_detail">PAYMENT DETAILS</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">PAYMENT METHOD</string>
+    <string name="txt_or">or</string>
+    <string name="title_payment_process">PAYMENT IN PROCESS</string>
+    <!-- item detail -->
+    <string name="txt_userid">User city</string>
+    <string name="txt_date">Monday at 11:10 AM </string>
+    <string name="txt_watch">Watch</string>
+    <string name="txt_unwatch">Unwatch</string>
+   <!-- <string name="txt_message">Message</string>-->
+    <string name="txt_review">Review</string>
+    <string name="txt_buy_item">Buy Item</string>
+    <string name="title_item_detail">ITEM DETAIL</string>
+    <string name="txt_sold_list">Sold List</string>
+    <string name="txt_traking_detail">Add Tracking #</string>
+    <string name="msg_no_review">Be the first review!</string>
+    <string name="msg_no_data">More to come!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">Old Password</string>
+    <string name="edt_new_password">New Password</string>
+    <string name="edt_confirm_password">Confirm Password</string>
+    <string name="title_change_password">CHANGE PASSWORD</string>
+    <string name="msg_empty_old_password">Enter your old password</string>
+    <string name="msg_empty_new_password">Enter your new password</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">CONFIGURE PAYMENT</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">WATCH LIST</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> Street address required</string>
+    <string name="toast_no_city">City required</string>
+    <string name="toast_no_zip">Zip code required</string>
+    <string name="toast_no_state">State required</string>
+    <string name="toast_no_quantity">Enter the item quantity</string>
+    <!-- -->
+    <string name="title_sold_history">SELLER HISTORY</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">Receipts</string>
+    <string name="txt_add_review">Add Review</string>
+    <string name="txt_done">Done</string>
+   <!-- <string name="txt_cancel">Cancel</string>-->
+    <string name="msg_empty_review">Please add your review</string>
+    <!--Toast -->
+    <string name="toast_login_fail">Try again or visit 2KXO.com/help</string>
+    <string name="toast_password_empty">Enter your password</string>
+    <string name="toast_no_internet">Check your internet connection</string>
+    <string name="toast_some_errro"> Try again or visit 2KXO.com/help </string>
+    <string name="toast_error_retry"> Try again or visit 2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> Try again or visit 2KXO.com/help.</string>
+    <string name="toast_error_cannot_share_file">We cannot share this file at the moment.</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">NOTIFICATIONS</string>
+    <string name="about_us">
+2KXO is an ad-free, unlimited streaming service and global marketplace used to upload music, videos, voice recordings, photos or buy and sell products and services from anywhere in the world. Born and raised in the USA, 2KXO was developed by an elite team of agile developers in New York City. After three full years of development, 2KXO is now ready for its global release. Our encryption technology is one of the best available. As a e-commerce platform, security is vital to our very existence; as a result, 2KXO is constantly being monitored, reviewed, and updated to provide maximum privacy protection. To retain the trust and confidence of users, 2KXO provides a transparent environment, particularly with respect to personal information, by letting the public know exactly what information is considered important, how that information is collected, and what is done with it. Trying to choose from so many web services can leave you torn. You use one for social media, another for sending and receiving payments, and others for shopping and selling.
+“As a millennial, I grew up with the internet,” says 2KXO founder and CEO Hugo.  “When I was younger, I used the internet for streaming music and videos, then for social networking, and eventually for commercial purposes. As I grew older, my use of the internet also evolved. I realized that I needed a platform that grew with me. I built 2KXO to be that platform, to provide all users at any level a single platform to do the things they love most: stream, shop, sell, send money, while staying connected.”
+2KXO was conceptualized, in 2008 with aims to disrupt the tech industry with a bold new approach. 2KXO provides creatives a place to professionally organize media, merchandise, products, and services in one powerful, streamlined platform. Not only does 2KXO offer unlimited streaming and shopping, users can also set up automated Boost campaigns to quickly and easily increase engagements via automated targeting of highly interested users.
+With many individuals switching among a variety of online services, it can be quite difficult to manage multiple accounts while trying to keep up with the latest news and trends. So 2KXO created a platform to help users manage and consolidate their online interactions more conveniently on one single platform.\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">Post Media</string>
+    <string name="post_media_short">Post Media</string>
+    <string name="sell_now">Sell Now</string>
+    <string name="sell_now_short">Sell Now</string>
+    <string name="post_stream">Post Stream</string>
+    <string name="post_stream_short">Post Stream</string>
+    <string name="existing_shortcuts">Existing shortcuts:</string>
+    <string name="remove_shortcut">Remove</string>
+    <string name="disable_shortcut">Disable</string>
+    <string name="enable_shortcut">Enable</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">LOG IN</string>
+    <string name="txt_signup">SIGN UP</string>
+    <string name="txt_done_small">Done</string>
+    <string name="txt_login_small">Login</string>
+    <string name="txt_welcome_back">WELCOME BACK</string>
+    <string name="txt_signin_account">Sign in to your account</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">SIGN UP WITH</string>
+    <string name="txt_signup_with_email">Sign Up via Email</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">MEDIA</string>-->
+    <!--<string name="txt_shop">SHOP</string>-->
+    <string name="txt_blog">BLOG</string>
+    <string name="txt_camera">CAMERA</string>
+    <string name="txt_music">MUSIC</string>
+    <string name="txt_microphone">MICROPHONE</string>
+    <string name="txt_timer">TIMER</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">New</string>-->
+    <string name="txt_new_description">New with tags(NWT),unused, unopened packaging</string>
+    <!--<string name="txt_like_new">Like New</string>-->
+    <string name="txt_like_new_description">New without tags(NWOT), unused, no sign of wear</string>
+    <!--<string name="txt_refurnished">Refurnished</string>-->
+    <string name="txt_refurnished_description">Gently used, functional, one/few minor flaws</string>
+    <!--<string name="txt_fair">Fair</string>-->
+    <string name="txt_fair_description">Used, functional, multiple flaws/defects</string>
+    <!--<string name="txt_poor">Poor</string>-->
+    <string name="txt_poor_descrption">Major flaws, may be damaged, for parts</string>
+</resources>

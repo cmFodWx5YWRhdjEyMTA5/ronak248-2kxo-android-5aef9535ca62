@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_back"
+        android:icon="@mipmap/setting_arrow"
+        android:orderInCategory="101"
+        android:title="back"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_forward"
+        android:icon="@drawable/ic_chevron_right_red"
+        android:orderInCategory="102"
+        android:title="forward"
+        app:showAsAction="never" />
+</menu>

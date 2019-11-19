@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f8f8f8</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="colorGray">#A2A2A2</color>
+    <color name="colordarkGray">#868686</color>
+    <color name="colorLightGray">#EFEFEF</color>
+    <color name="colorLightGray_alpha50">#95EFEFEF</color>
+    <color name="colorbackgroundgray">#EDEDED</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colordddddd">#dddddd</color>
+    
+    <color name="colorPink">#FC676C</color>
+    <color name="colordarkPink">#FF4F67</color>
+    <color name="colorLightGrey">#F4F4F4</color>
+    <color name="colorBlue">#0000ff</color>
+
+    <color name="colorgreen">#0ABBB5</color>
+    <color name="colorlightgreen">#54bbb8</color>
+    <color name="colorbackground">#ECECEC</color>
+    <color name="colorgreychat">#E3E3E3</color>
+    <color name="colorlightgrey">#DBDBDB</color>
+    <color name="colorf7f7f7">#f7f7f7</color>
+
+    <color name="tw__blue_default">#FF5BAAF4</color>
+    <color name="color_transperent_gray">#CC868686</color>
+    <color name="color_transperent_black">#4D000000</color>
+
+    <color name="colorRed">#ff4b4c</color>
+    <color name="colorNewBlue">#28aba6</color>
+    <color name="color3AB894">#3AB894</color>
+
+    <color name="colorfb4a4c">#fb4a4c</color>
+    <color name="color8c8c8c">#8c8c8c</color>
+    <color name="color979797">#979797</color>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/camara_tool_bar"
+        android:icon="@mipmap/ico_camera_tool"
+        android:orderInCategory="1"
+        android:title="Camera"
+        app:showAsAction="always" />
+</menu>
+

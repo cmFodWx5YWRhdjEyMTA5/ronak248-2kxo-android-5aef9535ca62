@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNewBlue"
+    tools:context="com.screamxo.Activity.UploadMediaAcitvity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lnr_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/lnr_camera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgMusic"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_95sdp"
+                android:src="@drawable/ico_music_new" />
+
+            <TextView
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="-90"
+                android:text="@string/txt_music"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnr_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/txtTimer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_music">
+
+            <ImageView
+                android:id="@+id/imgCamera"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginRight="-5dp"
+                android:src="@drawable/ico_camera_new" />
+
+            <TextView
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="-90"
+                android:text="@string/txt_camera"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTimer"
+            fontPath="fonts/Poppins-Medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_18sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/lnr_record"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_camera"
+            tools:ignore="MissingPrefix" />
+
+        <LinearLayout
+            android:id="@+id/lnr_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/lnr_timer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTimer">
+
+            <ImageView
+                android:id="@+id/imgRecord"
+                android:layout_width="@dimen/_97sdp"
+                android:layout_height="@dimen/_97sdp"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginRight="-25dp"
+                android:src="@drawable/ico_microphone" />
+
+            <TextView
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="-90"
+                android:text="@string/txt_microphone"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnr_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lnr_record">
+
+            <ImageView
+                android:id="@+id/imgTimer"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_95sdp"
+                android:src="@drawable/ico_timer_new" />
+
+            <TextView
+                android:id="@+id/txtControl"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rotation="-90"
+                android:text="@string/txt_timer"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="MissingPrefix" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+        <include
+            android:id="@+id/my_floating_button"
+            layout="@layout/item_floating_btn"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

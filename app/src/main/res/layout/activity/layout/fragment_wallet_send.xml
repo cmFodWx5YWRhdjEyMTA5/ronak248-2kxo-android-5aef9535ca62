@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="@dimen/_17sdp"
+    android:paddingRight="@dimen/_17sdp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_one"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="1"
+        app:layout_constraintHorizontal_weight="1"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txt_two"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txt_four"/>
+
+    <TextView
+        android:id="@+id/txt_two"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_one"
+        app:layout_constraintRight_toLeftOf="@+id/txt_three"
+        app:layout_constraintTop_toTopOf="@+id/txt_one" />
+
+    <TextView
+        android:id="@+id/txt_three"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="3"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_two"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_one" />
+
+    <TextView
+        android:id="@+id/txt_four"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="4"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txt_five"
+        app:layout_constraintTop_toBottomOf="@+id/txt_one"
+        app:layout_constraintBottom_toTopOf="@+id/txt_seven"/>
+
+    <TextView
+        android:id="@+id/txt_five"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_four"
+        app:layout_constraintRight_toLeftOf="@+id/txt_six"
+        app:layout_constraintTop_toTopOf="@+id/txt_four" />
+
+    <TextView
+        android:id="@+id/txt_six"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="6"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_five"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_four" />
+
+    <TextView
+        android:id="@+id/txt_seven"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="7"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txt_eight"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dot"
+        app:layout_constraintTop_toBottomOf="@+id/txt_four" />
+
+    <TextView
+        android:id="@+id/txt_eight"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="8"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_seven"
+        app:layout_constraintRight_toLeftOf="@+id/txt_nine"
+        app:layout_constraintTop_toTopOf="@+id/txt_seven" />
+
+    <TextView
+        android:id="@+id/txt_nine"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="9"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_eight"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_seven" />
+
+    <TextView
+        android:id="@+id/txt_dot"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="@string/txt_dot"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txt_zero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_seven" />
+
+    <TextView
+        android:id="@+id/txt_zero"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:text="0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_dot"
+        app:layout_constraintRight_toLeftOf="@+id/img_back"
+        app:layout_constraintTop_toTopOf="@+id/txt_dot" />
+
+    <ImageView
+        android:id="@+id/img_back"
+        style="@style/NumberTextStyle"
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_58sdp"
+        android:paddingLeft="@dimen/_22sdp"
+        android:paddingRight="@dimen/_22sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/txt_dot"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/txt_zero"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_dot"
+        app:srcCompat="@drawable/vect_keyboard_back" />
+
+</android.support.constraint.ConstraintLayout>

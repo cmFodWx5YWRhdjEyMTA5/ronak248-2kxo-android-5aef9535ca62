@@ -1,0 +1,407 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@android:color/white"
+         android:orientation="vertical"
+         android:layout_marginBottom="50dp"
+         tools:context="com.screamxo.Fragment.ItemDetails">
+
+         <LinearLayout
+             android:id="@+id/ll_container"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/_470sdp"
+             android:gravity="center"
+             android:orientation="horizontal"
+             android:visibility="visible" />
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:orientation="vertical"
+             android:layout_height="wrap_content">
+
+         <RelativeLayout
+             android:id="@+id/rl_Bottom"
+             android:layout_width="match_parent"
+             android:layout_height="35dp"
+             android:background="@android:color/white"
+             android:visibility="visible">
+
+             <FrameLayout
+                 android:id="@+id/user_image_container"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_centerVertical="true"
+                 android:layout_marginLeft="@dimen/_5sdp">
+
+                 <ImageView
+                     android:id="@+id/user_iv"
+                     android:layout_width="@dimen/_28sdp"
+                     android:layout_height="@dimen/_28sdp"
+                     android:layout_gravity="center_vertical"
+                     android:padding="@dimen/_2sdp"
+                     android:scaleType="centerCrop"
+                     tools:src="@mipmap/user" />
+
+                 <ImageView
+                     android:id="@+id/emoji_iv"
+                     android:layout_width="@dimen/_18sdp"
+                     android:layout_height="@dimen/_18sdp"
+                     android:layout_gravity="center|end"
+                     android:layout_marginLeft="@dimen/_20sdp"
+                     android:src="@drawable/ic_emoji_smile_white_bg" />
+
+             </FrameLayout>
+
+             <TextView
+                 android:id="@+id/txtBookmarkCount"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerVertical="true"
+                 android:layout_marginLeft="@dimen/_5sdp"
+                 android:layout_toRightOf="@+id/user_image_container"
+                 android:text=" "
+                 android:textColor="@color/colordarkGray"
+                 android:textSize="@dimen/_12sdp"
+                 tools:text="1" />
+
+             <TextView
+                 android:id="@+id/txtProductName"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:text=" "
+                 android:textColor="@color/colordarkGray" />
+
+             <Button
+                 android:id="@+id/txtBuy"
+                 android:layout_width="@dimen/_50sdp"
+                 android:layout_height="match_parent"
+                 android:layout_alignParentRight="true"
+                 android:background="@color/colorPink"
+                 android:text=" "
+                 android:textColor="@android:color/white" />
+         </RelativeLayout>
+         <ProgressBar
+             android:id="@+id/progreessbar"
+             style="@style/progressbar"
+             android:layout_gravity="center"
+             tools:visibility="visible" />
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/rc_Comments"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="@dimen/_5sdp"
+             android:layout_above="@+id/rl_footer" />
+
+
+         </LinearLayout>
+     </LinearLayout>
+
+ <RelativeLayout
+     android:id="@+id/rl_footer"
+     android:layout_alignParentBottom="true"
+     android:layout_width="match_parent"
+     android:layout_height="50dp">
+
+     <LinearLayout
+         android:id="@+id/lny_emoji_msg"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:orientation="vertical">
+
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginLeft="@dimen/_10sdp"
+             android:layout_marginRight="@dimen/_10sdp"
+             android:background="@android:color/darker_gray" />
+
+         <LinearLayout
+             android:id="@+id/lny_send_msg"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@android:color/white"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:padding="@dimen/_5sdp">
+
+             <FrameLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+
+                 <ImageView
+                     android:id="@+id/img_User"
+                     android:layout_width="35dp"
+                     android:layout_height="35dp"
+                     android:layout_marginRight="@dimen/_5sdp"
+                     android:src="@mipmap/user" />
+
+                 <ImageView
+                     android:id="@+id/img_emoji"
+                     android:layout_width="20dp"
+                     android:layout_height="20dp"
+                     android:layout_gravity="bottom|right"
+                     android:src="@mipmap/like" />
+             </FrameLayout>
+
+             <EditText
+                 android:id="@+id/edt_msg"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:background="@android:color/white"
+                 android:hint="Add Comment..."
+                 android:imeOptions="actionSend"
+                 android:inputType="text"
+                 android:padding="@dimen/_5sdp" />
+
+             <ImageView
+                 android:id="@+id/img_timer"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="@dimen/_5sdp"
+                 android:src="@mipmap/chat_timer"
+                 android:tint="@color/colorgreen" />
+
+         </LinearLayout>
+
+         <FrameLayout
+             android:id="@+id/frame_emoji"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+
+     </LinearLayout>
+
+ </RelativeLayout>-->
+    <!-- <com.screamxo.Others.YoutubeLayout
+         android:id="@+id/youtubeLayout"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+ -->
+    <FrameLayout
+        android:id="@+id/frame_detail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_307sdp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/li_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frame_detail"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@color/colorf7f7f7"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:id="@+id/rl_Bottom"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+
+        <!--style="@style/TextShadow"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:alpha=".8"
+            android:text="Posted by"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="italic" />
+        <!--            style="@style/TextShadow"
+        -->
+        <TextView
+            android:id="@+id/txtProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:text="xvdsfsdf "
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:id="@+id/emoji_iv"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_gravity="center|end"
+            android:elevation="@dimen/_4sdp"
+            android:src="@drawable/goodmoodemoticon" />
+
+        <!--            style="@style/TextShadow"
+-->
+        <TextView
+            android:id="@+id/txtBookmarkCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:text=" "
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            tools:text="1" />
+
+        <FrameLayout
+            android:id="@+id/user_image_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/user_iv"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:src="@mipmap/user" />
+
+        </FrameLayout>
+        <!--            style="@style/TextShadow"
+        -->
+        <Button
+            android:id="@+id/txtBuy"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@null"
+            android:text="share"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_Comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_footer"
+        android:layout_below="@+id/li_other"
+        android:background="@drawable/drawable_gray_gradient" />
+
+    <!--</com.screamxo.Others.YoutubeLayout>-->
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        android:layout_gravity="center"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/rl_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/lny_emoji_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorf7f7f7" />
+
+            <LinearLayout
+                android:id="@+id/lny_send_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp">
+
+                <ImageView
+                    android:id="@+id/img_User"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@mipmap/user"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/img_emoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:src="@drawable/ico_reaction_new" />
+                <!-- </FrameLayout>-->
+
+                <EditText
+                    android:id="@+id/edt_msg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:hint="Type something…"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:textColor="@color/color8c8c8c"
+                    android:textColorHint="@color/color8c8c8c"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_timer"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/ic_timer" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_emoji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        layout="@layout/item_floating_btn"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

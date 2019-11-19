@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorfb4a4c"
+    tools:context="com.screamxo.Activity.UploadMediaAcitvity">
+
+    <LinearLayout
+        android:id="@+id/frame_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/frame_payload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_105sdp"
+            android:elevation="@dimen/_10sdp"
+            android:src="@drawable/ico_media_new" />
+
+        <TextView
+            android:id="@+id/txtMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-90"
+            android:text="@string/txt_media"
+            fontPath="fonts/Poppins-Medium.ttf"
+            tools:ignore="MissingPrefix"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_payload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_105sdp"
+            android:elevation="@dimen/_10sdp"
+            android:src="@drawable/ico_shop_new" />
+
+        <TextView
+            android:id="@+id/txtUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="@string/txt_shop"
+            fontPath="fonts/Poppins-Medium.ttf"
+            tools:ignore="MissingPrefix"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/frame_blog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frame_payload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_105sdp"
+            android:elevation="@dimen/_10sdp"
+            android:src="@drawable/ico_blog_new" />
+
+        <TextView
+            android:id="@+id/txtStream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-90"
+            android:text="@string/txt_blog"
+            fontPath="fonts/Poppins-Medium.ttf"
+            tools:ignore="MissingPrefix"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11sdp"/>
+    </LinearLayout>
+
+    <include
+        layout="@layout/item_floating_btn"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "456261416977",
+    "firebase_url": "https://kxo-2a161.firebaseio.com",
+    "project_id": "kxo-2a161",
+    "storage_bucket": "kxo-2a161.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456261416977:android:aa5e2702ff993bab",
+        "android_client_info": {
+          "package_name": "com.screamxo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456261416977-e0169h7jqo6oajdlb6hpfqi1c8n89um3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.screamxo",
+            "certificate_hash": "c42c9529d6a33561763bcdd4a29d11b420b9f42a"
+          }
+        },
+        {
+          "client_id": "456261416977-3671s95h06d6090scad00fj2fee80ab5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwkaBOQA7B2L7oUi99fKxB5DnwRqYhRtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456261416977-3671s95h06d6090scad00fj2fee80ab5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456261416977-77vloa3a8dm6nr0m0f0qug4aea4cfjud.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rvtech.2KXO"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

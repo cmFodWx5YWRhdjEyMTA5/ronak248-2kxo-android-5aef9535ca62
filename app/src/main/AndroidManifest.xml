@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.screamxo">
+
+    <uses-sdk
+        android:minSdkVersion="INSERT_YOUR_DESIRED_minSdkVersion_HERE"
+        tools:overrideLibrary="com.paypal.android.sdk.payments" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.TYPE_APPLICATION_OVERLAY" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:name=".Utils.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ico_app"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ico_app_new_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.RahulWork.ItemBuyFinal"></activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="0d57e43beb89fa12e3701d918cd8bdb69eb40737" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <service
+            android:name=".Service.InlinePlayerService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" /> <!-- fixme -->
+        <activity
+            android:name=".Activity.CommonLoginSignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- <intent-filter> -->
+            <!-- <ation android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".Activity.EmailLoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.SignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait" /> <!-- fixme -->
+        <activity
+            android:name=".Activity.DrawerMainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:screenOrientation="user" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity
+            android:name=".Activity.EmailVerification"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.EditProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PostMediaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PostStreamActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Activity.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PostDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SellItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PaymentDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PaymentMethodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ItemDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ConfigurePaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.NewConfigurePaymentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/RedHeaderTheme" />
+        <activity
+            android:name=".Activity.WatchedItemListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PurchaseHistoryActivity"
+            android:screenOrientation="portrait" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Activity.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.instagram.InstagramLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ChatBackground"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service android:name=".FireBasePush.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FireBasePush.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+            <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="145fbeb2edc157eb21978c384d846446afd89b77" />
+        -->
+        <activity
+            android:name=".Activity.SoldHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.MediaDetailActivity" />
+        <activity android:name=".Activity.SplashActivity" /> <!-- fixme -->
+        <activity
+            android:name=".Activity.SplashoneActivity"
+            android:theme="@style/AppThemecustom">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".Activity.RahulWork.PushSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.RejectSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.PrivacySettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.GuessShareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.ShopListingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.UploadMediaAcitvity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.ItemDetailsAcitvity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.RecorderTagActivity"
+            android:theme="@style/AppThemeblack" />
+        <activity android:name=".Activity.RahulWork.BoostActivity" />
+        <activity
+            android:name=".Activity.RahulWork.WalletActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.SupportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.SendMoneyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.TopUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.FriendsActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.CameraActivity" />
+        <activity
+            android:name=".Activity.RahulWork.CardInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.TransactionHIstoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.BoostCongActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.MediaItemDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait " />
+        <activity
+            android:name=".Activity.RahulWork.SellItemActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.sandrios.sandriosCamera.internal.ui.preview.PreviewDashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.RahulWork.ConditionActivity" />
+        <activity
+            android:name=".Activity.RahulWork.ChatMediaPlayer"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".Activity.RahulWork.UploadDataActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemecustom" />
+        <activity
+            android:name=".Activity.RahulWork.MediaPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name=".Activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.PostCongActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RahulWork.BuyCongActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".Service.MusicPlayerService"
+            android:exported="false" /> <!-- Set custom default icon. This is used when no icon is set for incoming notification messages. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_emoji_happy" /> <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming notification message. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPink" />
+
+        <activity android:name=".Activity.RahulWork.CartCheckoutActivity" />
+        <activity
+            android:name=".Activity.wallet.WalletSendReceiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.cart.CartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.PayPalVerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.NewCommonSignUpActivity"
+            android:screenOrientation="portrait" />
+        <!--
+            <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="00370b2a4dc7aaab7d6ff1e274017ec28c5a1268" />
+        -->
+        <!--
+   <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="00370b2a4dc7aaab7d6ff1e274017ec28c5a1268" />
+        -->
+        <activity
+            android:name=".Activity.SelectItemConditionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SellItemCategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SelectPaymentMethodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.TermsAndUseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.NewConfigurePaymentSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.wallet.GiftActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.wallet.GiftStepOneActivity" />
+    </application>
+
+</manifest>

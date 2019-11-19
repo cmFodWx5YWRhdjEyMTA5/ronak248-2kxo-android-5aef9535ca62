@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.screamxo.Activity.SplashActivity">
+
+
+    <com.screamxo.Utils.TextureVideoView
+        android:id="@+id/vdView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/screamxo_iv"
+        android:layout_width="250dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:src="@drawable/ic_label_2kxo" />
+
+</FrameLayout>

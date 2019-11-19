@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/sv_container"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_add_new_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@color/colorRed"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_12sdp"
+                android:text="Add New Card"
+                android:textSize="@dimen/_12sdp"
+                fontPath="fonts/Poppins-SemiBold.ttf"
+                tools:ignore="MissingPrefix"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tv_payment_processor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/drawable_rect_red_border"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:padding="@dimen/_12sdp"
+                android:text="Add Payment Processor"
+                android:textSize="@dimen/_12sdp"
+                fontPath="fonts/Poppins-SemiBold.ttf"
+                tools:ignore="MissingPrefix"
+                android:textColor="@color/colorRed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:textColor="@color/colordarkGray"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                fontPath="fonts/Poppins-SemiBold.ttf"
+                tools:ignore="MissingPrefix"
+                android:text="YOUR CARDS"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:alpha=".5"
+                android:background="@color/colorGray"/>
+
+            <LinearLayout
+                android:id="@+id/ll_saved_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_saved_payment_details"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!--paypal-->
+                <RelativeLayout
+                    android:id="@+id/ll_paypal_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_gray_gradient"
+                    android:gravity="center_vertical"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/iv_paypal_payment_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:src="@drawable/ico_paypal" />
+
+                    <TextView
+                        android:id="@+id/tv_paypal_payment_processor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_paypal_payment_image"
+                        android:text="PayPal"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textSize="@dimen/_10sdp"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        android:textColor="@color/colordarkGray"/>
+
+                    <TextView
+                        android:id="@+id/tv_paypal_email"
+                        android:layout_width="match_parent"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_below="@+id/tv_paypal_payment_processor"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_toRightOf="@+id/iv_paypal_payment_image"
+                        android:text="vsbfbfdbdbdfbdfbdfv"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        tools:text="shubham.a@parangat.com" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:alpha=".5"
+                    android:background="@color/colorGray"/>
+
+                <RelativeLayout
+                    android:id="@+id/ll_xo_cash_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_gray_gradient"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/iv_xocash_image"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_19sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:backgroundTint="@color/colorNewBlue"
+                        android:src="@drawable/ico_xocash" />
+
+                    <TextView
+                        android:id="@+id/tv_xocash_payment_processor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv_xocash_image"
+                        android:text="XOCASH"
+                        android:layout_marginLeft="@dimen/_9sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textSize="@dimen/_10sdp"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        android:textColor="@color/colordarkGray"/>
+
+                    <TextView
+                        android:id="@+id/tv_xocash"
+                        android:layout_width="match_parent"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_marginLeft="@dimen/_9sdp"
+                        android:layout_below="@+id/tv_xocash_payment_processor"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_toRightOf="@+id/iv_xocash_image"
+                        android:text="vsbfbfdbdbdfbdfbdfv"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        tools:text="shubham.a@parangat.com" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:alpha=".5"
+                    android:background="@color/colorGray"/>
+
+
+                <!--Bitcoin-->
+
+                <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/ll_bitcoin_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/iv_bitcoin_payment_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/bitcoin" />
+
+
+                    <TextView
+                        android:id="@+id/tv_bitcoin_payment_processor"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Bitcoin"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_bitcoin_email"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        tools:text="shubham.a@parangat.com" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_alipay_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/iv_alipay_payment_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:src="@drawable/alipay" />
+
+                    <TextView
+                        android:id="@+id/tv_alipay_payment_processor"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="AliPay"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_alipay_email"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        tools:text="shubham.a@parangat.com" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_wechat_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/iv_wechat_payment_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/wechatpay" />
+
+                    <TextView
+                        android:id="@+id/tv_wechat_payment_processor"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="WeChat Pay"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_wechat_email"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        fontPath="fonts/Poppins-SemiBold.ttf"
+                        tools:ignore="MissingPrefix"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        tools:text="shubham.a@parangat.com" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        tools:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- Background -->
+    <item android:id="@+id/layer_item_bg">
+        <layer-list>
+            <item android:id="@+id/item_bg" >
+                <shape >
+                    <solid android:color="#1d1d1d" />
+                    <corners android:radius="@dimen/dp_3" />
+                </shape>
+            </item>
+            <item android:left="@dimen/dp_1"
+                android:right="@dimen/dp_1"
+                android:bottom="@dimen/dp_1"
+                android:top="@dimen/dp_1">
+                <shape >
+                    <solid android:color="#1d1d1d" />
+                    <corners android:radius="@dimen/dp_3" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</layer-list>

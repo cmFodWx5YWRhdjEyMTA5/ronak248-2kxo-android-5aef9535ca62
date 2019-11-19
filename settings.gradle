@@ -1,0 +1,3 @@
+//include ':app', ':ijkplayer-java', ':giraffeplayer', ':apimodule', ':watchSxo', ':sandriosCamera', ':floatingmenu'
+//nothing to test and review in watch module right now future update may be.
+include ':app', ':ijkplayer-java', ':giraffeplayer', ':apimodule', ':sandriosCamera', ':floatingmenu'

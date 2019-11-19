@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    app:layout_box="all"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/txtBuffet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/buffet"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_17" />
+
+    <android.support.wearable.view.GridViewPager
+        android:id="@+id/pager"
+        android:layout_below="@+id/txtBuffet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true" />
+
+    <android.support.wearable.view.DotsPageIndicator
+        android:id="@+id/page_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_gravity="center_horizontal|bottom" >
+    </android.support.wearable.view.DotsPageIndicator>
+
+</RelativeLayout>

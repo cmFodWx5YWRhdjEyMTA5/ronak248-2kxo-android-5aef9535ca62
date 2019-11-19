@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/edit_box_back"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_accont"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@mipmap/logo_paypal"
+        android:padding="@dimen/_20sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_hollow_circle"/>
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:text="helo@gmail.com"/>
+
+</LinearLayout>

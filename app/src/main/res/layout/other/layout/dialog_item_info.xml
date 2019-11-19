@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_chooser_popup"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowTopLeft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/triangle"
+            android:rotation="0"
+            android:visibility="visible" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowTopCenter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/triangle"
+            android:rotation="0"
+            android:visibility="visible" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowTopRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/triangle"
+            android:rotation="0"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/sv_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:background="@drawable/bg_my_popup">
+
+        <LinearLayout
+            android:id="@+id/view_container"
+            android:layout_width="wrap_content"
+            android:background="@null"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="wrap_content"
+        tools:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:background="@drawable/bg_my_popup"
+        tools:visibility="visible"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowBottomCenter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/triangle"
+            android:rotation="180"
+            android:visibility="visible" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowBottomRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/triangle"
+            android:rotation="180"
+            android:visibility="visible" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/arrowBottomLeft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/triangle"
+            android:rotation="180"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+</LinearLayout>

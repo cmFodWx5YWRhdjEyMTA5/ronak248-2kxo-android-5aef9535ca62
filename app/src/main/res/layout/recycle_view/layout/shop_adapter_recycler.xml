@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_1sdp"
+    android:background="@android:color/white">
+
+    <FrameLayout
+        android:layout_width="@dimen/shop_item_dimen"
+        android:layout_height="@dimen/shop_item_dimen">
+
+        <ImageView
+            android:id="@+id/img_thum"
+            android:layout_width="@dimen/shop_item_dimen"
+            android:layout_height="@dimen/shop_item_dimen"
+            android:src="@mipmap/img_placeholder" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@android:color/black"
+            android:alpha="0.6"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_1sdp"
+            android:paddingLeft="@dimen/_6sdp"
+            android:paddingRight="@dimen/_6sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_6sdp"
+            tools:text="$ 20" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ico_player"
+        tools:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_sold_out"
+        android:layout_width="@dimen/_68sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:src="@mipmap/sold_out"
+        tools:visibility="gone" />
+
+
+</FrameLayout>

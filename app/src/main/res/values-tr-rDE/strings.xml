@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s+<sup></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">Tamam</string>
+    <string name="txt_camara">Kamera</string>
+    <string name="txt_gallery">Galeri</string>
+    <string name="txt_no_image">Görsel yok</string>
+    <!-- login activity -->
+    <string name="btn_login">Giriş yap</string>
+    <string name="hint_edit_username">Kullanıcı adı</string>
+    <string name="hint_password">Şifre</string>
+    <string name="txt_sign_in_with">AŞAĞIDAKİLERDEN BİRİYLE GİRİŞ YAP</string>
+    <string name="txt_forgot_password">Şifrenizi mi unuttunuz?</string>
+    <string name="txt_new_here">Yeni misiniz? Kayıt olun.</string>
+    <!-- Signup activity -->
+    <string name="hint_username">Kullanıcı Adı</string>
+    <string name="hint_firstname">İsim</string>
+    <string name="hint_fullname">İsim ve Soyad</string>
+    <string name="hint_lastname">Soyad</string>
+    <string name="hint_email">E-posta Adresi</string>
+    <string name="hint_phone_no">Telefon Numarası</string>
+    <string name="txt_terms_condition">Şartlar ve koşulları kabul et</string>
+    <string name="btn_create_account">Hesap oluştur</string>
+    <string name="msg_first_name_null">İsminizi girin</string>
+    <string name="msg_last_name_null">Soyadınızı girin</string>
+    <string name="msg_username_null">Geçerli bir e-posta adresi ya da kullanıcı adı gerekli</string>
+    <string name="msg_email_invalid">Lütfen geçerli bir e-posta adresi girin</string>
+    <string name="msg_email_null">E-posta adresinizi girin</string>
+    <string name="msg_phone_number_null">Lütfen telefon numaranızı girin</string>
+    <string name="msg_phone_number_invalid">Lütfen geçerli bir telefon numarası girin</string>
+    <string name="msg_password_null">Şifre gerekli</string>
+    <string name="msg_password_not_valid">Şifre en az 6 karakter uzunluğunda olmalı</string>
+    <string name="msg_accept_t_c">Kullanım şart ve koşullarını kabul edin </string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">Şifrenizi unuttuysanız sıfırlamanız için e-posta gönderebiliriz.</string>
+    <string name="btn_send_email">E-posta gönder</string>
+    <string name="etd_email">E-posta</string>
+    <string name="title_forgot_password">Şifremi unuttum</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">Pano</string>
+    <string name="title_activity_drawer_friend">Arkadaşlar</string>
+    <string name="title_activity_drawer_notification">Bildirimler</string>
+    <string name="title_activity_drawer_shop">Shop</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">Ayarlar</string>
+    <string name="title_activity_drawer_social">Sosyal</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">MAĞAZA</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">MEDYA</string>
+    <string name="txt_tag_bottom_stream">AKIŞ</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">Tekrar yolla</string>
+    <string name="btn_confirm">Onayla</string>
+    <string name="txt_varification">Onay kodu e-posta adresinize gönderildi. Kayıt işlemini tamamlamak için onay kodunu girin.</string>
+    <string name="txt_varification_time">Onay kodu İsteğe Bağlı (0) Saniye içinde gönderilecektir.</string>
+    <string name="title_verification">ONAY</string>
+    <string name="hint_verification_code">Onay Kodu</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">Okul</string>
+    <string name="hint_job">Meslek</string>
+    <string name="hint_city">Şehir ya da Posta Kodu</string>
+    <string name="hint_hobby">İlgi Alanları</string>
+    <string name="txt_gender">Cinsiyet</string>
+    <string name="rad_male">Erkek</string>
+    <string name="rad_Female">Kadın</string>
+    <string name="rad_transgender">Transeksüel</string>
+    <string name="txt_Relationship_status">İlişki durumu</string>
+    <string name="rad_available">Müsait</string>
+    <string name="rad_unavailable">Müsait değil</string>
+    <string name="txt_sex_preference">Cinsiyet tercihi</string>
+    <string name="rad_opposite">Karşı cins</string>
+    <string name="rad_same">Aynı cins</string>
+    <string name="btn_update">Güncelle</string>
+    <string name="title_edit_profile">Profili düzenle</string>
+    <!-- post media -->
+    <string name="title_post_media">MEDYA PAYLAŞ</string>
+    <string name="btn_create_posgt">Gönderi oluştur</string>
+    <string name="hint_title">Başlık</string>
+    <!-- Post Stream -->
+    <string name="title_post">PAYLAŞ</string>
+    <string name="hint_stream">Ne düşünüyorsun?</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">GÖNDERİ DETAYLARI</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">Anlık Bildirim Ayarları</string>
+    <string name="txt_reject_list">Engellenenler Listesi</string>
+   <!-- <string name="txt_privacy_settings">Gizlilik Ayarları</string>-->
+    <!--<string name="txt_payment">Ödeme</string>-->
+    <string name="txt_change_pass">Şifre değiştir</string>
+    <string name="txt_help">Yardım ve İletişim</string>
+    <string name="txt_logout">Çıkış</string>
+    <!--<string name="txt_about_us">Hakkımızda</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">Sat</string>
+    <string name="txt_more">Daha fazla</string>
+    <!--<string name="txt_watching">Takip ettiklerim</string>-->
+    <string name="txt_bought">Aldıklarım</string>
+    <string name="txt_sold">Sattıklarım</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">ÜRÜN SAT</string>
+    <string name="hint_item_name">Ürün Adı</string>
+    <string name="hint_item_description">Ürün Tanımı</string>
+    <string name="hint_item_category">Kategori seçin</string>
+    <string name="hint_item_quantity">Ürün Miktarı</string>
+    <string name="hint_item_price">Ürün Fiyatı</string>
+    <string name="hint_you_earn">Kazanacağınız miktar</string>
+    <string name="hint_item_shipping_cost">Ürün nakliye ücreti</string>
+    <string name="hint_separate_keywords">Anahtar kelimeleri virgülle ayırın.</string>
+    <string name="btn_continue">Devam</string>
+    <string name="btn_delete">Sil</string>
+    <string name="dialog_item_info">Her satın alım için bu miktarı kazanacaksınız.</string>
+    <string name="msg_enter_item_name">Lütfen ürün adını girin</string>
+    <string name="msg_enter_item_description">Lütfen ürün tanımını girin</string>
+    <string name="msg_enter_item_quantity">Lütfen ürün miktarını girin</string>
+    <string name="msg_enter_item_price">Ürün fiyatını girin</string>
+    <string name="msg_enter_item_actual_price">Lütfen ürün fiyatını girin</string>
+    <string name="msg_enter_item_shipping_coast">Ücretsiz nakliye önerilmektedir.</string>
+    <string name="msg_enter_keywords">Lütfen anahtar kelimeler girin.</string>
+    <string name="msg_select_item_image">Lütfen ürüne ait en az 4 fotoğraf yükleyin.</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">Teslimat adresinizi girin.</string>
+    <string name="txt_payment_detail">Ödeme Detayları</string>
+    <string name="txt_item_quantity">Ürün Miktarı</string>
+    <string name="txt_item_cost">Ürün Ücreti</string>
+    <string name="txt_shipping_cost">Nakliye Ücreti</string>
+    <string name="txt_total_cost">Toplam Ücret</string>
+    <string name="hint_street">Sokak</string>
+    <string name="hint_city_payment">Şehir</string>
+    <string name="hint_zipcode">Posta Kodu</string>
+    <string name="hint_state">Bölge</string>
+    <string name="title_payment_detail">ÖDEME DETAYLARI</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">ÖDEME YÖNTEMİ</string>
+    <string name="txt_or">or</string>
+    <string name="title_payment_process">ÖDEME GERÇEKLEŞTİRİLİYOR</string>
+    <!-- item detail -->
+    <string name="txt_userid">Kullanıcı şehri</string>
+    <string name="txt_date">Pazartesi 11:10 AM </string>
+    <string name="txt_watch">Takip et</string>
+    <string name="txt_unwatch">Takip etmeyin</string>
+    <!--<string name="txt_message">Mesaj</string>-->
+    <string name="txt_review">Yorum yap</string>
+    <string name="txt_buy_item">Ürünü al</string>
+    <string name="title_item_detail">ÜRÜN DETAYLARI</string>
+    <string name="txt_sold_list">Satılanlar listesi</string>
+    <string name="txt_traking_detail">Takip numarası ekle</string>
+    <string name="msg_no_review">İlk yorumu siz yapın!</string>
+    <string name="msg_no_data">Dahası gelecek!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">Eski şifre</string>
+    <string name="edt_new_password">Yeni şifre</string>
+    <string name="edt_confirm_password">Şifreyi onayla</string>
+    <string name="title_change_password">ŞİFREYİ DEĞİŞTİR</string>
+    <string name="msg_empty_old_password">Eski şifrenizi girin</string>
+    <string name="msg_empty_new_password">Yeni şifrenizi girin</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">ÖDEMEYİ YAPILANDIR</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">TAKİP LİSTESİ</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> Sokak adresi gerekli</string>
+    <string name="toast_no_city">Şehir gerekli</string>
+    <string name="toast_no_zip">Posta kodu gerekli</string>
+    <string name="toast_no_state">Bölge gerekli</string>
+    <string name="toast_no_quantity">Ürün miktarını girin</string>
+    <!-- -->
+    <string name="title_sold_history">SATICI GEÇMİŞİ</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">Faturalar</string>
+    <string name="txt_add_review">Yorum Ekle</string>
+    <string name="txt_done">Tamam</string>
+    <!--<string name="txt_cancel">İptal</string>-->
+    <string name="msg_empty_review">Lütfen yorumunuzu ekleyin</string>
+    <!--Toast -->
+    <string name="toast_login_fail">Tekrar deneyin ya da 2KXO.com/help adresini ziyaret edin</string>
+    <string name="toast_password_empty">Şifrenizi girin</string>
+    <string name="toast_no_internet">İnternet bağlantınızı kontrol edin</string>
+    <string name="toast_some_errro"> Tekrar deneyin ya da 2KXO.com/help adresini ziyaret edin </string>
+    <string name="toast_error_retry"> Tekrar deneyin ya da 2KXO.com/help adresini ziyaret edin </string>
+    <string name="toast_error_something_went_wrong"> Tekrar deneyin ya da 2KXO.com/help adresini ziyaret edin</string>
+    <string name="toast_error_cannot_share_file">Şu anda bu dosyayı paylaşamıyoruz.</string>
+    <string name="navigation_drawer_open">Navigasyon sekmesini aç</string>
+    <string name="navigation_drawer_close">Navigasyon sekmesini kapat</string>
+    <string name="action_settings">Ayarlar</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">BİLDİRİMLER</string>
+    <string name="about_us"> 2KXO, müzik, video, ses kaydı, fotoğraf yüklemek veya dünyanın her yerinden ürün ve hizmet satın almak ve satmak için kullanılan, reklamsız ve sınırsız bir yayın hizmeti ve küresel pazar yeridir. ABD\'de doğup büyüyen 2KXO, New York\'ta bulunan becerikli geliştiricilerden oluşan seçkin bir ekip tarafından geliştirildi. Üç yıllık geliştirme sürecinin ardından, 2KXO şimdi küresel olarak yayınlanmak için hazır. Şifreleme teknolojimiz var olan en iyi teknolojilerden biridir. Bir e-ticaret platformu olarak, güvenlik bizim için hayati öneme sahip; bu yüzden 2KXO maksimum gizlilik koruması sağlamak için sürekli izlenmekte, değerlendirilmekte ve güncellenmekte. 2KXO, kullanıcıların güvenini ve mahremiyetini korumak için, özellikle kişisel bilgilere ilişkin olarak, kamuoyuna hangi bilgilerin önemli olduğunu, bu bilgilerin nasıl toplandığını ve onlarla ne yapıldığını tam olarak bildirerek şeffaf bir ortam sağlar. Bu kadar çok web servisi arasından seçim yapmaya çalışmak sizi ikilemde bırakabilir. Bu servislerden birini sosyal medya için, diğerini para göndermek ve almak için, diğerlerini alışveriş ve satış için kullanıyorsunuz. 2KXO\'nun kurucusu ve CEO\'su Hugo, "Y kuşağının üyesi olarak internet ile büyüdüm" diyor. "Küçükken interneti müzik ve videolara ulaşmak için kullanıyordum; sonra sosyal ağlar için ve sonunda ticari amaçlar için kullanmaya başladım. Büyüdükçe, internet kullanımım da gelişti. Benimle büyüyen bir platforma ihtiyacım olduğunu anladım. 2KXO'yu bu platform olması için inşa ettim; her seviyeden tüm kullanıcılara en çok sevdikleri şeyleri yapabilecekleri tek bir platform sağlamak için: bir yandan bağlantı kurarken bir yandan da alışveriş ve satış yapmak ve para göndermek. "2KXO fikri, teknoloji endüstrisini cesur bir yaklaşımla sarsmak amacıyla 2008 yılında oluşturuldu. 2KXO, yaratıcı insanlara medyayı, ürünleri ve hizmetleri güçlü bir platformda profesyonelce organize etmeleri için imkan sağlıyor. 2KXO sadece sınırsız akış ve alışveriş hizmeti sunmakla kalmaz, kullanıcılar aynı zamanda ilgi duyan kullanıcıların otomatik olarak hedeflenmesi ile etkileşimleri hızla ve kolayca artırmak için otomatik Boost kampanyaları düzenleyebilir. Pek çok kişi bir dizi çevrimiçi hizmet arasında geçiş yapıp duruyor; bu durumda en son haberlere ve trendlere ayak uydurmaya çalışırken birden fazla hesabı yönetmek oldukça zor olabiliyor. İşte bu yüzden 2KXO, kullanıcıların çevrimiçi etkileşimlerini tek bir platformda daha rahat bir şekilde yönetmelerine ve birleştirmelerine yardımcı olacak bir platform oluşturdu.\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">Medya Paylaş</string>
+    <string name="post_media_short">Medya Paylaş</string>
+    <string name="sell_now">Şimdi sat</string>
+    <string name="sell_now_short">Şimdi sat</string>
+    <string name="post_stream">Akış Paylaş</string>
+    <string name="post_stream_short">Akış Paylaş</string>
+    <string name="existing_shortcuts">Mevcut Kısayollar:</string>
+    <string name="remove_shortcut">Kaldır</string>
+    <string name="disable_shortcut">Devre dışı bırak</string>
+    <string name="enable_shortcut">Etkinleştir</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">GİRİŞ YAP</string>
+    <string name="txt_signup">KAYIT OL</string>
+    <!--<string name="txt_back">Geri</string>-->
+    <string name="txt_done_small">Tamam</string>
+    <string name="txt_login_small">Giriş</string>
+    <string name="txt_welcome_back">TEKRAR HOŞ GELDİNİZ</string>
+    <string name="txt_signin_account">Hesabınıza giriş yapın</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">ŞUNLARDAN BİRİ İLE GİRİŞ YAP</string>
+    <string name="txt_signup_with_email">E-posta ile giriş yap</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">MEDYA</string>-->
+   <!-- <string name="txt_shop">MAĞAZA</string>-->
+    <string name="txt_blog">BLOG</string>
+    <string name="txt_camera">KAMERA</string>
+    <string name="txt_music">MÜZİK</string>
+    <string name="txt_microphone">MİKROFON</string>
+    <string name="txt_timer">ZAMANLAYICI</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">Yeni</string>-->
+    <string name="txt_new_description">Yeni ve etiketi duruyor (YED), kullanılmamış, paketi açılmamış</string>
+    <!--<string name="txt_like_new">Yeni gibi</string>-->
+    <string name="txt_like_new_description">Yeni ama etiketi yok (YEY), kullanılmamış, yıpranma belirtisi yok</string>
+    <!--<string name="txt_refurnished">Yenilenmiş</string>-->
+    <string name="txt_refurnished_description">Nazik kullanılmış, işlevsel, birkaç küçük kusuru var </string>
+    <!--<string name="txt_fair">Vasat</string>-->
+    <string name="txt_fair_description">Kullanılmış, işlevsel, birkaç kusuru var</string>
+    <!--<string name="txt_poor">Kötü</string>-->
+    <string name="txt_poor_descrption"> Büyük kusurları var, bazı parçaları hasar görmüş olabilir </string>
+</resources>

@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingLeft="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/txt_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="fdsgdfgf"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_10sdp" />
+
+    <ImageView
+        android:id="@+id/imgDropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_user_name"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/arrow"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_below="@+id/txt_user_name"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/drawable_round_corner_red"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:text="Share"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_8sdp" />
+
+    <ImageView
+        android:id="@+id/emoji_iv"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_alignTop="@+id/btnShare"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_toRightOf="@+id/btnShare"
+        android:padding="4dp"
+        android:src="@drawable/ic_emoji_smile_white_bg" />
+
+    <TextView
+        android:id="@+id/txt_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/emoji_iv"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_toRightOf="@+id/emoji_iv"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:text="0"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/_8sdp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_comment"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_alignTop="@+id/emoji_iv"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="-3dp"
+        android:layout_toRightOf="@+id/txt_like"
+        android:padding="4dp"
+        android:src="@drawable/ico_comment_new" />
+
+    <ImageView
+        android:id="@+id/user_iv"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_alignTop="@+id/emoji_iv"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginTop="-7dp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:padding="@dimen/_2sdp"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/user" />
+
+    <FrameLayout
+        android:id="@+id/user_image_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txt_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_toLeftOf="@+id/imgDropDown"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:text="More"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorf7f7f7">
+
+    <ScrollView
+        android:id="@+id/main_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_8sdp"
+        android:paddingRight="@dimen/_12sdp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_Watching"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/ll_shop_preview_footer"
+                layout="@layout/media_shop_inflate_view"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/rl_WaTNoRecord"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@color/colorLightGray"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:text="No Items Uploaded"
+                    android:textColor="@color/colordarkGray" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

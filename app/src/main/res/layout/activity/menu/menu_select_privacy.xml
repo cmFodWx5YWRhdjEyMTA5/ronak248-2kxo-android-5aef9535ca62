@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_public"
+            android:title="Public" />
+
+        <item
+            android:id="@+id/pop_up_friends"
+            android:title="Friends" />
+
+        <item
+            android:id="@+id/pop_up_private"
+            android:title="Private" />
+    </group>
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_detele"
+            android:checked="true"
+            android:showAsAction="withText|always"
+            android:title="Delete"
+            tools:ignore="AppCompatResource" />
+
+        <item
+            android:id="@+id/pop_up_share"
+            android:title="Share" />
+    </group>
+</menu>

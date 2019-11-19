@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_block"
+            android:title="Block" />
+
+        <item
+            android:id="@+id/pop_up_unfriend"
+            android:title="Un Friend " />
+
+        <item
+            android:id="@+id/pop_up_message"
+            android:title="Message" />
+
+    </group>
+</menu>

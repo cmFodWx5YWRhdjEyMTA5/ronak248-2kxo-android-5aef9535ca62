@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">了解</string>
+    <string name="txt_camara">カメラ</string>
+    <string name="txt_gallery">ギャラリー</string>
+    <string name="txt_no_image">画像がありません</string>
+    <!-- login activity -->
+    <string name="btn_login">サインイン</string>
+    <string name="hint_edit_username">ユーザーネーム</string>
+    <string name="hint_password">パスワード</string>
+    <string name="txt_sign_in_with">または「サインイン」</string>
+    <string name="txt_forgot_password">パスワードを忘れましたか？</string>
+    <string name="txt_new_here">ご利用は初めてですか？ サインアップをどうぞ</string>
+    <!-- Signup activity -->
+    <string name="hint_username">ユーザー名</string>
+    <string name="hint_firstname">名</string>
+    <string name="hint_fullname">フルネーム</string>
+    <string name="hint_lastname">姓</string>
+    <string name="hint_email">Eメールアドレス</string>
+    <string name="hint_phone_no">電話番号</string>
+    <string name="txt_terms_condition">利用規約に同意する</string>
+    <string name="btn_create_account">アカウントの作成</string>
+    <string name="msg_first_name_null">あなたの名を入力してください。</string>
+    <string name="msg_last_name_null">姓を入力してください。</string>
+    <string name="msg_username_null">有効なEメールアドレスまたはユーザー名が必要です。</string>
+    <string name="msg_email_invalid">有効なメールアドレスを入力してください。</string>
+    <string name="msg_email_null">あなたのメールアドレスを入力してください。</string>
+    <string name="msg_phone_number_null">電話番号を入力してください。</string>
+    <string name="msg_phone_number_invalid">有効な電話番号を入力してください。</string>
+    <string name="msg_password_null">パスワードが必要です</string>
+    <string name="msg_password_not_valid">パスワードは6文字以上にする必要があります。</string>
+    <string name="msg_accept_t_c">利用規約に同意する</string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">パスワードを忘れた場合は、リセットするためにメールを送信することができます。</string>
+    <string name="btn_send_email">メールを送信する</string>
+    <string name="etd_email">Eメール</string>
+    <string name="title_forgot_password">パスワードを忘れた場合</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">ダッシュボード</string>
+    <string name="title_activity_drawer_friend">友達</string>
+    <string name="title_activity_drawer_notification">通知</string>
+    <string name="title_activity_drawer_shop">お店</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">設定</string>
+    <string name="title_activity_drawer_social">ソーシャル</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">ショップ</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">メディア</string>
+    <string name="txt_tag_bottom_stream">ストリーム</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">再送信</string>
+    <string name="btn_confirm">確認</string>
+    <string name="txt_varification">確認コードがあなたのEメールに送信されました。この確認コードを入力して登録を完了してください。</string>
+    <string name="txt_varification_time">確認コードはオプション（0）秒で配信されます</string>
+    <string name="title_verification">確認</string>
+    <string name="hint_verification_code">確認コード</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">学校または母校</string>
+    <string name="hint_job">職業</string>
+    <string name="hint_city">市区町村または郵便番号</string>
+    <string name="hint_hobby">趣味</string>
+    <string name="txt_gender">性別</string>
+    <string name="rad_male">男性</string>
+    <string name="rad_Female">女性</string>
+    <string name="rad_transgender">トランスジェンダー</string>
+    <string name="txt_Relationship_status">リレーションシップステータス</string>
+    <string name="rad_available">利用可能</string>
+    <string name="rad_unavailable">使用不可</string>
+    <string name="txt_sex_preference">性の好み</string>
+    <string name="rad_opposite">反対</string>
+    <string name="rad_same">同じ</string>
+    <string name="btn_update">更新</string>
+    <string name="title_edit_profile">プロフィールの編集</string>
+    <!-- post media -->
+    <string name="title_post_media">投稿メディア</string>
+    <string name="btn_create_posgt">投稿を作成</string>
+    <string name="hint_title">タイトル</string>
+    <!-- Post Stream -->
+    <string name="title_post">投稿</string>
+    <string name="hint_stream">何を考えていますか？</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">投稿の詳細</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">プッシュ通知設定</string>
+    <string name="txt_reject_list">拒否リスト</string>
+    <!--<string name="txt_privacy_settings">プライバシー設定</string>-->
+   <!-- <string name="txt_payment">支払い</string>-->
+    <string name="txt_change_pass">パスワードの変更</string>
+    <string name="txt_help">ヘルプと連絡先</string>
+    <string name="txt_logout">ログアウト</string>
+    <!--<string name="txt_about_us">会社概要</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">売却</string>
+    <string name="txt_more">その他</string>
+    <!--<string name="txt_watching">視聴中</string>-->
+    <string name="txt_bought">購入済み</string>
+    <string name="txt_sold">販売済み</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">商品を販売する</string>
+    <string name="hint_item_name">商品名</string>
+    <string name="hint_item_description">商品の説明</string>
+    <string name="hint_item_category">カテゴリの選択</string>
+    <string name="hint_item_quantity">商品の数量</string>
+    <string name="hint_item_price">商品の価格</string>
+    <string name="hint_you_earn">あなたの稼ぐ金額</string>
+    <string name="hint_item_shipping_cost">商品の配送料</string>
+    <string name="hint_separate_keywords">キーワードはカンマで区切ります。</string>
+    <string name="btn_continue">続行</string>
+    <string name="btn_delete">削除</string>
+    <string name="dialog_item_info">購入ごとに、この金額を取得します。</string>
+    <string name="msg_enter_item_name">商品名を入力してください。</string>
+    <string name="msg_enter_item_description">商品の説明を入力してください。</string>
+    <string name="msg_enter_item_quantity">商品の数量を入力してください。</string>
+    <string name="msg_enter_item_price">商品の価格を入力してください。</string>
+    <string name="msg_enter_item_actual_price">商品の価格を入力してください</string>
+    <string name="msg_enter_item_shipping_coast">送料無料をお勧めします。</string>
+    <string name="msg_enter_keywords">いくつかのキーワードを入力してください。</string>
+    <string name="msg_select_item_image">あなたの商品の少なくとも4つの画像をアップロードする</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">>配送先住所を入力してください。</string>
+    <string name="txt_payment_detail">支払いの詳細</string>
+    <string name="txt_item_quantity">商品の数量</string>
+    <string name="txt_item_cost">商品の費用</string>
+    <string name="txt_shipping_cost">配送料</string>
+    <string name="txt_total_cost">総費用</string>
+    <string name="hint_street">通り</string>
+    <string name="hint_city_payment">市区町村</string>
+    <string name="hint_zipcode">郵便番号</string>
+    <string name="hint_state">都道府県</string>
+    <string name="title_payment_detail">支払いの詳細</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">支払い方法</string>
+    <string name="txt_or">または</string>
+    <string name="title_payment_process">支払い処理中</string>
+    <!-- item detail -->
+    <string name="txt_userid">ユーザー都市</string>
+    <string name="txt_date">月曜日の午前11時10分</string>
+    <string name="txt_watch">ウォッチする</string>
+    <string name="txt_unwatch">ウオッチリストから削除する</string>
+    <!--<string name="txt_message">メッセージ</string>-->
+    <string name="txt_review">レビュー</string>
+    <string name="txt_buy_item">商品を購入する</string>
+    <string name="title_item_detail">商品の詳細</string>
+    <string name="txt_sold_list">販売リスト</string>
+    <string name="txt_traking_detail">追跡番号の追加 #</string>
+    <string name="msg_no_review">最初のレビューを投稿する！</string>
+    <string name="msg_no_data">今後の予定です！</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">旧パスワード</string>
+    <string name="edt_new_password">新しいパスワード</string>
+    <string name="edt_confirm_password">パスワードの確認</string>
+    <string name="title_change_password">パスワードの変更</string>
+    <string name="msg_empty_old_password">古いパスワードを入力してください。</string>
+    <string name="msg_empty_new_password">新しいパスワードを入力してください。</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">支払いの設定</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">ウォッチリスト</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> 番地が必要です</string>
+    <string name="toast_no_city">市区町村が必要です</string>
+    <string name="toast_no_zip">郵便番号が必要です</string>
+    <string name="toast_no_state">都道府県が必要です</string>
+    <string name="toast_no_quantity">商品の数量を入力してください。</string>
+    <!-- -->
+    <string name="title_sold_history">売り手の経歴</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">領収書</string>
+    <string name="txt_add_review">レビューを追加</string>
+    <string name="txt_done">完了</string>
+    <!--<string name="txt_cancel">キャンセル</string>-->
+    <string name="msg_empty_review">レビューを追加してください。</string>
+    <!--Toast -->
+    <string name="toast_login_fail">もう一度試すか、2KXO.com / helpにアクセスしてください。</string>
+    <string name="toast_password_empty">パスワードを入力してください。</string>
+    <string name="toast_no_internet">インターネット接続を確認してください</string>
+    <string name="toast_some_errro"> もう一度やり直すか、2KXO.com / help にアクセスしてください。 </string>
+    <string name="toast_error_retry"> もう一度やり直すか、2KXO.com / help にアクセスしてください。</string>
+    <string name="toast_error_something_went_wrong"> 再試行するか、2KXO.com / helpにアクセスしてください。</string>
+    <string name="toast_error_cannot_share_file">現時点ではこのファイルを共有できません。</string>
+    <string name="navigation_drawer_open">ナビゲーションパネルを開く</string>
+    <string name="navigation_drawer_close">ナビゲーションパネルを閉じる</string>
+    <string name="action_settings">設定</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">通知</string>
+    <string name="about_us"> 2KXOは、広告、無料、無制限のストリーミングサービスであり、音楽、ビデオ、音声録音、また写真をアップロードしたり、世界中のどこからでも商品やサービスを売買するために使用されます。2KXOはアメリカで生まれ、ニューヨークのアジャイルソフトウェア開発者のエリートチームによって開発されました。 ３年間の開発期間を経て、2KXOは現在世界規模でリリースされる準備が整いました。私たちの暗号化技術は、利用可能な最高の技術の一つです。電子商取引プラットフォームとして、セキュリティは私たちの存在には不可欠です。2KXOは、最大限のプライバシー保護のために常に監視され、修正され、そして更新されています。ユーザーの信頼を維持するために、2KXOは最重要と思われる情報の収集方法、およびそれを使用して行われる方法を、一般に周知させることによって、クリアな環境を提供しています。 非常に多くのWebサービスから、その都度用途を選ぶことは、あなたを迷宮に迷い込ませる可能性があります。 ですので1つはソーシャルメディア用、もう1つは支払いの送受信用、その他はショッピングや販売用に使用することも可能です。 2KXOの創設者で最高経営責任者（CEO）のユゴー氏は、次のように述べています。 「私は若い頃、音楽やビデオのストリーミング、そしてソーシャルネットワーキング、最終的には商業目的でインターネットを使用していました。 年をとるにつれて、私のインターネットの使用もまた進化しています。そして今私は自分と一緒に成長するプラットフォームが必要だと気づきました。2KXOをそのプラットフォームとして構築し、あらゆるレベルで全てのユーザーに、自分が一番好きなことをするための単一のプラットフォームを提供します。 2KXOは、大胆且つ新しいアプローチを用いて、テクノロジー産業を良い意味で崩壊させることを目的として2008年に概念化されました。 2KXOは、メディア、商品、製品、およびサービスを、強力で合理化されたプラットフォーム１つで、クリエイティブ且つ専門的に整理するための場所を提供します。 2KXOは、無制限のストリーミングとお買い物を提供するだけでなく、ユーザーは自動ブーストキャンペーンを設定して、関心の高いユーザーを自動的にターゲット設定することで、迅速かつ簡単に顧客の獲得を高めることができます。 多くの個人が、様々なオンラインサービスを切り替えて使用しているため、最新のニュースやトレンドに遅れないようにしながら、複数のアカウントを管理することは、非常に困難です。 そのため、2KXOは、ユーザーが1つのプラットフォームでオンライン操作をより便利に管理、および統合できるようにプラットフォームを作成しました。\ n \ n2KXO™\ nニューヨーク、ニューヨーク（888）611-8331</string>
+    <string name="post_media">メディア投稿</string>
+    <string name="post_media_short">メディア投稿</string>
+    <string name="sell_now">今すぐ販売</string>
+    <string name="sell_now_short">今すぐ販売</string>
+    <string name="post_stream">ストリームを投稿</string>
+    <string name="post_stream_short">ストリームを投稿</string>
+    <string name="existing_shortcuts">既存のショートカット：</string>
+    <string name="remove_shortcut">削除</string>
+    <string name="disable_shortcut">無効にする</string>
+    <string name="enable_shortcut">有効にする</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">ログイン</string>
+    <string name="txt_signup">登録</string>
+    <string name="txt_done_small">完了</string>
+    <string name="txt_login_small">ログイン</string>
+    <string name="txt_welcome_back">おかえりなさいませ</string>
+    <string name="txt_signin_account">あなたのアカウントにサインインする</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">サインアップ</string>
+    <string name="txt_signup_with_email">メールでサインアップ</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">メディア</string>-->
+    <!--<string name="txt_shop">お店</string>-->
+    <string name="txt_blog">ブログ</string>
+    <string name="txt_camera">カメラ</string>
+    <string name="txt_music">音楽</string>
+    <string name="txt_microphone">マイク</string>
+    <string name="txt_timer">タイマー</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">新作</string>-->
+    <string name="txt_new_description">タグ付き新機能（NWT）、未使用、未開封のパッケージ</string>
+    <!--<string name="txt_like_new">新作にライクする</string>-->
+    <string name="txt_like_new_description">タグなしの新しいもの（NWOT）、未使用、摩耗の兆候なし</string>
+    <!--<string name="txt_refurnished">補充済み</string>-->
+    <string name="txt_refurnished_description">丁寧に使用され、機能的、1つまたはいくつかのマイナーな欠陥</string>
+    <!--<string name="txt_fair">公正</string>-->
+    <string name="txt_fair_description">使用済み、機能的、複数の欠陥</string>
+    <!--<string name="txt_poor">貧弱</string>-->
+    <string name="txt_poor_descrption">主な欠陥、部品によっては破損する可能性があります。</string>
+</resources>

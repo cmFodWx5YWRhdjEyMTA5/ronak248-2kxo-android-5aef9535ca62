@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.screamxo.Activity.RahulWork.BoostCongActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/colordarkPink">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Thank You For Your Purchase"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtCongrats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Congratulations!"
+        android:textColor="@color/colordarkPink"
+        android:textSize="@dimen/_30sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCongrats"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="&quot;Shopping is the cheapest form of therapy&quot;"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtTag"
+        android:layout_above="@+id/item_name_tv"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:src="@mipmap/img_placeholder" />
+    <TextView
+        android:id="@+id/item_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_footer"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:gravity="center"
+        tools:text="" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnDone"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtBoostAnother"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_red"
+            android:gravity="center"
+            android:onClick="funAnother"
+            android:padding="@dimen/_12sdp"
+            android:text="Keep Shopping"
+            android:textColor="@color/colorPink"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtShare"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_red"
+            android:gravity="center"
+            android:onClick="funShare"
+            android:padding="@dimen/_12sdp"
+            android:text="Share Item"
+            android:textColor="@color/colorPink"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colordarkGray"
+        android:onClick="funDone"
+        android:stateListAnimator="@drawable/customized_state_animator"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"
+        tools:targetApi="lollipop" />
+
+
+    <include
+        layout="@layout/item_floating_btn"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

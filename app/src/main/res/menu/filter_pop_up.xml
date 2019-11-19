@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_video"
+            android:checked="true"
+            android:icon="@mipmap/ico_dashboard"
+            android:title="Video" />
+        <item
+            android:id="@+id/pop_up_Audio"
+            android:icon="@mipmap/ico_friends"
+            android:title="Audio" />
+        <item
+            android:id="@+id/pop_up_music"
+            android:icon="@mipmap/ico_notifications"
+            android:title="Music" />
+        <item
+            android:id="@+id/pop_up_image"
+            android:icon="@mipmap/ico_notifications"
+            android:title="Image" />
+
+        <item
+            android:id="@+id/pop_up_all"
+            android:icon="@mipmap/ico_notifications"
+            android:title="All" />
+
+    </group>
+</menu>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.screamxo.Activity.EditProfileActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorf7f7f7" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_line"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/frame_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:onClick="userProfileClick">
+
+                <ImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/pic_holder_dashboard" />
+
+                <ImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:src="@mipmap/edit_icon" />
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/edt_firstname"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_firstname"
+                android:inputType="textPersonName"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/edt_lastname"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_lastname"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="gone"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/edt_Username"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_username"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/et_email"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/edt_school_or_master"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_school_or_master"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/edt_job"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_job"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <Spinner
+                android:id="@+id/countries_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp" />
+
+            <Spinner
+                android:id="@+id/states_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp" />
+
+
+            <EditText
+                android:id="@+id/edt_city"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_city"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="gone"
+                tools:ignore="MissingPrefix" />
+
+            <EditText
+                android:id="@+id/edt_hobby"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/rect_gray_border"
+                android:hint="@string/hint_hobby"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_14sdp"
+                android:textColor="@color/color8c8c8c"
+                android:textColorHint="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="MissingPrefix" />
+
+            <TextView
+                android:id="@+id/txt_gender"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@string/txt_gender"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                tools:ignore="MissingPrefix" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rad_male"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radio_selector_seting"
+                    android:checked="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_male"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+                <RadioButton
+                    android:id="@+id/rad_female"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:button="@drawable/radio_selector_seting"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_Female"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+                <RadioButton
+                    android:id="@+id/rad_transgender"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:button="@drawable/radio_selector_seting"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_transgender"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txt_Relation_status"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/txt_Relationship_status"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                tools:ignore="MissingPrefix" />
+
+            <RadioGroup
+                android:id="@+id/radio_grp_relation_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rad_available"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radio_selector_seting"
+                    android:checked="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_available"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+                <RadioButton
+                    android:id="@+id/rad_unavailable"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:button="@drawable/radio_selector_seting"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_unavailable"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/txt_sex_preference"
+                fontPath="fonts/Poppins-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/txt_sex_preference"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/color8c8c8c"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                tools:ignore="MissingPrefix" />
+
+            <RadioGroup
+                android:id="@+id/radio_grp_sex_preference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rad_opposite"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/radio_selector_seting"
+                    android:checked="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_opposite"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+                <RadioButton
+                    android:id="@+id/rad_same"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:button="@drawable/radio_selector_seting"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/rad_same"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp"
+                    tools:ignore="MissingPrefix"
+                    tools:targetApi="lollipop" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_update"
+                fontPath="fonts/Poppins-SemiBold.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/colorfb4a4c"
+                android:onClick="onUpdateclick"
+                android:text="@string/btn_update"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                tools:ignore="MissingPrefix" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        tools:visibility="visible" />
+
+</RelativeLayout>

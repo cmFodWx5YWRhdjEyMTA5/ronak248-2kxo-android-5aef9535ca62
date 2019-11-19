@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SXO</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+    <string name="screamxo">2KXO&lt;sup&gt;&lt;sup&gt;&lt;small&gt;&lt;small&gt;&#174;&lt;/small&gt;&lt;/small&gt;&lt;/sup&gt;&lt;/sup&gt;</string>
+    <string name="buffet">BUFFET</string>
+    <string name="shop">SHOP</string>
+    <string name="stream">STREAM</string>
+    <string name="detail">Details</string>
+</resources>

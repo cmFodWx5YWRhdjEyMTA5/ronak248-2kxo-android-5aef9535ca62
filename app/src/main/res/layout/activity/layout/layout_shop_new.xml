@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white" >
+    <EditText
+        android:id="@+id/toolbar_edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ico_search_new"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="Shop"
+        android:visibility="gone"
+        android:padding="@dimen/_3sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:singleLine="true"
+        android:textSize="@dimen/_12sdp"  />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/rl_Sell"
+        android:layout_below="@+id/toolbar_edt_search"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_Watching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray" />
+            <RelativeLayout
+                android:id="@+id/rl_WaTNoRecord"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="@dimen/_90sdp"
+                android:background="@color/colorGray">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:text="No records found"
+                    android:textColor="@color/colordarkGray" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_Watching"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="WATCHING"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorGray"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_Recommended"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_RecRecord"
+                android:visibility="gone"
+                android:background="@color/colorGray"
+                android:layout_height="@dimen/_90sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="No records found"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colordarkGray"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_Recommended"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="RECOMMENDED"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorGray"
+                    android:padding="@dimen/_8sdp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_Recently"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_RecentlyRecord"
+                android:background="@color/colorGray"
+                android:visibility="gone"
+                android:layout_height="@dimen/_90sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="No records found"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colordarkGray"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/rl_Recently"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="RECENTLY VIEWED"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorGray"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_World"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_TrendingRecord"
+                android:background="@color/colorGray"
+                android:visibility="gone"
+                android:layout_height="@dimen/_90sdp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="No records found"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colordarkGray"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:id="@+id/rl_Trending"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="WORLD TRENDING"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/colorGray"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl_Sell"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorLightGray"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Sell"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@color/colordarkGray"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@style/progressbar" />
+</RelativeLayout>

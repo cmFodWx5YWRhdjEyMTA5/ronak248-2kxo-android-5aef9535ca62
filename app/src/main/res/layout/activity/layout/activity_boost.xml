@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:scrollbars="none"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context="com.screamxo.Activity.RahulWork.BoostActivity">
+
+        <TextView
+            android:id="@+id/txtBoast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="BOOST"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+       <!-- <TextView
+            android:id="@+id/txtBoastData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtBoast"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/boasttext"
+            android:textColor="@color/Grey_400"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />-->
+
+        <ImageView
+            android:id="@+id/imgBoast"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/txtBoast"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="@color/colorbackgroundgray" />
+
+        <ImageView
+            android:id="@+id/ico_boost"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imgBoast"
+            android:src="@drawable/small_boost_ico"/>
+
+
+        <LinearLayout
+            android:id="@+id/ll_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ico_boost"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:baselineAligned="true">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtDays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="5 DAYS"
+                        android:background="@drawable/ico_blue_button"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:visibility="visible" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rc_Days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_dark_gray_round_corner"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_boost_days"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_45sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="$20"
+                        android:background="@drawable/ico_blue_button"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:visibility="visible" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rc_Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_dark_gray_round_corner"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_boost_price"
+                    tools:visibility="visible" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_reach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_View"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@android:color/white"
+            android:visibility="visible"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtReach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reach"
+                android:textColor="@color/colordarkGray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtReachData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="1,200"
+                android:textColor="@color/colorPink"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTopUp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@+id/ll_reach"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/ico_red_button"
+            android:stateListAnimator="@null"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="Boost"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            tools:ignore="UnusedAttribute" />
+
+        <!--<EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnTopUp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@android:color/transparent"
+            android:ems="8"
+            android:gravity="center"
+            android:hint="Code"
+            android:padding="@dimen/_4sdp"
+            android:textColorHint="@color/Grey_400" />-->
+
+        <include
+            layout="@layout/item_floating_btn"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" />
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_screamXo">ScreamXO_preference</string>
+    <string name="pref_gcm">Gcm_preference</string>
+    <string name="pref_avtar">avtar_preference</string>
+    <string name="pref_recent_group">recent_group_preference</string>
+
+    <string name="key_user_Id">id</string>
+
+    <string name="key_avtar">avatar</string>
+    <string name="key_mobile">mobileNumber</string>
+
+    <string name="key_latitude">latitude</string>
+    <string name="key_longitude">longitude</string>
+    <string name="key_user_token">usertoken</string>
+
+</resources>

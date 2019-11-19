@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.screamxo.Activity.RahulWork.SupportActivity">
+
+    <ImageView
+        android:id="@+id/img_transperent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/relative_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:src="@drawable/ico_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Support"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_toolbar"
+        android:background="@drawable/drawable_gray_gradient">
+
+        <RelativeLayout
+            android:id="@+id/rl_Drop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/rect_gray_border_new">
+
+            <TextView
+                android:id="@+id/txtIssue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Choose Issue"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:srcCompat="@drawable/vect_down" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_pop_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_Drop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-37dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/vect_up" />
+
+        <LinearLayout
+            android:id="@+id/lnr_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_pop_up"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="-50dp"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_send_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="How to send Money?"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_request_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="How to request money?"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_invoices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="Invoices &amp; Reporting "
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_withdraw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="How to withdraw Xocash?"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_technical_bugs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="Technical  Bugs"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_dispute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="Dispute Transaction"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+            <TextView
+                android:id="@+id/txt_enquiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:text="General Enquiry"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorf7f7f7" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edDescription"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_below="@+id/rl_Drop"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rect_gray_border_new"
+            android:gravity="top|left"
+            android:hint="Type your message here..."
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/color8c8c8c"
+            android:textColorHint="@color/color8c8c8c"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edDescription"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/colorNewBlue"
+            android:onClick="funSubmitQuery"
+            android:stateListAnimator="@drawable/customized_state_animator"
+            android:text="Send Query"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="visible"
+            tools:ignore="UnusedAttribute" />
+
+        <ProgressBar
+            android:id="@+id/progreessbar"
+            style="@style/progressbar"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/item_floating_btn"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

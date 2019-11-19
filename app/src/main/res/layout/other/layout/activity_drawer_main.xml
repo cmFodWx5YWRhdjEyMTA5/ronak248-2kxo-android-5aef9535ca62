@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_drawer_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/txt_back"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/framlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar" />
+
+    <include
+        android:id="@+id/my_floating_button"
+        layout="@layout/item_floating_btn"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="RtlHardcoded" />
+
+    <ImageView
+        android:id="@+id/img_transperent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_transperent_black"
+        android:visibility="gone" />
+
+</RelativeLayout>

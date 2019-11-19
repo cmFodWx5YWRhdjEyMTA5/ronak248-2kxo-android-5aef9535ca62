@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_camara"
+            android:checked="true"
+            android:icon="@drawable/ico_camera_chat"
+            android:title="Camera" />
+
+        <item
+            android:id="@+id/pop_up_gallery"
+            android:icon="@drawable/gallery_image"
+            android:title="Gallery" />
+
+        <item
+            android:id="@+id/pop_up_remove_photo"
+            android:icon="@drawable/vect_close"
+            android:title="Remove Photo"
+            android:visible="false" />
+
+    </group>
+</menu>

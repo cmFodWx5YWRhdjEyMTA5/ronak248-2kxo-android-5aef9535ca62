@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s-<sup><small>%s</small></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">Ok</string>
+    <string name="txt_camara">Fotocamera</string>
+    <string name="txt_gallery">Galleria</string>
+    <string name="txt_no_image">Nessuna Immagine</string>
+    <!-- login activity -->
+    <string name="btn_login">Registrati</string>
+    <string name="hint_edit_username">Nome Utente</string>
+    <string name="hint_password">Password</string>
+    <string name="txt_sign_in_with">OPPURE REGISTRATI CON</string>
+    <string name="txt_forgot_password">Hai dimenticato la password?</string>
+    <string name="txt_new_here">Sei appena arrivato? Registrati</string>
+    <!-- Signup activity -->
+    <string name="hint_username">Nome Utente</string>
+    <string name="hint_firstname">Nome</string>
+    <string name="hint_fullname">Nome Completo</string>
+    <string name="hint_lastname">Cognome</string>
+    <string name="hint_email">Indirizzo Email</string>
+    <string name="hint_phone_no">Numero di Telefono</string>
+    <string name="txt_terms_condition">Accetta Termini e Condizioni</string>
+    <string name="btn_create_account">Crea Account</string>
+    <string name="msg_first_name_null">Inserisci il tuo nome</string>
+    <string name="msg_last_name_null">Inserisci il tuo cognome</string>
+    <string name="msg_username_null">Sono necessari una Email o un Nome Utente validi</string>
+    <string name="msg_email_invalid">Per favore, inserisci un indirizzo email valido</string>
+    <string name="msg_email_null">Inserisci il tuo indirizzo email</string>
+    <string name="msg_phone_number_null">Inserisci Numero di Telefono</string>
+    <string name="msg_phone_number_invalid">Inserisci un Numero di Telefono Valido</string>
+    <string name="msg_password_null">Password necessaria</string>
+    <string name="msg_password_not_valid">La password deve essere lunga almeno 6 caratteri.</string>
+    <string name="msg_accept_t_c">Accetta i nostri termini e condizioni</string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">Se hai dimenticato la password, possiamo mandarti una email per ripristinarla.</string>
+    <string name="btn_send_email">Manda Email</string>
+    <string name="etd_email">Email</string>
+    <string name="title_forgot_password">Ho Dimenticato la Password</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">DashBoard</string>
+    <string name="title_activity_drawer_friend">Amici</string>
+    <string name="title_activity_drawer_notification">Notifiche</string>
+    <string name="title_activity_drawer_shop">Negozio</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">Impostazioni</string>
+    <string name="title_activity_drawer_social">Social Network</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">NEGOZIO</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">FILE MULTIMEDIALI</string>
+    <string name="txt_tag_bottom_stream">STREAM</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">Rimanda</string>
+    <string name="btn_confirm">Conferma</string>
+    <string name="txt_varification">Un codice di verifica è stato mandato al tuo indirizzo email. Inseriscilo per completare la tua registrazione.</string>
+    <string name="txt_varification_time">Un codice di verifica sarà inviato tra (0)Facoltativi Secondi</string>
+    <string name="title_verification">VERIFICA</string>
+    <string name="hint_verification_code">Codice di Verifica</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">Scuola o Ateneo</string>
+    <string name="hint_job">Occupazione</string>
+    <string name="hint_city">Città o CAP</string>
+    <string name="hint_hobby">Interessi</string>
+    <string name="txt_gender">Sesso</string>
+    <string name="rad_male">Maschile</string>
+    <string name="rad_Female">Femminile</string>
+    <string name="rad_transgender">Transessuale</string>
+    <string name="txt_Relationship_status">Stato relazione</string>
+    <string name="rad_available">Disponibile</string>
+    <string name="rad_unavailable">Non disponibile</string>
+    <string name="txt_sex_preference">Preferenze sessuali</string>
+    <string name="rad_opposite">Sesso opposto</string>
+    <string name="rad_same">Stesso sesso</string>
+    <string name="btn_update">Aggiorna</string>
+    <string name="title_edit_profile">Modifica Profilo</string>
+    <!-- post media -->
+    <string name="title_post_media">PUBBLICA FILE MULTIMEDIALI</string>
+    <string name="btn_create_posgt">Crea Post</string>
+    <string name="hint_title">Titolo</string>
+    <!-- Post Stream -->
+    <string name="title_post">POST</string>
+    <string name="hint_stream">Che cos\'hai in mente?</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">DETTAGLI DEL POST</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">Impostazioni Notifiche Push</string>
+    <string name="txt_reject_list">Rifiuta Lista</string>
+    <!--<string name="txt_privacy_settings">Impostazioni della Privacy</string>-->
+   <!-- <string name="txt_payment">Pagamento</string>-->
+    <string name="txt_change_pass">Cambia Password</string>
+    <string name="txt_help">Aiuto e Contatti</string>
+    <string name="txt_logout">Disconnettiti</string>
+    <!--<string name="txt_about_us">Riguardo a Noi</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">Vendi</string>
+    <string name="txt_more">Altro</string>
+   <!-- <string name="txt_watching">Sto Osservando</string>-->
+    <string name="txt_bought">Acquistati</string>
+    <string name="txt_sold">Venduti</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">VENDI ARTICOLO</string>
+    <string name="hint_item_name">Nome Articolo</string>
+    <string name="hint_item_description">Descrizione Articolo</string>
+    <string name="hint_item_category">Seleziona Categoria</string>
+    <string name="hint_item_quantity">Quantità Articolo</string>
+    <string name="hint_item_price">Prezzo Articolo</string>
+    <string name="hint_you_earn">Guadagnerai</string>
+    <string name="hint_item_shipping_cost">Costo Spedizione Articolo</string>
+    <string name="hint_separate_keywords">Separa le parole chiave con una virgola.</string>
+    <string name="btn_continue">Continua</string>
+    <string name="btn_delete">Elimina</string>
+    <string name="dialog_item_info">Riceverai questo importo per ciascun acquisto.</string>
+    <string name="msg_enter_item_name">Ti preghiamo di inserire il nome dell\'articolo</string>
+    <string name="msg_enter_item_description">Inserisci la descrizione di un articolo</string>
+    <string name="msg_enter_item_quantity">Inserisci la quantità dell\'articolo</string>
+    <string name="msg_enter_item_price">Inserisci il prezzo dell\'articolo</string>
+    <string name="msg_enter_item_actual_price">Ti preghiamo di inserire il prezzo dell\'articolo</string>
+    <string name="msg_enter_item_shipping_coast">Consigliamo la spedizione gratuita.</string>
+    <string name="msg_enter_keywords">Inserisci alcune parole chiave</string>
+    <string name="msg_select_item_image">Invia almeno quattro immagini del tuo articolo</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">Inserisci il tuo indirizzo per la spedizione</string>
+    <string name="txt_payment_detail">Dettagli di Pagamento</string>
+    <string name="txt_item_quantity">Quantità Articolo</string>
+    <string name="txt_item_cost">Costo Articolo</string>
+    <string name="txt_shipping_cost">Costo di Spedizione</string>
+    <string name="txt_total_cost">Costo Totale</string>
+    <string name="hint_street">Via</string>
+    <string name="hint_city_payment">Città</string>
+    <string name="hint_zipcode">Codice di Avviamento Postale (CAP)</string>
+    <string name="hint_state">Stato</string>
+    <string name="title_payment_detail">DETTAGLI DI PAGAMENTO</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">DETTAGLI DI PAGAMENTO</string>
+    <string name="txt_or">oppure</string>
+    <string name="title_payment_process">PAGAMENTO IN ELABORAZIONE</string>
+    <!-- item detail -->
+    <string name="txt_userid">Città Utente</string>
+    <string name="txt_date">Lunedì alle 11:10</string>
+    <string name="txt_watch">Osserva</string>
+    <string name="txt_unwatch">Non Osservare Più</string>
+    <!--<string name="txt_message">Messaggio</string>-->
+    <string name="txt_review">Controlla</string>
+    <string name="txt_buy_item">Acquista Articolo</string>
+    <string name="title_item_detail">DETTAGLIO ARTICOLO</string>
+    <string name="txt_sold_list">Lista dei Venduti</string>
+    <string name="txt_traking_detail">Aggiungi Numero di Tracking</string>
+    <string name="msg_no_review">Sii il primo a fare la recensione!</string>
+    <string name="msg_no_data">Altro in arrivo!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">Vecchia Password</string>
+    <string name="edt_new_password">Nuova Password</string>
+    <string name="edt_confirm_password">Conferma Password</string>
+    <string name="title_change_password">CAMBIA PASSWORD</string>
+    <string name="msg_empty_old_password">Inserisci la tua vecchia password</string>
+    <string name="msg_empty_new_password">Inserisci la tua nuova password</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">CONFIGURA PAGAMENTO</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">LISTA D\'INTERESSE</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> È necessario l\'indirizzo stradale</string>
+    <string name="toast_no_city">Città necessaria</string>
+    <string name="toast_no_zip">Codice CAP Necessario</string>
+    <string name="toast_no_state">Stato necessario</string>
+    <string name="toast_no_quantity">Inserisci la quantità dell\'articolo</string>
+    <!-- -->
+    <string name="title_sold_history">CRONOLOGIA DEL VENDITORE</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">Fatture</string>
+    <string name="txt_add_review">Aggiungi Recensione</string>
+    <string name="txt_done">Fatto</string>
+    <!--<string name="txt_cancel">Cancella</string>-->
+    <string name="msg_empty_review">Ti preghiamo di aggiungere la tua recensione</string>
+    <!--Toast -->
+    <string name="toast_login_fail">Riprovaci, oppure visita 2KXO.com/aiuto</string>
+    <string name="toast_password_empty">Inserisci la tua password</string>
+    <string name="toast_no_internet">Controlla la tua connessione a internet</string>
+    <string name="toast_some_errro"> Riprovaci o visita 2KXO.com/help </string>
+    <string name="toast_error_retry"> Riprovaci o visita 2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> Riprovaci o visita 2KXO.com/help.</string>
+    <string name="toast_error_cannot_share_file">Non possiamo condividere questo file al momento.</string>
+    <string name="navigation_drawer_open">Apri sezione della navigazione</string>
+    <string name="navigation_drawer_close">Chiudi sezione della navigazione</string>
+    <string name="action_settings">Impostazioni</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">NOTIFICHE</string>
+    <string name="about_us"> 2KXO è un servizio di streaming senza pubblicità, ed un mercato globale utilizzato per inviare musica, video, registrazioni vocali e foto, oppure per acquistare e vendere prodotti e servizi in ogni parte del mondo. Concepito e sviluppato negli Stati Uniti, 2KXO è l\'idea di un talentuoso team di versatili sviluppatori di New York City. Dopo ben tre anni di incubazione, 2KXO è finalmente pronto per il rilascio globale. La nostra tecnologia crittografica è una delle migliori in circolazione. Da piattaforma di e-commerce, la sicurezza è di vitale importanza per la nostra stessa esistenza; di conseguenza, 2KXO viene costantemente monitorato, controllato e aggiornato, con lo scopo di fornire il massimo livello di privacy possibile. Per mantenere la fiducia ed il rispetto dei suoi utenti, 2KXO mette a loro disposizione un ambiente assolutamente trasparente per quanto riguarda le informazioni personali, permettendo al pubblico di sapere esattamente quali informazioni vengono considerate importanti, come vengono raccolte e cosa ne facciamo. Scegliere tra così tanti servizi sul web può davvero risultare faticoso. Se ne utilizza uno come piattaforma social, un altro per mandare e ricevere pagamenti, ed altri ancora per la compravendita. "Essendo un millennial io stesso, sono cresciuto con internet," dice il fondatore e amministratore delegato di 2KXO Hugo. "Quando ero piccolo, utilizzavo internet per guardare i video e ascoltare la musica in streaming, poi per andare sui social, e alla fine a scopi commerciali. Crescendo, il mio utilizzo della rete si è anch'esso evoluto. Ho capito che mi serviva una piattaforma che crescesse con me. Ho costruito 2KXO proprio per questo, per dare a tutti gli utenti di ogni genere e livello una singola piattaforma, dove fare quello che più gli piace: sfruttare la potenza dello streaming, fare shopping, rivendere, inviare denaro, tutto quanto rimanendo connessi." 2KXO è stato concettualizzato nel 2008, con l'ambizione di sconvolgere l'industria tecnologica, con un approccio nuovo e deciso. 2KXO regala ai più creativi un luogo dove organizzare professionalmente file multimediali, merci, prodotti e servizi, tutto in un'unica piattaforma, potente e ben organizzata. E non solo. Oltre a offrire streaming e shopping illimitati come mai prima d'ora, 2KXO permette agli utenti di creare le proprie campagne di Spinta automatiche, per aumentare velocemente e con facilità il coinvolgimento dei contatti, tramite il targeting automatico degli utenti maggiormente interessati. Con tante persone costrette ad alternarsi tra tutta una serie di servizi online, a volte può diventare difficile gestire più account contemporaneamente, mantenendosi nel frattempo sempre al passo con le ultime notizie e tendenze. Per questo motivo, 2KXO ha creato una piattaforma per aiutare gli utenti a gestire e a consolidare le loro interazioni online in modo più conveniente, da una sola piattaforma.\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">Pubblica File Multimediale</string>
+    <string name="post_media_short">Pubblica File</string>
+    <string name="sell_now">Vendi Adesso</string>
+    <string name="sell_now_short">Vendi Ora</string>
+    <string name="post_stream">Pubblica Streaming</string>
+    <string name="post_stream_short">Pubblica Streaming</string>
+    <string name="existing_shortcuts">Scorciatoie esistenti:</string>
+    <string name="remove_shortcut">Rimuovi</string>
+    <string name="disable_shortcut">Disabilita</string>
+    <string name="enable_shortcut">Abilita</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">ACCEDI</string>
+    <string name="txt_signup">REGISTRATI</string>
+    <string name="txt_done_small">Fatto</string>
+    <string name="txt_login_small">Accedi</string>
+    <string name="txt_welcome_back">BENTORNATO</string>
+    <string name="txt_signin_account">Accedi al tuo account</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">REGISTRATI CON</string>
+    <string name="txt_signup_with_email">Registrati via Email</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">FILE MULTIMEDIALI</string>-->
+    <!--<string name="txt_shop">NEGOZIO</string>-->
+    <string name="txt_blog">BLOG</string>
+    <string name="txt_camera">FOTOCAMERA</string>
+    <string name="txt_music">MUSICA</string>
+    <string name="txt_microphone">MICROFONO</string>
+    <string name="txt_timer">CRONOMETRO</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">Nuovo</string>-->
+    <string name="txt_new_description">Nuovo con etichette(NCT),non utilizzato, confezione chiusa</string>
+    <!--<string name="txt_like_new">Come Nuovo</string>-->
+    <string name="txt_like_new_description">Nuovo Senza Etichette(NST), inutilizzato, nessun segno di usura</string>
+    <!--<string name="txt_refurnished">Rigenerato</string>-->
+    <string name="txt_refurnished_description">Utilizzato poco, funzionante, una/poche imperfezioni</string>
+    <!--<string name="txt_fair">Accettabile</string>-->
+    <string name="txt_fair_description">Usato, funzionante, diverse imperfezioni/difetti</string>
+    <!--<string name="txt_poor">Condizioni scarse</string>-->
+    <string name="txt_poor_descrption">Difetti gravi, potrebbe essere danneggiato, adatto a ricambi</string>
+</resources>

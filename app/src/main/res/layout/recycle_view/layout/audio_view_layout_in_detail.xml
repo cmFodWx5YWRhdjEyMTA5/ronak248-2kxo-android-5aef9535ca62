@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relative_audio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lny_audio_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorBlack"
+            android:elevation="@dimen/_1sdp"
+            android:orientation="horizontal"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/app_video_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron_left_white_36dp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="@dimen/_8sdp"
+                android:src="@drawable/ic_ios_share"
+                android:tint="@android:color/white" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_audio_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/_50sdp"
+            android:paddingRight="@dimen/_50sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ico_app" />
+
+        <LinearLayout
+            android:id="@+id/ll_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lny_player_seek_bar"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBlack"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/app_video_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_play_arrow_white_24dp" />
+
+                <TextView
+                    android:id="@+id/app_audio_currentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:text="00:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+
+                <com.screamxo.Utils.CustomSeekBar
+                    android:id="@+id/app_audio_seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/seekbarprogress"
+                    android:secondaryProgressTint="@android:color/white"
+                    android:thumbTint="@color/tw__composer_white"
+                    tools:targetApi="lollipop" />
+
+                <TextView
+                    android:id="@+id/app_audio_endTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:text="00:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/audio_bottom_view"
+        layout="@layout/video_bottom_view"
+        tools:visibility="visible" />
+</LinearLayout>

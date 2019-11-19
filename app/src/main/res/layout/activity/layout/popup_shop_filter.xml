@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp">
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:src="@mipmap/cut_rectangle_middle_gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/img_arrow"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/ll_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_my_popup"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/fl_Main"
+        android:padding="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/img_thum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_placeholder" />
+
+        <ImageView
+            android:id="@+id/img_sold_out"
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:src="@mipmap/sold_out" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@+id/fl_Main"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Header"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 20"
+            android:textColor="@color/colordarkGray" />
+    </LinearLayout>
+</RelativeLayout>

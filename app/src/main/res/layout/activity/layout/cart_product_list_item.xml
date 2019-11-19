@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorGray"
+        android:text="Johnnyapplessed"
+        android:gravity="center"
+        android:textSize="@dimen/_13sdp"
+        android:padding="@dimen/_8sdp"
+        android:id="@+id/txtProductCart"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_child_product"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_below="@+id/txtProductCart"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_child_product"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/rlProductDetail"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:id="@+id/imgDetailProduct"
+            android:src="@drawable/ic_2kxo"
+            android:scaleType="centerCrop"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relImgDetailProduct"
+            android:orientation="horizontal"
+            android:layout_below="@+id/imgDetailProduct">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue Jeans"
+                android:textSize="@dimen/_13sdp"
+                android:layout_centerInParent="true"
+                android:padding="3dp"
+                android:id="@+id/txtProductChildName"
+                android:textColor="@color/colordarkGray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/tw__composer_white"
+                android:text="Save"
+                android:textStyle="bold"
+                android:id="@+id/txtSaveProductDetail"
+                android:background="@color/colorgreen"
+                android:paddingLeft="@dimen/_30sdp"
+                android:paddingRight="@dimen/_30sdp"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgCrossProductDetail"
+                android:src="@drawable/cross_gray"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_3sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colordarkGray"
+                android:layout_toRightOf="@+id/imgCrossProductDetail"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:text="1"
+                android:id="@+id/txtItemQuntity"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/corner_bg_product_cart"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

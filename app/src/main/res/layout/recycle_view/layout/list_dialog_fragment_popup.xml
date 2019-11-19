@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/list_time_textview_popup"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:background="@color/colorf7f7f7"
+        android:gravity="center"
+        android:focusable="true"
+        android:clickable="true"
+        android:text="Time"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_11sdp" />
+</RelativeLayout>

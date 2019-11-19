@@ -1,0 +1,163 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:layout_marginTop="-90dp"
+    tools:context="com.screamxo.Fragment.SellItemSecondFragment"
+    tools:ignore="PrivateResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:text="PRODUCT DETAILS"
+            android:textColor="@color/colorPink"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/productText"
+            android:textColor="@color/colordarkGray"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp" />
+
+        <EditText
+            android:id="@+id/ed_item_name"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:hint="Item Name"
+            android:inputType="text"
+            android:textColorHint="@color/colordarkGray"
+            android:textSize="@dimen/_11sdp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_Condition"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/edit_box_back">
+
+                <TextView
+                    android:id="@+id/txtCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:hint="Condition"
+                    android:textColorHint="@color/colordarkGray"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageView
+                    android:id="@+id/imgDropDown1"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:rotation="-90"
+                    android:layout_margin="@dimen/_6sdp"
+                    app:srcCompat="@drawable/ic_chevron_left_red_24dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:src="@mipmap/questionmark"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_category"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:background="@drawable/edit_box_back">
+
+            <TextView
+                android:id="@+id/txtCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:hint="Select Category"
+                android:textColorHint="@color/colordarkGray"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/imgDropDown"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_6sdp"
+                android:rotation="-90"
+                app:srcCompat="@drawable/ic_chevron_left_red_24dp" />
+        </RelativeLayout>
+
+        <com.aldoapps.autoformatedittext.AutoFormatEditText
+            android:id="@+id/ed_item_Quantity"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:hint="Item Quantity"
+            android:inputType="number"
+            android:textColorHint="@color/colordarkGray"
+            android:textSize="@dimen/_10sdp" />
+
+        <EditText
+            android:id="@+id/ed_item_Deacription"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:hint="Item Description"
+            android:inputType="text"
+            android:textColorHint="@color/colordarkGray"
+            android:textSize="@dimen/_10sdp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnAddDetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@color/colorRed"
+            android:text="Add Price"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+</FrameLayout>

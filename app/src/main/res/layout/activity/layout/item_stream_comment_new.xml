@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorf7f7f7">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_gray_gradient"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp">
+
+        <RelativeLayout
+            android:id="@+id/relative_first_child"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/ico_user_profile"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:src="@mipmap/ic_user" />
+
+            <LinearLayout
+                android:id="@+id/ll_comment_detail_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/ico_user_profile"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="----"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_9sdp"
+                    android:textStyle="bold"
+                    tools:text="Hugo" />
+
+                <TextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:gravity="end"
+                    android:textSize="@dimen/_8sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.screamxo.Emoji.CustomText
+                android:id="@+id/txt_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_comment_detail_container"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:autoLink="web"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp"
+                tools:text="Some labble..." />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_comment"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:gravity="right">
+
+                <ImageView
+                    android:id="@+id/emoji_iv"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:padding="4dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center|end"
+                    android:src="@drawable/ic_emoji_smile_white_bg" />
+
+                <TextView
+                    android:id="@+id/txt_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/emoji_iv"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/colordarkGray"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_comment"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:padding="4dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_toRightOf="@+id/txt_like"
+                    android:src="@drawable/ico_comment_new" />
+
+                <TextView
+                    android:id="@+id/txt_comment_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_toRightOf="@+id/img_comment"
+                    android:text="0"
+                    android:textColor="@color/colordarkGray"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_toRightOf="@+id/txt_comment_count"
+                    android:drawableLeft="@drawable/ico_dots_red_new"
+                    android:gravity="bottom"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

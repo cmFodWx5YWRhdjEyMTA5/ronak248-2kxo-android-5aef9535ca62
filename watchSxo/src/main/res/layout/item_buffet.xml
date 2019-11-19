@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/mdp_10"
+            android:layout_toRightOf="@+id/rly_video"
+            android:layout_centerInParent="true"
+            android:background="@drawable/audio_place_holder">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerInParent="true"
+                android:src="@drawable/audio"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rly_video"
+            android:layout_width="@dimen/dp_118"
+            android:layout_height="@dimen/dp_118"
+            android:background="@drawable/video_place_holder">
+
+            <ImageView
+                android:layout_width="@dimen/dp_114"
+                android:layout_height="@dimen/dp_114"
+                android:layout_centerInParent="true"
+                android:src="@drawable/video_image"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_centerInParent="true"
+                android:src="@drawable/play"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/tools">
+    <background android:drawable="@android:color/transparent"/>
+    <foreground android:drawable="@drawable/ico_app_round"/>
+</adaptive-icon>

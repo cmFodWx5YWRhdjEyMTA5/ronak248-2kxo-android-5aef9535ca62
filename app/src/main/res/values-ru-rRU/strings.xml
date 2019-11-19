@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">2KXO</string>
+    <!--<string name="facebook_app_id">438965873143705</string>-->
+
+    <!--<string name="facebook_app_id">1006726839401266</string> -->
+    <string name="facebook_app_id">188811728609378</string>
+    //1735866819860423 <string name="fb_login_protocol_scheme">fb188811728609378</string>//1735866819860423
+    -
+    <string name="txt_amount_cash">-<sup><small>%s</small></sup>%s+<sup></sup></string>
+    <!-- Dialog Text -->
+    <string name="btn_ok">Окей</string>
+    <string name="txt_camara">Камера</string>
+    <string name="txt_gallery">Галерея</string>
+    <string name="txt_no_image">Нет Изображения</string>
+    <!-- login activity -->
+    <string name="btn_login">Войти</string>
+    <string name="hint_edit_username">Имя пользователя</string>
+    <string name="hint_password">Пароль</string>
+    <string name="txt_sign_in_with">ИЛИ ВОЙТИ С ПОМОЩЬЮ</string>
+    <string name="txt_forgot_password">Забыли пароль?</string>
+    <string name="txt_new_here">Впервые здесь? Зарегистрируйтесь</string>
+    <!-- Signup activity -->
+    <string name="hint_username">Имя пользователя</string>
+    <string name="hint_firstname">Имя</string>
+    <string name="hint_fullname">Полное имя</string>
+    <string name="hint_lastname">Фамилия</string>
+    <string name="hint_email">Электронный Адрес</string>
+    <string name="hint_phone_no">Номер Телефона</string>
+    <string name="txt_terms_condition">Принять Условия и Положения</string>
+    <string name="btn_create_account">Создать Аккаунт</string>
+    <string name="msg_first_name_null">Введите свое имя</string>
+    <string name="msg_last_name_null">Введите свою фамилию</string>
+    <string name="msg_username_null">Необходим действительный Электронный Адрес или Имя Пользователя</string>
+    <string name="msg_email_invalid">Пожалуйста, введите действительный электронный адрес</string>
+    <string name="msg_email_null">Введите свой эл. адрес</string>
+    <string name="msg_phone_number_null">Пожалуйста, Введите Номер Телефона</string>
+    <string name="msg_phone_number_invalid">Введите Действительный Номер Телефона</string>
+    <string name="msg_password_null">Пароль обязателен</string>
+    <string name="msg_password_not_valid">Пароль должен содержать не менее 6 символов.</string>
+    <string name="msg_accept_t_c">Принять наши условия и положения</string>
+    <!-- Forgot password activity-->
+    <string name="txt_send_mail_forgot_password">Если вы забыли свой пароль, мы можем отправить вам электронное письмо, чтобы сбросить его.</string>
+    <string name="btn_send_email">Отправить Электронное Письмо</string>
+    <string name="etd_email">Эл. адрес</string>
+    <string name="title_forgot_password">Забыли Пароль</string>
+    <!-- Drawer Main -->
+    <string name="title_activity_drawer_dash_board">Страница Пользователя</string>
+    <string name="title_activity_drawer_friend">Друзья</string>
+    <string name="title_activity_drawer_notification">Оповещения</string>
+    <string name="title_activity_drawer_shop">Магазин</string>
+    <string name="title_activity_drawer_screamxo">2KXO</string>
+    <string name="title_activity_drawer_setting">Настройки</string>
+    <string name="title_activity_drawer_social">Социальный</string>
+    <string name="title_activity_drawer_profile">2KXO</string>
+    <!-- Dash Board Adapter -->
+    <string name="txt_tag_top_shop">МАГАЗИН</string>
+    <string name="txt_tag_top_screamxo">2KXO</string>
+    <string name="txt_tag_top_MEDIA">МЕДИА</string>
+    <string name="txt_tag_bottom_stream">СТРИМ</string>
+    <!-- Email verification activity -->
+    <string name="btn_resend">Сбросить</string>
+    <string name="btn_confirm">Подтвердить</string>
+    <string name="txt_varification">Код подтверждения был отправлен на вашу электронную почту. Введите этот код подтверждения, чтобы завершить регистрацию.</string>
+    <string name="txt_varification_time">Проверочный код будет доставлен в течение Необязательно(0) Секунд</string>
+    <string name="title_verification">ПОДТВЕРЖДЕНИЕ</string>
+    <string name="hint_verification_code">Код Подтверждения</string>
+    <!-- Edit Profile -->
+    <string name="hint_school_or_master">Школа или Вуз</string>
+    <string name="hint_job">Род занятий</string>
+    <string name="hint_city">Город или Почтовый Индекс</string>
+    <string name="hint_hobby">Интересы</string>
+    <string name="txt_gender">Пол</string>
+    <string name="rad_male">Мужчина</string>
+    <string name="rad_Female">Женщина</string>
+    <string name="rad_transgender">Трансгендер</string>
+    <string name="txt_Relationship_status">Семейное положение</string>
+    <string name="rad_available">Доступно</string>
+    <string name="rad_unavailable">Недоступно</string>
+    <string name="txt_sex_preference">Половые предпочтения</string>
+    <string name="rad_opposite">Противоположно</string>
+    <string name="rad_same">Так же</string>
+    <string name="btn_update">Обновить</string>
+    <string name="title_edit_profile">Редактировать Профиль</string>
+    <!-- post media -->
+    <string name="title_post_media">ОПУБЛИКОВАТЬ МЕДИА</string>
+    <string name="btn_create_posgt">Создать Публикацию</string>
+    <string name="hint_title">Заголовок</string>
+    <!-- Post Stream -->
+    <string name="title_post">ПУБЛИКАЦИЯ</string>
+    <string name="hint_stream">О чем вы думаете?</string>
+    <!-- Post Details Activity -->
+    <string name="title_post_detail">ДАННЫЕ ПУБЛИКАЦИИ</string>
+    <!-- Setings -->
+    <string name="txt_notification_setting">Настройки Push-Уведомлений</string>
+    <string name="txt_reject_list">Черный Список</string>
+    <!--<string name="txt_privacy_settings">Настройки Конфиденциальности</string>-->
+    <!--<string name="txt_payment">Оплата</string>-->
+    <string name="txt_change_pass">Изменить Пароль</string>
+    <string name="txt_help">Помощь и Контакты</string>
+    <string name="txt_logout">Выйти</string>
+    <!--<string name="txt_about_us">О Нас</string>-->
+    <!-- Profile -->
+    <string name="txt_sell">Продать</string>
+    <string name="txt_more">Больше</string>
+    <!--<string name="txt_watching">Просмотр</string>-->
+    <string name="txt_bought">Куплено</string>
+    <string name="txt_sold">Продано</string>
+    <!-- Sell Item -->
+    <string name="title_sell_item">ПРОДАТЬ ТОВАР</string>
+    <string name="hint_item_name">Название Товара</string>
+    <string name="hint_item_description">Описание Товара</string>
+    <string name="hint_item_category">Выбрать Категорию</string>
+    <string name="hint_item_quantity">Количество Товара</string>
+    <string name="hint_item_price">Цена Товара</string>
+    <string name="hint_you_earn">Вы Заработаете</string>
+    <string name="hint_item_shipping_cost">Стоимость Доставки Товара</string>
+    <string name="hint_separate_keywords">Разделите ключевые слова запятой.</string>
+    <string name="btn_continue">Продолжить</string>
+    <string name="btn_delete">Удалить</string>
+    <string name="dialog_item_info">Это сумма, которую вы получите за каждую покупку.</string>
+    <string name="msg_enter_item_name">Пожалуйста, введите название товара</string>
+    <string name="msg_enter_item_description">Введите описание товара</string>
+    <string name="msg_enter_item_quantity">Введите количество товара</string>
+    <string name="msg_enter_item_price">Введите стоимость товара</string>
+    <string name="msg_enter_item_actual_price">Пожалуйста, введите стоимость товара</string>
+    <string name="msg_enter_item_shipping_coast">Рекомендуется бесплатная доставка.</string>
+    <string name="msg_enter_keywords">Пожалуйста, введите ключевые слова</string>
+    <string name="msg_select_item_image">Загрузите как минимум четыре изображения вашего товара</string>
+    <!-- PaymentDetai -->
+    <string name="txt_enter_shipping_address">Введите свой адрес доставки</string>
+    <string name="txt_payment_detail">Детали Платежа</string>
+    <string name="txt_item_quantity">Количество Товара</string>
+    <string name="txt_item_cost">Стоимость Товара</string>
+    <string name="txt_shipping_cost">Стоимость Доставки</string>
+    <string name="txt_total_cost">Общая Стоимость</string>
+    <string name="hint_street">Улица</string>
+    <string name="hint_city_payment">Город</string>
+    <string name="hint_zipcode">Индекс</string>
+    <string name="hint_state">Страна</string>
+    <string name="title_payment_detail">ДАННЫЕ ПЛАТЕЖА</string>
+    <!-- Payment method -->
+    <string name="title_payment_method">СПОСОБ ОПЛАТЫ</string>
+    <string name="txt_or">или</string>
+    <string name="title_payment_process">ОПЛАТА В ПРОЦЕССЕ</string>
+    <!-- item detail -->
+    <string name="txt_userid">Город пользователя</string>
+    <string name="txt_date">Понедельник в 11:10</string>
+    <string name="txt_watch">Наблюдать</string>
+    <string name="txt_unwatch">Удалить</string>
+    <!--<string name="txt_message">Сообщение</string>-->
+    <string name="txt_review">Отзыв</string>
+    <string name="txt_buy_item">Купить Товар</string>
+    <string name="title_item_detail">ДАННЫЕ О ТОВАРЕ</string>
+    <string name="txt_sold_list">Список Проданного</string>
+    <string name="txt_traking_detail">Добавить Трек #</string>
+    <string name="msg_no_review">Оставить первый отзыв!</string>
+    <string name="msg_no_data">Это еще не все!</string>
+    <!-- Change Password -->
+    <string name="edt_old_password">Старый Пароль</string>
+    <string name="edt_new_password">Новый Пароль</string>
+    <string name="edt_confirm_password">Подтвердить Пароль</string>
+    <string name="title_change_password">ИЗМЕНИТЬ ПАРОЛЬ</string>
+    <string name="msg_empty_old_password">Введите ваш старый пароль</string>
+    <string name="msg_empty_new_password">Введите ваш новый пароль</string>
+    <!-- Configure payment -->
+    <string name="title_configure_payment">КОНФИГУРАЦИЯ ОПЛАТЫ</string>
+    <!-- Watching List -->
+    <string name="title_watching_list">СПИСОК НАБЛЮДЕНИЯ</string>
+    <!-- PaymentActivity -->
+    <string name="toast_no_street"> Адрес обязателен</string>
+    <string name="toast_no_city">Город обязателен</string>
+    <string name="toast_no_zip">Индекс обязателен</string>
+    <string name="toast_no_state">Страна обязательна</string>
+    <string name="toast_no_quantity">Введите количество товара</string>
+    <!-- -->
+    <string name="title_sold_history">ИСТОРИЯ ПРОДАВЦА</string>
+    <!-- Reciepts -->
+    <string name="title_receipts">Чеки</string>
+    <string name="txt_add_review">Добавить Отзыв</string>
+    <string name="txt_done">Готово</string>
+    <!--<string name="txt_cancel">Отмена</string>-->
+    <string name="msg_empty_review">Пожалуйста, оставьте свой отзыв</string>
+    <!--Toast -->
+    <string name="toast_login_fail">Попробуйте снова или посетите 2KXO.com/help</string>
+    <string name="toast_password_empty">Введите свой пароль</string>
+    <string name="toast_no_internet">Проверьте ваше интернет соединение</string>
+    <string name="toast_some_errro"> Попробуйте снова или посетите 2KXO.com/help </string>
+    <string name="toast_error_retry"> Попробуйте снова или посетите 2KXO.com/help </string>
+    <string name="toast_error_something_went_wrong"> Попробуйте снова или посетите 2KXO.com/help.</string>
+    <string name="toast_error_cannot_share_file">В данный момент мы не можем поделиться этим файлом.</string>
+    <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="navigation_drawer_close">Закрыть панель навигации</string>
+    <string name="action_settings">Настройки</string>
+    <!-- Emoji Class Usage-->
+    <item name="tag_emojix_watcher" type="id" />
+    <item name="tag_layout_listener" type="id" />
+    <!-- Push setting -->
+    <string name="setting_notification">ОПОВЕЩЕНИЯ</string>
+    <string name="about_us"> 2KXO - это неограниченный стриминг-сервис без рекламы и глобальный рынок для загрузки музыки, видео, голосовых записей, фотографий или покупки и продажи продуктов и услуг из любой точки мира. 2KXO был основан и разработан в Нью-Йорке, США, элитной командой разработчиков. После трех лет разработки 2KXO был готов к глобальному релизу. Наша технология шифрования является одной из лучших среди доступных. Поскольку это - платформа электронной коммерции, безопасность жизненно важна для самого нашего существования. Именно поэтому 2KXO постоянно контролируется, проверяется и обновляется для обеспечения максимальной защиты конфиденциальности. Для того, чтобы поддерживать доверие и уверенность пользователей, 2KXO обеспечивает им прозрачную среду, особенно в отношении личной информации, позволяя общественности точно знать, какая информация считается важной, как эта информация собирается и что с ней делают. Вы будете разрываться, пытаясь выбрать один из множества веб-сервисов. Вы используете социальную сеть, сервис для отправки и получения платежей, а другие - для покупок и продаж. "Как и любой другой миллениал я вырос с интернетом», - говорит основатель и генеральный директор 2KXO Хьюго. «Когда я был моложе, я использовал Интернет для стриминга музыки и видео, затем для социальных сетей и, в конечном итоге, в коммерческих целях. По мере того, как я взрослел, мои интересы и потребности в отношении интернета тоже развивались. Я понял, что мне нужна платформа, которая росла бы вместе со мной. С этой целью я создал 2KXO, чтобы дать всем пользователям единую платформу для занятий любимым делом: стриминг, шопинг, продажа, отправка денег и т.д." Концепция 2KXO была составлена в 2008 году: главной целью проекта было разрушить технологическую индустрию, используя смелый новый подход. 2KXO предоставляет творческим людям возможность профессионально организовать медиа, мерчендайзинг, продукцию и услуги на одной мощной, модернизированной платформе. 2KXO предлагает вашему вниманию не только неограниченный стриминг и шоппинг, но и возможность создавать автоматические кампании Продвижения, чтобы вы могли легко и быстро увеличить количество пользователей, благодаря автоматизированному таргетингу. Поскольку многие люди переключаются между различными онлайн-сервисами, им довольно сложно управлять несколькими аккаунтами, и при этом следить за последними новостями и тенденциями. Поэтому 2KXO создал платформу, которая поможет пользователям упростить процесс управления и консолидации интерактивных взаимодействий на одной платформе.\n\n2KXO™\nNEW YORK, NEW YORK\n(888) 611-8331</string>
+    <string name="post_media">Опубликовать Медиа</string>
+    <string name="post_media_short">Опубликовать Медиа</string>
+    <string name="sell_now">Продать Сейчас</string>
+    <string name="sell_now_short">Продать Сейчас</string>
+    <string name="post_stream">Опубликовать Стрим</string>
+    <string name="post_stream_short">Опубликовать Стрим</string>
+    <string name="existing_shortcuts">Существующие ярлыки:</string>
+    <string name="remove_shortcut">Удалить</string>
+    <string name="disable_shortcut">Отключить</string>
+    <string name="enable_shortcut">Включить</string>
+    <string name="txt_dot">\u2022</string>
+    <!-- login new design -->
+    <string name="txt_login">ВОЙТИ</string>
+    <string name="txt_signup">ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="txt_done_small">Готово</string>
+    <string name="txt_login_small">Войти</string>
+    <string name="txt_welcome_back">С ВОЗВРАЩЕНИЕМ</string>
+    <string name="txt_signin_account">Войдите в свой аккаунт</string>
+    <!-- signup new -->
+    <string name="txt_signup_with">ЗАРЕГИСТРИРОВАТЬСЯ С ПОМОЩЬЮ</string>
+    <string name="txt_signup_with_email">Зарегистрироваться с помощью эл. почты</string>
+    <!-- Upload data -->
+    <!--<string name="txt_media">МЕДИА</string>-->
+    <!--<string name="txt_shop">МАГАЗИН</string>-->
+    <string name="txt_blog">БЛОГ</string>
+    <string name="txt_camera">КАМЕРА</string>
+    <string name="txt_music">МУЗЫКА</string>
+    <string name="txt_microphone">МИКРОФОН</string>
+    <string name="txt_timer">ТАЙМЕР</string>
+    <!-- Sell item condition -->
+    <!--<string name="txt_new">Новая</string>-->
+    <string name="txt_new_description">Новая с бирками (НСБ), неиспользованная, упаковка не вскрыта</string>
+   <!-- <string name="txt_like_new">Как Новая</string>-->
+    <string name="txt_like_new_description">Новая без бирок (НББ), неиспользованная, без признаков использования</string>
+    <!--<string name="txt_refurnished">Обновленная</string>-->
+    <string name="txt_refurnished_description">Использовалась аккуратно, пригодна к использованию, один/несколько мелких недостатков</string>
+   <!-- <string name="txt_fair">Нормально</string>-->
+    <string name="txt_fair_description">Использовалась, пригодна к использованию, много недостатков/дефектов</string>
+    <!--<string name="txt_poor">Плохо</string>-->
+    <string name="txt_poor_descrption">Много недостатков, может быть повреждена, на запчасти</string>
+</resources>

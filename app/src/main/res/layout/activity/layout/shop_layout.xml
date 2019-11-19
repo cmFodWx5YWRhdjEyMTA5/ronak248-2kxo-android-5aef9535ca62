@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.screamxo.Others.LockableScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_container"
+    android:background="@color/colorf7f7f7"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorf7f7f7"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/top_tag_layout"
+            layout="@layout/tag_layout"
+            android:visibility="visible" />
+
+        <include
+            android:id="@+id/include_no_data"
+            layout="@layout/no_data_found" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:paddingLeft="@dimen/_6sdp"
+            android:paddingRight="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:background="@android:color/white"
+            android:descendantFocusability="blocksDescendants"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/greyline"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_7sdp"
+            android:visibility="visible"
+            android:background="@color/colorf7f7f7"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_gravity="bottom"/>
+
+        <!--Image is also loaded into the same view.-->
+
+        <LinearLayout
+            android:id="@+id/ll_audio_video_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/lny_vedio_like_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/_10sdp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/bottom_tag_layout"
+            layout="@layout/tag_layout"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</com.screamxo.Others.LockableScrollView>

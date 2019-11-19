@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_350sdp"
+    android:layout_marginLeft="@dimen/_8sdp"
+    android:layout_marginRight="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:tint="@android:color/white"
+        android:src="@mipmap/cut_rectangle_middle_gray" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_arrow"
+        android:background="@drawable/bg_my_popup"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_watching"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_popup_selector"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:text="Watching"
+            android:textColor="@color/tw__blue_default"
+            tools:ignore="PrivateResource" />
+
+        <TextView
+            android:id="@+id/tv_bought"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_popup_selector"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:text="Bought"
+            android:textColor="@color/tw__blue_default"
+            tools:ignore="PrivateResource" />
+
+
+        <TextView
+            android:id="@+id/tv_sold"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_popup_selector"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:text="Sold"
+            android:textColor="@color/tw__blue_default"
+            tools:ignore="PrivateResource" />
+
+        <TextView
+            android:id="@+id/tv_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_popup_selector"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:text="Edit Profile"
+            android:textColor="@color/tw__blue_default"
+            tools:ignore="PrivateResource" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

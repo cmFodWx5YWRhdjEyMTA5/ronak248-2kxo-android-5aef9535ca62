@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lnr_top"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/_minus45sdp"
+            android:paddingTop="@dimen/_17sdp"
+            android:paddingBottom="@dimen/_17sdp"
+            android:src="@drawable/new_2kxo_logo" />
+    </LinearLayout>
+
+    <com.screamxo.Others.CustomViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lnr_top" />
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/tv_paypal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="PayPal"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#949494" />
+
+       <!-- <TextView
+            android:id="@+id/tv_bitcoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Bitcoin"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#949494" />-->
+
+       <!-- <TextView
+            android:id="@+id/tv_alipay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="Alipay"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#949494" />
+
+
+        <TextView
+            android:id="@+id/tv_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="WeChat"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#949494" />-->
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        tools:visibility="gone" />
+
+</RelativeLayout>

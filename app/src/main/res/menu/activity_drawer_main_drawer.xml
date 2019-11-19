@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:checked="true"
+            android:icon="@mipmap/ico_dashboard"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_world"
+            android:checked="true"
+            android:icon="@mipmap/ico_dashboard"
+            android:title="World" />
+
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@mipmap/ico_shop"
+            android:title="Shop" />
+
+        <item
+            android:id="@+id/nav_social"
+            android:checked="true"
+            android:icon="@mipmap/ico_dashboard"
+            android:title="Social" />
+
+        <item
+            android:id="@+id/nav_people"
+            android:icon="@mipmap/ico_friends"
+            android:title="People" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@mipmap/ico_user"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@mipmap/ico_settings"
+            android:title="Settings" />
+
+    </group>
+
+</menu>

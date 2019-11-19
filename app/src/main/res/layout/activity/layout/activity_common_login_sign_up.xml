@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ico_login_bg"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/iv_2kxo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_40sdp"
+        android:src="@drawable/ico_2kxo_white"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_20sdp"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_white_border"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/txt_login"
+        android:textColor="@android:color/white"
+        android:letterSpacing="0.02"
+        android:textSize="@dimen/_12sdp"
+        fontPath="fonts/Poppins-Medium.ttf"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/tv_signup"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/txt_signup"
+        android:letterSpacing="0.02"
+        android:background="@color/colorfb4a4c"
+        android:textColor="@android:color/white"
+        fontPath="fonts/Poppins-Medium.ttf"
+        android:textSize="@dimen/_12sdp"
+        tools:ignore="HardcodedText,MissingPrefix" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progreessbar"
+        style="@style/progressbar"
+        tools:visibility="visible" />
+
+</RelativeLayout>

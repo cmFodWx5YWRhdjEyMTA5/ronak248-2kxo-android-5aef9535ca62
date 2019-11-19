@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/menu_item_fashion"
+            android:title="Fashion &amp; Jewelry" />
+
+        <item
+            android:id="@+id/menu_item_electronics"
+            android:title="Electronics" />
+
+        <item
+            android:id="@+id/menu_item_entertainment"
+            android:title="Music and Entertainment" />
+
+        <item
+            android:id="@+id/menu_item_care"
+            android:title="Care (Home, Health &amp; Beauty)" />
+
+
+        <item
+            android:id="@+id/menu_item_original"
+            android:title="Original Art &amp; Crafts" />
+
+
+        <item
+            android:id="@+id/menu_item_cars"
+            android:title="Cars and Mechanic" />
+
+
+        <item
+            android:id="@+id/menu_item_classified"
+            android:title="Classified (Misc.)" />
+
+        <item
+            android:id="@+id/menu_item_speciality_services"
+            android:title="Speciality  Services" />
+
+    </group>
+</menu>

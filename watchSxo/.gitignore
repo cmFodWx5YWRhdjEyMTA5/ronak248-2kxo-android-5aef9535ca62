@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+build/
+*.iml
+
+
+src/main/java/.DS_Store
+src/main/java/com/.DS_Store
+src/main/java/com/screamxo/.DS_Store
