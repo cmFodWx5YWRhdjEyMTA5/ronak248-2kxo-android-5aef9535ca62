@@ -51,7 +51,7 @@ import retrofit2.Response;
 public class SelectPaymentFragment extends Fragment {
 
     public interface OnPaymentSelectedListener {
-        void onCardSelected(String cardNumber, String expDate, String brand, String cardId);
+            void onCardSelected(String cardNumber, String expDate, String brand, String cardId);
         void onPaymentGatewaySelected(String paymentProcessorName, String email);
     }
 
