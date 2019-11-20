@@ -179,7 +179,7 @@ public class PostStreamActivity extends AppCompatActivity implements View.OnClic
         if (preferences.getUserProfile() != null && !preferences.getUserProfile().isEmpty()) {
             Picasso.with(context)
                     .load(preferences.getUserProfile())
-                    .placeholder(R.mipmap.user)
+                    .placeholder(R.mipmap.user).centerCrop()
                     .error(R.mipmap.user)
                     .transform(new CircleTransform())
                     .resize(width, height)
