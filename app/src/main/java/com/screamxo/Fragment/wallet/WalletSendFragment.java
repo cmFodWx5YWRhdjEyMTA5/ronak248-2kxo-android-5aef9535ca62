@@ -106,7 +106,7 @@ public class WalletSendFragment extends BaseFragment {
                 try {
                     if (strAmount.length() > 0)
                         countAmount(getString(R.string.txt_back));
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 

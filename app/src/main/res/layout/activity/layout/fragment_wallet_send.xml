@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/_17sdp"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/txt_one"
