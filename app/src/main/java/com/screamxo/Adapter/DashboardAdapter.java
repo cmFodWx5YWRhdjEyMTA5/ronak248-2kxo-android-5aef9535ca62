@@ -38,6 +38,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.apimodule.ApiBase.ApiBean.CategoryList.Category;
@@ -86,14 +87,17 @@ import com.screamxo.Utils.Utils;
 import com.screamxo.Utils.Validations;
 import com.screamxo.Utils.ViewUtils;
 import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import tcking.github.com.giraffeplayer.ScreamxoPlayer;
+
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 import static com.screamxo.Activity.DrawerMainActivity.CAPTURE_MEDIA;
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_BOOST_ACTIVITY_RESULTS;
@@ -120,7 +124,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private LockableScrollView sv_container_media;
     private boolean isLocked;
     private ScreamxoPlayer screamxoPlayer;
-    public  int screenWidthPixels, screenHeightPixels;
+    public int screenWidthPixels, screenHeightPixels;
     private DashboardFragment dashboardFragment;
     private String categoryId = "0";
     private String categoryName = "";
@@ -1092,8 +1096,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         releaseMediaPlayer();
         stopVideoPlayer();
 
-        if (currentMediaPosition != index)
-        {
+        if (currentMediaPosition != index) {
             currentMediaPosition = index;
             View audioViewContainer = LayoutInflater.from(context).inflate(R.layout.audio_view_layout, ll_audio_video_image_media_container, false);
 
@@ -1262,9 +1265,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                                 mediaposts.get(currentMediaPosition).setIslike(0);
                                 setLikeApi(mediaposts.get(currentMediaPosition).getId(), StaticConstant.UNLIKE);
                             }
-                        }
-                        catch (IndexOutOfBoundsException e)
-                        {
+                        } catch (IndexOutOfBoundsException e) {
                             e.printStackTrace();
 //                                Utils.showToast(context, "Index Out of Box ");
                         }
@@ -1272,11 +1273,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
 
-            btnShare.setOnClickListener(new View.OnClickListener()
-            {
+            btnShare.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     if (mMediaPlayer != null)
 //                        mMediaPlayer.pause();
                         if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty()) {
@@ -1372,8 +1371,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         videoUrl = url;
         releaseMediaPlayer();
         stopVideoPlayer();
-
-
         if (currentMediaPosition != index) {
             currentMediaPosition = index;
             View girrafePlayerView = LayoutInflater.from(context).inflate(R.layout.view_screamxo_player, ll_audio_video_image_media_container, false);
@@ -1448,20 +1445,15 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 emoji_iv.setImageResource(R.drawable.ico_reaction_new);
             }
 
-            btnShare.setOnClickListener(new View.OnClickListener()
-            {
+            btnShare.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
-                    if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty())
-                    {
+                public void onClick(View view) {
+                    if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty()) {
                         ((DrawerMainActivity) context).gotoLogin(context);
                         return;
                     }
-                    if (mediaposts.get(currentMediaPosition).getUserid() == Integer.parseInt(preferences.getUserId()))
-                    {
-                        if (isVideo)
-                        {
+                    if (mediaposts.get(currentMediaPosition).getUserid() == Integer.parseInt(preferences.getUserId())) {
+                        if (isVideo) {
                             playInlinePlayer();
                         }
                         Intent gotoActivity = new Intent(context, BoostActivity.class);
@@ -1470,18 +1462,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                             gotoActivity.putExtra("videourl", mediaposts.get(currentMediaPosition).getMediaUrl());
                         } else if (mediaposts.get(currentMediaPosition).getMediaType().startsWith("image")) {
                             gotoActivity.putExtra("image", mediaposts.get(currentMediaPosition).getMediaUrl());
-                        }
-                        else
-                            {
+                        } else {
                             gotoActivity.putExtra("image", mediaposts.get(currentMediaPosition).getMediaThumb());
                         }
                         gotoActivity.putExtra("boost_type", String.valueOf(StaticConstant.BOOST_TYPE_MEDIA_ITEM));
                         gotoActivity.putExtra("itemid", String.valueOf(mediaposts.get(currentMediaPosition).getId()));
                         gotoActivity.putExtra("boost_url", String.valueOf(mediaposts.get(currentMediaPosition).getBoost_url()));
                         ((Activity) context).startActivityForResult(gotoActivity, REQ_CODE_BOOST_ACTIVITY_RESULTS);
-                    }
-                    else
-                        {
+                    } else {
                         StaticConstant.from_ = "media";
                         StaticConstant.from_type = mediaposts.get(currentMediaPosition).getMediaType();
                         StaticConstant.from_url = mediaposts.get(currentMediaPosition).getMediaUrl();
@@ -1528,8 +1516,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
 
-            emoji_iv.setOnClickListener(new View.OnClickListener()
-            {
+            emoji_iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty()) {
@@ -1560,9 +1547,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             screamxoPlayer.setScaleType(ScreamxoPlayer.SCALETYPE_FITXY);
             screamxoPlayer.play(mediaposts.get(currentMediaPosition).getMediaUrl());
             screamxoPlayer.setScreamxoPlayerClickListener(this);
-            screenWidthPixels=screamxoPlayer.screenWidthPixels;
-            screenHeightPixels=screamxoPlayer.screenHeightPixels;
-            ((DrawerMainActivity) context).setHeigthWidth(screenWidthPixels,screenHeightPixels);
+            screenWidthPixels = screamxoPlayer.screenWidthPixels;
+            screenHeightPixels = screamxoPlayer.screenHeightPixels;
+            ((DrawerMainActivity) context).setHeigthWidth(screenWidthPixels, screenHeightPixels);
 
             screamxoPlayer.onComplete(() ->
             {
@@ -2195,14 +2182,12 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             screamxoPlayer.onConfigurationChanged(newConfig);
         }
 
-        if (isPortrait)
-        {
+        if (isPortrait) {
             rellandscape.setVisibility(View.GONE);
             ((CustomLinearLayoutManager) dashboardMainRv.getLayoutManager()).setScrollEnabled(true);
             sv_container_media.setScrollingEnabled(true);
 
-            if(!((DrawerMainActivity) context).IsPipMode)
-            {
+            if (!((DrawerMainActivity) context).IsPipMode) {
                 ((DrawerMainActivity) context).floatingButton.setVisibility(View.VISIBLE);
             }
 
@@ -2306,11 +2291,10 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         rellandscape.setVisibility(View.GONE);
         ((CustomLinearLayoutManager) dashboardMainRv.getLayoutManager()).setScrollEnabled(true);
         sv_container_media.setScrollingEnabled(true);
-      //  ((DrawerMainActivity) context).floatingButton.setVisibility(View.VISIBLE);
+        //  ((DrawerMainActivity) context).floatingButton.setVisibility(View.VISIBLE);
 
 
-        if(!((DrawerMainActivity) context).IsPipMode)
-        {
+        if (!((DrawerMainActivity) context).IsPipMode) {
             ((DrawerMainActivity) context).floatingButton.setVisibility(View.VISIBLE);
         }
 
@@ -2357,23 +2341,17 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     @Override
-    public void onBackArrowClicked()
-    {
+    public void onBackArrowClicked() {
         Log.d(TAG, "onBackArrowClicked: ");
         clearVideoPreviewView();
     }
 
     @Override
-    public void onShareButtonClicked()
-    {
-        if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty())
-        {
+    public void onShareButtonClicked() {
+        if (preferences.getUserId().isEmpty() || preferences.getStripeCustomerId().isEmpty()) {
             ((DrawerMainActivity) context).gotoLogin(context);
-        }
-        else
-            {
-            if (isVideo)
-            {
+        } else {
+            if (isVideo) {
                 playInlinePlayer();
             }
             Intent sendIntent = new Intent();
@@ -2385,8 +2363,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     @Override
-    public void onFullScreenBtnClicked()
-    {
+    public void onFullScreenBtnClicked() {
 
     }
 
@@ -2434,8 +2411,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public void onDestroy() {
-        try
-        {
+        try {
 
             if (screamxoPlayer != null) {
                 screamxoPlayer.onDestroy();
@@ -2893,8 +2869,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
 
-    private class NoData extends RecyclerView.ViewHolder
-    {
+    private class NoData extends RecyclerView.ViewHolder {
         TextView mtxtNodata;
 
         NoData(View itemView) {
@@ -3028,8 +3003,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         map.put("offset", "" + 0);
 
 
-        if (Utils.isInternetOn(context))
-        {
+        if (Utils.isInternetOn(context)) {
             mService.getFetcherService(context).getDashboardEventsData(map).
                     enqueue(new Callback<DashBoardBean>() {
                         @Override
