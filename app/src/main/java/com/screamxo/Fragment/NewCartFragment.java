@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import com.screamxo.Activity.DrawerMainActivity;
 import com.screamxo.Activity.RahulWork.CartCheckoutActivity;
-import com.screamxo.Activity.cart.CartFragment;
+import com.screamxo.Activity.cart.CartTabFragment;
 import com.screamxo.Activity.cart.GetItemCount;
 import com.screamxo.Activity.cart.SaveItemFragment;
 import com.screamxo.R;
@@ -39,7 +39,7 @@ import static com.screamxo.Activity.cart.CartAdapter.qty;
 
 @SuppressLint("ValidFragment")
 public class NewCartFragment extends Fragment implements GetItemCount {
-    public CartFragment cartFragment;
+    public CartTabFragment cartFragment;
     public SaveItemFragment saveItemFragment;
     Context context;
     @BindView(R.id.txtCartTool)
@@ -119,7 +119,7 @@ public class NewCartFragment extends Fragment implements GetItemCount {
     }
 
     private void setPager() {
-        cartFragment = new CartFragment();
+        cartFragment = new CartTabFragment();
         saveItemFragment = new SaveItemFragment();
         viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
         viewPagerAdapter.addFragment(cartFragment, getString(R.string.txt_in_cart));
