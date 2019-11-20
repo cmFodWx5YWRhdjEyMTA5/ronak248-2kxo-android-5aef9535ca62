@@ -129,7 +129,7 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
                     }
                 }, 2000);
             } else if (getIntent().getExtras().containsKey("from")) {
-                if (getIntent().getExtras().get("from").equals("profile")) {
+                if (getIntent().getExtras().get("from").equals("profile") || getIntent().getExtras().get("from").equals("chat")) {
                     viewPager.setCurrentItem(1);
                 }
             }

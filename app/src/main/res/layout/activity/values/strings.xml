@@ -172,7 +172,7 @@
     <string name="txt_privacy_policy">Privacy Policy</string>
     <string name="txt_live_support">Live Support</string>
     <string name="txt_refer_friend">Refer Your Friend</string>
-<!--    update in other files too-->
+    <!--    update in other files too-->
     <string name="txt_uname_email_already_taken">Try another. Username or Email is in use</string>
     <string name="txt_change_password">Change Password</string>
     <string name="msg_password_not_match">confirm password not match with new password,plz try again</string>
@@ -198,4 +198,5 @@
     <string name="txt_member">Members</string>
     <string name="txt_request">Requests</string>
     <string name="txt_suggestions">SUGGESTIONS</string>
+    <string name="refund_buyer">Refund Buyer</string>
 </resources>

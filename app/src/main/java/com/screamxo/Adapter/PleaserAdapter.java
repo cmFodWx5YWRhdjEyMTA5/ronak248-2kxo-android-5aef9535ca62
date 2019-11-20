@@ -103,6 +103,7 @@ public class PleaserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 //        type: 0 = Pleaser,  1 = Business
             switch (type) {
                 case "0":
+
                     if (!TextUtils.isEmpty(message.getUsername())) {
                         txtUserName.setText(message.getUsername());
                     } else {
@@ -128,7 +129,14 @@ public class PleaserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                 case "1":
                     txtDescription.setVisibility(View.VISIBLE);
-                    txtDescription.setText(message.getUsername());
+
+                    if (!TextUtils.isEmpty(message.getUsername())) {
+                        txtUserName.setText(message.getUsername());
+                    } else {
+                        txtUserName.setText(message.getFname() + " " + message.getLname());
+                    }
+
+
                     txtUserName.setText(message.getItemname());
                     if (message.getItemmedia() != null && !message.getItemmedia().equals("")) {
                         Picasso.with(context)

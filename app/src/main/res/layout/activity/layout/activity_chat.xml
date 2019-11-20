@@ -155,7 +155,7 @@
                     android:layout_marginBottom="@dimen/_6sdp"
                     android:background="@color/colorfb4a4c"
                     android:stateListAnimator="@null"
-                    android:text="Pay Seller"
+                    android:text="@string/refund_buyer"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/_12sdp"

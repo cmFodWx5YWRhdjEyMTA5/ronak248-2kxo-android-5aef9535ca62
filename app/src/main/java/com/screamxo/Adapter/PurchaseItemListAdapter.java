@@ -59,7 +59,7 @@ public class PurchaseItemListAdapter extends RecyclerView.Adapter<PurchaseItemLi
     private PurchaseHistoryActivity context;
     private ArrayList<PurchaseOrderdetail> puchaseitemlist;
     private Validations mvalidations;
-    private String userid, review,shippingaddress;
+    private String userid, review, shippingaddress;
     private FetchrServiceBase mservice;
     private Preferences preferences;
 
@@ -121,13 +121,13 @@ public class PurchaseItemListAdapter extends RecyclerView.Adapter<PurchaseItemLi
             holder.tv_tracking.setText(puchaseitemlist.get(position).getItemTrackingDataNew().get(0).getTrackingNumber());
             holder.tv_estimate.setText(puchaseitemlist.get(position).getItemTrackingDataNew().get(0).getEstimatedDelivery());
             holder.tv_postal.setText(puchaseitemlist.get(position).getItemTrackingDataNew().get(0).getPostalCarrier());
-        }
-        else{
+        } else {
             holder.tv_tracking.setHint("Pending");
             holder.tv_estimate.setHint("Pending");
             holder.tv_postal.setHint("Pending");
         }
-        Glide.with(context).load("https://s3-us-west-2.amazonaws.com/scremax/profile/" + puchaseitemlist.get(position).getSeller().getPhoto()).apply(RequestOptions.circleCropTransform()).into(holder.img_buyer);
+        if (puchaseitemlist.get(position).getSeller().getPhoto() != null)
+            Glide.with(context).load("https://s3-us-west-2.amazonaws.com/scremax/profile/" + puchaseitemlist.get(position).getSeller().getPhoto()).apply(RequestOptions.circleCropTransform()).into(holder.img_buyer);
         holder.iv_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,7 +161,7 @@ public class PurchaseItemListAdapter extends RecyclerView.Adapter<PurchaseItemLi
 
         String username = "";
         if (puchaseitemlist.size() != 0)
-            username = puchaseitemlist.get(position).getSeller().getFname()+" "+puchaseitemlist.get(position).getSeller().getLname();
+            username = puchaseitemlist.get(position).getSeller().getFname() + " " + puchaseitemlist.get(position).getSeller().getLname();
 
         StringBuilder finalString = new StringBuilder();
 
@@ -429,8 +429,8 @@ public class PurchaseItemListAdapter extends RecyclerView.Adapter<PurchaseItemLi
     }
 
     public class PurchaseItemHolder extends RecyclerView.ViewHolder {
-        private TextView txtitemname, txtreview, txt_view_more, item_price, txt_purchase_date, txtReviewDummy, tv_postal, tv_estimate, tv_tracking,tv_basic_address;
-        private ImageView imgitem, iv_chat, img_buyer,img_name_copy;
+        private TextView txtitemname, txtreview, txt_view_more, item_price, txt_purchase_date, txtReviewDummy, tv_postal, tv_estimate, tv_tracking, tv_basic_address;
+        private ImageView imgitem, iv_chat, img_buyer, img_name_copy;
         private LinearLayout li_l;
 
         public PurchaseItemHolder(View itemView) {

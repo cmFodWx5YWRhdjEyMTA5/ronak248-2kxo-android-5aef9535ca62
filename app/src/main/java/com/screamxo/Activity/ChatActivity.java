@@ -51,6 +51,7 @@ import com.sandrios.sandriosCamera.internal.configuration.CameraConfiguration;
 import com.screamxo.Activity.RahulWork.CartCheckoutActivity;
 import com.screamxo.Activity.RahulWork.CustomWebViewFragment;
 import com.screamxo.Activity.RahulWork.UploadDataActivity;
+import com.screamxo.Activity.wallet.WalletSendReceiveActivity;
 import com.screamxo.Adapter.ChatAdapter;
 import com.screamxo.Emoji.EmojiLayoutFragment;
 import com.screamxo.Emoji.Emojix;
@@ -96,6 +97,7 @@ import rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton;
 
 import static com.sandrios.sandriosCamera.internal.ui.preview.PreviewDashboardActivity.FILE_PATH_ARG;
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_UPLOAD_DATA_ACTIVITY_RESULTS;
+import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_WALLET_ACTIVITY_RESULTS;
 import static com.screamxo.FireBasePush.MyFirebaseMessagingService.ACTION_CHAT_MESSAGE;
 
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener, CommonMethod, EmojiTextInterface, TextWatcher, android.support.v4.app.FragmentManager.OnBackStackChangedListener {
@@ -369,8 +371,10 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (itemId != null)
-                    callMoveToCartApi(itemId, "1");
+//                if (itemId != null)
+//                    callMoveToCartApi(itemId, "1");
+                startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", otherUid).putExtra("from", "chat"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
+
             }
         });
     }
@@ -423,7 +427,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 if (!BundleUtils.getIntentExtra(getIntent(), "username", "").isEmpty()) {
                     txt_username.setText(BundleUtils.getIntentExtra(getIntent(), "username", ""));
-                } else {
+                } else if (!BundleUtils.getIntentExtra(getIntent(), "fullname", "").isEmpty()) {
                     txt_username.setText(BundleUtils.getIntentExtra(getIntent(), "fullname", ""));
                 }
             } catch (Exception e) {
@@ -663,9 +667,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                                 pageCounter++;
                                 totalMsgCount = response.body().getResult().getCount();
                                 setAdapter(true);
-                            }
-                           else if(iscameFromSellerChat){
-                               callSendMsgApi("Send tracking");
+                            } else if (iscameFromSellerChat) {
+                                callSendMsgApi("Send tracking");
                             }
 
                         }
