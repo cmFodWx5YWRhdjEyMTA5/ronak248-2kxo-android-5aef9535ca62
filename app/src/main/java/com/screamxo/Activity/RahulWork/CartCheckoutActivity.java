@@ -252,7 +252,7 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
         ll_payment_gateway_details_container.setVisibility(View.VISIBLE);
         ll_card_details_container.setVisibility(View.GONE);
 
-        tv_payement_name.setText("XOCASH");
+        tv_payement_name.setText("Connect");
         tv_payement_email.setText("");
         this.cardId = null;
 

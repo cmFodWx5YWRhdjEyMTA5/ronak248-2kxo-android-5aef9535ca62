@@ -203,7 +203,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="XOCASH"
+                        android:text="Connect"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="@android:color/black"
                         tools:text="Select Payment"

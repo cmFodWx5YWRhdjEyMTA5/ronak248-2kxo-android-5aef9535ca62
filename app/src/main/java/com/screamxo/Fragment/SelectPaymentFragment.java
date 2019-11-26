@@ -238,7 +238,7 @@ public class SelectPaymentFragment extends Fragment {
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    onPaymentSelectedListener.onPaymentGatewaySelected("XOCASH", "");
+                                    onPaymentSelectedListener.onPaymentGatewaySelected("Connect", "");
                                     FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
                                     fragmentManager.popBackStack(SelectPaymentFragment.class.getSimpleName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
                                 }
