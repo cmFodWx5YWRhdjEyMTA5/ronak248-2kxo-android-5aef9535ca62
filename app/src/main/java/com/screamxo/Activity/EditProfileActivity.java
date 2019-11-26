@@ -137,7 +137,8 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
         initControlValue();
     }
 
-    private void init() {
+    private void init()
+    {
         context = this;
         bean = new HashMap<>();
         fileArray = new HashMap<>();

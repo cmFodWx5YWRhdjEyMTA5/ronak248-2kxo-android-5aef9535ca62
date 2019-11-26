@@ -239,7 +239,8 @@ public class ImageVideoShopAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         ImageView imgPlay, imgThum, imgsoldout;
         TextView txtPrice;
 
-        ImageVideo(View v) {
+        ImageVideo(View v)
+        {
             super(v);
             imgPlay = v.findViewById(R.id.img_play);
             imgThum = v.findViewById(R.id.img_thum);

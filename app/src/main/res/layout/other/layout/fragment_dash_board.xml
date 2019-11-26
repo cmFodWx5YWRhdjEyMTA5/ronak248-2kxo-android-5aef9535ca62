@@ -10,7 +10,6 @@
         android:background="@android:color/white"
         android:orientation="vertical">
 
-
         <RelativeLayout
             android:id="@+id/ll_Search"
             android:layout_width="match_parent"
@@ -118,6 +117,4 @@
         android:orientation="vertical"
         android:visibility="gone" />
 
-
 </RelativeLayout>
-

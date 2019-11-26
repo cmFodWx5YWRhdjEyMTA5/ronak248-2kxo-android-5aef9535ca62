@@ -63,7 +63,8 @@ import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
 
-public interface FetchrServiceInterface {
+public interface FetchrServiceInterface
+{
 
     @FormUrlEncoded
     @POST("users/signup")

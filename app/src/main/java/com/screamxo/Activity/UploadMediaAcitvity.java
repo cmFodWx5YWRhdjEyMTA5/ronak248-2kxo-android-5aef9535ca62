@@ -402,17 +402,20 @@ public class UploadMediaAcitvity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    private void requestPermission() {
+    private void requestPermission()
+    {
         ActivityCompat.requestPermissions(UploadMediaAcitvity.this, new String[]{WRITE_EXTERNAL_STORAGE, RECORD_AUDIO}, RequestPermissionCode);
     }
 
-    public boolean hasRequiredPermissions() {
+    public boolean hasRequiredPermissions()
+    {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
         int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO);
         return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
     }
 
-    public void setUpMediaRecorder() {
+    public void setUpMediaRecorder()
+    {
         mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);

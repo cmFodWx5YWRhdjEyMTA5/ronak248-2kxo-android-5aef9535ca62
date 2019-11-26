@@ -673,7 +673,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                             userdetailsArray.addAll(response.body().getResult().getUserdetails());
                             for (int i = 0; i < userdetailsArray.size(); i++) {
                                 ArrayList<Item> arrayListitem = userdetailsArray.get(i).getItems();
-                                for (int image = 0; image < arrayListitem.size(); image++) {
+                                for (int image = 0; image < arrayListitem.size(); image++)
+                                {
                                     arrayListItems.add(arrayListitem.get(image).getIimage().get(0).getMediaThumb());
                                     arrayListItemsName.add(arrayListitem.get(image).getItemName());
                                     arrayListItemsQuentity.add(arrayListitem.get(image).getCartQty());
@@ -726,40 +727,50 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
 
     int item_Pos = 0;
 
-    private void setAdapter() {
-        cartAdapter = new CartCheckoutAdapter(context, arrayListItems, arrayListPrices, arrayListItemsId, arrayListItemsName, arrayListItemsQuentity, new CartItemImage() {
+    private void setAdapter()
+    {
+        cartAdapter = new CartCheckoutAdapter(context, arrayListItems, arrayListPrices, arrayListItemsId, arrayListItemsName, arrayListItemsQuentity, new CartItemImage()
+        {
             @Override
-            public void ItemImage(String path, int position) {
-
-                if (itemImagepreview.getVisibility() == View.VISIBLE && path.equals(itemImagePreviewtemp)) {
+            public void ItemImage(String path, int position)
+            {
+                if (itemImagepreview.getVisibility() == View.VISIBLE && path.equals(itemImagePreviewtemp))
+                {
                     item_Pos = position;
-                    if (arrayListItems.size() == 1) {
-                        if (itemImagepreview.getVisibility() == View.VISIBLE) {
+                    if (arrayListItems.size() == 1)
+                    {
+                        if (itemImagepreview.getVisibility() == View.VISIBLE)
+                        {
                             itemImagepreview.setVisibility(View.GONE);
                             relchangecart.setVisibility(View.GONE);
-                        } else {
+                        }
+                        else
+                            {
                             itemImagepreview.setVisibility(View.VISIBLE);
                             relchangecart.setVisibility(View.VISIBLE);
-
                         }
-                    } else {
+                    }
+                    else
+                        {
                         itemImagepreview.setVisibility(View.GONE);
                         relchangecart.setVisibility(View.GONE);
-
                     }
-                } else {
+                }
+                else
+                    {
                     itemImagepreview.setVisibility(View.VISIBLE);
                     relchangecart.setVisibility(View.VISIBLE);
+
                 }
 
                 itemImagePreviewtemp = arrayListItems.get(position);
                 itemImagePreviewUrl = actualCartItem.get(position);
+
                 Picasso.with(itemImagepreview.getContext())
                         .load(path)
                         .placeholder(R.mipmap.img_placeholder)
                         .error(R.mipmap.img_placeholder)
                         .into(itemImagepreview);
-
 
                 txt_quntity.setText(String.valueOf(arrayListItemsQuentity.get(position)));
                 txt_item_name.setText(String.valueOf(arrayListItemsName.get(position)));
@@ -783,13 +794,14 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
         }
         DialogFragmentForItemQuantity dialogFragment = new DialogFragmentForItemQuantity(new CommonMethod() {
             @Override
-            public void commonMethod(String type, File... files) {
+            public void commonMethod(String type, File... files)
+            {
                 txt_quntity.setText(type);
 
                 callUpdateCartQty(String.valueOf(item_id), type);
 
-
-                for (int i = 0; i < multipleItemarray.size(); i++) {
+                for (int i = 0; i < multipleItemarray.size(); i++)
+                {
                     JsonObject jb = (JsonObject) multipleItemarray.get(i);
                     if (jb.get("item_id").toString().contains(String.valueOf(item_id))) {
                         jb.addProperty("item_id", String.valueOf(item_id));
@@ -800,8 +812,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                 }
                 arrayListItemsQuentity.set(curruntPosition, Integer.parseInt(type));
             }
-
-        }, qtyList, context);
+        },
+                qtyList, context);
         android.app.FragmentManager manager = (this).getFragmentManager();
         dialogFragment.show(manager, "");
 
@@ -912,15 +924,19 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                 onBackPressed();
                 break;
             case R.id.txtPay:
-                if (!TextUtils.isEmpty(tv_shipping_address.getText().toString())) {
+                if (!TextUtils.isEmpty(tv_shipping_address.getText().toString()))
+                {
                     if (BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(ItemDetailsAcitvity.class.getSimpleName())
                             || BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(DashboardAdapter.class.getSimpleName())
                             || BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(ShopFragmentView.class.getSimpleName())
                             || BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(NewCartFragment.class.getSimpleName())) {
-                        if (tv_selected_payment.getVisibility() == View.VISIBLE || tv_payement_name.getText().toString().trim().equals("XOCASH")) {
+                        if (tv_selected_payment.getVisibility() == View.VISIBLE || tv_payement_name.getText().toString().trim().equals("XOCASH"))
+                        {
                             //  payUsingWallet();
                             payUsingWalletMultipleItems();
-                        } else {
+                        }
+                        else
+                            {
                             if (cardId == null) {
                                 if (tv_payement_name.getText().toString().equalsIgnoreCase("paypal")) {
                                     payWithPayPal();
@@ -1064,7 +1080,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                 }
 
                 @Override
-                public void onFailure(Call<StripeToken> call, Throwable t) {
+                public void onFailure(Call<StripeToken> call, Throwable t)
+                {
                     t.printStackTrace();
                     progreessbar.setVisibility(View.GONE);
                     txtPay.setEnabled(true);
@@ -1075,7 +1092,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
         }
     }
 
-    private void buyMultipleitemsUsingCard() {
+    private void buyMultipleitemsUsingCard()
+    {
         Map<String, String> map = new HashMap<>();
         Map<String, ArrayList<Object>> mapitem = new HashMap<>();
 
@@ -1083,18 +1101,23 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
         map.put("customer_id", preferences.getStripeCustomerId());
 
         if (multipleItemarray != null)
-            mapitem.put("itemid", multipleItemarray);
+        mapitem.put("itemid", multipleItemarray);
         map.put("type", "OUT");
         map.put("shipping", tv_shipping_address.getText().toString());
 
-        if (Utils.isInternetOn(context)) {
+        if (Utils.isInternetOn(context))
+        {
             progreessbar.setVisibility(View.VISIBLE);
             txtPay.setEnabled(false);
             buyUsingCardCall = mservice.getFetcherService(context).stripeProcessPaymentMultipleItems(map, mapitem);
-            buyUsingCardCall.enqueue(new Callback<StripeToken>() {
+            buyUsingCardCall.enqueue(new Callback<StripeToken>()
+            {
+
                 @Override
-                public void onResponse(Call<StripeToken> call, Response<StripeToken> response) {
-                    if (response.code() == StaticConstant.RESULT_OK) {
+                public void onResponse(Call<StripeToken> call, Response<StripeToken> response)
+                {
+                    if (response.code() == StaticConstant.RESULT_OK)
+                    {
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                             finalizeBuyMultipleItemCard(response.body().getResult().getStripePaymentId());
                         } else {
@@ -1106,7 +1129,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                 }
 
                 @Override
-                public void onFailure(Call<StripeToken> call, Throwable t) {
+                public void onFailure(Call<StripeToken> call, Throwable t)
+                {
                     t.printStackTrace();
                     progreessbar.setVisibility(View.GONE);
                     txtPay.setEnabled(true);
@@ -1132,13 +1156,19 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
             progreessbar.setVisibility(View.VISIBLE);
             txtPay.setEnabled(false);
             buyUsingCardCall = mservice.getFetcherService(context).stripeProcessPayment(map);
-            buyUsingCardCall.enqueue(new Callback<StripeToken>() {
+            buyUsingCardCall.enqueue(new Callback<StripeToken>()
+            {
                 @Override
-                public void onResponse(Call<StripeToken> call, Response<StripeToken> response) {
-                    if (response.code() == StaticConstant.RESULT_OK) {
-                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+                public void onResponse(Call<StripeToken> call, Response<StripeToken> response)
+                {
+                    if (response.code() == StaticConstant.RESULT_OK)
+                    {
+                        if (response.body().getStatus().equals(StaticConstant.STATUS_1))
+                        {
                             finalizeBuyUsingCard(response.body().getResult().getStripePaymentId());
-                        } else {
+                        }
+                        else
+                            {
                             progreessbar.setVisibility(View.GONE);
                             txtPay.setEnabled(true);
                             DialogBox.showDialog(context, context.getString(R.string.app_name), response.body().getMsg(), DialogBox.DIALOG_FAILURE, null);
@@ -1147,7 +1177,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                 }
 
                 @Override
-                public void onFailure(Call<StripeToken> call, Throwable t) {
+                public void onFailure(Call<StripeToken> call, Throwable t)
+                {
                     t.printStackTrace();
                     progreessbar.setVisibility(View.GONE);
                     txtPay.setEnabled(true);
@@ -1539,8 +1570,8 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
         }
     }
 
-    private void returnResultAfterSuccessfullPayment
-            (Response<FinalProcessResponse> response) {
+    private void returnResultAfterSuccessfullPayment(Response<FinalProcessResponse> response)
+    {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("itemid", response.body().getResult().getItemid());
         returnIntent.putExtra("item_name", response.body().getResult().getItemname());

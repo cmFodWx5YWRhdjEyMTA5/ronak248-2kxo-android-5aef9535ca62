@@ -13,21 +13,17 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.screamxo.R;
 import com.screamxo.Utils.Preferences;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 
-public class SplashoneActivity extends AppCompatActivity {
+public class SplashoneActivity extends AppCompatActivity
+{
 
     private ImageView imgLogo;
     private ConstraintLayout constraintLayout;
@@ -36,9 +32,9 @@ public class SplashoneActivity extends AppCompatActivity {
     public static final String PACKAGE = "com.screamxo";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splashone);
         getWindow().setStatusBarColor(Color.BLACK);
         preferences = new Preferences(SplashoneActivity.this);
@@ -49,23 +45,30 @@ public class SplashoneActivity extends AppCompatActivity {
         startCountDownTimer();
     }
 
-    public void generateHashkey() {
-        try {
+    public void generateHashkey()
+    {
+        try
+        {
             PackageInfo info = getPackageManager().getPackageInfo(PACKAGE, PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
+            for (Signature signature : info.signatures)
+            {
                 MessageDigest md = MessageDigest.getInstance("SHA1");
                 md.update(signature.toByteArray());
                 Log.i("hashkey", ".........." + Base64.encodeToString(md.digest(), Base64.NO_WRAP));
             }
-        } catch (PackageManager.NameNotFoundException e) {
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
             Log.d("Name not found", e.getMessage(), e);
-
-        } catch (NoSuchAlgorithmException e) {
+        }
+        catch (NoSuchAlgorithmException e)
+        {
             Log.d("Error", e.getMessage(), e);
         }
     }
 
-    private void startCountDownTimer() {
+    private void startCountDownTimer()
+    {
 
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
@@ -78,27 +81,34 @@ public class SplashoneActivity extends AppCompatActivity {
 
         subscribe = Observable.just(100)
                 .delay(1500, TimeUnit.MILLISECONDS)
-                .subscribe(integer -> {
+                .subscribe(integer ->
+                {
                     startNextActivity();
                     SplashoneActivity.this.finish();
                 });
     }
 
-    private void startNextActivity() {
+    private void startNextActivity()
+    {
+
         Intent gotoNext;
         preferences.setFirstTimeLogin(false);
 
-        if (preferences.isFirstTimeLogin()) {
+        if (preferences.isFirstTimeLogin())
+        {
             gotoNext = new Intent(SplashoneActivity.this, CommonLoginSignUpActivity.class);
             startActivity(gotoNext);
             finish();
             return;
-        } else if (!preferences.getUserId().isEmpty() && !preferences.getUserToken().isEmpty()) {
+        }
+        else if (!preferences.getUserId().isEmpty() && !preferences.getUserToken().isEmpty()) {
             gotoNext = new Intent(SplashoneActivity.this, DrawerMainActivity.class);
             startActivity(gotoNext);
             finish();
             return;
-        } else {
+        }
+        else
+            {
             gotoNext = new Intent(SplashoneActivity.this, CommonLoginSignUpActivity.class);
             startActivity(gotoNext);
             finish();
@@ -106,12 +116,14 @@ public class SplashoneActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onDestroy()
+    {
         if (subscribe != null && !subscribe.isDisposed())
             subscribe.dispose();
         super.onDestroy();
     }
 }
+
 
 /*
 import android.content.Intent;
@@ -122,17 +134,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.screamxo.R;
 import com.screamxo.Utils.Preferences;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SplashoneActivity extends AppCompatActivity {
+public class SplashoneActivity extends AppCompatActivity
+{
     public static final String PACKAGE = "com.screamxo";
     Preferences preferences;
 

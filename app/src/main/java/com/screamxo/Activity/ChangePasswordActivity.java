@@ -54,7 +54,6 @@ public class ChangePasswordActivity extends AppCompatActivity {
     EditText edtNewPassword;
     @BindView(R.id.edt_confirm_password)
     EditText edtConfirmPassword;
-
     @BindView(R.id.progreessbar)
     ProgressBar progreessbar;
     @BindView(R.id.btn_update)

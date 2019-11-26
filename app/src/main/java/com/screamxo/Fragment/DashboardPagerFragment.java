@@ -113,8 +113,7 @@ public class DashboardPagerFragment extends Fragment {
     private String filePath;
 
     //    static int  currentItemPos = 1;
-    public static DashboardPagerFragment newInstance(String pos)
-    {
+    public static DashboardPagerFragment newInstance(String pos) {
         Bundle args = new Bundle();
         args.putString("CURRENT_ITEM_POSTION", pos);
         DashboardPagerFragment dashboardPagerFragment = new DashboardPagerFragment();
@@ -129,8 +128,7 @@ public class DashboardPagerFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         initData();
         return inflater.inflate(R.layout.fragment_dash_board_pager, container, false);
     }
@@ -146,8 +144,7 @@ public class DashboardPagerFragment extends Fragment {
         super.onConfigurationChanged(newConfig);
     }
 
-    private void initData()
-    {
+    private void initData() {
         requestbodyconverter = new RequestBodyConveter();
         fileArray = new LinkedHashMap<>();
         type = new String[1];
@@ -155,44 +152,33 @@ public class DashboardPagerFragment extends Fragment {
         preferences = new Preferences(getActivity());
     }
 
-    public void initSearch(String data)
-    {
-        try
-        {
+    public void initSearch(String data) {
+        try {
             fragment = pageAdapter.getItem(1);
-            if (fragment instanceof DashboardFragment)
-            {
+            if (fragment instanceof DashboardFragment) {
                 EventBus.getDefault().post(new EventData(EVENT_TOGGLE_SEARCH, data));
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
-    {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
         super.onViewCreated(view, savedInstanceState);
-        if (TextUtils.isEmpty(preferences.getUserToken()) && TextUtils.isEmpty(preferences.getUserId()) && false)
-        {
+        if (TextUtils.isEmpty(preferences.getUserToken()) && TextUtils.isEmpty(preferences.getUserId()) && false) {
             fragment = new DashboardFragment();
             HomeViewPagerAdapter homeViewPagerAdapter = new HomeViewPagerAdapter(getChildFragmentManager());
             homeViewPagerAdapter.addFragment(fragment, "");
             viewPager.setAdapter(homeViewPagerAdapter);
-        }
-        else
-            {
+        } else {
             RxPermissions.getInstance(getActivity()).request(Manifest.permission.CAMERA,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
                     Manifest.permission.RECORD_AUDIO).subscribe(new Action1<Boolean>() {
                 @Override
-                public void call(Boolean aBoolean)
-                {
-                    if (aBoolean)
-                    {
+                public void call(Boolean aBoolean) {
+                    if (aBoolean) {
                         pageAdapter = new MyPageAdapter(getChildFragmentManager());
                         viewPager.setAdapter(pageAdapter);
 //                    fragment = pageAdapter.getItem(currentItemPos);
@@ -201,8 +187,7 @@ public class DashboardPagerFragment extends Fragment {
                         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
                             @Override
-                            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
-                            {
+                            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                             }
 
@@ -439,8 +424,7 @@ public class DashboardPagerFragment extends Fragment {
 
 //            Utils.showToast(context, getString(R.string.txt_uploading_media));
 
-            postMediaCall.enqueue(new Callback<PostMediaBean>()
-            {
+            postMediaCall.enqueue(new Callback<PostMediaBean>() {
                 @Override
                 public void onResponse(Call<PostMediaBean> call, Response<PostMediaBean> response) {
                     if (builder != null) {
@@ -454,8 +438,7 @@ public class DashboardPagerFragment extends Fragment {
                                 Utils.showToast(context, response.body().getMsg());
                                 Toast.makeText(MyApplication.getInstance(), getString(R.string.txt_refreshing_media), Toast.LENGTH_SHORT).show();
                                 fragment = (Fragment) pageAdapter.instantiateItem(viewPager, viewPager.getCurrentItem());
-                                if (fragment != null && fragment instanceof DashboardFragment)
-                                {
+                                if (fragment != null && fragment instanceof DashboardFragment) {
                                     ((DashboardFragment) fragment).loadDashboardData(false);
                                 }
                             }
@@ -466,8 +449,7 @@ public class DashboardPagerFragment extends Fragment {
                 }
 
                 @Override
-                public void onFailure(Call<PostMediaBean> call, Throwable t)
-                {
+                public void onFailure(Call<PostMediaBean> call, Throwable t) {
                     MyApplication.getInstance().cancleNotification(121);
                     t.printStackTrace();
                 }
@@ -477,8 +459,7 @@ public class DashboardPagerFragment extends Fragment {
         }
     }
 
-    public Fragment getFragmentFromViewpager(@SuppressWarnings("SameParameterValue") int position)
-    {
+    public Fragment getFragmentFromViewpager(@SuppressWarnings("SameParameterValue") int position) {
         try {
             return ((Fragment) (pageAdapter.instantiateItem(viewPager, position)));
         } catch (Exception e) {
@@ -487,8 +468,7 @@ public class DashboardPagerFragment extends Fragment {
     }
 
     @Override
-    public void onDetach()
-    {
+    public void onDetach() {
         super.onDetach();
         isAttatched = false;
     }
@@ -536,8 +516,7 @@ public class DashboardPagerFragment extends Fragment {
         }
 
         @Override
-        public int getCount()
-        {
+        public int getCount() {
             if (!TextUtils.isEmpty(preferences.getUserToken()) && !TextUtils.isEmpty(preferences.getUserId()))
                 return 3;
             else

@@ -36,21 +36,17 @@ import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
 import com.screamxo.Utils.ViewUtils;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton;
-
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP;
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_tranding;
 import static com.screamxo.Utils.EventData.EVENT_TOGGLE_SEARCH;
@@ -64,10 +60,8 @@ public class DashboardFragment extends Fragment implements CommonMethod
     public Boolean streamCall = false;
     @BindView(R.id.recycler_view)
     public RecyclerView mrecyclerView;
-
     @BindView(R.id.rel_landscape)
     public LinearLayout rellandscape;
-
     @BindView(R.id.progreessbar)
     public ProgressBar progreessbar;
     String TAG = DashboardFragment.class.getSimpleName();
@@ -195,7 +189,8 @@ public class DashboardFragment extends Fragment implements CommonMethod
         Utils.hideKeyboard(context);
     }
 
-    private void init() {
+    private void init()
+    {
         mService = new FetchrServiceBase();
         Preferences preferences = new Preferences(context);
         dashBoardResult = new DashBoardResult();
@@ -248,7 +243,8 @@ public class DashboardFragment extends Fragment implements CommonMethod
         toolbar_edt_search.addTextChangedListener(new TextWatcher()
         {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
 
             }
 
@@ -266,7 +262,8 @@ public class DashboardFragment extends Fragment implements CommonMethod
             }
         });
 
-        rl_search.setOnClickListener(new View.OnClickListener() {
+        rl_search.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 rl_search_main.setVisibility(View.VISIBLE);
@@ -284,7 +281,8 @@ public class DashboardFragment extends Fragment implements CommonMethod
             }
         });
 
-        iv_fire.setOnClickListener(new View.OnClickListener() {
+        iv_fire.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 loadDashboardData(true);
@@ -316,13 +314,16 @@ public class DashboardFragment extends Fragment implements CommonMethod
         }
     }
 
-    void callDashBoardApi(String query, boolean isSearch, boolean isFiring, boolean isFirst) {
+    void callDashBoardApi(String query, boolean isSearch, boolean isFiring, boolean isFirst)
+    {
 
         Map<String, String> map = new HashMap<>();
-        if (isFirst) {
+        if (isFirst)
+        {
             map.put("userfiltertype", "2");
         }
-        if (isSearch) {
+        if (isSearch)
+        {
             pageCounter = 1;
             map.put("searchstring", query);
             map.put("userfiltertype", "2");
@@ -337,11 +338,12 @@ public class DashboardFragment extends Fragment implements CommonMethod
         map.put("limit", LIMIT);
         map.put("offset", "" + 0);
 
-
-        if (Utils.isInternetOn(context)) {
+        if (Utils.isInternetOn(context))
+        {
             progreessbar.setVisibility(View.VISIBLE);
             DashBoardApiCall = mService.getFetcherService(context).getDashboardEventsData(map);
-            DashBoardApiCall.enqueue(new Callback<DashBoardBean>() {
+            DashBoardApiCall.enqueue(new Callback<DashBoardBean>()
+            {
                 @Override
                 public void onResponse(Call<DashBoardBean> call, Response<DashBoardBean> response) {
                     Log.d("Responce", "Success");
@@ -362,7 +364,6 @@ public class DashboardFragment extends Fragment implements CommonMethod
                 public void onFailure(Call<DashBoardBean> call, Throwable t)
                 {
                     Log.d("Responce", "false");
-
                     streamCall = true;
                     progreessbar.setVisibility(View.GONE);
                     t.printStackTrace();
@@ -373,59 +374,12 @@ public class DashboardFragment extends Fragment implements CommonMethod
         }
     }
 
-    public void callDashBoardApiore(String categoryId, String categoryName, String pageCounterForShop) {
-
-        Map<String, String> map = new HashMap<>();
-        map.put("uid", uId);
-        map.put("limit", LIMIT);
-        map.put("offset", "" + 0);
-        map.put("categoryid", categoryId);
-
-        if (categoryName.equalsIgnoreCase("trending")) {
-            map.put("trending_mode", "3");
-        }
-
-        map.put("searchstring", StaticConstant.SEARCHSTRING);
-        map.put("userfiltertype", "3");
-        map.put("posttype", "3");
-        map.put("mediatype", "");
-
-        if (Utils.isInternetOn(context)) {
-            progreessbar.setVisibility(View.VISIBLE);
-            DashBoardApiCall = mService.getFetcherService(context).getDashboardEventsData(map);
-            DashBoardApiCall.enqueue(new Callback<DashBoardBean>() {
-                @Override
-                public void onResponse(Call<DashBoardBean> call, Response<DashBoardBean> response) {
-                    streamCall = true;
-                    if (response.code() == RESULT_OK) {
-                        if (response.body() != null && response.body().getStatus().equals(StaticConstant.STATUS_1)) {
-                            progreessbar.setVisibility(View.GONE);
-                            dashBoardResult = response.body().getResult();
-                            setAdapter();
-                            pageCounter++;
-                            totalCount = dashBoardResult.getStreampostcount();
-                            if (context.getClass() == DrawerMainActivity.class) {
-                                ((DrawerMainActivity) context).setApiData(dashBoardResult);
-                            }
-                        }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<DashBoardBean> call, Throwable t) {
-                    streamCall = true;
-                    progreessbar.setVisibility(View.GONE);
-                }
-            });
-        } else {
-            Utils.showToast(context, context.getString(R.string.toast_no_internet));
-        }
-    }
-
     /* userFilterType  // 2 is public */
-    public void callMoreStreamApi(boolean isSearched, String userFilterType) {
+    public void callMoreStreamApi(boolean isSearched, String userFilterType)
+    {
 
-        if (isSearched) {
+        if (isSearched)
+        {
             pageCounter = 1;
         }
 
@@ -553,8 +507,6 @@ public class DashboardFragment extends Fragment implements CommonMethod
         pageCounter = 1;
         callDashBoardApi("", false, isFiring, true);
         Log.e("HOgya", "asasas");
-
-
     }
 
     @Override

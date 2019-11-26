@@ -3,15 +3,21 @@ package com.screamxo.Activity;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.app.PictureInPictureParams;
+import android.app.RemoteAction;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
+import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -68,12 +74,14 @@ import com.screamxo.R;
 import com.screamxo.Utils.ApiConnectionUtils;
 import com.screamxo.Utils.DialogBox;
 import com.screamxo.Utils.EventData;
+import com.screamxo.Utils.HomeWatcher;
 import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -121,7 +129,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     public static final int REQ_CODE_CHAT_ACTIVITY_RESULTS = 123;
     public static final int REQ_CODE_CONFIGURE_PAYEMENT_RESULTS = 124;
     public static final int REQ_CODE_BUY_CONG_ACTIVITY_RESULTS = 125;
-
     public static final int CAPTURE_MEDIA = 368;
     public static final int FACEBOOK_REQUEST_CODE = 64206;
 
@@ -158,16 +165,41 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     FloatingSubButton sbflSetting, sbflHome, subFriend, sbSearch, sbWorld, sbProfile, sbChat, sbSocial;
     private FetchrServiceBase mService;
     private DashBoardResult mDashBoardResult;
-
     DashboardPagerFragment dashboardPagerFragment;
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    PictureInPictureParams.Builder pictureInPictureParamsBuilder = new PictureInPictureParams.Builder();
-
+    PictureInPictureParams.Builder pictureInPictureParamsBuilder;
+    public boolean has_pip;
     public int player_height;
     public int player_width;
+    public boolean IsPipMode, activity_Created;
+    HomeWatcher mHomeWatcher;
 
-    public boolean IsPipMode;
+    private static final String ACTION_MEDIA_CONTROL = "media_control";
+    private static final String EXTRA_CONTROL_TYPE = "control_type";
+
+    /**
+     * The request code for play action PendingIntent.
+     */
+    private static final int REQUEST_PLAY = 1;
+
+    /**
+     * The request code for pause action PendingIntent.
+     */
+    private static final int REQUEST_PAUSE = 2;
+
+    /**
+     * The request code for info action PendingIntent.
+     */
+    private static final int REQUEST_INFO = 3;
+
+    /**
+     * The intent extra value for play action.
+     */
+    private static final int CONTROL_TYPE_PLAY = 1;
+
+    private static final int CONTROL_TYPE_PAUSE = 2;
+
+    private BroadcastReceiver mReceiver;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,23 +207,45 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         setContentView(R.layout.activity_drawer_main);
         dashboardPagerFragment = DashboardPagerFragment.newInstance("1");
         ButterKnife.bind(this);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.BLACK);
         }
+
         init();
         initFabIcon();
         setUpFloatingMenuItems();
         Log.e(TAG, "onCreate: " + FirebaseInstanceId.getInstance().getToken());
+
+        mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
+            @Override
+            public void onHomePressed() {
+                if (activity_Created)
+                    enterInPipMode();
+            }
+
+            @Override
+            public void onHomeLongPressed() {
+                if (activity_Created)
+                    enterInPipMode();
+            }
+        });
+        mHomeWatcher.startWatch();
     }
 
     private void init() {
         context = this;
         preferences = new Preferences(this);
         mService = new FetchrServiceBase();
+        mHomeWatcher = new HomeWatcher(this);
         ApiConnectionUtils.initCategory(context);
         ApiConnectionUtils.initNewCategories(context);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            pictureInPictureParamsBuilder = new PictureInPictureParams.Builder();
+        }
     }
 
     public void setTranperentVisibility(int visibility) {
@@ -199,8 +253,10 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     }
 
     private void initFabIcon() {
+
         Log.d(TAG, "initFabIcon: ");
         try {
+
             floatingButton = findViewById(R.id.my_floating_button);
             sbProfile = findViewById(R.id.sbProfile);
 
@@ -219,29 +275,31 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                     .shouldScale(true)
                     .shouldRotate(true);
 
-
             floatingButton.setBackground(getResources().getDrawable(R.mipmap.menu));
+
             floatingButton.setOnClickBtnListener(new FloatingMenuButton.OnClickBtnListener() {
                 @Override
                 public void onClickBtn() {
+
                     Log.d(TAG, "onClickBtn: ");
 
                     Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
                     if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
                         DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
                         dashboardPagerFragment.check_Page();
+
                         /*Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(StaticConstant.count);
                         if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment) {
                             EventBus.getDefault().post(new EventData(EVENT_SCROLL_TO_TOP, ""));
                         } else if (currentVpFrag != null && currentVpFrag instanceof SocialFragment) {
                             EventBus.getDefault().post(new EventData(EVENT_SCROLL_TO_TOP_NEW, ""));
                         }*/
+
                     } else {
                         EventBus.getDefault().post(new EventData(EVENT_SCROLL_TO_TOP_NEW_PROFILE, ""));
                     }
                 }
             });
-
 
             floatingButton.setStateChangeListener(new FloatingMenuStateChangeListener() {
                 @Override
@@ -305,11 +363,9 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                         DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
                         if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
                             Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
-                            if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment &&
-                                    ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
-                                            .mrecyclerView.getAdapter()) != null) {
-                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
-                                        .mrecyclerView.getAdapter()).playInlinePlayer();
+                            if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment && ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
+                                    .mrecyclerView.getAdapter()) != null) {
+                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).playInlinePlayer();
                             }
                         }
                     }
@@ -340,6 +396,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                             }
                         }
                     }
+
                     if (!preferences.getUserId().isEmpty() && !preferences.getStripeCustomerId().isEmpty()) {
                         setFragment(3);
                     } else {
@@ -349,6 +406,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             });
 
             sbChat = findViewById(R.id.sbChat);
+
             sbChat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -401,7 +459,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                     } else {
                         gotoLogin(context);
                     }
-
                 }
             });
 
@@ -419,8 +476,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                             if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment &&
                                     ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
                                             .mrecyclerView.getAdapter()) != null) {
-                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
-                                        .mrecyclerView.getAdapter()).playInlinePlayer();
+                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).playInlinePlayer();
                             }
                         }
                     }
@@ -478,7 +534,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                     } else {
                         gotoLogin(context);
                     }
-
                 }
             });
 
@@ -496,8 +551,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                             if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment &&
                                     ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
                                             .mrecyclerView.getAdapter()) != null) {
-                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
-                                        .mrecyclerView.getAdapter()).playInlinePlayer();
+                                ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).playInlinePlayer();
                             }
                         }
                     }
@@ -521,10 +575,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                                 DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
                                 Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
                                 if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment &&
-                                        ((DashboardAdapter) ((DashboardFragment) currentVpFrag)
-                                                .mrecyclerView.getAdapter()) != null) {
+                                        ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()) != null) {
                                     isLocked = !isLocked;
-
 
                                     ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).lockUnlockScreen();
                                 }
@@ -539,14 +591,10 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                     }
                 }
             });
-
             initControlValue();
-
         } catch (Exception e) {
             Log.e(TAG, "initFabIcon: ", e);
         }
-
-
     }
 
     public void setUpFloatingMenuItems() {
@@ -561,6 +609,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             sbChat.setBackground(ContextCompat.getDrawable(this, R.drawable.post_with_name));
             sbSocial.setBackground(ContextCompat.getDrawable(this, R.drawable.shop));
         } else {
+
             sbflSetting.setBackground(ContextCompat.getDrawable(this, R.drawable.floating_posts));
             sbflHome.setBackground(ContextCompat.getDrawable(this, R.drawable.floating_dashboard));
             subFriend.setBackground(ContextCompat.getDrawable(this, R.drawable.floating_peoples));
@@ -624,8 +673,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 3:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof NewCartFragment)
-                    { // replace ShopFragment
+                    if (currentFragment != null && currentFragment instanceof NewCartFragment) { // replace ShopFragment
                         return;
                     }
                     fragment = new NewCartFragment(false);
@@ -634,8 +682,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 4:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof SocialFragment)
-                    {
+                    if (currentFragment != null && currentFragment instanceof SocialFragment) {
                         return;
                     }
                     fragment = new SocialFragment();
@@ -651,8 +698,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 6:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof ProfileFragment)
-                    {
+                    if (currentFragment != null && currentFragment instanceof ProfileFragment) {
                         return;
                     }
                     fragment = new ProfileFragment();
@@ -669,8 +715,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 7:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof SettingFragment)
-                    {
+                    if (currentFragment != null && currentFragment instanceof SettingFragment) {
                         return;
                     }
                     fragment = new SettingFragment();
@@ -687,11 +732,9 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                     fragment = new DashboardPagerFragment();
                     setVisibility(0, View.GONE);
                     break;
-
             }
 
-            if (flagFriends && !flagWallet)
-            {
+            if (flagFriends && !flagWallet) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
                 if (fragment instanceof DashboardPagerFragment) {
@@ -1008,6 +1051,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
     }
 
     @Override
@@ -1046,6 +1090,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
 //        MenuItem viewById = (MenuItem) findViewById(R.id.nav_people);
 //        onOptionsItemSelected(viewById);
+
     }
 
     public void replaceFragment(int id, Bundle bundle) {
@@ -1099,7 +1144,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                 }
             }
         }
-
 //        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
 //        if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
 //            if (((DashboardPagerFragment) currentFragment).viewPager.getCurrentItem() == 0) {
@@ -1113,7 +1157,6 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 ////                }
 ////            }
 //        }
-
         @SuppressLint("RestrictedApi")
         Fragment frg = null;
         for (int i = fragmentList.size() - 1; i >= 0; i--) {
@@ -1148,6 +1191,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
     @Override
     public void islogout(boolean status) {
+
     }
 
     @Override
@@ -1164,14 +1208,32 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         setFragment(1);
     }
 
-    @Override
-    public void onUserLeaveHint() {
+//
+//    @Override
+//    public void onUserLeaveHint()
+//    {
+//        super.onUserLeaveHint();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+//        {
+//            if (hasPip(DrawerMainActivity.this))
+//            {
+//                if (!isInPictureInPictureMode())
+//                {
+//                    Rational aspectRatio = new Rational(250, 150);
+//                    pictureInPictureParamsBuilder.setAspectRatio(aspectRatio).build();
+//                    enterPictureInPictureMode(pictureInPictureParamsBuilder.build());
+//                }
+//            }
+//        }
+//    }
+
+    public void enterInPipMode() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (!isInPictureInPictureMode()) {
-                //            Rational aspectRatio = new Rational(player_width, player_height);
-                Rational aspectRatio = new Rational(250, 150);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (hasPip(DrawerMainActivity.this)) {
+                if (!isInPictureInPictureMode()) {
+                    Rational aspectRatio = new Rational(250, 150);
                     pictureInPictureParamsBuilder.setAspectRatio(aspectRatio).build();
+                    updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "mPause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
                     enterPictureInPictureMode(pictureInPictureParamsBuilder.build());
                 }
             }
@@ -1185,21 +1247,112 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                 floatingButton.setVisibility(View.GONE);
                 toolbar.setVisibility(View.GONE);
                 IsPipMode = true;
+
+                mReceiver = new BroadcastReceiver() {
+                    @Override
+                    public void onReceive(Context context, Intent intent) {
+
+                        if (intent == null || !ACTION_MEDIA_CONTROL.equals(intent.getAction())) {
+                            return;
+                        }
+
+                        // This is where we are called back from Picture-in-Picture action
+                        // items.
+
+                        final int controlType = intent.getIntExtra(EXTRA_CONTROL_TYPE, 0);
+                        switch (controlType) {
+                            case CONTROL_TYPE_PLAY:
+                                chamgeSelection();
+                                break;
+                            case CONTROL_TYPE_PAUSE:
+                                chamgeSelection();
+                                break;
+                        }
+                    }
+                };
+
+                registerReceiver(mReceiver, new IntentFilter(ACTION_MEDIA_CONTROL));
+
+
+                chamgeFragmentControlsVisibility("show");
+
+
             } else {
+
+                mReceiver = null;
+                // Show the video controls if the video is not playing
+
                 floatingButton.setVisibility(View.VISIBLE);
-                toolbar.setVisibility(View.VISIBLE);
                 IsPipMode = false;
+                chamgeFragmentControlsVisibility("hide");
             }
         }
     }
 
-    private void pictureInPictureMode() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (!isInPictureInPictureMode()) {
-                Rational aspectRatio = new Rational(250, 150);
-                pictureInPictureParamsBuilder.setAspectRatio(aspectRatio).build();
-                enterPictureInPictureMode(pictureInPictureParamsBuilder.build());
+    public boolean hasPip(Context context) {
+        PackageManager pckMgr = context.getPackageManager();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            boolean flag = pckMgr.hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
+            if (flag)
+                has_pip = true;
+            else
+                has_pip = false;
+        }
+        return has_pip;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        activity_Created = true;
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        activity_Created = false;
+    }
+
+    public void updatePictureInPictureActions(@DrawableRes int iconId, String title, int controlType, int requestCode)
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            final ArrayList<RemoteAction> actions = new ArrayList<>();
+            final PendingIntent intent = PendingIntent.getBroadcast(DrawerMainActivity.this, requestCode, new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, controlType), 0);
+            final Icon icon = Icon.createWithResource(DrawerMainActivity.this, iconId);
+            if (actions.size() > 0) {
+                actions.clear();
+            }
+            actions.add(new RemoteAction(icon, title, title, intent));
+            pictureInPictureParamsBuilder.setActions(actions);
+        }
+    }
+
+    void chamgeSelection() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
+        if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+            DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
+            if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+                Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
+                if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment && ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()) != null) {
+                    ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).setPipControls();
+                }
+            }
+        }
+    }
+
+    void chamgeFragmentControlsVisibility(String status) {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
+        if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+            DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
+            if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+                Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
+                if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment && ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()) != null) {
+                    ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).setControlsVisibility(status);
+                }
             }
         }
     }
 }
+

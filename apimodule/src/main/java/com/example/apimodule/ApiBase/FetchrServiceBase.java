@@ -46,7 +46,6 @@ public class FetchrServiceBase {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getClient(context, isUploadService))
-
                 .build();
     }
 

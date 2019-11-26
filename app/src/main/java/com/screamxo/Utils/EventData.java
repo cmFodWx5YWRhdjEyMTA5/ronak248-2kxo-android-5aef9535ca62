@@ -1,6 +1,7 @@
 package com.screamxo.Utils;
 
-public class EventData {
+public class EventData
+{
 
     public static final int EVENT_SCROLL_TO_TOP = 100;
     public static final int EVENT_SCROLL_TO_TOP_NEW = 106;

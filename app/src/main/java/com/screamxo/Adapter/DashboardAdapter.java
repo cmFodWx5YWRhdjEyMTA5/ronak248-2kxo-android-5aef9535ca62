@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -165,6 +166,25 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private boolean isVideo = false;
     private boolean videoClicked = false;
 
+    private static final int REQUEST_PLAY = 1;
+
+    /**
+     * The request code for pause action PendingIntent.
+     */
+    private static final int REQUEST_PAUSE = 2;
+
+    /**
+     * The request code for info action PendingIntent.
+     */
+    private static final int REQUEST_INFO = 3;
+
+    /**
+     * The intent extra value for play action.
+     */
+    private static final int CONTROL_TYPE_PLAY = 1;
+
+    private static final int CONTROL_TYPE_PAUSE = 2;
+
     private Runnable mUpdateTimeTask = new Runnable() {
         public void run() {
             try {
@@ -184,8 +204,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     };
 
     private boolean isPortrait;
-    private RelativeLayout rl_mediaAudioBottomBar;
-    private ImageView imgPlay;
+    private RelativeLayout rl_mediaAudioBottomBar,app_video_bottom_box=null;
+    private ImageView imgPlay = null;
     private Configuration newConfig;
 
     private AudioManager.OnAudioFocusChangeListener focusChangeListener =
@@ -298,7 +318,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     ((Header) holder).includeNoData.setVisibility(View.GONE);
                     ((Header) holder).mrecyclerView.setVisibility(View.GONE);
                     ((Header) holder).greyline.setVisibility(View.GONE);
-
 
                     ll_media_preview_bottom_bar.setVisibility(View.GONE);
                     if (rl_mediaAudioBottomBar != null) {
@@ -1046,6 +1065,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             Intent intent = new Intent(context, InlinePlayerService.class);
             (context).stopService(intent);
         } catch (Exception e) {
+
         }
     }
 
@@ -1101,6 +1121,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             View audioViewContainer = LayoutInflater.from(context).inflate(R.layout.audio_view_layout, ll_audio_video_image_media_container, false);
 
             rl_mediaAudioBottomBar = audioViewContainer.findViewById(R.id.audio_bottom_view);
+            app_video_bottom_box = audioViewContainer.findViewById(R.id.app_video_bottom_box);
             FrameLayout user_image_container = audioViewContainer.findViewById(R.id.user_image_container);
             ImageView emoji_iv = audioViewContainer.findViewById(R.id.emoji_iv);
             ImageView user_iv = audioViewContainer.findViewById(R.id.user_iv);
@@ -2082,7 +2103,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     releaseMediaPlayer();
                 });
 
-                imgPlay.setOnClickListener(v -> {
+                imgPlay.setOnClickListener(v ->
+                {
                     Log.d(TAG, "setOnClickListener: ");
                     if (mMediaPlayer.isPlaying()) {
                         mMediaPlayer.pause();
@@ -2384,7 +2406,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 screamxoPlayer.onResume();
             }
 
-            if (mMediaPlayer != null && mMediaPlayer.getCurrentPosition() != 0) {
+            if (mMediaPlayer != null && mMediaPlayer.getCurrentPosition() != 0)
+            {
                 mMediaPlayer.start();
                 imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
                 mMediaPlayer.seekTo(mMediaPlayer.getCurrentPosition());
@@ -3037,7 +3060,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         ll_audio_video_image_shop_container.setVisibility(View.GONE);
         currentShopPosition = -1;
 
-
         Map<String, String> map = new HashMap<>();
         map.put("userfiltertype", "2");
         map.put("firing_mode", "1");
@@ -3046,10 +3068,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         map.put("myid", uId);
         map.put("uid", uId);
         map.put("trending", "2");
-
         map.put("limit", LIMIT);
         map.put("offset", "" + 0);
-
 
         if (Utils.isInternetOn(context)) {
             mService.getFetcherService(context).getDashboardEventsData(map).
@@ -3058,7 +3078,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         public void onResponse(Call<DashBoardBean> call, Response<DashBoardBean> response) {
                             Log.d("Responce", "Success");
                             if (response.code() == RESULT_OK) {
-
 
                                 canLazyLoadMoreShopItems = true;
                                 if (response.code() == StaticConstant.RESULT_OK && response.body() != null) {
@@ -3069,8 +3088,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                                     imagevideoAdapterImageShop.notifyDataSetChanged();
 //                            }
                                 }
-
-
 //                                if (response.body() != null) {
 //
 //                                    if(response.body().getResult().getItemdetails().size()>0) {
@@ -3093,10 +3110,68 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         @Override
                         public void onFailure(Call<DashBoardBean> call, Throwable t) {
                             Log.d("Responce", "false");
-
                             t.printStackTrace();
                         }
                     });
+        }
+    }
+
+    public void setPipControls() {
+        Log.d(TAG, "setOnClickListener:+++3116++");
+        if (imgPlay != null) {
+            imgPlay.setVisibility(View.INVISIBLE);
+        }
+
+        if (mMediaPlayer != null)
+        {
+            if (mMediaPlayer.isPlaying()) {
+                mMediaPlayer.pause();
+                sMediaPlayerLastPosition = mMediaPlayer.getCurrentPosition();
+                //  imgPlay.setImageResource(R.drawable.ic_play_arrow_white_24dp);
+                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+            } else {
+
+//                imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
+                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
+                mMediaPlayer.start();
+                mMediaPlayer.seekTo(sMediaPlayerLastPosition);
+//            playInlinePlayer();
+//            screamxoPlayer.play(mediaposts.get(currentMediaPosition).getMediaUrl());
+//            screamxoPlayer.pause();
+            }
+        }
+        else if (isVideo)
+        {
+            if ((screamxoPlayer != null)) {
+                if (screamxoPlayer.isPlaying()) {
+                    screamxoPlayer.pause();
+//                    imgPlay.setImageResource(R.drawable.ic_play_arrow_white_24dp);
+                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+
+                }
+                else
+                    {
+//                    screamxoPlayer.play(mediaposts.get(currentMediaPosition).getMediaUrl());
+                    screamxoPlayer.onResume();
+                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+//                    imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
+                }
+            }
+        }
+    }
+
+    public  void setControlsVisibility(String status)
+    {
+        if(app_video_bottom_box!=null)
+        {
+            if(status.equalsIgnoreCase("hide"))
+            {
+                app_video_bottom_box.setVisibility(View.INVISIBLE);
+            }
+            else if(status.equalsIgnoreCase("show"))
+            {
+                app_video_bottom_box.setVisibility(View.VISIBLE);
+            }
         }
     }
 }
