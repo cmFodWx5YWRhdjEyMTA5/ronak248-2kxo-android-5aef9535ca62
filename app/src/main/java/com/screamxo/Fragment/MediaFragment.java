@@ -189,12 +189,15 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
 
                 mrecyclerView.addOnScrollListener(new HidingScrollListener() {
                     @Override
-                    public void onHide() {
-                        if (context.getClass() == DrawerMainActivity.class) {
+                    public void onHide()
+                    {
+                        if (context.getClass() == DrawerMainActivity.class)
+                        {
                             ((DrawerMainActivity) context).hideViews();
                         }
 
-                        if (context.getClass() == ProfileActivity.class) {
+                        if (context.getClass() == ProfileActivity.class)
+                        {
                             ((ProfileActivity) context).hideViews();
                         }
                     }
@@ -212,8 +215,10 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
                     }
                 });
 
-                if (linearLayoutManagerImageAudio.findLastCompletelyVisibleItemPosition() == (imagevideoAdapterAllmedia.getItemCount() - 1)) {
-                    if (allMediaBoolean && mediaposts.size() < mediaPostCount) {
+                if (linearLayoutManagerImageAudio.findLastCompletelyVisibleItemPosition() == (imagevideoAdapterAllmedia.getItemCount() - 1))
+                {
+                    if (allMediaBoolean && mediaposts.size() < mediaPostCount)
+                    {
                         updatePaging(false);
                         allMediaBoolean = false;
                         callUserInfoApi();
@@ -246,7 +251,8 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
         }
     }
 
-    private void callUserInfoApi() {
+    private void callUserInfoApi()
+    {
         Map<String, String> map = new HashMap<>();
         map.put("uid", uId);
         map.put("offset", "" + 0);
@@ -334,9 +340,12 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
             ImageView emoji_iv = viewBottomView.findViewById(R.id.emoji_iv);
             ImageView user_iv = viewBottomView.findViewById(R.id.user_iv);
 
-            if (mediaposts.get(index).getMypost() == 1) {
+            if (mediaposts.get(index).getMypost() == 1)
+            {
                 btnShare.setText(getString(R.string.txt_boost));
-            } else {
+            }
+            else
+                {
                 btnShare.setText(getString(R.string.txt_share));
             }
             Picasso.with(context)
@@ -876,7 +885,6 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
             }
         });
 
-
         mMediaPlayer = new MediaPlayer();
 
         try {
@@ -895,8 +903,10 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
                     e.printStackTrace();
                 }
 
-                mMediaPlayer.setOnPreparedListener(mp -> {
-                    try {
+                mMediaPlayer.setOnPreparedListener(mp ->
+                {
+                    try
+                    {
                         mMediaPlayer.start();
 
                         totalMediaPlayerDuration = mp.getDuration();
@@ -909,12 +919,14 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
                         imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
 
                         seekBarAudioProgress.setMax(totalMediaPlayerDuration);
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                     }
                 });
 
-                imgPlay.setOnClickListener(v -> {
+                imgPlay.setOnClickListener(v ->
+                {
                     if (mMediaPlayer.isPlaying()) {
                         mMediaPlayer.pause();
                         imgPlay.setImageResource(R.drawable.ic_play_arrow_white_24dp);
@@ -924,18 +936,23 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
                     }
                 });
 
-                seekBarAudioProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                seekBarAudioProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+                {
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
                     }
 
                     @Override
-                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    public void onStartTrackingTouch(SeekBar seekBar)
+                    {
+
                     }
 
                     @Override
-                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                        if (fromUser && mMediaPlayer != null && mMediaPlayer.isPlaying()) {
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
+                    {
+                        if (fromUser && mMediaPlayer != null && mMediaPlayer.isPlaying())
+                        {
                             mMediaPlayer.seekTo(progress);
                         }
                     }
@@ -968,7 +985,6 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     private AudioManager.OnAudioFocusChangeListener focusChangeListener =
@@ -1047,15 +1063,20 @@ public class MediaFragment extends Fragment implements AudioVideoInterface, Gira
         }
     }
 
-    public void onPause() {
+    public void onPause()
+    {
         super.onPause();
-        if (giraffePlayer != null) {
+
+        if (giraffePlayer != null)
+        {
             giraffePlayer.onPause();
         }
 
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null)
+        {
             mMediaPlayer.pause();
         }
+
     }
 
     public void onResume() {
