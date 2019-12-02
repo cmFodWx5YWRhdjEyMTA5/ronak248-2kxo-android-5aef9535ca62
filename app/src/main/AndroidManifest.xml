@@ -122,9 +122,15 @@
             android:name=".Activity.PostStreamActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible" />
+
         <activity
             android:name=".Activity.ProfileActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Activity.PostDetailsActivity"
             android:screenOrientation="portrait" />

@@ -124,7 +124,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private int sMediaPlayerLastPosition;
     private LockableScrollView sv_container_media;
     private boolean isLocked;
-    private ScreamxoPlayer screamxoPlayer;
+    private ScreamxoPlayer screamxoPlayer = null;
     public int screenWidthPixels, screenHeightPixels;
     private DashboardFragment dashboardFragment;
     private String categoryId = "0";
@@ -171,6 +171,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     /**
      * The request code for pause action PendingIntent.
      */
+
     private static final int REQUEST_PAUSE = 2;
 
     /**
@@ -204,7 +205,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     };
 
     private boolean isPortrait;
-    private RelativeLayout rl_mediaAudioBottomBar,app_video_bottom_box=null;
+    private RelativeLayout rl_mediaAudioBottomBar, app_video_bottom_box = null;
+    private LinearLayout ll_footer = null;
     private ImageView imgPlay = null;
     private Configuration newConfig;
 
@@ -1122,6 +1124,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
             rl_mediaAudioBottomBar = audioViewContainer.findViewById(R.id.audio_bottom_view);
             app_video_bottom_box = audioViewContainer.findViewById(R.id.app_video_bottom_box);
+            ll_footer = audioViewContainer.findViewById(R.id.ll_footer);
             FrameLayout user_image_container = audioViewContainer.findViewById(R.id.user_image_container);
             ImageView emoji_iv = audioViewContainer.findViewById(R.id.emoji_iv);
             ImageView user_iv = audioViewContainer.findViewById(R.id.user_iv);
@@ -1165,7 +1168,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     .transform(new CircleTransform())
                     .into(user_iv);
 
-            user_iv.setOnClickListener(viewProfile -> {
+            user_iv.setOnClickListener(viewProfile ->
+            {
                 if (isVideo) {
                     playInlinePlayer();
                 }
@@ -1581,6 +1585,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     }
                 }
             });
+
+
         } else {
             clearVideoPreviewView();
         }
@@ -2135,7 +2141,8 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     }
                 });
 
-                mMediaPlayer.setOnCompletionListener(mp -> {
+                mMediaPlayer.setOnCompletionListener(mp ->
+                {
                     if (sharedClick) {
                         sharedClick = false;
                     } else {
@@ -2158,8 +2165,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         }
                     }
 
-//                    commented by amit because audio player was not playing next song
-//                    mMediaPlayer.release();
                 });
             }
         } catch (Exception e) {
@@ -2406,8 +2411,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 screamxoPlayer.onResume();
             }
 
-            if (mMediaPlayer != null && mMediaPlayer.getCurrentPosition() != 0)
-            {
+            if (mMediaPlayer != null && mMediaPlayer.getCurrentPosition() != 0) {
                 mMediaPlayer.start();
                 imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
                 mMediaPlayer.seekTo(mMediaPlayer.getCurrentPosition());
@@ -2834,7 +2838,6 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         txtClose.setText("Close");
                     }
 
-
                     window.setOnDismissListener(new PopupWindow.OnDismissListener() {
                         @Override
                         public void onDismiss() {
@@ -3116,23 +3119,26 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
 
-    public void setPipControls() {
+    public void setPipControls()
+    {
         Log.d(TAG, "setOnClickListener:+++3116++");
-        if (imgPlay != null) {
-            imgPlay.setVisibility(View.INVISIBLE);
-        }
-
+//        if (imgPlay != null) {
+//            imgPlay.setVisibility(View.INVISIBLE);
+//        }
         if (mMediaPlayer != null)
         {
-            if (mMediaPlayer.isPlaying()) {
+            if (mMediaPlayer.isPlaying())
+            {
                 mMediaPlayer.pause();
                 sMediaPlayerLastPosition = mMediaPlayer.getCurrentPosition();
-                //  imgPlay.setImageResource(R.drawable.ic_play_arrow_white_24dp);
-                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
-            } else {
+//                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
+                ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, R.drawable.next, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
+            }
+            else
+            {
+//                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_stop_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+                ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_stop_white_24dp, R.drawable.next, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
 
-//                imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
-                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
                 mMediaPlayer.start();
                 mMediaPlayer.seekTo(sMediaPlayerLastPosition);
 //            playInlinePlayer();
@@ -3142,36 +3148,103 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
         else if (isVideo)
         {
-            if ((screamxoPlayer != null)) {
-                if (screamxoPlayer.isPlaying()) {
+            if ((screamxoPlayer != null))
+            {
+                if (screamxoPlayer.isPlaying())
+                {
                     screamxoPlayer.pause();
-//                    imgPlay.setImageResource(R.drawable.ic_play_arrow_white_24dp);
-                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
-
+//                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
+                    ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, R.drawable.next, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
                 }
                 else
-                    {
-//                    screamxoPlayer.play(mediaposts.get(currentMediaPosition).getMediaUrl());
+                {
                     screamxoPlayer.onResume();
-                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PLAY, REQUEST_PLAY);
-//                    imgPlay.setImageResource(R.drawable.ic_stop_white_24dp);
+//                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_stop_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+                    ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_stop_white_24dp, R.drawable.next, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
                 }
             }
         }
     }
 
-    public  void setControlsVisibility(String status)
-    {
-        if(app_video_bottom_box!=null)
-        {
-            if(status.equalsIgnoreCase("hide"))
-            {
-                app_video_bottom_box.setVisibility(View.INVISIBLE);
+    public void setControlsVisibility(String status) {
+        if (isVideo) {
+            if (app_video_bottom_box != null) {
+                if (status.equalsIgnoreCase("hide")) {
+                    app_video_bottom_box.setVisibility(View.INVISIBLE);
+                    ll_footer.setVisibility(View.INVISIBLE);
+                } else if (status.equalsIgnoreCase("show")) {
+                    app_video_bottom_box.setVisibility(View.VISIBLE);
+                    ll_footer.setVisibility(View.VISIBLE);
+                }
             }
-            else if(status.equalsIgnoreCase("show"))
-            {
-                app_video_bottom_box.setVisibility(View.VISIBLE);
+        }
+
+        if (mMediaPlayer != null) {
+            if (ll_footer != null) {
+                if (status.equalsIgnoreCase("hide")) {
+                    ll_footer.setVisibility(View.VISIBLE);
+                } else if (status.equalsIgnoreCase("show")) {
+                    ll_footer.setVisibility(View.INVISIBLE);
+                }
             }
+        }
+    }
+
+    public void playNextItem() {
+        if (mMediaPlayer != null) {
+            sMediaPlayerLastPosition = 0;
+            seekBarAudioProgress.setProgress(0);
+            long currentDuration = 0; // in case of the completion...
+            long totalDuration = mMediaPlayer.getDuration();
+
+            txtDuration.setText(Utils.milliSecondsToTimer(currentDuration));
+            txtEndDuration.setText(Utils.milliSecondsToTimer(totalDuration));
+
+            for (int i = currentMediaPosition + 1; i < mediaposts.size(); i++) {
+                if (mediaposts.get(currentMediaPosition).getPosttype() == mediaposts.get(i).getPosttype()) {
+                    Audio(null, null, null, null, i);
+                    break;
+                }
+            }
+        }
+
+        if (screamxoPlayer != null) {
+            for (int i = currentMediaPosition + 1; i < mediaposts.size(); i++) {
+                if (mediaposts.get(currentMediaPosition).getPosttype() == mediaposts.get(i).getPosttype()) {
+                    Video(null, null, i);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void playPreviousItem() {
+        if (mMediaPlayer != null) {
+            sMediaPlayerLastPosition = 0;
+            seekBarAudioProgress.setProgress(0);
+            long currentDuration = 0; // in case of the completion...
+            long totalDuration = mMediaPlayer.getDuration();
+
+            txtDuration.setText(Utils.milliSecondsToTimer(currentDuration));
+            txtEndDuration.setText(Utils.milliSecondsToTimer(totalDuration));
+
+            if (currentMediaPosition > 0)
+                for (int i = currentMediaPosition - 1; i < mediaposts.size(); i++) {
+                    if (mediaposts.get(currentMediaPosition).getPosttype() == mediaposts.get(i).getPosttype()) {
+                        Audio(null, null, null, null, i);
+                        break;
+                    }
+                }
+        }
+
+        if (screamxoPlayer != null) {
+            if (currentMediaPosition > 0)
+                for (int i = currentMediaPosition - 1; i < mediaposts.size(); i++) {
+                    if (mediaposts.get(currentMediaPosition).getPosttype() == mediaposts.get(i).getPosttype()) {
+                        Video(null, null, i);
+                        break;
+                    }
+                }
         }
     }
 }

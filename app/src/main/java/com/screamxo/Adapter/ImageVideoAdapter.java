@@ -38,8 +38,7 @@ public class ImageVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 //    MediaPlayer mediaPlayer = new MediaPlayer();
 
-    public ImageVideoAdapter(Context context, ArrayList<Mediapost> mediaposts, ArrayList<Itemdetail> itemdetails
-            , AudioVideoInterface commonMethod) {
+    public ImageVideoAdapter(Context context, ArrayList<Mediapost> mediaposts, ArrayList<Itemdetail> itemdetails, AudioVideoInterface commonMethod) {
         this.context = context;
         mMediaposts = mediaposts;
         mItemdetails = itemdetails;
@@ -99,7 +98,9 @@ public class ImageVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                                         .into(((ImageVideo) holder).imgThum);
                             }
                         });*/
-            } else {
+            }
+            else
+                {
                 Picasso.with(context)
                         .load(R.mipmap.img_placeholder)
                         .placeholder(R.mipmap.img_placeholder)
@@ -171,9 +172,12 @@ public class ImageVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 }
             }
 
-            if (mMediaposts.get(position).getPosttype() == 2) {
+            if (mMediaposts.get(position).getPosttype() == 2)
+            {
                 ((ImageVideo) holder).imgPlay.setVisibility(View.GONE);
-            } else {
+            }
+            else
+                {
                 ((ImageVideo) holder).imgPlay.setVisibility(View.VISIBLE);
             }
 
@@ -224,7 +228,8 @@ public class ImageVideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return 0;
     }
 
-    private class ImageVideo extends RecyclerView.ViewHolder {
+    private class ImageVideo extends RecyclerView.ViewHolder
+    {
 
         ImageView imgPlay, imgThum, imgsoldout;
         TextView txtPrice;

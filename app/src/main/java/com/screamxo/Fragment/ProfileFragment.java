@@ -159,11 +159,11 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
         this.context = context;
     }
-
 
     @Nullable
     @Override
@@ -227,7 +227,8 @@ public class ProfileFragment extends Fragment {
     }
 
     @SuppressLint("SetTextI18n")
-    public void setUserInfoData() {
+    public void setUserInfoData()
+    {
         if (userinfo != null) {
             if (userinfo.getRealtionstatus() != null && !userinfo.getRealtionstatus().equals("")) {
                 String status = userinfo.getRealtionstatus();

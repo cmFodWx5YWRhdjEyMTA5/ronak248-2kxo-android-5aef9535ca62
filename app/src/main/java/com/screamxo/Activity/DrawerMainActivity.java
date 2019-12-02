@@ -17,11 +17,13 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
@@ -78,12 +80,9 @@ import com.screamxo.Utils.HomeWatcher;
 import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
-
 import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -93,7 +92,6 @@ import rjsv.floatingmenu.animation.enumerators.AnimationType;
 import rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton;
 import rjsv.floatingmenu.floatingmenubutton.listeners.FloatingMenuStateChangeListener;
 import rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton;
-
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_NEW_PROFILE;
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_tranding;
 
@@ -197,9 +195,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     private static final int CONTROL_TYPE_PLAY = 1;
 
     private static final int CONTROL_TYPE_PAUSE = 2;
-
-    private BroadcastReceiver mReceiver;
-
+    private static final int CONTROL_TYPE_NEXT = 3;
+    private static final int CONTROL_TYPE_PREVIOUS = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -233,6 +230,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             }
         });
         mHomeWatcher.startWatch();
+
     }
 
     private void init() {
@@ -348,14 +346,17 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                 }
 
                 @Override
-                public void onMenuClosed(FloatingMenuButton floatingMenuButton) {
+                public void onMenuClosed(FloatingMenuButton floatingMenuButton)
+                {
                     floatingButton.setBackground(getResources().getDrawable(R.mipmap.menu));
                 }
             });
 
-            sbProfile.setOnClickListener(new View.OnClickListener() {
+            sbProfile.setOnClickListener(new View.OnClickListener()
+            {
                 @Override
-                public void onClick(View view) {
+                public void onClick(View view)
+                {
                     floatingButton.closeMenu();
 
                     Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
@@ -625,7 +626,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    private void initControlValue() {
+    private void initControlValue()
+    {
         imgToolbarLeftIcon.setImageDrawable(getResources().getDrawable(R.mipmap.ico_back_chat));
         toolbarEdtSearch.addTextChangedListener(this);
         setFragment(1);
@@ -638,13 +640,16 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         finish();
     }
 
-    public void setHeigthWidth(int player_height, int player_width) {
+    public void setHeigthWidth(int player_height, int player_width)
+    {
         this.player_height = player_height;
         this.player_width = player_width;
     }
 
-    public void setFragment(int i, int pos) {
-        try {
+    public void setFragment(int i, int pos)
+    {
+        try
+        {
             Log.d(TAG, "setFragment: " + i);
             setUpFloatingMenuItems();
             Fragment currentFragment;
@@ -652,10 +657,12 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             toolbarEdtSearch.setText("");
             String tag = "";
             boolean flagWallet = false;
-            switch (i) {
+            switch (i)
+            {
                 case 1:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+                    if (currentFragment != null && currentFragment instanceof DashboardPagerFragment)
+                    {
                         ((DashboardPagerFragment) currentFragment).viewPager.setCurrentItem(pos);
                         return;
                     }
@@ -698,7 +705,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 6:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof ProfileFragment) {
+                    if (currentFragment != null && currentFragment instanceof ProfileFragment)
+                    {
                         return;
                     }
                     fragment = new ProfileFragment();
@@ -811,7 +819,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         imgArrow.setVisibility(visibility);
         imgPopUp.setVisibility(visibility);
 
-        switch (caseNo) {
+        switch (caseNo)
+        {
             case 1:
                 imgToolbarLeftIcon.setVisibility(View.GONE);
                 toolbar.setVisibility(View.GONE);
@@ -1204,7 +1213,8 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         super.onDestroy();
     }
 
-    public void clickCloseCart() {
+    public void clickCloseCart()
+    {
         setFragment(1);
     }
 
@@ -1227,71 +1237,52 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 //        }
 //    }
 
-    public void enterInPipMode() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if (hasPip(DrawerMainActivity.this)) {
+    public void enterInPipMode()
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            if (hasPip(DrawerMainActivity.this))
+            {
                 if (!isInPictureInPictureMode()) {
                     Rational aspectRatio = new Rational(250, 150);
                     pictureInPictureParamsBuilder.setAspectRatio(aspectRatio).build();
-                    updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "mPause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
-                    enterPictureInPictureMode(pictureInPictureParamsBuilder.build());
+                    // updatePictureInPictureActions(R.drawable.ic_stop_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+                    setPictureInPictureActions(R.drawable.ic_stop_white_24dp, R.drawable.next, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
+                    enterPictureInPictureMode(pictureInPictureParamsBuilder.build()); // INTERNAL METHOD
                 }
             }
         }
     }
 
     @Override
-    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig) {
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig)
+    {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (isInPictureInPictureMode) {
                 floatingButton.setVisibility(View.GONE);
                 toolbar.setVisibility(View.GONE);
                 IsPipMode = true;
 
-                mReceiver = new BroadcastReceiver() {
-                    @Override
-                    public void onReceive(Context context, Intent intent) {
-
-                        if (intent == null || !ACTION_MEDIA_CONTROL.equals(intent.getAction())) {
-                            return;
-                        }
-
-                        // This is where we are called back from Picture-in-Picture action
-                        // items.
-
-                        final int controlType = intent.getIntExtra(EXTRA_CONTROL_TYPE, 0);
-                        switch (controlType) {
-                            case CONTROL_TYPE_PLAY:
-                                chamgeSelection();
-                                break;
-                            case CONTROL_TYPE_PAUSE:
-                                chamgeSelection();
-                                break;
-                        }
-                    }
-                };
-
                 registerReceiver(mReceiver, new IntentFilter(ACTION_MEDIA_CONTROL));
-
-
                 chamgeFragmentControlsVisibility("show");
-
-
-            } else {
-
-                mReceiver = null;
+            }
+            else
+                {
+                unregisterReceiver(mReceiver);
                 // Show the video controls if the video is not playing
-
                 floatingButton.setVisibility(View.VISIBLE);
                 IsPipMode = false;
                 chamgeFragmentControlsVisibility("hide");
+
             }
         }
     }
 
-    public boolean hasPip(Context context) {
+    public boolean hasPip(Context context)
+    {
         PackageManager pckMgr = context.getPackageManager();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+        {
             boolean flag = pckMgr.hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
             if (flag)
                 has_pip = true;
@@ -1300,6 +1291,38 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
         return has_pip;
     }
+
+    BroadcastReceiver  mReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+
+            if (intent == null || !ACTION_MEDIA_CONTROL.equals(intent.getAction()))
+            {
+                return;
+            }
+
+            // This is where we are called back from Picture-in-Picture action items.
+
+            final int controlType = intent.getIntExtra(EXTRA_CONTROL_TYPE, 0);
+            switch (controlType)
+            {
+                case CONTROL_TYPE_PLAY:  //PLAY==1
+                    chamgeSelection();
+                    break;
+                case CONTROL_TYPE_PAUSE:  //PAUSE==2
+                    chamgeSelection();
+                    break;
+                case CONTROL_TYPE_NEXT:
+                    playNextSong();
+                    break;
+                case CONTROL_TYPE_PREVIOUS:
+                    playPreviousSong();
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onResume() {
@@ -1314,18 +1337,62 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         activity_Created = false;
     }
 
-    public void updatePictureInPictureActions(@DrawableRes int iconId, String title, int controlType, int requestCode)
-    {
+    public void updatePictureInPictureActions(@DrawableRes int iconId, String title, int controlType, int requestCode) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
+
             final ArrayList<RemoteAction> actions = new ArrayList<>();
             final PendingIntent intent = PendingIntent.getBroadcast(DrawerMainActivity.this, requestCode, new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, controlType), 0);
             final Icon icon = Icon.createWithResource(DrawerMainActivity.this, iconId);
+
+            if (actions.size() > 0)
+            {
+                actions.clear();
+            }
+
+            actions.add(new RemoteAction(icon, title, title, intent));
+            pictureInPictureParamsBuilder.setActions(actions);
+            // This is how you can update action items (or aspect ratio) for Picture-in-Picture mode.
+            // Note this call can happen even when the app is not in PiP mode. In that case, the
+            // arguments will be used for at the next call of #enterPictureInPictureMode.
+            setPictureInPictureParams(pictureInPictureParamsBuilder.build());
+        }
+    }
+
+    public void setPictureInPictureActions(@DrawableRes int iconId, @DrawableRes int iconIdnew, String title, int controlType, int requestCode)
+    {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+
+            final ArrayList<RemoteAction> actions = new ArrayList<>();
+
+            final PendingIntent intent = PendingIntent.getBroadcast(DrawerMainActivity.this, requestCode,
+                    new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, controlType), 0);
+
+            final PendingIntent intentnew = PendingIntent.getBroadcast(DrawerMainActivity.this, CONTROL_TYPE_NEXT,
+                    new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, CONTROL_TYPE_NEXT), 0);
+
+            final PendingIntent intent_previous = PendingIntent.getBroadcast(DrawerMainActivity.this, CONTROL_TYPE_PREVIOUS,
+                    new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, CONTROL_TYPE_PREVIOUS), 0);
+
+            final Icon icon = Icon.createWithResource(DrawerMainActivity.this, iconId);
+            final Icon iconnew = Icon.createWithResource(DrawerMainActivity.this, iconIdnew);
+            final Icon icon_previous = Icon.createWithResource(DrawerMainActivity.this, R.drawable.previous);
+
             if (actions.size() > 0) {
                 actions.clear();
             }
+
+            actions.add(new RemoteAction(icon_previous, "Previous", "Previous", intent_previous));
             actions.add(new RemoteAction(icon, title, title, intent));
+            actions.add(new RemoteAction(iconnew, "Next", "Next", intentnew));
+
             pictureInPictureParamsBuilder.setActions(actions);
+            // This is how you can update action items (or aspect ratio) for Picture-in-Picture mode.
+            // Note this call can happen even when the app is not in PiP mode. In that case, the
+            // arguments will be used for at the next call of #enterPictureInPictureMode.
+            setPictureInPictureParams(pictureInPictureParamsBuilder.build());
         }
     }
 
@@ -1354,5 +1421,32 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             }
         }
     }
-}
 
+    void playNextSong()
+    {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
+        if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+            DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
+            if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+                Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
+                if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment && ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()) != null) {
+                    ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).playNextItem();
+                }
+            }
+        }
+    }
+
+    private void playPreviousSong()
+    {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
+        if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+            DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
+            if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
+                Fragment currentVpFrag = dashboardPagerFragment.getFragmentFromViewpager(1);
+                if (currentVpFrag != null && currentVpFrag instanceof DashboardFragment && ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()) != null) {
+                    ((DashboardAdapter) ((DashboardFragment) currentVpFrag).mrecyclerView.getAdapter()).playPreviousItem();
+                }
+            }
+        }
+    }
+}
