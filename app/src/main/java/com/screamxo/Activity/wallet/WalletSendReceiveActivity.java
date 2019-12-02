@@ -134,8 +134,6 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
                 }
             }
         }
-
-
     }
 
     private void setHistory() {

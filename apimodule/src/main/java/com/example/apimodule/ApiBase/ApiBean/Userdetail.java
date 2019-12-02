@@ -121,6 +121,12 @@ public class Userdetail {
     @SerializedName("total_item")
     @Expose
     private int totalItem;
+
+    @SerializedName("block")
+    @Expose
+    private int block;
+
+
     @SerializedName("total_friend")
     @Expose
     private int totalFriend;
@@ -168,6 +174,15 @@ public class Userdetail {
     public void setTotalpostlikes(int totalpostlikes) {
         this.totalpostlikes = totalpostlikes;
     }
+
+    public int getBlock() {
+        return block;
+    }
+
+    public void setBlock(int block) {
+        this.block = block;
+    }
+
 
     public int getTotalsolditem() {
         return totalsolditem;
@@ -602,7 +617,6 @@ public class Userdetail {
     public void setUserid(Integer userid) {
         this.userid = userid;
     }
-
 
 
     public String getFname() {

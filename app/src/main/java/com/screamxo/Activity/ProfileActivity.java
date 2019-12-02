@@ -403,9 +403,12 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                 public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
                     if (response.code() == StaticConstant.RESULT_OK) {
                         Utils.showToast(context, response.body().getMsg());
-                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
-                            finish();
-                        }
+//                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+//                            finish();
+//                        }
+
+                        if (fragment instanceof ProfileFragment)
+                            ((ProfileFragment) fragment).isBlock = response.body().getResult().getUserdetail().getBlock();
                     }
                 }
 
@@ -628,7 +631,10 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
             GetUserInfoCall.enqueue(new Callback<GetUserDetailBean>() {
                 @Override
                 public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
+                    Utils.showToast(context, response.body().getMsg());
 
+                    if (fragment instanceof ProfileFragment)
+                        ((ProfileFragment) fragment).isBlock = response.body().getResult().getUserdetail().getBlock();
                 }
 
                 @Override

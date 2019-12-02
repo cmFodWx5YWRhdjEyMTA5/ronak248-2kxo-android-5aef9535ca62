@@ -88,6 +88,7 @@
     <string name="msg_invalid_file_format">Invalid file format</string>
     <string name="txt_condition">Condition :</string>
     <string name="txt_payment">Payment :</string>
+    <string name="okay">Okay</string>
     <string name="txt_policy">Policy :</string>
     <string name="txt_shipping">Shipping :</string>
     <string name="txt_other">Other :</string>
@@ -114,6 +115,9 @@
     <string name="title_topup">Top Up</string>
     <string name="txt_free">Free</string>
     <string name="txt_confirm">Confirm!</string>
+
+    <string name="insufficient_balance">Insufficient balance</string>
+    <string name="insufficient_balance_message">You do not have sufficient balance in Wallet for this transaction.</string>
     <string name="txt_confirm_forms_payment">Confirm you accept these forms of payment.</string>
     <string name="txt_agree">Yes, I agree!</string>
     <string name="msg_select_card_to_topup">Select card to top up</string>

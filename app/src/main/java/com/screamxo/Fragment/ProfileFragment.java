@@ -75,11 +75,10 @@ import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_WALLET_ACTIVITY_
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_WATCH_ITEM_LIST_ACTIVITY_RESULTS;
 
 public class ProfileFragment extends Fragment {
-
     private static final String TAG = "ProfileFragment";
     public String friendshipid, frdShipType = "-1";
-    public Boolean isFriend = false, isBlock = false;
-    public int isMyFriend;
+    public Boolean isFriend = false;
+    public int isMyFriend, isBlock;
     Context context;
     @BindView(R.id.relative_layout)
     RelativeLayout relativeLayout;
@@ -373,6 +372,7 @@ public class ProfileFragment extends Fragment {
                     linearLayout.setVisibility(View.VISIBLE);
                     if (response.code() == StaticConstant.RESULT_OK && response.body() != null && response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                         userinfo = response.body().getResult().getUserdetail();
+                        isBlock = response.body().getResult().getUserdetail().getBlock();
                         String url = userinfo.getPhotothumb();
                         txtFrd.setText(String.valueOf(userinfo.getTotalFriend()));
                         txtItem.setText(String.valueOf(userinfo.getTotalItem()));
@@ -634,15 +634,22 @@ public class ProfileFragment extends Fragment {
     }
 
     public void openPopUpmenu() {
+        String blockStatus;
+        if (isBlock == 0)
+            blockStatus = getString(R.string.txt_block);
+        else {
+            blockStatus = getString(R.string.txt_unblock);
+        }
+
         if (!isLoginUser) {
             switch (frdShipType) {
                 case "0":
                     if (isMyFriend == 0) {
-                        strings = new String[]{getString(R.string.txt_message), getString(R.string.txt_add_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money), getString(R.string.txt_block)};
+                        strings = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_add_friend), blockStatus};
                     } else {
-                        strings = new String[]{getString(R.string.txt_message), getString(R.string.txt_block),
-                                getString(R.string.txt_un_friend), getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings = new String[]{getString(R.string.txt_message),
+                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_un_friend), blockStatus};
                     }
 
                     MyPopUpWindow popUpWindow2 = new MyPopUpWindow(context, img_edit,
@@ -658,13 +665,13 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Block":
                                     ((ProfileActivity) context).callBlockApi();
-                                    strings = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_add_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_add_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "UnBlock":
                                     ((ProfileActivity) context).callUnBlockApi();
-                                    strings = new String[]{getString(R.string.txt_block), getString(R.string.txt_add_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings = new String[]{getString(R.string.txt_block), getString(R.string.txt_add_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "Add Friend":
                                     ((ProfileActivity) context).callAddFrd();
@@ -691,11 +698,11 @@ public class ProfileFragment extends Fragment {
                 case "1":
 
                     if (isMyFriend == 0) {
-                        strings1 = new String[]{getString(R.string.txt_message), getString(R.string.txt_add_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings1 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_add_friend)};
                     } else {
-                        strings1 = new String[]{getString(R.string.txt_message), getString(R.string.txt_block), getString(R.string.txt_un_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings1 = new String[]{getString(R.string.txt_message), blockStatus, getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_un_friend)};
                     }
 
                     MyPopUpWindow popUpWindow1 = new MyPopUpWindow(context, img_edit,
@@ -711,13 +718,13 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Block":
                                     ((ProfileActivity) context).callBlockApi();
-                                    strings1 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_un_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings1 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_un_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "UnBlock":
                                     ((ProfileActivity) context).callUnBlockApi();
-                                    strings1 = new String[]{getString(R.string.txt_block), getString(R.string.txt_un_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings1 = new String[]{getString(R.string.txt_block), getString(R.string.txt_un_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "Add Friend":
                                     ((ProfileActivity) context).callAddFrd();
@@ -743,11 +750,11 @@ public class ProfileFragment extends Fragment {
                 case "2":
 
                     if (isMyFriend == 0) {
-                        strings2 = new String[]{getString(R.string.txt_message), getString(R.string.txt_cancel_request),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings2 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_cancel_request)};
                     } else {
-                        strings2 = new String[]{getString(R.string.txt_message), getString(R.string.txt_block),
-                                getString(R.string.txt_cancel_request), getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings2 = new String[]{getString(R.string.txt_message),
+                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_cancel_request), blockStatus};
                     }
 
                     MyPopUpWindow popUpWindow = new MyPopUpWindow(context, img_edit,
@@ -763,13 +770,13 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Block":
                                     ((ProfileActivity) context).callBlockApi();
-                                    strings2 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_cancel_request),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings2 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_cancel_request),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "UnBlock":
                                     ((ProfileActivity) context).callUnBlockApi();
-                                    strings2 = new String[]{getString(R.string.txt_block), getString(R.string.txt_cancel_request),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings2 = new String[]{getString(R.string.txt_block), getString(R.string.txt_cancel_request),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "Cancel Request":
                                     ((ProfileActivity) context).callCancleFrdRequest();
@@ -795,11 +802,11 @@ public class ProfileFragment extends Fragment {
                 case "3":
 
                     if (isMyFriend == 0) {
-                        strings3 = new String[]{getString(R.string.txt_message), getString(R.string.txt_accept_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings3 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
                     } else {
-                        strings3 = new String[]{getString(R.string.txt_message), getString(R.string.txt_block),
-                                getString(R.string.txt_accept_friend), getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings3 = new String[]{getString(R.string.txt_message),
+                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
                     }
 
                     MyPopUpWindow popUpWindowa = new MyPopUpWindow(context, img_edit,
@@ -815,13 +822,13 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Block":
                                     ((ProfileActivity) context).callBlockApi();
-                                    strings3 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings3 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "UnBlock":
                                     ((ProfileActivity) context).callUnBlockApi();
-                                    strings3 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings3 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "Accept Friend":
                                     ((ProfileActivity) context).callAcceptFrdRequestApi();
@@ -845,11 +852,11 @@ public class ProfileFragment extends Fragment {
                     break;
                 case "4":
                     if (isMyFriend == 0) {
-                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_accept_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
                     } else {
-                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
-                                getString(R.string.txt_share), getString(R.string.txt_send_money)};
+                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+                                getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
                     }
 
                     MyPopUpWindow popUpWindowa1 = new MyPopUpWindow(context, img_edit,
@@ -865,13 +872,13 @@ public class ProfileFragment extends Fragment {
                                     break;
                                 case "Block":
                                     ((ProfileActivity) context).callBlockApi();
-                                    strings4 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings4 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "UnBlock":
                                     ((ProfileActivity) context).callUnBlockApi();
-                                    strings4 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
-                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    strings4 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
+//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
                                     break;
                                 case "Accept Friend":
                                     ((ProfileActivity) context).callAcceptFrdRequestApi();

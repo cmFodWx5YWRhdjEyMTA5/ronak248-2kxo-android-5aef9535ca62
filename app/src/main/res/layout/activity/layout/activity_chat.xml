@@ -12,10 +12,10 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@android:color/white"
-
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize">
+
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,8 +82,7 @@
         android:id="@+id/fl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/view_line"
-        >
+        android:layout_below="@+id/view_line">
 
         <RelativeLayout
             android:layout_width="match_parent"
