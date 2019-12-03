@@ -80,9 +80,12 @@ import com.screamxo.Utils.HomeWatcher;
 import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
 import com.screamxo.Utils.Utils;
+
 import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -92,6 +95,7 @@ import rjsv.floatingmenu.animation.enumerators.AnimationType;
 import rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton;
 import rjsv.floatingmenu.floatingmenubutton.listeners.FloatingMenuStateChangeListener;
 import rjsv.floatingmenu.floatingmenubutton.subbutton.FloatingSubButton;
+
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_NEW_PROFILE;
 import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_tranding;
 
@@ -346,17 +350,14 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
                 }
 
                 @Override
-                public void onMenuClosed(FloatingMenuButton floatingMenuButton)
-                {
+                public void onMenuClosed(FloatingMenuButton floatingMenuButton) {
                     floatingButton.setBackground(getResources().getDrawable(R.mipmap.menu));
                 }
             });
 
-            sbProfile.setOnClickListener(new View.OnClickListener()
-            {
+            sbProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     floatingButton.closeMenu();
 
                     Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
@@ -626,8 +627,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    private void initControlValue()
-    {
+    private void initControlValue() {
         imgToolbarLeftIcon.setImageDrawable(getResources().getDrawable(R.mipmap.ico_back_chat));
         toolbarEdtSearch.addTextChangedListener(this);
         setFragment(1);
@@ -640,16 +640,13 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         finish();
     }
 
-    public void setHeigthWidth(int player_height, int player_width)
-    {
+    public void setHeigthWidth(int player_height, int player_width) {
         this.player_height = player_height;
         this.player_width = player_width;
     }
 
-    public void setFragment(int i, int pos)
-    {
-        try
-        {
+    public void setFragment(int i, int pos) {
+        try {
             Log.d(TAG, "setFragment: " + i);
             setUpFloatingMenuItems();
             Fragment currentFragment;
@@ -657,12 +654,10 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             toolbarEdtSearch.setText("");
             String tag = "";
             boolean flagWallet = false;
-            switch (i)
-            {
+            switch (i) {
                 case 1:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof DashboardPagerFragment)
-                    {
+                    if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
                         ((DashboardPagerFragment) currentFragment).viewPager.setCurrentItem(pos);
                         return;
                     }
@@ -705,8 +700,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 case 6:
                     currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
-                    if (currentFragment != null && currentFragment instanceof ProfileFragment)
-                    {
+                    if (currentFragment != null && currentFragment instanceof ProfileFragment) {
                         return;
                     }
                     fragment = new ProfileFragment();
@@ -819,8 +813,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         imgArrow.setVisibility(visibility);
         imgPopUp.setVisibility(visibility);
 
-        switch (caseNo)
-        {
+        switch (caseNo) {
             case 1:
                 imgToolbarLeftIcon.setVisibility(View.GONE);
                 toolbar.setVisibility(View.GONE);
@@ -1213,8 +1206,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         super.onDestroy();
     }
 
-    public void clickCloseCart()
-    {
+    public void clickCloseCart() {
         setFragment(1);
     }
 
@@ -1237,12 +1229,9 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 //        }
 //    }
 
-    public void enterInPipMode()
-    {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
-            if (hasPip(DrawerMainActivity.this))
-            {
+    public void enterInPipMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (hasPip(DrawerMainActivity.this)) {
                 if (!isInPictureInPictureMode()) {
                     Rational aspectRatio = new Rational(250, 150);
                     pictureInPictureParamsBuilder.setAspectRatio(aspectRatio).build();
@@ -1255,8 +1244,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     }
 
     @Override
-    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig)
-    {
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (isInPictureInPictureMode) {
                 floatingButton.setVisibility(View.GONE);
@@ -1265,9 +1253,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
 
                 registerReceiver(mReceiver, new IntentFilter(ACTION_MEDIA_CONTROL));
                 chamgeFragmentControlsVisibility("show");
-            }
-            else
-                {
+            } else {
                 unregisterReceiver(mReceiver);
                 // Show the video controls if the video is not playing
                 floatingButton.setVisibility(View.VISIBLE);
@@ -1278,11 +1264,9 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    public boolean hasPip(Context context)
-    {
+    public boolean hasPip(Context context) {
         PackageManager pckMgr = context.getPackageManager();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             boolean flag = pckMgr.hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE);
             if (flag)
                 has_pip = true;
@@ -1292,22 +1276,18 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         return has_pip;
     }
 
-    BroadcastReceiver  mReceiver = new BroadcastReceiver()
-    {
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
-        public void onReceive(Context context, Intent intent)
-        {
+        public void onReceive(Context context, Intent intent) {
 
-            if (intent == null || !ACTION_MEDIA_CONTROL.equals(intent.getAction()))
-            {
+            if (intent == null || !ACTION_MEDIA_CONTROL.equals(intent.getAction())) {
                 return;
             }
 
             // This is where we are called back from Picture-in-Picture action items.
 
             final int controlType = intent.getIntExtra(EXTRA_CONTROL_TYPE, 0);
-            switch (controlType)
-            {
+            switch (controlType) {
                 case CONTROL_TYPE_PLAY:  //PLAY==1
                     chamgeSelection();
                     break;
@@ -1331,22 +1311,19 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
     }
 
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
         activity_Created = false;
     }
 
     public void updatePictureInPictureActions(@DrawableRes int iconId, String title, int controlType, int requestCode) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             final ArrayList<RemoteAction> actions = new ArrayList<>();
             final PendingIntent intent = PendingIntent.getBroadcast(DrawerMainActivity.this, requestCode, new Intent(ACTION_MEDIA_CONTROL).putExtra(EXTRA_CONTROL_TYPE, controlType), 0);
             final Icon icon = Icon.createWithResource(DrawerMainActivity.this, iconId);
 
-            if (actions.size() > 0)
-            {
+            if (actions.size() > 0) {
                 actions.clear();
             }
 
@@ -1359,11 +1336,9 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    public void setPictureInPictureActions(@DrawableRes int iconId, @DrawableRes int iconIdnew, String title, int controlType, int requestCode)
-    {
+    public void setPictureInPictureActions(@DrawableRes int iconId, @DrawableRes int iconIdnew, String title, int controlType, int requestCode) {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             final ArrayList<RemoteAction> actions = new ArrayList<>();
 
@@ -1422,8 +1397,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    void playNextSong()
-    {
+    void playNextSong() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
         if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
             DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;
@@ -1436,8 +1410,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
         }
     }
 
-    private void playPreviousSong()
-    {
+    private void playPreviousSong() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.framlayout);
         if (currentFragment != null && currentFragment instanceof DashboardPagerFragment) {
             DashboardPagerFragment dashboardPagerFragment = (DashboardPagerFragment) currentFragment;

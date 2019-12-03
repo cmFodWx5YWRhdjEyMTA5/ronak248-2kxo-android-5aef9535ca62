@@ -401,15 +401,15 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
             GetUserInfoCall.enqueue(new Callback<GetUserDetailBean>() {
                 @Override
                 public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
-                    if (response.code() == StaticConstant.RESULT_OK) {
-                        Utils.showToast(context, response.body().getMsg());
+//                    if (response.code() == StaticConstant.RESULT_OK) {
+                    Utils.showToast(context, "Blocked Successfully");
 //                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
 //                            finish();
 //                        }
 
-                        if (fragment instanceof ProfileFragment)
-                            ((ProfileFragment) fragment).isBlock = response.body().getResult().getUserdetail().getBlock();
-                    }
+                    if (fragment instanceof ProfileFragment)
+                        ((ProfileFragment) fragment).isBlock = 1;
+//                    }
                 }
 
                 @Override
@@ -631,10 +631,10 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
             GetUserInfoCall.enqueue(new Callback<GetUserDetailBean>() {
                 @Override
                 public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
-                    Utils.showToast(context, response.body().getMsg());
+                    Utils.showToast(context, "Unblocked Successfully");
 
                     if (fragment instanceof ProfileFragment)
-                        ((ProfileFragment) fragment).isBlock = response.body().getResult().getUserdetail().getBlock();
+                        ((ProfileFragment) fragment).isBlock = 0;
                 }
 
                 @Override

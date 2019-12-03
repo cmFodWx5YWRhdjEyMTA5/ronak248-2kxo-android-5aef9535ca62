@@ -3119,23 +3119,18 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
 
-    public void setPipControls()
-    {
+    public void setPipControls() {
         Log.d(TAG, "setOnClickListener:+++3116++");
 //        if (imgPlay != null) {
 //            imgPlay.setVisibility(View.INVISIBLE);
 //        }
-        if (mMediaPlayer != null)
-        {
-            if (mMediaPlayer.isPlaying())
-            {
+        if (mMediaPlayer != null) {
+            if (mMediaPlayer.isPlaying()) {
                 mMediaPlayer.pause();
                 sMediaPlayerLastPosition = mMediaPlayer.getCurrentPosition();
 //                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
                 ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, R.drawable.next, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
-            }
-            else
-            {
+            } else {
 //                ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_stop_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
                 ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_stop_white_24dp, R.drawable.next, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
 
@@ -3145,19 +3140,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 //            screamxoPlayer.play(mediaposts.get(currentMediaPosition).getMediaUrl());
 //            screamxoPlayer.pause();
             }
-        }
-        else if (isVideo)
-        {
-            if ((screamxoPlayer != null))
-            {
-                if (screamxoPlayer.isPlaying())
-                {
+        } else if (isVideo) {
+            if ((screamxoPlayer != null)) {
+                if (screamxoPlayer.isPlaying()) {
                     screamxoPlayer.pause();
 //                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
                     ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_play_arrow_white_24dp, R.drawable.next, "Pause", CONTROL_TYPE_PAUSE, REQUEST_PAUSE);
-                }
-                else
-                {
+                } else {
                     screamxoPlayer.onResume();
 //                    ((DrawerMainActivity) context).updatePictureInPictureActions(R.drawable.ic_stop_white_24dp, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);
                     ((DrawerMainActivity) context).setPictureInPictureActions(R.drawable.ic_stop_white_24dp, R.drawable.next, "Play", CONTROL_TYPE_PLAY, REQUEST_PLAY);

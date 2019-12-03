@@ -128,7 +128,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                 Picasso.with(context)
                         .load(streampost.getMedia().get(0).getMediaUrl())
-                        .placeholder(R.mipmap.img_placeholder)
+                        .placeholder(R.mipmap.img_placeholder).centerCrop()
                         .resize(width, height)
                         .error(R.mipmap.img_placeholder)
                         .into(imgPhoto);
@@ -400,7 +400,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (streampost.getUserphotothumb() != null && !streampost.getUserphotothumb().equals("")) {
                 Picasso.with(context)
                         .load(streampost.getUserphotothumb())
-                        .placeholder(R.mipmap.user)
+                        .placeholder(R.mipmap.user).centerCrop()
                         .error(R.mipmap.user)
                         .fit()
                         .transform(new CircleTransform())

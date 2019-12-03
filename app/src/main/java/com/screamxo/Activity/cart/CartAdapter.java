@@ -271,7 +271,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.RecyclerViewHo
             txtItemName.setText(userdetailsArray.get(position).getItems().get(0).getItemName());
             qty = String.valueOf(userdetailsArray.get(position).getItems().get(0).getCartQty());
             txtItemQty.setText(" " + qty + " ");
-            txtSellerName.setText(userdetailsArray.get(position).getSeller());
+            txtSellerName.setText(userdetailsArray.get(position).getItems().get(0).getUserName());
             itemsArray.clear();
             itemsArray.addAll(userdetailsArray.get(position).getItems());
 

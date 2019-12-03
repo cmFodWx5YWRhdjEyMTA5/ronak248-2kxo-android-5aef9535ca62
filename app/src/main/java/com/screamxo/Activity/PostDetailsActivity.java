@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -148,6 +149,7 @@ public class PostDetailsActivity extends AppCompatActivity implements CommonMeth
     Call<FriendBean> friendBeanCall;
     private Call<CommentBean> deletePostCall;
     private Call<CommentBean> reportPostCall;
+    int height, width;
 
     FloatingMenuButton floatingButton;
     FloatingSubButton sbflSetting, sbflHome, subFriend, sbSearch, sbWorld, sbProfile, sbChat, sbSocial;
@@ -391,6 +393,15 @@ public class PostDetailsActivity extends AppCompatActivity implements CommonMeth
     }
 
     private void initControlValue() {
+        try {
+            BitmapDrawable bd = (BitmapDrawable) context.getResources().getDrawable(R.mipmap.user);
+            height = bd.getBitmap().getHeight();
+            width = bd.getBitmap().getWidth();
+        } catch (Exception ignored) {
+
+        }
+
+
         toolbar.setVisibility(View.VISIBLE);
         txtToolbarTitle.setText("");
         imgToolbarLeftIcon.setOnClickListener(view -> finish());
@@ -398,18 +409,19 @@ public class PostDetailsActivity extends AppCompatActivity implements CommonMeth
         if (!TextUtils.isEmpty(preferences.getUserProfile()))
             Picasso.with(context)
                     .load(preferences.getUserProfile())
-                    .placeholder(R.mipmap.user)
-                    .fit()
+                    .placeholder(R.mipmap.user).centerCrop()
                     .error(R.mipmap.user)
                     .transform(new CircleTransform())
+                    .resize(width, height)
                     .into(user_iv);
+
         else {
             Picasso.with(context)
                     .load(R.mipmap.user)
-                    .placeholder(R.mipmap.user)
-                    .fit()
+                    .placeholder(R.mipmap.user).centerCrop()
                     .error(R.mipmap.user)
                     .transform(new CircleTransform())
+                    .resize(width, height)
                     .into(user_iv);
         }
         callGetPostDetailApi();

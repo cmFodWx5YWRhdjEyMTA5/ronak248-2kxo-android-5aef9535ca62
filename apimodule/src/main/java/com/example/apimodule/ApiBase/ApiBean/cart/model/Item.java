@@ -10,9 +10,24 @@ public class Item {
     @SerializedName("id")
     @Expose
     private int id;
+
     @SerializedName("item_name")
     @Expose
     private String itemName;
+
+    @SerializedName("username")
+    @Expose
+    private String userName;
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     @SerializedName("item_price")
     @Expose
     private double itemPrice;
