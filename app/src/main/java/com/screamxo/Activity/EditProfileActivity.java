@@ -7,12 +7,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -24,6 +26,7 @@ import com.example.apimodule.ApiBase.FetchrServiceBase;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.hbb20.CountryCodePicker;
 import com.screamxo.Adapter.CountriesAdapter;
 import com.screamxo.Adapter.StatesAdapter;
 import com.screamxo.Interface.Imagepath;
@@ -68,12 +71,18 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
     public String gender = "m", relation = "a", sexPref = "o", lat = "", lon = "";
     @BindView(R.id.countries_spinner)
     Spinner countries_spinner;
+
+    @BindView(R.id.ccp)
+    CountryCodePicker ccp;
+
     @BindView(R.id.states_spinner)
     Spinner states_spinner;
     @BindView(R.id.edt_Username)
     EditText edt_Username;
     @BindView(R.id.et_email)
     EditText et_email;
+    @BindView(R.id.et_phoneno)
+    EditText et_phone;
     @BindView(R.id.edt_firstname)
     EditText edtFirstname;
     @BindView(R.id.edt_lastname)
@@ -118,6 +127,10 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
     TextView txtToolbarTitle;
     @BindView(R.id.img_profile)
     ImageView imgProfile;
+
+    @BindView(R.id.li_phone)
+    LinearLayout liPhone;
+
     private Validations mValidations;
     private Preferences preferences;
     private FetchrServiceBase mService;
@@ -137,8 +150,7 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
         initControlValue();
     }
 
-    private void init()
-    {
+    private void init() {
         context = this;
         bean = new HashMap<>();
         fileArray = new HashMap<>();
@@ -157,6 +169,11 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
             imgToolbarLeftIcon.setVisibility(View.VISIBLE);
         }
         et_email.setVisibility((BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(CommonLoginSignUpActivity.class.getSimpleName())
+                ||
+                BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(EmailVerification.class.getSimpleName()))
+                ? View.VISIBLE : View.GONE);
+
+        liPhone.setVisibility((BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(CommonLoginSignUpActivity.class.getSimpleName())
                 ||
                 BundleUtils.getIntentExtra(getIntent(), "screen", "").equalsIgnoreCase(EmailVerification.class.getSimpleName()))
                 ? View.VISIBLE : View.GONE);
@@ -278,6 +295,7 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
         }, 1000);
 
         et_email.setText(preferences.getUserEmail());
+//        et_phone.setText(preferences.getPhone());
 
     }
 
@@ -422,6 +440,7 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
                 map.put("email", et_email.getText().toString());
             }
 
+            map.put(("phone"), "+" + ccp.getSelectedCountryCode() + et_phone.getText().toString());
             map.put("school", edtSchoolOrMaster.getText().toString());
             map.put("job", edtJob.getText().toString());
             map.put("city", edtCity.getText().toString());
@@ -543,6 +562,14 @@ public class EditProfileActivity extends AppCompatActivity implements Imagepath 
 
         if (ViewUtils.isVisible(et_email) && et_email.getText().toString().isEmpty()) {
             DialogBox.showDialog(context, context.getString(R.string.app_name), getString(R.string.msg_email_required), DialogBox.DIALOG_FAILURE, null);
+            return false;
+        }
+
+        if (ViewUtils.isVisible(liPhone) && et_phone.getText().toString().isEmpty()) {
+            DialogBox.showDialog(context, context.getString(R.string.app_name), getString(R.string.msg_phone_number_null), DialogBox.DIALOG_FAILURE, null);
+            return false;
+        } else if (!TextUtils.isEmpty(et_phone.getText().toString()) && mValidations.checkPhoneNo(et_phone.getText().toString())) {
+            DialogBox.showDialog(context, context.getString(R.string.app_name), getResources().getString(R.string.msg_phone_number_invalid), DialogBox.DIALOG_FAILURE, null);
             return false;
         }
 

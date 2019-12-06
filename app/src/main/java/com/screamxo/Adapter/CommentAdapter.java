@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.example.apimodule.ApiBase.ApiBean.Comment;
 import com.example.apimodule.ApiBase.ApiBean.CommentBean;
 import com.example.apimodule.ApiBase.ApiBean.CommentResult;
+import com.example.apimodule.ApiBase.ApiBean.GetUserDetailBean;
 import com.example.apimodule.ApiBase.ApiBean.LoginBean;
 import com.example.apimodule.ApiBase.FetchrServiceBase;
 import com.screamxo.Activity.PostDetailsActivity;
@@ -37,6 +38,7 @@ import com.screamxo.Activity.RahulWork.WebViewActivity;
 import com.screamxo.Emoji.CustomText;
 import com.screamxo.Interface.CommonMethod;
 import com.screamxo.R;
+import com.screamxo.Utils.BundleUtils;
 import com.screamxo.Utils.CircleTransform;
 import com.screamxo.Utils.Preferences;
 import com.screamxo.Utils.StaticConstant;
@@ -170,12 +172,42 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } else if (holder instanceof CommentHolder) {
             Comment comment = comments.get(position - 1);
 
+//            if (streampost.getUserid().toString().equals(preferences.getUserId()))
+//                ((CommentHolder) holder).txtCommentMore.setVisibility(View.VISIBLE);
+//            else
+//                ((CommentHolder) holder).txtCommentMore.setVisibility(View.GONE);
+
             if (position == 1 && streampost.getCommentcount() > comments.size()) {
                 ((CommentHolder) holder).txtMoreComment.setVisibility(View.VISIBLE);
             } else {
                 ((CommentHolder) holder).txtMoreComment.setVisibility(View.GONE);
             }
 
+//            ((CommentHolder) holder).txtCommentMore.setOnClickListener(v -> {
+//                PopupMenu popup = new PopupMenu(context, ((CommentHolder) holder).txtCommentMore);
+//                popup.getMenuInflater().inflate(R.menu.menu_block_delete, popup.getMenu());
+//
+////                if (preferences.getUserId().equals("" + streampost.getUserid())) {
+////                    popup.getMenu().getItem(0).setTitle(context.getString(R.string.txt_delete));
+////                } else {
+////                    popup.getMenu().getItem(0).setTitle(context.getString(R.string.txt_report_post));
+////                }
+//
+//                popup.setOnMenuItemClickListener(item -> {
+//                    positionSelect = position;
+//                    switch (item.getItemId()) {
+//                        case R.id.pop_up_delete:
+//                            callDeleteCommentApi(streampost.getUserid(), Integer.parseInt(comment.getCommentid()), streampost.getId());
+//                            break;
+//
+//                        case R.id.pop_up_block:
+//                            callBlockApi(comment.getUserid());
+//                            break;
+//                    }
+//                    return true;
+//                });
+//                popup.show();
+//            });
             ((CommentHolder) holder).txtMoreComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -207,29 +239,37 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     positionSelect = position;
                     PopupMenu popup = new PopupMenu(context, ((CommentHolder) holder).txtCommnet);
 
-                    popup.getMenuInflater().inflate(R.menu.menu_share_delete, popup.getMenu());
+                    popup.getMenuInflater().inflate(R.menu.menu_select_privacy, popup.getMenu());
 
                     if (preferences.getUserId().equals("" + comment.getUserid()) || preferences.getUserId().equals("" + streampost.getUserid())) {
                         popup.getMenu().getItem(0).setTitle("Copy");
                         popup.getMenu().getItem(1).setTitle("Delete");
+                        popup.getMenu().getItem(2).setTitle("Block");
+
                     } else {
                         popup.getMenu().getItem(0).setTitle("Copy");
                         popup.getMenu().getItem(1).setVisible(false);
+                        popup.getMenu().getItem(2).setVisible(false);
                     }
                     popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                         public boolean onMenuItemClick(MenuItem item) {
 
                             switch (item.getItemId()) {
-                                case R.id.pop_up_detele:
+                                case R.id.pop_up_public:
                                     ClipboardManager clipboard = (ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE);
                                     ClipData clip = ClipData.newPlainText("Text Copied", comment.getCommentdesc());
                                     clipboard.setPrimaryClip(clip);
                                     Toast.makeText(context, "Text copied", Toast.LENGTH_SHORT).show();
                                     break;
 
-                                case R.id.pop_up_share:
+                                case R.id.pop_up_friends:
                                     callDeleteCommentApi(streampost.getUserid(), Integer.parseInt(comment.getCommentid()), streampost.getId());
                                     break;
+
+                                case R.id.pop_up_private:
+                                    callBlockApi(comment.getUserid());
+                                    break;
+
                             }
                             return true;
                         }
@@ -291,11 +331,43 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    public void callBlockApi(String toId) {
+        Map<String, String> map = new HashMap<>();
+        map.put("fromid", preferences.getUserId());
+        map.put("toid", toId);
+
+        if (Utils.isInternetOn(context)) {
+
+            mService.getFetcherService(context).BlockUser(map).enqueue(new Callback<GetUserDetailBean>() {
+                @Override
+                public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
+//                    if (response.code() == StaticConstant.RESULT_OK) {
+                    Utils.showToast(context, "Blocked Successfully");
+//                        if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+//                            finish();
+//                        }
+
+//                    if (fragment instanceof ProfileFragment)
+//                        ((ProfileFragment) fragment).isBlock = 1;
+//                    }
+                }
+
+                @Override
+                public void onFailure(Call<GetUserDetailBean> call, Throwable t) {
+                    t.printStackTrace();
+                    Utils.showToast(context, t.toString());
+                }
+            });
+        } else {
+            Utils.showToast(context, context.getString(R.string.toast_no_internet));
+        }
+    }
+
     private void callDeleteCommentApi(int uId, int commentid, int postId) {
         Map<String, Integer> map = new HashMap<>();
 
-        map.put("uid", uId);
-        map.put("commentid", commentid);
+//        map.put("uid", uId);
+        map.put("commentId", commentid);
         map.put("postid", postId);
 
         if (Utils.isInternetOn(context)) {
@@ -337,6 +409,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             txtCommnet = v.findViewById(R.id.txt_comment);
             txtTime = v.findViewById(R.id.txt_time);
             txtMoreComment = v.findViewById(R.id.txt_view_more);
+//            txtCommentMore = v.findViewById(R.id.txt__comment_more);
         }
     }
 

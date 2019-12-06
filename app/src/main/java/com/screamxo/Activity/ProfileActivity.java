@@ -500,7 +500,7 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
     public void callCancleFrdRequest() {
         if (Utils.isInternetOn(context)) {
             HashMap<String, String> map = new HashMap<>();
-            map.put("fromid", preferences.getUserId());
+//            map.put("fromid", preferences.getUserId());
             map.put("toid", "" + BundleUtils.getIntentExtra(getIntent(), "uid", ""));
             map.put("friendshipid", "" + frdshipId);
             friendBeanCall = mService.getFetcherService(context).CancelFrdRequest(map);
@@ -588,7 +588,7 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                             frdshipId = "" + response.body().getResult().getTotalcount();
                             updateValue("2");
                             if (fragment instanceof ProfileFragment) {
-                                ((ProfileFragment) fragment).isMyFriend = 1;
+                                ((ProfileFragment) fragment).isMyFriend = 0;
                             }
                         }
                     } else if (response.errorBody() != null) {

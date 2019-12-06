@@ -132,11 +132,11 @@ public class PurchaseItemListAdapter extends RecyclerView.Adapter<PurchaseItemLi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ChatActivity.class);
-                intent.putExtra("otherUid", puchaseitemlist.get(position).getOrderId() + "");
+                intent.putExtra("otherUid", puchaseitemlist.get(position).getSeller().getId() + "");
                 intent.putExtra("username", puchaseitemlist.get(position).getSeller().getUsername());
                 intent.putExtra("userProfile", "https://s3-us-west-2.amazonaws.com/scremax/profile/" + puchaseitemlist.get(position).getSeller().getPhoto());
                 intent.putExtra("fullname", puchaseitemlist.get(position).getSeller().getFname());
-                intent.putExtra("itemId", puchaseitemlist.get(position).getSeller().getId() + "");
+                intent.putExtra("itemId", puchaseitemlist.get(position).getItemId() + "");
                 context.startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
             }
         });

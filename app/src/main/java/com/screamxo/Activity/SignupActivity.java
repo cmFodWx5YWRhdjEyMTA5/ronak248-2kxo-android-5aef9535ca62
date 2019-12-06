@@ -278,32 +278,27 @@ public class SignupActivity extends AppCompatActivity implements Imagepath {
         return matcher.matches();
     }
 
-    public void userProfileClick(View view)
-    {
+    public void userProfileClick(View view) {
         RxPermissions.getInstance(this)
                 .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .subscribe(aBoolean ->
                 {
-                    if (aBoolean)
-                    {
+                    if (aBoolean) {
                         photoPicker.ImagePickker();
                     }
                 });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (photoPicker != null)
-        {
+        if (photoPicker != null) {
             photoPicker.onResult(requestCode, resultCode, data);
         }
     }
 
     @Override
-    public void imagePathfromCamara(File file)
-    {
+    public void imagePathfromCamara(File file) {
         BitmapDrawable bd = (BitmapDrawable) context.getResources().getDrawable(R.mipmap.profile_pic_placeholder);
         int height = bd.getBitmap().getHeight();
         int width = bd.getBitmap().getWidth();

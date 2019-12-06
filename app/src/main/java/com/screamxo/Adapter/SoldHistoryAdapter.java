@@ -82,7 +82,6 @@ public class SoldHistoryAdapter extends RecyclerView.Adapter<SoldHistoryAdapter.
                 soldItemDetailArrayList.get(position).getCreatedDate());
         String username = soldItemDetailArrayList.get(position).getOrderdetails().get(0).getDetails().get(0).getFname() + " " + soldItemDetailArrayList.get(position).getOrderdetails().get(0).getDetails().get(0).getLname();
 
-
         int quantity = 1;
         for (int k = 0; k < soldItemDetailArrayList.get(position).getOrderdetails().get(0).getItemQty().size(); k++) {
             {
@@ -298,8 +297,8 @@ public class SoldHistoryAdapter extends RecyclerView.Adapter<SoldHistoryAdapter.
         private ImageView imgitem, img_copy, img_buyer, img_chat, img_name_copy;
         private LinearLayout li_l;
 
-        private EditText ed_epc , ed_etn;
-        private  TextView ed_edd;
+        private EditText ed_epc, ed_etn;
+        private TextView ed_edd;
 
         SoldHistoryHolder(View itemView) {
             super(itemView);

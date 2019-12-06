@@ -130,7 +130,8 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
                 }, 2000);
             } else if (getIntent().getExtras().containsKey("from")) {
                 if (getIntent().getExtras().get("from").equals("profile") || getIntent().getExtras().get("from").equals("chat")) {
-                    viewPager.setCurrentItem(1);
+
+                        viewPager.setCurrentItem(1);
                 }
             }
         }
@@ -142,8 +143,7 @@ public class WalletSendReceiveActivity extends AppCompatActivity implements View
         tabs.getTabAt(0).setText(getString(R.string.txt_history));
         commonFragment.callHistry(String.valueOf(sdf.format(d)));
     }
-
-
+    
     private void initFabIcon() {
         try {
             floatingButton = findViewById(R.id.my_floating_button);

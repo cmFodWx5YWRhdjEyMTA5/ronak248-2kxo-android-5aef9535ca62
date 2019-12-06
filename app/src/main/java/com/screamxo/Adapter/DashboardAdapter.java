@@ -2395,7 +2395,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public void lockUnlockScreen() {
+
         isLocked = !isLocked;
+
         releaseMediaPlayer();
         stopVideoPlayer();
         notifyDataSetChanged();
@@ -2832,11 +2834,12 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     txtClose = (TextView) layout.findViewById(R.id.txt_close);
                     txtFilter = (TextView) layout.findViewById(R.id.txt_filter);
                     txtUpload = (TextView) layout.findViewById(R.id.txt_upload);
-                    if (mrecyclerView.getVisibility() == View.GONE || isLocked) {
+                    if (!canCollapseBottom || isLocked) {
                         txtClose.setText("Open");
                     } else {
                         txtClose.setText("Close");
                     }
+
 
                     window.setOnDismissListener(new PopupWindow.OnDismissListener() {
                         @Override
@@ -2857,6 +2860,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                                 dashboardFragment.streamCall = false;
                                 txtClose.setText("Open");
                                 returnCount = 0;
+
                             } else if (mDashBoardResult.getStreampost().size() != 0) {
                                 canCollapseBottom = true;
                                 dashboardFragment.streamCall = true;
@@ -2867,6 +2871,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                                 dashboardFragment.streamCall = true;
                                 txtClose.setText("Close");
                                 returnCount = 1;
+
                             }
                             notifyDataSetChanged();
                             window.dismiss();

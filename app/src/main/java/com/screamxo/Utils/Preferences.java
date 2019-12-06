@@ -58,6 +58,19 @@ public class Preferences extends com.example.apimodule.ApiBase.Preferences {
         return preferences.getString("Walletamount", "");
     }
 
+    public String getPhone() {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.key_mobile), Context.MODE_PRIVATE);
+        return preferences.getString(context.getString(R.string.key_mobile), "");
+    }
+
+
+    public void savePhone(String data) {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(context.getString(R.string.key_mobile), data);
+        editor.apply();
+    }
+
 
     public void saveLoginUser(Result bean, String token) {
         SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
@@ -148,6 +161,7 @@ public class Preferences extends com.example.apimodule.ApiBase.Preferences {
         return preferences.getString("name", "");
     }
 
+
     public String getUserId() {
         SharedPreferences preferences = context.getSharedPreferences("ScreamXO_preference", Context.MODE_PRIVATE);
         return preferences.getString("id", "");
@@ -186,6 +200,7 @@ public class Preferences extends com.example.apimodule.ApiBase.Preferences {
         map.put("avatar", preferences.getString("avatar", ""));
         map.put("name", preferences.getString("name", ""));
         map.put("school", preferences.getString("school", ""));
+        map.put("phone", preferences.getString(context.getString(R.string.key_mobile), ""));
         map.put("job", preferences.getString("job", ""));
         map.put("hobby", preferences.getString("hobby", ""));
         map.put("nationality", preferences.getString("nationality", ""));
@@ -206,6 +221,7 @@ public class Preferences extends com.example.apimodule.ApiBase.Preferences {
         SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("gender", uDetail.get("gender"));
+        editor.putString(context.getString(R.string.key_mobile), uDetail.get("phone"));
         editor.putString("realtionstatus", uDetail.get("realtionstatus"));
         editor.putString("sexpreference", uDetail.get("sexpreference"));
         editor.putString("job", uDetail.get("job"));
@@ -256,6 +272,32 @@ public class Preferences extends com.example.apimodule.ApiBase.Preferences {
         editor.putString("stripe_customer_id", "");
         setUserid("");
         setUserToken("");
+        editor.apply();
+    }
+
+
+    public int getFreezeStatus() {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
+        return preferences.getInt("freezeStatus", 0);
+    }
+
+    public void setFreezeStatus(int status) {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("freezeStatus", status);
+        editor.apply();
+    }
+
+
+    public String getHoldAmount() {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
+        return preferences.getString("holdAmount", "0");
+    }
+
+    public void setHoldAmount(String serviceId) {
+        SharedPreferences preferences = context.getSharedPreferences(context.getString(R.string.pref_screamXo), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("holdAmount", serviceId);
         editor.apply();
     }
 

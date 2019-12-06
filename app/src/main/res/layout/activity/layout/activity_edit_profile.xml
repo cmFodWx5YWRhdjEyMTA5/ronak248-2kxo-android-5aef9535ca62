@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_edit_profile"
     android:layout_width="match_parent"
@@ -123,6 +124,52 @@
                 android:textColorHint="@color/color8c8c8c"
                 android:textSize="@dimen/_10sdp"
                 tools:ignore="MissingPrefix" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+android:id="@+id/li_phone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="93dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/rect_gray_border_new"
+                    android:gravity="center"
+                    app:ccp_autoDetectCountry="false"
+                    app:ccp_contentColor="@color/color8c8c8c"
+                    app:ccp_defaultNameCode="us"
+                    app:ccp_defaultPhoneCode="1"
+                    app:ccp_showFlag="false"
+                    app:ccp_showFullName="false"
+                    app:ccp_showNameCode="false" />
+
+                <EditText
+                    android:id="@+id/et_phoneno"
+                    fontPath="fonts/Poppins-Medium.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_gray_border"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="@string/hint_phone_no"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_14sdp"
+                    android:paddingBottom="@dimen/_14sdp"
+                    android:textColor="@color/color8c8c8c"
+                    android:textColorHint="@color/color8c8c8c"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="MissingPrefix" />
+
+            </LinearLayout>
+
 
             <EditText
                 android:id="@+id/edt_school_or_master"

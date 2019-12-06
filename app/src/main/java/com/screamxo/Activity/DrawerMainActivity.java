@@ -48,6 +48,8 @@ import android.widget.Toast;
 
 import com.example.apimodule.ApiBase.ApiBean.CategoryList.CategoryList;
 import com.example.apimodule.ApiBase.ApiBean.DashBoardResult;
+import com.example.apimodule.ApiBase.ApiBean.GetUserDetailBean;
+import com.example.apimodule.ApiBase.ApiBean.Userdetail;
 import com.example.apimodule.ApiBase.FetchrServiceBase;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.screamxo.Activity.RahulWork.CustomWebViewFragment;
@@ -74,6 +76,7 @@ import com.screamxo.Interface.IHttpresponse;
 import com.screamxo.Interface.INavigator;
 import com.screamxo.R;
 import com.screamxo.Utils.ApiConnectionUtils;
+import com.screamxo.Utils.BundleUtils;
 import com.screamxo.Utils.DialogBox;
 import com.screamxo.Utils.EventData;
 import com.screamxo.Utils.HomeWatcher;
@@ -84,12 +87,15 @@ import com.screamxo.Utils.Utils;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 import rjsv.floatingmenu.animation.enumerators.AnimationType;
 import rjsv.floatingmenu.floatingmenubutton.FloatingMenuButton;
@@ -234,6 +240,7 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             }
         });
         mHomeWatcher.startWatch();
+        callGetUserMoreInfoApi();
 
     }
 
@@ -1422,4 +1429,39 @@ public class DrawerMainActivity extends AppCompatActivity implements /*Navigatio
             }
         }
     }
+
+
+    public void callGetUserMoreInfoApi() {
+        Map<String, String> map = new HashMap<>();
+        map.put("userid", preferences.getUserId());
+        if (Utils.isInternetOn(context)) {
+            // dialog_progreessbar.setVisibility(View.VISIBLE);
+
+            mService.getFetcherService(context).GetUserInfo(map).
+                    enqueue(new Callback<GetUserDetailBean>() {
+                        @Override
+                        public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
+                            //   dialog_progreessbar.setVisibility(View.GONE);
+                            if (response.code() == StaticConstant.RESULT_OK && response.body() != null && response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+                                Userdetail userinfo = response.body().getResult().getUserdetail();
+                                preferences.saveAmount(userinfo.getWalletAmount().toString());
+                                if (userinfo.getHoldAmount() != null)
+                                    preferences.setHoldAmount(userinfo.getHoldAmount());
+                                else
+                                    preferences.setHoldAmount("0");
+
+                                preferences.setFreezeStatus(userinfo.getFreezeStatus());
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<GetUserDetailBean> call, Throwable t) {
+                        }
+                    });
+        } else {
+            Utils.showToast(context, context.getString(R.string.toast_no_internet));
+        }
+    }
+
 }

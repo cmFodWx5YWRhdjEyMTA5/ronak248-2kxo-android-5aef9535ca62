@@ -17,6 +17,12 @@ public class Message {
     @SerializedName("messagetext")
     @Expose
     private String messagetext;
+
+    @SerializedName("item_created_by")
+    @Expose
+    private int itemCreatedBy;
+
+
     @SerializedName("media")
     @Expose
     private String media;
@@ -174,6 +180,14 @@ public class Message {
 
     public String getItemid() {
         return itemid;
+    }
+
+    public int getItemCreatedBy() {
+        return itemCreatedBy;
+    }
+
+    public void setItemCreatedBy(int itemCreatedBy) {
+        this.itemCreatedBy = itemCreatedBy;
     }
 
     public String getItemdescription() {

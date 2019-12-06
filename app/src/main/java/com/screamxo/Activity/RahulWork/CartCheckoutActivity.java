@@ -1328,6 +1328,9 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
 
     private void payUsingWalletMultipleItems() {
         Log.d(TAG, "payUsingWallet: ");
+        double availableAmount = Double.parseDouble(preferences.getAmount()) - Double.parseDouble(preferences.getHoldAmount());
+
+
         try {
             NumberFormat format = NumberFormat.getCurrencyInstance();
             String totalCostValueStr = txttTotalOrderPrise.getText().toString();
@@ -1348,6 +1351,38 @@ public class CartCheckoutActivity extends AppCompatActivity implements CommonMet
                         })
                         .show();
                 return;
+            } else if (Double.parseDouble(preferences.getHoldAmount()) > 0 && availableAmount < Double.parseDouble(totalCostValueStr.substring(1, txttTotalOrderPrise.getText().toString().length()))) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("2KXO")
+                        .setMessage(getString(R.string.msg_hold))
+                        .setPositiveButton(getString(R.string.okay), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+//                                startActivityForResult(new Intent(CartCheckoutActivity.this, TopUpActivity.class), REQ_CODE_TOP_UP_ACTIVITY_RESULTS);
+                                dialog.dismiss();
+                            }
+                        })
+
+                        .show();
+                return;
+
+            } else if (preferences.getFreezeStatus() == 1) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("2KXO")
+                        .setMessage(getString(R.string.msg_freeze))
+                        .setPositiveButton(getString(R.string.okay), new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+//                                startActivityForResult(new Intent(CartCheckoutActivity.this, TopUpActivity.class), REQ_CODE_TOP_UP_ACTIVITY_RESULTS);
+                                dialog.dismiss();
+                            }
+                        })
+//                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                dialog.dismiss();
+//                            }
+//                        })
+                        .show();
+                return;
+
             } else {
                 Map<String, String> map = new HashMap<>();
                 Map<String, ArrayList<Object>> mapItem = new HashMap<>();

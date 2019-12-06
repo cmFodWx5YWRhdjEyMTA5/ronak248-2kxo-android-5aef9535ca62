@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/pop_up_delete"
+            android:checked="true"
+            android:showAsAction="withText|always"
+            android:title="@string/btn_delete"
+            tools:ignore="AppCompatResource" />
+
+        <item
+            android:id="@+id/pop_up_block"
+            android:title="@string/txt_block" />
+    </group>
+</menu>

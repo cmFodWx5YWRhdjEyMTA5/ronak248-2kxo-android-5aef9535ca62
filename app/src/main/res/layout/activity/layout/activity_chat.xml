@@ -145,7 +145,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_pay"
+                        android:id="@+id/btn_pay"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_32sdp"
                     android:layout_marginLeft="@dimen/_6sdp"

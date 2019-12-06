@@ -394,8 +394,8 @@ public class MediaDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private void callDeleteCommentApi(int uId, int commentid, int postId) {
         Map<String, Integer> map = new HashMap<>();
 
-        map.put("uid", uId);
-        map.put("commentid", commentid);
+//        map.put("uid", uId);
+        map.put("commentId", commentid);
         map.put("postid", postId);
 //        map.put("posttype", postType);
 

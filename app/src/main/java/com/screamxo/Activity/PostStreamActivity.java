@@ -382,7 +382,6 @@ public class PostStreamActivity extends AppCompatActivity implements View.OnClic
 
                     setViewEnableDisable(true);
                     progressBar.setVisibility(View.GONE);
-
                     if (response.code() == StaticConstant.RESULT_OK) {
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                             isUpdate = true;

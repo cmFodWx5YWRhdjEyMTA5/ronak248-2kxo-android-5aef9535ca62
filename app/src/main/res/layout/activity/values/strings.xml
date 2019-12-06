@@ -122,6 +122,8 @@
     <string name="txt_agree">Yes, I agree!</string>
     <string name="msg_select_card_to_topup">Select card to top up</string>
     <string name="msg_add_shipping_address">Please add shipping address</string>
+    <string name="msg_hold">Your Payment Account has been put on hold contact support</string>
+    <string name="msg_freeze">Your Payment Account has been frozen contact support</string>
     <string name="msg_less_amount_in_wallet">You have less amount in your wallet. Please add amount to your wallet to continue.</string>
     <string name="txt_add_money">Add Money</string>
     <string name="txt_not_getting_verification_link">not getting paypal verification link</string>
@@ -171,11 +173,13 @@
     <string name="msg_add_profile_pic">Please add profile picture to continue.</string>
     <string name="msd_uname_required">Username is required</string>
     <string name="msg_email_required">Email is required</string>
+    <string name="msg_phone_required">Phone is required</string>
     <string name="txt_about_us">About Us</string>
     <string name="txt_terms_of_use">Terms Of Use</string>
     <string name="txt_privacy_policy">Privacy Policy</string>
     <string name="txt_live_support">Live Support</string>
     <string name="txt_refer_friend">Refer Your Friend</string>
+    <string name="spam">Spam</string>
     <!--    update in other files too-->
     <string name="txt_uname_email_already_taken">Try another. Username or Email is in use</string>
     <string name="txt_change_password">Change Password</string>
@@ -188,6 +192,7 @@
     <string name="txt_delete">Delete</string>
     <string name="txt_cap_add_to_cart">ADD TO CART</string>
     <string name="txt_cap_pay">PAY</string>
+    <string name="pay">Pay</string>
 
 
     <string name="txt_entire_account_private">Set entire account private</string>
@@ -203,4 +208,4 @@
     <string name="txt_request">Requests</string>
     <string name="txt_suggestions">SUGGESTIONS</string>
     <string name="refund_buyer">Refund Buyer</string>
-</resources>
+ </resources>

@@ -11,6 +11,19 @@ public class Userdetail {
     @SerializedName("id")
     @Expose
     private Integer id;
+
+    @SerializedName("wallet_amount")
+    @Expose
+    private Integer walletAmount;
+
+    public Integer getWalletAmount() {
+        return walletAmount;
+    }
+
+    public void setWalletAmount(Integer walletAmount) {
+        this.walletAmount = walletAmount;
+    }
+
     @SerializedName("firstname")
     @Expose
     private String firstname;
@@ -61,6 +74,31 @@ public class Userdetail {
     @SerializedName("country")
     @Expose
     private String country;
+
+    @SerializedName("freeze_status")
+    @Expose
+    private int freezeStatus;
+
+    @SerializedName("hold_amount")
+    @Expose
+    private String holdAmount;
+
+
+    public int getFreezeStatus() {
+        return freezeStatus;
+    }
+
+    public void setFreezeStatus(int freezeStatus) {
+        this.freezeStatus = freezeStatus;
+    }
+
+    public String getHoldAmount() {
+        return holdAmount;
+    }
+
+    public void setHoldAmount(String holdAmount) {
+        this.holdAmount = holdAmount;
+    }
 
     public String getState() {
         return state;

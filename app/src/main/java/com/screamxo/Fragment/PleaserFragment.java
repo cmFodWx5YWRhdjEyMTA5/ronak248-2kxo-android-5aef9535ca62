@@ -25,6 +25,7 @@ import com.example.apimodule.ApiBase.FetchrServiceBase;
 import com.screamxo.Activity.DrawerMainActivity;
 import com.screamxo.Adapter.NetWorkAdapter;
 import com.screamxo.Adapter.PleaserAdapter;
+import com.screamxo.Interface.CommonMethod;
 import com.screamxo.R;
 import com.screamxo.Utils.EventData;
 import com.screamxo.Utils.HidingScrollListener;
@@ -35,6 +36,7 @@ import com.screamxo.Utils.Utils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -54,7 +56,7 @@ import static com.screamxo.Utils.EventData.EVENT_SCROLL_TO_TOP_NEW;
  */
 
 @SuppressLint("ValidFragment")
-public class PleaserFragment extends Fragment {
+public class PleaserFragment extends Fragment implements CommonMethod {
     private static final String TAG = "PleaserFragment";
     public static Boolean isPleasureOpened = false;
     @BindView(R.id.recycler_view)
@@ -225,7 +227,7 @@ public class PleaserFragment extends Fragment {
         }
 
         if (pleaserAdapter == null) {
-            pleaserAdapter = new PleaserAdapter(context, messageArrayList);
+            pleaserAdapter = new PleaserAdapter(context, messageArrayList, this);
             recyclerView.setAdapter(pleaserAdapter);
             pleaserAdapter.type = type;
         } else {
@@ -263,6 +265,8 @@ public class PleaserFragment extends Fragment {
             if (friendBeanCall != null) {
                 friendBeanCall.cancel();
             }
+
+            messageArrayList.clear();
 
             switch (type) {
                 case "0":
@@ -413,5 +417,32 @@ public class PleaserFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         StaticConstant.CHAT_SCREEN = false;
+    }
+
+    @Override
+    public void commonMethod(String data, File... files) {
+// 0 for delete, 1 for block,2 for spam,3 for showing progress bar
+        switch (data) {
+            case "0":
+                progreessbar.setVisibility(View.GONE);
+                callGetChatFrdList();
+                break;
+
+            case "1":
+                progreessbar.setVisibility(View.GONE);
+                break;
+
+            case "2":
+                progreessbar.setVisibility(View.GONE);
+                break;
+            case "3":
+                progreessbar.setVisibility(View.VISIBLE);
+                break;
+
+            default:
+                progreessbar.setVisibility(View.GONE);
+        }
+
+
     }
 }

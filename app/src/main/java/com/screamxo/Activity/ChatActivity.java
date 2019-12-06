@@ -103,6 +103,7 @@ import static com.screamxo.FireBasePush.MyFirebaseMessagingService.ACTION_CHAT_M
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener, CommonMethod, EmojiTextInterface, TextWatcher, android.support.v4.app.FragmentManager.OnBackStackChangedListener {
 
     private static final int CAPTURE_MEDIA = 368;
+    int createdBy;
     private static final String TAG = "ChatActivity";
     public String otherUserName = "", otherUserPhoto = "", itemId;
     @BindView(R.id.recycler_view)
@@ -315,6 +316,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("itemId")) {
             itemId = getIntent().getExtras().getString("itemId");
+            createdBy = getIntent().getExtras().getInt("createdBy");
             iscameFromSellerChat = true;
         }
 
@@ -368,13 +370,18 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
+        if (iscameFromSellerChat && createdBy == Integer.parseInt(otherUid))
+            btnPay.setText(R.string.pay);
+        else if (iscameFromSellerChat)
+            btnPay.setText(R.string.refund_buyer);
+
+
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                if (itemId != null)
 //                    callMoveToCartApi(itemId, "1");
                 startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", otherUid).putExtra("from", "chat"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
-
             }
         });
     }
@@ -833,9 +840,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             map.put("messagetype", "1");
             map.put("messagedetail", "" + edtMsg.getText().toString());
 
-            if (msgDeleteTimer != null) {
+            if (msgDeleteTimer != null)
                 map.put("messagetiming", msgDeleteTimer);
-            }
 
             if (iscameFromSellerChat) {
                 map.put("itemid", itemId);

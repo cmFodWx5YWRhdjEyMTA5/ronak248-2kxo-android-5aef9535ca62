@@ -7,30 +7,45 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListPopupWindow;
+import android.widget.PopupMenu;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.apimodule.ApiBase.ApiBean.GetUserDetailBean;
 import com.example.apimodule.ApiBase.ApiBean.Message;
+import com.example.apimodule.ApiBase.FetchrServiceBase;
+import com.google.gson.JsonElement;
 import com.screamxo.Activity.ChatActivity;
 import com.screamxo.Emoji.CustomText;
+import com.screamxo.Interface.CommonMethod;
 import com.screamxo.R;
 import com.screamxo.Utils.CircleTransform;
+import com.screamxo.Utils.Utils;
 import com.screamxo.Utils.Validations;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Response;
 
 import static com.screamxo.Activity.DrawerMainActivity.REQ_CODE_CHAT_ACTIVITY_RESULTS;
 
@@ -45,13 +60,19 @@ public class PleaserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private ArrayList<Message> messageArrayList;
     private Validations validations;
     private int heightProfile, widthProfile, heightItem, widthItem;
+    private CommonMethod commonMethod;
+    FetchrServiceBase mService = new FetchrServiceBase();
+    Call<JsonElement> deleteCall;
+    Call<GetUserDetailBean> blockApi;
 
     // type: 0 = Pleaser 1 = Business
-    public PleaserAdapter(Context context, ArrayList<Message> messageArrayList) {
+    public PleaserAdapter(Context context, ArrayList<Message> messageArrayList, CommonMethod commonMethod) {
 
         this.context = context;
         this.messageArrayList = messageArrayList;
+        this.commonMethod = commonMethod;
         validations = new Validations();
+
 
         BitmapDrawable bdUser = (BitmapDrawable) context.getResources().getDrawable(R.mipmap.pic_holder_dashboard);
         BitmapDrawable bdItem = (BitmapDrawable) context.getResources().getDrawable(R.mipmap.img_placeholder);
@@ -199,12 +220,113 @@ public class PleaserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     switch (type) {
                         case "1":
                             intent.putExtra("itemId", message.getItemid());
+                            intent.putExtra("createdBy", message.getItemCreatedBy());
                             break;
                     }
                     ((Activity) context).startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
                 }
             });
+
+            linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    PopupMenu popup = new PopupMenu(context, txtTime);
+                    popup.getMenuInflater().inflate(R.menu.menu_chat_options, popup.getMenu());
+
+                    popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch (item.getItemId()) {
+                                case R.id.pop_up_detele:
+                                    if (type.equals("0"))
+                                        callDeleteChatApi("", message.getUserid());
+                                    else
+                                        callDeleteChatApi(message.getItemid(), message.getUserid());
+
+                                    break;
+
+                                case R.id.pop_up_block:
+                                    callBlockUserApi(message.getUserid());
+                                    break;
+
+                                case R.id.pop_up_spam:
+                                    break;
+                            }
+                            return true;
+                        }
+                    });
+                    popup.show();
+                    return true;
+                }
+            });
         }
+    }
+
+    public void callDeleteChatApi(String itemId, String otherUid) {
+        if (Utils.isInternetOn(context)) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("other_user_id", otherUid);
+
+            if (deleteCall != null)
+                deleteCall.cancel();
+
+            switch (type) {
+                case "0":
+                    deleteCall = mService.getFetcherService(context).deleteNormalChat(map);
+                    break;
+                case "1":
+                    map.put("itemid", itemId);
+                    deleteCall = mService.getFetcherService(context).deleteBusinessChat(map);
+                    break;
+            }
+
+            commonMethod.commonMethod("3");
+
+            deleteCall.enqueue(new retrofit2.Callback<JsonElement>() {
+                @Override
+                public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
+                    commonMethod.commonMethod("0");
+                }
+
+                @Override
+                public void onFailure(Call<JsonElement> call, Throwable t) {
+                    commonMethod.commonMethod("15");
+                }
+            });
+        } else
+            Utils.showToast(context, context.getString(R.string.toast_no_internet));
+    }
+
+    public void callBlockUserApi(String otherUid) {
+        if (Utils.isInternetOn(context)) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("toid", otherUid);
+
+            if (blockApi != null)
+                blockApi.cancel();
+
+            blockApi = mService.getFetcherService(context).blockChatUser(map);
+
+            commonMethod.commonMethod("3");
+
+            blockApi.enqueue(new retrofit2.Callback<GetUserDetailBean>() {
+                @Override
+                public void onResponse(Call<GetUserDetailBean> call, Response<GetUserDetailBean> response) {
+                    commonMethod.commonMethod("1");
+                    try {
+                        Utils.showToast(context, response.body().getMsg());
+                    } catch (Exception ex) {
+                        Utils.showToast(context, "Already Blocked");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<GetUserDetailBean> call, Throwable t) {
+                    commonMethod.commonMethod("15");
+                }
+            });
+        } else
+            Utils.showToast(context, context.getString(R.string.toast_no_internet));
     }
 
 }

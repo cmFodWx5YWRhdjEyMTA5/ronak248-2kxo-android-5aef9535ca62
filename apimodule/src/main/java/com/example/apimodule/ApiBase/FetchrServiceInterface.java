@@ -63,8 +63,7 @@ import retrofit2.http.PartMap;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
 
-public interface FetchrServiceInterface
-{
+public interface FetchrServiceInterface {
 
     @FormUrlEncoded
     @POST("users/signup")
@@ -317,6 +316,16 @@ public interface FetchrServiceInterface
     Call<ChatBean> getFrdChatHeader(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded
+    @POST("user_chat/delete_all_message")
+        // 35.
+    Call<JsonElement> deleteNormalChat(@FieldMap Map<String, String> params);
+
+    @FormUrlEncoded
+    @POST("user_chat/delete_all_message_business")
+        // 35.
+    Call<JsonElement> deleteBusinessChat(@FieldMap Map<String, String> params);
+
+    @FormUrlEncoded
     @POST("user_chat/buyersellermessagelist")
         // 60
     Call<ChatBean> getByerSellerChatHeader(@FieldMap Map<String, String> params);
@@ -350,8 +359,15 @@ public interface FetchrServiceInterface
     Call<ItemCategoriesBean> deleteMediaPost(@FieldMap Map<String, Integer> params);
 
     @FormUrlEncoded
-    @POST("Posts/deletecomment")
+    @POST("post/deletecomment")
     Call<CommentBean> DeleteComment(@FieldMap Map<String, Integer> params);
+
+
+    @FormUrlEncoded
+    @POST("friend/blockfriend_for_bussiness")
+    Call<GetUserDetailBean> blockChatUser(@FieldMap Map<String, String> params);
+
+
 
     @FormUrlEncoded
     @POST("post/reportpost")
@@ -551,7 +567,7 @@ public interface FetchrServiceInterface
     Call<GetUserDetailBean> UnBlockUser(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded
-    @POST("friend/cancelfriend")
+    @POST("friend/cancel_friend_request")
     Call<FriendBean> CancelFrdRequest(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded
