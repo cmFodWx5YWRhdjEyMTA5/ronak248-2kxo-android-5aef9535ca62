@@ -133,7 +133,7 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.rl_Header)
     RelativeLayout rl_Header;
     UserResult userdetail;
-    Userdetail userinfo;
+    public Userdetail userinfo;
     Preferences preferences;
     Call<SendMsgBean> sendMsgBeanCall;
     RequestBodyConveter requestbodyconverter;
@@ -357,6 +357,8 @@ public class ProfileFragment extends Fragment {
         return BundleUtils.getBundleExtra(getArguments(), "uid", "");
     }
 
+
+    //    0=sent,1=accpeted,2=rejected,3=blocked,4=unbloked,5=unfriend,6=cancelled
     public void callGetUserMoreInfoApi() {
         Map<String, String> map = new HashMap<>();
         map.put("userid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
@@ -371,7 +373,6 @@ public class ProfileFragment extends Fragment {
                     linearLayout.setVisibility(View.VISIBLE);
                     if (response.code() == StaticConstant.RESULT_OK && response.body() != null && response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                         userinfo = response.body().getResult().getUserdetail();
-                        isBlock = response.body().getResult().getUserdetail().getBlock();
                         String url = userinfo.getPhotothumb();
                         txtFrd.setText(String.valueOf(userinfo.getTotalFriend()));
                         txtItem.setText(String.valueOf(userinfo.getTotalItem()));
@@ -633,273 +634,359 @@ public class ProfileFragment extends Fragment {
     }
 
     public void openPopUpmenu() {
-        String blockStatus;
-        if (isBlock == 0)
-            blockStatus = getString(R.string.txt_block);
-        else {
-            blockStatus = getString(R.string.txt_unblock);
+
+        //    0=sent,1=accpeted,2=rejected,3=blocked,4=unbloked,5=unfriend,6=cancelled
+
+        Boolean isSent = false;
+        Boolean isNotFriend = true;
+        String blockStatus = getString(R.string.txt_block);
+
+        if (userinfo.getConnectionData() != null) {
+            isSent = userinfo.getConnectionData().getAction() == 0;
+            isNotFriend = (userinfo.getConnectionData().getAction() == 2 || userinfo.getConnectionData().getAction() == 5 || userinfo.getConnectionData().getAction() == 6 || userinfo.getConnectionData().getAction() == 3);
+
+            if (userinfo.getConnectionData().getAction() == 3)
+                blockStatus = getString(R.string.txt_unblock);
+            else
+                blockStatus = getString(R.string.txt_block);
         }
 
-        if (!isLoginUser) {
-            switch (frdShipType) {
-                case "0":
-                    if (isMyFriend == 0) {
-                        strings = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_add_friend), blockStatus};
-                    } else {
-                        strings = new String[]{getString(R.string.txt_message),
-                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_un_friend), blockStatus};
-                    }
 
-                    MyPopUpWindow popUpWindow2 = new MyPopUpWindow(context, img_edit,
-                            strings, img_edit, "ProfileRejectList");
-                    popUpWindow2.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
-                    popUpWindow2.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
-                        @Override
-                        public boolean onPopupItemClick(int position) {
-                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
-                            switch (strings[position]) {
-                                case "Message":
-                                    performActionOnMessageClick();
-                                    break;
-                                case "Block":
-                                    ((ProfileActivity) context).callBlockApi();
+
+
+        String friendShipStatus = "";
+
+        if (isSent)
+            friendShipStatus = getString(R.string.txt_cancel_request);
+        else if (isNotFriend)
+            friendShipStatus = getString(R.string.txt_add_friend);
+        else
+            friendShipStatus = getString(R.string.txt_un_friend);
+
+
+        strings = new String[]{getString(R.string.txt_message),
+                getString(R.string.txt_send_money), getString(R.string.txt_share), friendShipStatus, blockStatus};
+
+
+        if (!isLoginUser) {
+            MyPopUpWindow popUpWindow2 = new MyPopUpWindow(context, img_edit,
+                    strings, img_edit, "ProfileRejectList");
+            popUpWindow2.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
+            popUpWindow2.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+                @Override
+                public boolean onPopupItemClick(int position) {
+                    img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+                    switch (strings[position]) {
+                        case "Message":
+                            performActionOnMessageClick();
+                            break;
+                        case "Block":
+                            ((ProfileActivity) context).callBlockApi();
 //                                    strings = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_add_friend),
 //                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "UnBlock":
-                                    ((ProfileActivity) context).callUnBlockApi();
+                            break;
+                        case "UnBlock":
+                            ((ProfileActivity) context).callUnBlockApi();
 //                                    strings = new String[]{getString(R.string.txt_block), getString(R.string.txt_add_friend),
 //                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "Add Friend":
-                                    ((ProfileActivity) context).callAddFrd();
+                            break;
+                        case "Add Friend":
+                            ((ProfileActivity) context).callAddFrd();
 
-                                    break;
-                                case "Un Friend":
-                                    ((ProfileActivity) context).callUnfrdApi();
-                                    isMyFriend = 0;
-                                    break;
-                                case "Share":
-                                    openChatActivity();
-                                    break;
-                                case "Send money":
+                            break;
+                        case "Un Friend":
+                            ((ProfileActivity) context).callUnfrdApi();
+                            isMyFriend = 0;
+                            break;
+                        case "Share":
+                            openChatActivity();
+                            break;
+                        case "Send money":
 //                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")).putExtra("from", "profile"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
-                                    break;
-                            }
-                            popUpWindow2.dismiss();
-                            return true;
-                        }
-                    });
-                    break;
+                            startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")).putExtra("from", "profile"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
+                            break;
 
-                case "1":
-
-                    if (isMyFriend == 0) {
-                        strings1 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_add_friend)};
-                    } else {
-                        strings1 = new String[]{getString(R.string.txt_message), blockStatus, getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_un_friend)};
+                        case "Cancel Request":
+                            ((ProfileActivity) context).callCancleFrdRequest();
+                            break;
                     }
+                    popUpWindow2.dismiss();
+                    return true;
+                }
+            });
 
-                    MyPopUpWindow popUpWindow1 = new MyPopUpWindow(context, img_edit,
-                            strings1, img_edit, "ProfileRejectList");
-                    popUpWindow1.show(img_edit, MyPopUpWindow.PopUpPosition.RIGHT);
-                    popUpWindow1.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
-                        @Override
-                        public boolean onPopupItemClick(int position) {
-                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
-                            switch (strings1[position]) {
-                                case "Message":
-                                    performActionOnMessageClick();
-                                    break;
-                                case "Block":
-                                    ((ProfileActivity) context).callBlockApi();
-//                                    strings1 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_un_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "UnBlock":
-                                    ((ProfileActivity) context).callUnBlockApi();
-//                                    strings1 = new String[]{getString(R.string.txt_block), getString(R.string.txt_un_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "Add Friend":
-                                    ((ProfileActivity) context).callAddFrd();
-                                    isMyFriend = 1;
-                                    break;
-                                case "Un Friend":
-                                    ((ProfileActivity) context).callUnfrdApi();
-                                    isMyFriend = 0;
-                                    break;
-                                case "Share":
-                                    getActivity().finish();
-                                    break;
-                                case "Send money":
-                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    break;
-                            }
-                            popUpWindow1.dismiss();
-                            return true;
-                        }
-                    });
-                    break;
 
-                case "2":
-
-                    if (isMyFriend == 0) {
-                        strings2 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_cancel_request)};
-                    } else {
-                        strings2 = new String[]{getString(R.string.txt_message),
-                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_cancel_request), blockStatus};
-                    }
-
-                    MyPopUpWindow popUpWindow = new MyPopUpWindow(context, img_edit,
-                            strings2, img_edit, "ProfileRejectList");
-                    popUpWindow.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
-                    popUpWindow.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
-                        @Override
-                        public boolean onPopupItemClick(int position) {
-                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
-                            switch (strings2[position]) {
-                                case "Message":
-                                    performActionOnMessageClick();
-                                    break;
-                                case "Block":
-                                    ((ProfileActivity) context).callBlockApi();
-//                                    strings2 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_cancel_request),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "UnBlock":
-                                    ((ProfileActivity) context).callUnBlockApi();
-//                                    strings2 = new String[]{getString(R.string.txt_block), getString(R.string.txt_cancel_request),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "Cancel Request":
-                                    ((ProfileActivity) context).callCancleFrdRequest();
-                                    break;
-                                case "Share":
-                                    Intent intent = new Intent(context, ChatActivity.class);
-                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
-                                    intent.putExtra("username", userName);
-                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
-                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
-                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
-                                    break;
-                                case "Send money":
-                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    break;
-                            }
-                            popUpWindow.dismiss();
-                            return true;
-                        }
-                    });
-                    break;
-
-                case "3":
-
-                    if (isMyFriend == 0) {
-                        strings3 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
-                    } else {
-                        strings3 = new String[]{getString(R.string.txt_message),
-                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
-                    }
-
-                    MyPopUpWindow popUpWindowa = new MyPopUpWindow(context, img_edit,
-                            strings3, img_edit, "ProfileRejectList");
-                    popUpWindowa.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
-                    popUpWindowa.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
-                        @Override
-                        public boolean onPopupItemClick(int position) {
-                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
-                            switch (strings3[position]) {
-                                case "Message":
-                                    performActionOnMessageClick();
-                                    break;
-                                case "Block":
-                                    ((ProfileActivity) context).callBlockApi();
-//                                    strings3 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "UnBlock":
-                                    ((ProfileActivity) context).callUnBlockApi();
-//                                    strings3 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "Accept Friend":
-                                    ((ProfileActivity) context).callAcceptFrdRequestApi();
-                                    break;
-                                case "Share":
-                                    Intent intent = new Intent(context, ChatActivity.class);
-                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
-                                    intent.putExtra("username", userName);
-                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
-                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
-                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
-                                    break;
-                                case "Send money":
-                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    break;
-                            }
-                            popUpWindowa.dismiss();
-                            return true;
-                        }
-                    });
-                    break;
-                case "4":
-                    if (isMyFriend == 0) {
-                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
-                    } else {
-                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
-                                getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
-                    }
-
-                    MyPopUpWindow popUpWindowa1 = new MyPopUpWindow(context, img_edit,
-                            strings4, img_edit, "ProfileRejectList");
-                    popUpWindowa1.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
-                    popUpWindowa1.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
-                        @Override
-                        public boolean onPopupItemClick(int position) {
-                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
-                            switch (strings4[position]) {
-                                case "Message":
-                                    performActionOnMessageClick();
-                                    break;
-                                case "Block":
-                                    ((ProfileActivity) context).callBlockApi();
-//                                    strings4 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "UnBlock":
-                                    ((ProfileActivity) context).callUnBlockApi();
-//                                    strings4 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
-//                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
-                                    break;
-                                case "Accept Friend":
-                                    ((ProfileActivity) context).callAcceptFrdRequestApi();
-                                    break;
-                                case "Share":
-                                    Intent intent = new Intent(context, ChatActivity.class);
-                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
-                                    intent.putExtra("username", userName);
-                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
-                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
-                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
-                                    break;
-                                case "Send money":
-                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
-                                    break;
-                            }
-                            popUpWindowa1.dismiss();
-                            return true;
-                        }
-                    });
-                    break;
-            }
+//            switch (frdShipType) {
+//                case "0":
+//                    if (isMyFriend == 0) {
+//                        strings = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_add_friend), blockStatus};
+//                    } else {
+//                        strings = new String[]{getString(R.string.txt_message),
+//                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_un_friend), blockStatus};
+//                    }
+//
+//
+//                    strings = new String[]{getString(R.string.txt_message),
+//                            getString(R.string.txt_send_money), getString(R.string.txt_share), friendShipStatus, blockStatus};
+//
+//
+//
+//                    MyPopUpWindow popUpWindow2 = new MyPopUpWindow(context, img_edit,
+//                            strings, img_edit, "ProfileRejectList");
+//                    popUpWindow2.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
+//                    popUpWindow2.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+//                        @Override
+//                        public boolean onPopupItemClick(int position) {
+//                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+//                            switch (strings[position]) {
+//                                case "Message":
+//                                    performActionOnMessageClick();
+//                                    break;
+//                                case "Block":
+//                                    ((ProfileActivity) context).callBlockApi();
+////                                    strings = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_add_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "UnBlock":
+//                                    ((ProfileActivity) context).callUnBlockApi();
+////                                    strings = new String[]{getString(R.string.txt_block), getString(R.string.txt_add_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "Add Friend":
+//                                    ((ProfileActivity) context).callAddFrd();
+//
+//                                    break;
+//                                case "Un Friend":
+//                                    ((ProfileActivity) context).callUnfrdApi();
+//                                    isMyFriend = 0;
+//                                    break;
+//                                case "Share":
+//                                    openChatActivity();
+//                                    break;
+//                                case "Send money":
+////                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+//                                    startActivityForResult(new Intent(context, WalletSendReceiveActivity.class).putExtra("uid", BundleUtils.getBundleExtra(getArguments(), "uid", "")).putExtra("from", "profile"), REQ_CODE_WALLET_ACTIVITY_RESULTS);
+//                                    break;
+//
+//                                case "Cancel Request":
+//                                    ((ProfileActivity) context).callCancleFrdRequest();
+//                                    break;
+//                            }
+//                            popUpWindow2.dismiss();
+//                            return true;
+//                        }
+//                    });
+//                    break;
+//
+//                case "1":
+//
+//                    if (isMyFriend == 0) {
+//                        strings1 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_add_friend)};
+//                    } else {
+//                        strings1 = new String[]{getString(R.string.txt_message), blockStatus, getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_un_friend)};
+//                    }
+//
+//                    MyPopUpWindow popUpWindow1 = new MyPopUpWindow(context, img_edit,
+//                            strings1, img_edit, "ProfileRejectList");
+//                    popUpWindow1.show(img_edit, MyPopUpWindow.PopUpPosition.RIGHT);
+//                    popUpWindow1.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+//                        @Override
+//                        public boolean onPopupItemClick(int position) {
+//                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+//                            switch (strings1[position]) {
+//                                case "Message":
+//                                    performActionOnMessageClick();
+//                                    break;
+//                                case "Block":
+//                                    ((ProfileActivity) context).callBlockApi();
+////                                    strings1 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_un_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "UnBlock":
+//                                    ((ProfileActivity) context).callUnBlockApi();
+////                                    strings1 = new String[]{getString(R.string.txt_block), getString(R.string.txt_un_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "Add Friend":
+//                                    ((ProfileActivity) context).callAddFrd();
+//                                    isMyFriend = 1;
+//                                    break;
+//                                case "Un Friend":
+//                                    ((ProfileActivity) context).callUnfrdApi();
+//                                    isMyFriend = 0;
+//                                    break;
+//                                case "Share":
+//                                    getActivity().finish();
+//                                    break;
+//                                case "Send money":
+//                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+//                                    break;
+//
+//
+//                            }
+//                            popUpWindow1.dismiss();
+//                            return true;
+//                        }
+//                    });
+//                    break;
+//
+//                case "2":
+//
+//                    if (isMyFriend == 0) {
+//                        strings2 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_cancel_request)};
+//                    } else {
+//                        strings2 = new String[]{getString(R.string.txt_message),
+//                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_cancel_request), blockStatus};
+//                    }
+//
+//                    MyPopUpWindow popUpWindow = new MyPopUpWindow(context, img_edit,
+//                            strings2, img_edit, "ProfileRejectList");
+//                    popUpWindow.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
+//                    popUpWindow.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+//                        @Override
+//                        public boolean onPopupItemClick(int position) {
+//                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+//                            switch (strings2[position]) {
+//                                case "Message":
+//                                    performActionOnMessageClick();
+//                                    break;
+//                                case "Block":
+//                                    ((ProfileActivity) context).callBlockApi();
+////                                    strings2 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_cancel_request),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "UnBlock":
+//                                    ((ProfileActivity) context).callUnBlockApi();
+////                                    strings2 = new String[]{getString(R.string.txt_block), getString(R.string.txt_cancel_request),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "Cancel Request":
+//                                    ((ProfileActivity) context).callCancleFrdRequest();
+//                                    break;
+//                                case "Share":
+//                                    Intent intent = new Intent(context, ChatActivity.class);
+//                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
+//                                    intent.putExtra("username", userName);
+//                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
+//                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
+//                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
+//                                    break;
+//                                case "Send money":
+//                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+//                                    break;
+//                            }
+//                            popUpWindow.dismiss();
+//                            return true;
+//                        }
+//                    });
+//                    break;
+//
+//                case "3":
+//
+//                    if (isMyFriend == 0) {
+//                        strings3 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
+//                    } else {
+//                        strings3 = new String[]{getString(R.string.txt_message),
+//                                getString(R.string.txt_send_money), getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
+//                    }
+//
+//                    MyPopUpWindow popUpWindowa = new MyPopUpWindow(context, img_edit,
+//                            strings3, img_edit, "ProfileRejectList");
+//                    popUpWindowa.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
+//                    popUpWindowa.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+//                        @Override
+//                        public boolean onPopupItemClick(int position) {
+//                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+//                            switch (strings3[position]) {
+//                                case "Message":
+//                                    performActionOnMessageClick();
+//                                    break;
+//                                case "Block":
+//                                    ((ProfileActivity) context).callBlockApi();
+////                                    strings3 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "UnBlock":
+//                                    ((ProfileActivity) context).callUnBlockApi();
+////                                    strings3 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "Accept Friend":
+//                                    ((ProfileActivity) context).callAcceptFrdRequestApi();
+//                                    break;
+//                                case "Share":
+//                                    Intent intent = new Intent(context, ChatActivity.class);
+//                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
+//                                    intent.putExtra("username", userName);
+//                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
+//                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
+//                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
+//                                    break;
+//                                case "Send money":
+//                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+//                                    break;
+//                            }
+//                            popUpWindowa.dismiss();
+//                            return true;
+//                        }
+//                    });
+//                    break;
+//                case "4":
+//                    if (isMyFriend == 0) {
+//                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_accept_friend)};
+//                    } else {
+//                        strings4 = new String[]{getString(R.string.txt_message), getString(R.string.txt_send_money),
+//                                getString(R.string.txt_share), getString(R.string.txt_accept_friend), blockStatus};
+//                    }
+//
+//                    MyPopUpWindow popUpWindowa1 = new MyPopUpWindow(context, img_edit,
+//                            strings4, img_edit, "ProfileRejectList");
+//                    popUpWindowa1.show(img_edit, MyPopUpWindow.PopUpPosition.CENTER);
+//                    popUpWindowa1.setOnPopupItemClickListner(new MyPopUpWindow.OnPopupItemClickListener() {
+//                        @Override
+//                        public boolean onPopupItemClick(int position) {
+//                            img_edit.setBackground(context.getResources().getDrawable(R.drawable.ractangle));
+//                            switch (strings4[position]) {
+//                                case "Message":
+//                                    performActionOnMessageClick();
+//                                    break;
+//                                case "Block":
+//                                    ((ProfileActivity) context).callBlockApi();
+////                                    strings4 = new String[]{getString(R.string.txt_unblock), getString(R.string.txt_accept_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "UnBlock":
+//                                    ((ProfileActivity) context).callUnBlockApi();
+////                                    strings4 = new String[]{getString(R.string.txt_block), getString(R.string.txt_accept_friend),
+////                                            getString(R.string.txt_share), getString(R.string.txt_send_money)};
+//                                    break;
+//                                case "Accept Friend":
+//                                    ((ProfileActivity) context).callAcceptFrdRequestApi();
+//                                    break;
+//                                case "Share":
+//                                    Intent intent = new Intent(context, ChatActivity.class);
+//                                    intent.putExtra("otherUid", BundleUtils.getBundleExtra(getArguments(), "uid", ""));
+//                                    intent.putExtra("username", userName);
+//                                    intent.putExtra("userProfile", BundleUtils.getBundleExtra(getArguments(), "uProfile", ""));
+//                                    intent.putExtra("fullname", BundleUtils.getBundleExtra(getArguments(), "uFullName", ""));
+//                                    startActivityForResult(intent, REQ_CODE_CHAT_ACTIVITY_RESULTS);
+//                                    break;
+//                                case "Send money":
+//                                    startActivityForResult(new Intent(context, SendMoneyActivity.class), REQ_CODE_SEND_MONEY_ACTIVITY_RESULTS);
+//                                    break;
+//                            }
+//                            popUpWindowa1.dismiss();
+//                            return true;
+//                        }
+//                    });
+//                    break;
+//            }
 
         } else {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

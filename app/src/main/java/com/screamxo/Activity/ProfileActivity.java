@@ -86,7 +86,6 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
     private int isFriend = 1;
     Userdetail userinfo;
 
-
     FloatingMenuButton floatingButton;
     FloatingSubButton sbflSetting, sbflHome, subFriend, sbSearch, sbWorld, sbProfile, sbChat, sbSocial;
 
@@ -408,7 +407,8 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
 //                        }
 
                     if (fragment instanceof ProfileFragment)
-                        ((ProfileFragment) fragment).isBlock = 1;
+                        ((ProfileFragment) fragment).callGetUserMoreInfoApi();
+//                        ((ProfileFragment) fragment).userinfo.getConnectionData().setAction(3);
 //                    }
                 }
 
@@ -436,10 +436,11 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                 @Override
                 public void onResponse(Call<FriendBean> call, Response<FriendBean> response) {
                     if (response.code() == StaticConstant.RESULT_OK) {
+
                         Utils.showToast(context, response.body().getMsg());
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
                             friendshType = "1";
-
+                            ((ProfileFragment) fragment).callGetUserMoreInfoApi();
                             updateValue("1");
                         }
                     }
@@ -476,6 +477,7 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                     if (response.code() == StaticConstant.RESULT_OK) {
                         Utils.showToast(context, response.body().getMsg());
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+                            ((ProfileFragment) fragment).callGetUserMoreInfoApi();
                             friendshType = "0";
                             updateValue("0");
                         }
@@ -510,6 +512,7 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                     if (response.code() == StaticConstant.RESULT_OK) {
                         Utils.showToast(context, response.body().getMsg());
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+                            ((ProfileFragment) fragment).callGetUserMoreInfoApi();
                             friendshType = "0";
                             //  StaticConstant.REQUESTFLAG = true;
                             updateValue("0");
@@ -547,8 +550,9 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                     if (response.code() == StaticConstant.RESULT_OK) {
                         Utils.showToast(context, response.body().getMsg());
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
-                            friendshType = "" + 0;
-                            updateValue("0");
+                            ((ProfileFragment) fragment).callGetUserMoreInfoApi();
+//                            friendshType = "" + 0;
+//                            updateValue("0");
                         }
                     }
                 }
@@ -584,11 +588,13 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                     if (response.code() == StaticConstant.RESULT_OK) {
                         Utils.showToast(context, response.body().getMsg());
                         if (response.body().getStatus().equals(StaticConstant.STATUS_1)) {
+
                             friendshType = "" + 2;
                             frdshipId = "" + response.body().getResult().getTotalcount();
                             updateValue("2");
                             if (fragment instanceof ProfileFragment) {
-                                ((ProfileFragment) fragment).isMyFriend = 0;
+                                ((ProfileFragment) fragment).callGetUserMoreInfoApi();
+//                                ((ProfileFragment) fragment).isMyFriend = 0;
                             }
                         }
                     } else if (response.errorBody() != null) {
@@ -634,7 +640,8 @@ public class ProfileActivity extends AppCompatActivity implements FriendActionIn
                     Utils.showToast(context, "Unblocked Successfully");
 
                     if (fragment instanceof ProfileFragment)
-                        ((ProfileFragment) fragment).isBlock = 0;
+                        ((ProfileFragment) fragment).callGetUserMoreInfoApi();
+//                        ((ProfileFragment) fragment).userinfo.getConnectionData().setAction(4);
                 }
 
                 @Override

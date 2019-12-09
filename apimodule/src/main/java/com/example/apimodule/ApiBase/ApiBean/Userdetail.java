@@ -83,6 +83,18 @@ public class Userdetail {
     @Expose
     private String holdAmount;
 
+    @SerializedName("connectionData")
+    @Expose
+    private ConnectionData connectionData;
+
+
+    public ConnectionData getConnectionData() {
+        return connectionData;
+    }
+
+    public void setConnectionData(ConnectionData connectionData) {
+        this.connectionData = connectionData;
+    }
 
     public int getFreezeStatus() {
         return freezeStatus;
@@ -119,6 +131,7 @@ public class Userdetail {
     @SerializedName("realtionstatus")
     @Expose
     private String realtionstatus;
+
     @SerializedName("sexpreference")
     @Expose
     private String sexpreference;

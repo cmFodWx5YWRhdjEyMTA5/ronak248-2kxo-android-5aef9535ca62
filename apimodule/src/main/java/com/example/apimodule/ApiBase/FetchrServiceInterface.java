@@ -551,6 +551,8 @@ public interface FetchrServiceInterface {
         //65
     Call<AddItemreviewBean> AddItemReview(@FieldMap Map<String, String> params);
 
+
+//    0=sent,1=accpeted,2=rejected,3=blocked,4=unbloked,5=unfriend,6=cancelled
     @FormUrlEncoded
     @POST("users/getuserbyid")
         // 2.
